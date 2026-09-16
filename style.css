@@ -610,3 +610,313 @@ a {
     }
 
 }
+
+/* ---------- TRIP PLANNER OPTIONS ---------- */
+
+.planner-options {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 30px;
+}
+
+.planner-options button {
+    padding: 22px 18px;
+    border: 1px solid #d9ddd7;
+    border-radius: 14px;
+    background: white;
+    color: #183c29;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s ease;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 7px;
+
+    min-height: 105px;
+}
+
+.planner-options button:hover {
+    transform: translateY(-3px);
+    border-color: #b57a32;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.planner-options button:focus-visible {
+    outline: 3px solid #e1b56e;
+    outline-offset: 3px;
+}
+
+/* ---------- SELECTED PLANNER OPTION ---------- */
+
+.planner-options button.selected {
+    border-color: #b57a32;
+    background: #f7f1e7;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+/* ---------- BUILD JOURNEY BUTTON ---------- */
+
+.planner-action {
+    margin-top: 35px;
+    text-align: center;
+}
+
+#build-journey {
+    display: inline-block;
+    padding: 16px 32px;
+
+    background: #b57a32;
+    color: white;
+
+    border: none;
+    border-radius: 8px;
+
+    font-size: 16px;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#build-journey:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ---------- JOURNEY RESULT ---------- */
+
+.journey-result {
+    max-width: 850px;
+    margin: 45px auto 0;
+    padding: 40px;
+    background: #ffffff;
+    border: 1px solid #e1b56e;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.journey-result h3 {
+    margin-bottom: 15px;
+    color: #183c29;
+    font-size: 30px;
+}
+
+.journey-result p {
+    max-width: 650px;
+    margin: 0 auto 25px;
+    color: #68736b;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.journey-result button {
+    padding: 14px 28px;
+    background: #b57a32;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+/* ---------- TRIP DNA ---------- */
+
+.trip-dna {
+    margin-top: 35px;
+    padding: 28px;
+    background: #f7f7f3;
+    border-radius: 14px;
+    border: 1px solid #e1b56e;
+}
+
+.trip-dna h4 {
+    margin-bottom: 22px;
+    color: #183c29;
+    font-size: 24px;
+}
+
+.dna-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 22px;
+}
+
+.dna-grid > div {
+    padding: 16px;
+    background: #ffffff;
+    border-radius: 10px;
+}
+
+.dna-grid span,
+.trip-dna > div span {
+    display: block;
+    margin-bottom: 6px;
+    color: #68736b;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.dna-grid strong,
+.trip-dna > div strong {
+    color: #183c29;
+    font-size: 17px;
+}
+
+.journey-insight {
+    margin-top: 22px;
+    padding-top: 20px;
+    border-top: 1px solid #d9ddd8;
+}
+
+.journey-insight span {
+    display: block;
+    margin-bottom: 8px;
+    color: #b57a32;
+    font-weight: 700;
+}
+
+.journey-insight p {
+    margin: 0;
+    color: #68736b;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* ---------- JOURNEY STORY ---------- */
+
+.journey-story {
+    margin-top: 28px;
+    padding: 24px 26px;
+    background: #183c29;
+    border-radius: 12px;
+    text-align: left;
+}
+
+.journey-story span {
+    display: block;
+    margin-bottom: 10px;
+    color: #e1b56e;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.journey-story p {
+    margin: 0;
+    max-width: 720px;
+    color: #ffffff;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+/* ---------- SUGGESTED EXPERIENCE PATH ---------- */
+
+.experience-path {
+    margin-top: 32px;
+    padding: 28px;
+    border-top: 1px solid #d9ddd8;
+    text-align: left;
+}
+
+.path-title {
+    display: block;
+    margin-bottom: 24px;
+    color: #183c29;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.path-steps {
+    position: relative;
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+.path-step {
+    position: relative;
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    gap: 18px;
+    align-items: start;
+    padding-bottom: 24px;
+}
+
+.path-step:last-child {
+    padding-bottom: 0;
+}
+
+.path-step > span {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border: 1px solid #b57a32;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #b57a32;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.path-step:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: 21px;
+    top: 42px;
+    width: 1px;
+    height: calc(100% - 18px);
+    background: #e1b56e;
+}
+
+.path-step p {
+    margin: 7px 0 0;
+    color: #68736b;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* ---------- MOBILE EXPERIENCE PATH ---------- */
+
+@media (max-width: 550px) {
+    .experience-path {
+        padding: 22px 10px;
+    }
+
+    .path-step {
+        grid-template-columns: 44px 1fr;
+        gap: 14px;
+    }
+
+    .path-step > span {
+        width: 38px;
+        height: 38px;
+        font-size: 12px;
+    }
+
+    .path-step:not(:last-child)::after {
+        left: 19px;
+        top: 38px;
+    }
+
+    .path-step p {
+        font-size: 15px;
+    }
+}
