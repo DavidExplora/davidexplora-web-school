@@ -2,82 +2,503 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>David Explora Tanzania Tours & Adventures</title>
+
+    <meta
+        name="description"
+        content="David Explora creates authentic Tanzania travel experiences including Kilimanjaro, safari, culture and Zanzibar adventures."
+    >
+
+    <title>David Explora | Tanzania Tours & Local Experiences</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<header>
-    <h1>David Explora</h1>
 
-   <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#tours">Tours</a>
-    <a href="#contact">Contact</a>
-</nav>
-</header>
+    <!-- ================= HEADER ================= -->
 
-<main>
+    <header class="site-header">
 
-<section id="home">
-        <h2>Explore Tanzania Beyond the Ordinary</h2>
-        <img src="images/kilimanjaro-guide.jpeg" alt="David Explora guide with a traveler on Mount Kilimanjaro">
+        <div class="nav-container">
+
+            <a href="#home" class="logo">
+                David <span>Explora</span>
+            </a>
+
+            <button class="menu-toggle" aria-label="Open navigation">
+                ☰
+            </button>
+
+            <nav class="main-nav">
+
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#experiences">Experiences</a>
+                <a href="#why-us">Why Us</a>
+                <a href="#contact">Contact</a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <!-- ================= HERO ================= -->
+
+        <section id="home" class="hero">
+
+            <div class="hero-content">
+
+                <p class="eyebrow">
+                    LOCAL TANZANIA • REAL EXPERIENCES
+                </p>
+
+                <h1>
+                    Explore Tanzania
+                    <span>Beyond the Ordinary.</span>
+                </h1>
+
+                <p class="hero-text">
+                    Discover Kilimanjaro, wildlife, culture and Zanzibar
+                    through authentic experiences shaped by local knowledge.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#experiences" class="btn btn-primary">
+                        Explore Experiences
+                    </a>
+
+                    <a href="#contact" class="btn btn-secondary">
+                        Plan My Trip
+                    </a>
+
+                </div>
+
+                <div class="trust-line">
+
+                    <span>✓ Local knowledge</span>
+                    <span>✓ Personal service</span>
+                    <span>✓ Authentic experiences</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ABOUT ================= -->
+
+        <section id="about" class="section about-section">
+
+            <div class="section-heading">
+
+                <p class="eyebrow">
+                    MEET YOUR LOCAL GUIDE
+                </p>
+
+                <h2>
+                    Tanzania is more than a destination.
+                </h2>
+
+                <p>
+                    It is a place to experience, understand and remember.
+                </p>
+
+            </div>
+
+            <div class="about-grid">
+
+                <div class="about-image">
+
+                    <img
+                        src="images/kilimanjaro-guide.jpeg"
+                        alt="David Explora guide with a traveler near Mount Kilimanjaro"
+                    >
+
+                </div>
+
+                <div class="about-content">
+
+                    <h3>
+                        Travel with local knowledge.
+                    </h3>
+
+                    <p>
+                        David Explora focuses on meaningful Tanzania
+                        experiences that connect travelers with landscapes,
+                        wildlife, people and local culture.
+                    </p>
+
+                    <p>
+                        From the slopes of Kilimanjaro to Tanzania's
+                        wildlife destinations and the islands of Zanzibar,
+                        every journey begins with understanding what
+                        travelers actually want to experience.
+                    </p>
+
+                    <a href="#contact" class="text-link">
+                        Start a conversation →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= EXPERIENCES ================= -->
+
+        <section id="experiences" class="section experiences-section">
+
+            <div class="section-heading centered">
+
+                <p class="eyebrow">
+                    DISCOVER TANZANIA
+                </p>
+
+                <h2>
+                    Experiences worth remembering.
+                </h2>
+
+                <p>
+                    Choose your adventure or let us help you design your
+                    own Tanzania journey.
+                </p>
+
+            </div>
+
+
+            <div class="experience-grid">
+
+
+                <!-- Kilimanjaro -->
+
+                <article class="experience-card featured-card">
+
+                    <div class="card-image">
+
+                        <img
+                            src="images/kilimanjaro-guide.jpeg"
+                            alt="Kilimanjaro trekking experience"
+                        >
+
+                        <span class="card-tag">
+                            Adventure
+                        </span>
+
+                    </div>
+
+                    <div class="card-content">
+
+                        <h3>Kilimanjaro</h3>
+
+                        <p>
+                            Trek through changing landscapes and experience
+                            Africa's highest mountain with local mountain
+                            knowledge.
+                        </p>
+
+                        <a href="#contact">
+                            Discover Kilimanjaro →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Safari -->
+
+                <article class="experience-card">
+
+                    <div class="card-image">
+    <img src="images/safari/safari-elephant.jpg" alt="Elephant on safari in Tanzania">
+</div>
+
+                    <div class="card-content">
+                    <span class="card-tag">Wildlife</span>
+                        <h3>Tanzania Safari</h3>
+
+                        <p>
+                            Discover wildlife, dramatic landscapes and
+                            unforgettable moments across Tanzania.
+                        </p>
+
+                        <a href="#contact">
+                            Discover Safari →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Zanzibar -->
+
+                <article class="experience-card">
+
+    <div class="card-image">
+       <img src="zanzibar/zanzibar.jpg" alt="Zanzibar island experience">
+    </div>
+
+    <div class="card-content">
+
+        <span class="card-tag">Island Life</span>
+
+        <h3>Zanzibar & Tropical Islands</h3>
+
         <p>
-            Discover Kilimanjaro, wildlife, culture and Zanzibar
-            through authentic local experiences.
+            Experience Zanzibar through beaches, marine adventures,
+            Stone Town, spices and local island experiences.
         </p>
 
-        <a href="#tours">Explore Tours</a>
-        <a href="#contact">Contact Us</a>
-    </section>
-
-    <section id="about">
-        <h2>About David Explora</h2>
-
-        <p>
-            We create authentic Tanzania experiences combining
-            adventure, culture and local knowledge.
-        </p>
-    </section>
-
-    <section id="tours">
-<h2>Our Experiences</h2>
-
-<div class="tour-container">
-
-    <div class="tour-card">
-    <img src="images/kilimanjaro-guide.jpeg" alt="Kilimanjaro trekking experience">
-    <h3>Kilimanjaro</h3>
-    <p>Experience Africa's highest mountain.</p>
-</div>
-
-<div class="tour-card">
-    <h3>Safari</h3>
-    <p>Discover Tanzania's incredible wildlife.</p>
-</div>
-
-<div class="tour-card">
-    <h3>Zanzibar</h3>
-    <p>Explore island culture, beaches and marine adventures.</p>
-    <a href="#contact">Explore Tour</a>
-</div>
-
-</section>
-    <section id="contact">
-        <h2>Contact Us</h2>
-
-        <p>Ready to explore Tanzania?</p>
-
-        <a href="mailto:info@davidexplora.com">
-            Contact David Explora
+        <a href="#contact">
+            Discover Zanzibar →
         </a>
-    </section>
 
-</main>
+    </div>
 
-<footer>
-    <p>© 2026 David Explora</p>
-</footer>
+</article>
+
+<!-- Local Tanzania -->
+<article class="experience-card">
+    <div class="card-image">
+        <img
+            src="images/local/local-tanzania.avif"
+            alt="Waterfall surrounded by lush forest in Tanzania"
+        >
+    </div>
+
+    <div class="card-content">
+        <span class="card-tag">Nature & Culture</span>
+
+        <h3>Local Tanzania</h3>
+
+        <p>
+            Go beyond the famous sights with waterfalls,
+            local communities, nature and authentic experiences.
+        </p>
+
+        <a href="#contact">
+            Discover Local Tanzania →
+        </a>
+    </div>
+</article>
+            </div>
+
+        </section>
+
+
+        <!-- ================= WHY US ================= -->
+
+        <section id="why-us" class="section trust-section">
+
+            <div class="section-heading centered">
+
+                <p class="eyebrow">
+                    WHY DAVID EXPLORA
+                </p>
+
+                <h2>
+                    Travel with confidence.
+                </h2>
+
+            </div>
+
+
+            <div class="trust-grid">
+
+                <div class="trust-card">
+
+                    <div class="trust-icon">01</div>
+
+                    <h3>Local Perspective</h3>
+
+                    <p>
+                        Discover Tanzania through people who understand
+                        the destinations beyond the standard tourist route.
+                    </p>
+
+                </div>
+
+
+                <div class="trust-card">
+
+                    <div class="trust-icon">02</div>
+
+                    <h3>Clear Information</h3>
+
+                    <p>
+                        Understand what your experience includes, what to
+                        expect and how to prepare before you travel.
+                    </p>
+
+                </div>
+
+
+                <div class="trust-card">
+
+                    <div class="trust-icon">03</div>
+
+                    <h3>Personal Service</h3>
+
+                    <p>
+                        Your journey starts with a conversation so we can
+                        understand your interests and travel style.
+                    </p>
+
+                </div>
+
+
+                <div class="trust-card">
+
+                    <div class="trust-icon">04</div>
+
+                    <h3>Built for Travelers</h3>
+
+                    <p>
+                        We combine local tourism knowledge with modern
+                        technology to make trip planning easier.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SMART TRIP PLANNER ================= -->
+
+        <section class="planner-section">
+
+            <div class="planner-content">
+
+                <p class="eyebrow">
+                    COMING NEXT
+                </p>
+
+                <h2>
+                    Your Tanzania.
+                    <span>Your way.</span>
+                </h2>
+
+                <p>
+                    Tell us what you love—mountains, wildlife, culture,
+                    beaches or adventure—and we will help shape your
+                    Tanzania experience.
+                </p>
+
+                <a href="#contact" class="btn btn-light">
+                    Build My Tanzania Trip
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CONTACT ================= -->
+
+        <section id="contact" class="section contact-section">
+
+            <div class="section-heading centered">
+
+                <p class="eyebrow">
+                    LET'S PLAN
+                </p>
+
+                <h2>
+                    Start your Tanzania story.
+                </h2>
+
+                <p>
+                    Have an idea for your trip? Let's talk about it.
+                </p>
+
+            </div>
+
+
+            <div class="contact-box">
+
+                <div>
+
+                    <h3>
+                        Ready to explore Tanzania?
+                    </h3>
+
+                    <p>
+                        Send us your travel idea, preferred dates and
+                        interests. We can start from there.
+                    </p>
+
+                </div>
+
+                <div class="contact-actions">
+
+                    <a
+                        href="mailto:info@davidexplora.com"
+                        class="btn btn-primary"
+                    >
+                        Email David Explora
+                    </a>
+
+                    <a
+                        href="https://wa.me/255000000000"
+                        class="btn btn-whatsapp"
+                        target="_blank"
+                        rel="noopener"
+                    >
+                        WhatsApp Us
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+            <div>
+
+                <h3>David Explora</h3>
+
+                <p>
+                    Authentic Tanzania experiences through local knowledge.
+                </p>
+
+            </div>
+
+            <div>
+
+                <p>
+                    © <span id="current-year"></span> David Explora
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
 </body>
 </html>
