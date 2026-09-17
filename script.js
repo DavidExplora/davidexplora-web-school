@@ -74,71 +74,72 @@ yearElement.textContent = currentYear;
 
 // ---------- TRIP PLANNER SELECTIONS ----------
 
-// DESTINATION
-const destinationButtons = document.querySelectorAll(
-    '.planner-options button[data-destination]'
+// Current planner selections
+const plannerSelections = {
+    destination: "",
+    interest: "",
+    duration: ""
+};
+
+// Reusable function for planner buttons
+function setupPlannerSelection(selector, key, dataKey) {
+    const buttons = document.querySelectorAll(selector);
+
+    buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+
+            // Remove selected state from this group
+            buttons.forEach((item) => {
+                item.classList.remove("selected");
+            });
+
+            // Mark clicked option as selected
+            button.classList.add("selected");
+
+            // Save selected value
+            plannerSelections[key] = button.dataset[dataKey];
+
+            // Keep the existing variables connected
+            if (key === "destination") {
+                selectedDestination = plannerSelections.destination;
+            }
+
+            if (key === "interest") {
+                selectedInterest = plannerSelections.interest;
+            }
+
+            if (key === "duration") {
+                selectedDuration = plannerSelections.duration;
+            }
+
+            console.log(`${key} selected:`, plannerSelections[key]);
+        });
+    });
+}
+
+
+// ---------- DESTINATION ----------
+setupPlannerSelection(
+    '.planner-options button[data-destination]',
+    "destination",
+    "destination"
 );
 
-destinationButtons.forEach((button) => {
-    button.addEventListener("click", () => {
 
-        destinationButtons.forEach((item) => {
-            item.classList.remove("selected");
-        });
-
-        button.classList.add("selected");
-
-        const destination = button.dataset.destination;
-        selectedDestination = destination;
-        console.log("Selected destination:", destination);
-    });
-});
-
-
-// INTEREST
-const interestButtons = document.querySelectorAll(
-    '.planner-options button[data-interest]'
+// ---------- INTEREST ----------
+setupPlannerSelection(
+    '.planner-options button[data-interest]',
+    "interest",
+    "interest"
 );
 
-interestButtons.forEach((button) => {
-    button.addEventListener("click", () => {
 
-        interestButtons.forEach((item) => {
-            item.classList.remove("selected");
-        });
-
-        button.classList.add("selected");
-
-        const interest = button.dataset.interest;
-
-selectedInterest = interest;
-
-console.log("Selected interest:", selectedInterest);
-    });
-});
-
-
-// DURATION
-const durationButtons = document.querySelectorAll(
-    '.planner-options button[data-duration]'
+// ---------- DURATION ----------
+setupPlannerSelection(
+    '.planner-options button[data-duration]',
+    "duration",
+    "duration"
 );
-
-durationButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-
-        durationButtons.forEach((item) => {
-            item.classList.remove("selected");
-        });
-
-        button.classList.add("selected");
-
-        const duration = button.dataset.duration;
-
-        selectedDuration = duration;
-
-        console.log("Selected duration:", selectedDuration);
-    });
-});
 
 // ---------- BUILD TANZANIA JOURNEY ----------
 const buildJourneyButton = document.querySelector("#build-journey");
@@ -381,73 +382,82 @@ tripDNA.innerHTML = `
             <strong>${selectedDuration} days</strong>
         </div>
 
+        <div class="dna-code">
+            <span>DNA Code</span>
+            <strong>${tripCode}</strong>
+        </div>
+
     </div>
 
-    <div>
-    <span>DNA Code</span>
-    <strong>${tripCode}</strong>
-</div>
+    <div class="recommendations">
+        <span>Recommended for you</span>
 
-<div class="recommendations">
-    <span>Recommended for you</span>
+        ${
+            recommendedExperiences.length > 0
+                ? recommendedExperiences.map((experience) => `
+                    <div class="recommended-experience">
 
-    ${
-        recommendedExperiences.length > 0
-            ? recommendedExperiences.map((experience) => `
-             
-            <div class="recommended-experience">
-    <h5>${experience.name}</h5>
-    <p>${experience.description}</p>
+                        <h5>${experience.name}</h5>
 
-    <button
-        class="explore-recommended"
-        data-destination="${experience.destination}">
-        Explore This Experience →
-    </button>
-</div>
+                        <p>${experience.description}</p>
 
-            `).join("")
-            : `
-                <p>
-                    We can create a personalized combination
-                    based on your interests.
-                </p>
-            `
-    }
-</div>
+                        <button
+                            type="button"
+                            class="explore-recommended"
+                            data-destination="${experience.destination}">
+                            Explore This Experience →
+                        </button>
 
-<div class="journey-insight">
-    <span>Why this journey fits you</span>
-    <p>${journeyInsight}</p>
-</div>
-
-<div class="journey-story">
-    <span>Your Tanzania Story</span>
-    <p>${journeyStory}</p>
-</div>
-
-<div class="experience-path">  
-    <span class="path-title">Your Suggested Experience Path</span>
-
-    <div class="path-steps">
-        <div class="path-step">
-            <span>01</span>
-            <p>${experiencePath[0]}</p>
-        </div>
-
-        <div class="path-step">
-            <span>02</span>
-            <p>${experiencePath[1]}</p>
-        </div>
-
-        <div class="path-step">
-            <span>03</span>
-            <p>${experiencePath[2]}</p>
-        </div>
+                    </div>
+                `).join("")
+                : `
+                    <p>
+                        We can create a personalized combination
+                        based on your interests.
+                    </p>
+                `
+        }
     </div>
-</div>
+
+    <div class="journey-insight">
+        <span>Why this journey fits you</span>
+
+        <p>${journeyInsight}</p>
+    </div>
+
+    <div class="journey-story">
+        <span>Your Tanzania Story</span>
+
+        <p>${journeyStory}</p>
+    </div>
+
+    <div class="experience-path">
+
+        <span class="path-title">
+            Your Suggested Experience Path
+        </span>
+
+        <div class="path-steps">
+
+            <div class="path-step">
+                <span>01</span>
+                <p>${experiencePath[0]}</p>
+            </div>
+
+            <div class="path-step">
+                <span>02</span>
+                <p>${experiencePath[1]}</p>
+            </div>
+
+            <div class="path-step">
+                <span>03</span>
+                <p>${experiencePath[2]}</p>
+            </div>
+
+        </div>
+
+    </div>
 `;
-
 journeyResult.appendChild(tripDNA);
 
 const exploreButton = tripDNA.querySelector(".explore-recommended");
@@ -482,18 +492,44 @@ exploreButton.addEventListener("click", () => {
 // ---------- PLAN THIS TRIP ----------
 const planTripButton = document.querySelector("#plan-this-trip");
 planTripButton.addEventListener("click", () => {
-    const message = `Hello David Explora! I would like to plan a Tanzania trip.
 
-Destination: ${selectedDestination}
-Experience: ${selectedInterest}
-Duration: ${selectedDuration}
+    const destinationField =
+        document.querySelector("#trip-destination");
 
-Please help me create an itinerary and provide the available options and price.`;
+    const durationField =
+        document.querySelector("#trip-duration");
 
-    const whatsappURL =
-        "https://wa.me/255778321400?text=" + encodeURIComponent(message);
+    const messageField =
+        document.querySelector("#trip-message");
 
-    window.open(whatsappURL, "_blank");
+    const destinationMap = {
+        kilimanjaro: "Kilimanjaro",
+        safari: "Safari",
+        zanzibar: "Zanzibar",
+        local: "Local Tanzania"
+    };
+
+    const durationMap = {
+        "3-4": "3-4 days",
+        "5-7": "5-7 days",
+        "8-10": "8-10 days",
+        "11-plus": "11+ days"
+    };
+
+    destinationField.value =
+        destinationMap[selectedDestination] || "";
+
+    durationField.value =
+        durationMap[selectedDuration] || "";
+
+    messageField.value =
+        `I am interested in a ${selectedDuration} day Tanzania journey focused on ${selectedInterest}. Please help me create the right itinerary for my trip.`;
+
+    document.querySelector("#contact").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+
 });
 
 // ---------- TRIP INQUIRY FORM ----------
@@ -529,20 +565,22 @@ inquiryForm.addEventListener("submit", (event) => {
         document.querySelector("#trip-message").value.trim();
 
     const whatsappMessage =
-        `Hello David Explora! I have a Tanzania trip inquiry.
+    ` NEW TANZANIA TRIP INQUIRY
 
-Name: ${customerName}
+Traveler: ${customerName}
 Email: ${customerEmail}
 WhatsApp: ${customerWhatsApp}
+
 Preferred Travel Date: ${travelDate || "Not specified"}
 Travelers: ${travelerCount}
 Destination: ${destination}
 Trip Length: ${tripDuration}
 
-Travel Idea:
-${tripMessage || "No additional message provided."}
+TRAVELER'S IDEA
+${tripMessage || "No additional travel idea provided."}
 
-Please help me plan this journey and provide the available options and price.`;
+NEXT STEP
+Please help me design this journey, recommend suitable options, and provide the available pricing.`;
 
     const whatsappURL =
         "https://wa.me/255778321400?text=" +
