@@ -595,28 +595,183 @@
 
                 </div>
 
-                <div class="contact-actions">
+                <<form id="trip-inquiry-form" class="inquiry-form">
 
-                    <a
-                        href="mailto:info@davidexplora.com"
-                        class="btn btn-primary"
-                    >
-                        Email David Explora
-                    </a>
+    <div class="form-group">
+        <label for="customer-name">
+            Full Name
+        </label>
 
-                    <a
-                        href="https://wa.me/255000000000"
-                        class="btn btn-whatsapp"
-                        target="_blank"
-                        rel="noopener"
-                    >
-                        WhatsApp Us
-                    </a>
+        <input
+            type="text"
+            id="customer-name"
+            name="customer-name"
+            placeholder="Your full name"
+            required
+        >
+    </div>
 
-                </div>
 
-            </div>
+    <div class="form-row">
 
+        <div class="form-group">
+            <label for="customer-email">
+                Email
+            </label>
+
+            <input
+                type="email"
+                id="customer-email"
+                name="customer-email"
+                placeholder="you@example.com"
+                required
+            >
+        </div>
+
+
+        <div class="form-group">
+            <label for="customer-whatsapp">
+                WhatsApp
+            </label>
+
+            <input
+                type="tel"
+                id="customer-whatsapp"
+                name="customer-whatsapp"
+                placeholder="+255..."
+                required
+            >
+        </div>
+
+    </div>
+
+
+    <div class="form-row">
+
+        <div class="form-group">
+            <label for="travel-date">
+                Preferred Travel Date
+            </label>
+
+            <input
+                type="date"
+                id="travel-date"
+                name="travel-date"
+            >
+        </div>
+
+
+        <div class="form-group">
+            <label for="traveler-count">
+                Travelers
+            </label>
+
+            <input
+                type="number"
+                id="traveler-count"
+                name="traveler-count"
+                min="1"
+                max="50"
+                placeholder="2"
+                required
+            >
+        </div>
+
+    </div>
+
+
+    <div class="form-row">
+
+        <div class="form-group">
+            <label for="trip-destination">
+                Destination
+            </label>
+
+            <select
+                id="trip-destination"
+                name="trip-destination"
+                required
+            >
+                <option value="">
+                    Select destination
+                </option>
+
+                <option value="Kilimanjaro">
+                    Kilimanjaro
+                </option>
+
+                <option value="Safari">
+                    Tanzania Safari
+                </option>
+
+                <option value="Zanzibar">
+                    Zanzibar
+                </option>
+
+                <option value="Local Tanzania">
+                    Local Tanzania
+                </option>
+            </select>
+        </div>
+
+
+        <div class="form-group">
+            <label for="trip-duration">
+                Trip Length
+            </label>
+
+            <select
+                id="trip-duration"
+                name="trip-duration"
+                required
+            >
+                <option value="">
+                    Select duration
+                </option>
+
+                <option value="3–4 days">
+                    3–4 Days
+                </option>
+
+                <option value="5–7 days">
+                    5–7 Days
+                </option>
+
+                <option value="8–10 days">
+                    8–10 Days
+                </option>
+
+                <option value="11+ days">
+                    11+ Days
+                </option>
+            </select>
+        </div>
+
+    </div>
+
+
+    <div class="form-group">
+        <label for="trip-message">
+            Tell us about your journey
+        </label>
+
+        <textarea
+            id="trip-message"
+            name="trip-message"
+            rows="5"
+            placeholder="Tell us what you would love to experience in Tanzania..."
+        ></textarea>
+    </div>
+
+
+    <button
+        type="submit"
+        class="btn btn-primary inquiry-submit"
+    >
+        Send My Trip Request →
+    </button>
+
+</form>
         </section>
 
     </main>
