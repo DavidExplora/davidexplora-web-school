@@ -483,6 +483,85 @@ a {
     gap: 12px;
 }
 
+/* ---------- TRIP INQUIRY FORM ---------- */
+
+.inquiry-form {
+    width: 100%;
+    max-width: 650px;
+    margin-top: 30px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.form-group label {
+    color: #183c29;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 15px;
+    border: 1px solid #d9ddd7;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #183c29;
+    font-family: inherit;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #b57a32;
+    box-shadow: 0 0 0 3px rgba(181, 122, 50, 0.12);
+}
+
+.form-group textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+.inquiry-submit {
+    border: none;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.inquiry-submit:hover {
+    transform: translateY(-2px);
+}
+
+
+/* ---------- MOBILE INQUIRY FORM ---------- */
+
+@media (max-width: 700px) {
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .inquiry-form {
+        max-width: 100%;
+    }
+
+}
 
 /* ---------- FOOTER ---------- */
 

@@ -495,3 +495,59 @@ Please help me create an itinerary and provide the available options and price.`
 
     window.open(whatsappURL, "_blank");
 });
+
+// ---------- TRIP INQUIRY FORM ----------
+
+const inquiryForm = document.querySelector("#trip-inquiry-form");
+
+inquiryForm.addEventListener("submit", (event) => {
+
+    event.preventDefault();
+
+    const customerName =
+        document.querySelector("#customer-name").value.trim();
+
+    const customerEmail =
+        document.querySelector("#customer-email").value.trim();
+
+    const customerWhatsApp =
+        document.querySelector("#customer-whatsapp").value.trim();
+
+    const travelDate =
+        document.querySelector("#travel-date").value;
+
+    const travelerCount =
+        document.querySelector("#traveler-count").value;
+
+    const destination =
+        document.querySelector("#trip-destination").value;
+
+    const tripDuration =
+        document.querySelector("#trip-duration").value;
+
+    const tripMessage =
+        document.querySelector("#trip-message").value.trim();
+
+    const whatsappMessage =
+        `Hello David Explora! I have a Tanzania trip inquiry.
+
+Name: ${customerName}
+Email: ${customerEmail}
+WhatsApp: ${customerWhatsApp}
+Preferred Travel Date: ${travelDate || "Not specified"}
+Travelers: ${travelerCount}
+Destination: ${destination}
+Trip Length: ${tripDuration}
+
+Travel Idea:
+${tripMessage || "No additional message provided."}
+
+Please help me plan this journey and provide the available options and price.`;
+
+    const whatsappURL =
+        "https://wa.me/255778321400?text=" +
+        encodeURIComponent(whatsappMessage);
+
+    window.open(whatsappURL, "_blank");
+
+});
