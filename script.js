@@ -8,6 +8,38 @@ let selectedDestination = "";
 let selectedInterest = "";
 let selectedDuration = "";
 
+// ---------- EXPERIENCE DATA ----------
+
+const experiences = [
+    {
+        name: "Kilimanjaro Trek",
+        destination: "kilimanjaro",
+        interest: "adventure",
+        description: "Trek through changing mountain landscapes toward the roof of Africa."
+    },
+
+    {
+        name: "Tanzania Wildlife Safari",
+        destination: "safari",
+        interest: "wildlife",
+        description: "Explore Tanzania's national parks and experience wildlife in the wild."
+    },
+
+    {
+        name: "Zanzibar Island Escape",
+        destination: "zanzibar",
+        interest: "beach",
+        description: "Enjoy beaches, marine experiences, island culture and the rhythm of Zanzibar."
+    },
+
+    {
+        name: "Local Tanzania Experience",
+        destination: "local",
+        interest: "culture",
+        description: "Discover local communities, nature, food and experiences beyond the main tourist routes."
+    }
+];
+
 // ---------- MOBILE NAVIGATION ----------
 
 const menuToggle = document.querySelector(".menu-toggle");
@@ -229,6 +261,15 @@ const tripCode =
     `${selectedInterest.slice(0, 3).toUpperCase()}-` +
     `${durationCode}`;
 
+    // ---------- RECOMMENDATION ENGINE ----------
+
+const recommendedExperiences = experiences.filter((experience) => {
+    return (
+        experience.destination === selectedDestination &&
+        experience.interest === selectedInterest
+    );
+});
+
    // ---------- JOURNEY INSIGHT ----------
 let journeyInsight = "";
 
@@ -347,6 +388,34 @@ tripDNA.innerHTML = `
     <strong>${tripCode}</strong>
 </div>
 
+<div class="recommendations">
+    <span>Recommended for you</span>
+
+    ${
+        recommendedExperiences.length > 0
+            ? recommendedExperiences.map((experience) => `
+             
+            <div class="recommended-experience">
+    <h5>${experience.name}</h5>
+    <p>${experience.description}</p>
+
+    <button
+        class="explore-recommended"
+        data-destination="${experience.destination}">
+        Explore This Experience →
+    </button>
+</div>
+
+            `).join("")
+            : `
+                <p>
+                    We can create a personalized combination
+                    based on your interests.
+                </p>
+            `
+    }
+</div>
+
 <div class="journey-insight">
     <span>Why this journey fits you</span>
     <p>${journeyInsight}</p>
@@ -357,7 +426,7 @@ tripDNA.innerHTML = `
     <p>${journeyStory}</p>
 </div>
 
-<div class="experience-path">
+<div class="experience-path">  
     <span class="path-title">Your Suggested Experience Path</span>
 
     <div class="path-steps">
@@ -380,6 +449,29 @@ tripDNA.innerHTML = `
 `;
 
 journeyResult.appendChild(tripDNA);
+
+const exploreButton = tripDNA.querySelector(".explore-recommended");
+
+exploreButton.addEventListener("click", () => {
+    const destination = exploreButton.dataset.destination;
+
+    const destinationLinks = {
+        kilimanjaro: "#experiences",
+        safari: "#experiences",
+        zanzibar: "#experiences",
+        local: "#experiences"
+    };
+
+    const target = destinationLinks[destination];
+
+    if (target) {
+        document.querySelector(target).scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    }
+});
+
     // Smoothly move to the result
     journeyResult.scrollIntoView({
         behavior: "smooth",
