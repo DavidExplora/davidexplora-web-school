@@ -1037,3 +1037,219 @@ a {
         font-size: 15px;
     }
 }
+
+/* ==================== HERO REDESIGN ==================== */
+
+.hero {
+    position: relative;
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    background-image: url("images/kilimanjaro-guide.jpeg");
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(8, 27, 18, 0.88) 0%,
+            rgba(8, 27, 18, 0.68) 42%,
+            rgba(8, 27, 18, 0.28) 100%
+        );
+
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: min(1120px, 92%);
+    margin: 0 auto;
+
+    padding: 120px 0 100px;
+}
+
+.hero-eyebrow {
+    margin-bottom: 22px;
+
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+
+    color: #e1b56e;
+}
+
+.hero h1 {
+    max-width: 850px;
+    margin-bottom: 26px;
+
+    font-size: clamp(3rem, 7vw, 6.2rem);
+    line-height: 0.98;
+    letter-spacing: -0.045em;
+    font-weight: 800;
+}
+
+.hero h1 span {
+    display: block;
+    color: #e1b56e;
+}
+
+.hero-text {
+    max-width: 680px;
+    margin-bottom: 34px;
+
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    line-height: 1.75;
+
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+
+    margin-bottom: 38px;
+}
+
+.hero-buttons .btn {
+    min-width: 180px;
+    text-align: center;
+}
+
+.hero-trust {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.hero-trust span {
+    position: relative;
+    padding-left: 18px;
+}
+
+.hero-trust span::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+    background: #e1b56e;
+
+    transform: translateY(-50%);
+}
+
+.hero-scroll {
+    position: absolute;
+    z-index: 2;
+
+    right: 5%;
+    bottom: 32px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+
+    color: rgba(255, 255, 255, 0.72);
+
+    writing-mode: vertical-rl;
+}
+
+.scroll-line {
+    width: 1px;
+    height: 55px;
+
+    background: rgba(255, 255, 255, 0.55);
+}
+
+
+/* ==================== HERO MOBILE ==================== */
+
+@media (max-width: 850px) {
+
+    .hero {
+        min-height: 82vh;
+        background-position: center;
+    }
+
+    .hero-content {
+        padding: 100px 0 90px;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.8rem, 12vw, 4.5rem);
+    }
+
+    .hero-text {
+        max-width: 600px;
+    }
+
+    .hero-scroll {
+        display: none;
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .hero {
+        min-height: 78vh;
+    }
+
+    .hero-content {
+        width: 90%;
+        padding: 85px 0 70px;
+    }
+
+    .hero-eyebrow {
+        font-size: 0.72rem;
+        letter-spacing: 0.12em;
+    }
+
+    .hero h1 {
+        font-size: 2.8rem;
+        line-height: 1;
+    }
+
+    .hero-text {
+        font-size: 1rem;
+        line-height: 1.65;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    .hero-trust {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+}

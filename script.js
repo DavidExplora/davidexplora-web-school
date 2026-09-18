@@ -4,9 +4,6 @@
 // =========================================
 // ---------- TRIP PLANNER SELECTIONS ----------
 
-let selectedDestination = "";
-let selectedInterest = "";
-let selectedDuration = "";
 
 // ---------- EXPERIENCE DATA ----------
 
@@ -72,53 +69,47 @@ const yearElement = document.querySelector("#current-year");
 const currentYear = new Date().getFullYear();
 yearElement.textContent = currentYear;
 
-// ---------- TRIP PLANNER SELECTIONS ----------
+// ---------- TRIP PLANNER ----------
 
-// Current planner selections
 const plannerSelections = {
     destination: "",
     interest: "",
     duration: ""
 };
 
-// Reusable function for planner buttons
+
+// ---------- PLANNER BUTTON SETUP ----------
+
 function setupPlannerSelection(selector, key, dataKey) {
+
     const buttons = document.querySelectorAll(selector);
 
     buttons.forEach((button) => {
+
         button.addEventListener("click", () => {
 
-            // Remove selected state from this group
             buttons.forEach((item) => {
                 item.classList.remove("selected");
             });
 
-            // Mark clicked option as selected
             button.classList.add("selected");
 
-            // Save selected value
-            plannerSelections[key] = button.dataset[dataKey];
+            plannerSelections[key] =
+                button.dataset[dataKey];
 
-            // Keep the existing variables connected
-            if (key === "destination") {
-                selectedDestination = plannerSelections.destination;
-            }
+            console.log(
+                `${key} selected:`,
+                plannerSelections[key]
+            );
 
-            if (key === "interest") {
-                selectedInterest = plannerSelections.interest;
-            }
-
-            if (key === "duration") {
-                selectedDuration = plannerSelections.duration;
-            }
-
-            console.log(`${key} selected:`, plannerSelections[key]);
         });
+
     });
 }
 
 
 // ---------- DESTINATION ----------
+
 setupPlannerSelection(
     '.planner-options button[data-destination]',
     "destination",
@@ -127,6 +118,7 @@ setupPlannerSelection(
 
 
 // ---------- INTEREST ----------
+
 setupPlannerSelection(
     '.planner-options button[data-interest]',
     "interest",
@@ -135,21 +127,39 @@ setupPlannerSelection(
 
 
 // ---------- DURATION ----------
+
 setupPlannerSelection(
     '.planner-options button[data-duration]',
     "duration",
     "duration"
 );
 
-// ---------- BUILD TANZANIA JOURNEY ----------
-const buildJourneyButton = document.querySelector("#build-journey");
-const journeyResult = document.querySelector("#journey-result");
-const journeyMessage = document.querySelector("#journey-message");
+
+// ---------- BUILD JOURNEY ----------
+
+const buildJourneyButton =
+    document.querySelector("#build-journey");
+
+const journeyResult =
+    document.querySelector("#journey-result");
+
+const journeyMessage =
+    document.querySelector("#journey-message");
+
 
 buildJourneyButton.addEventListener("click", () => {
 
-    // Make sure all choices have been selected
-    if (!selectedDestination || !selectedInterest || !selectedDuration) {
+    const {
+        destination,
+        interest,
+        duration
+    } = plannerSelections;
+
+
+    // ---------- VALIDATION ----------
+
+    if (!destination || !interest || !duration) {
+
         journeyMessage.textContent =
             "Please choose a destination, experience type and trip length first.";
 
@@ -163,332 +173,362 @@ buildJourneyButton.addEventListener("click", () => {
         return;
     }
 
-    // Show the selections in the console
-    console.log("Destination:", selectedDestination);
-    console.log("Interest:", selectedInterest);
-    console.log("Duration:", selectedDuration);
-
-    // Create a personalized message
-    let message = "";
-
-    if (
-        selectedDestination === "kilimanjaro" &&
-        selectedInterest === "adventure"
-    ) {
-        message = `A ${selectedDuration.replace("-", "–")} day
-        Kilimanjaro adventure focused on trekking, hiking and active
-        experiences.`;
-    }
-
-    else if (
-        selectedDestination === "safari" &&
-        selectedInterest === "wildlife"
-    ) {
-        message = `A ${selectedDuration.replace("-", "–")} day
-        Tanzania safari focused on wildlife, national parks and
-        unforgettable encounters.`;
-    }
-
-    else if (
-        selectedDestination === "zanzibar" &&
-        selectedInterest === "beach"
-    ) {
-        message = `A ${selectedDuration.replace("-", "–")} day
-        Zanzibar escape focused on beaches, marine life and island
-        experiences.`;
-    }
-
-    else if (
-        selectedDestination === "local" &&
-        selectedInterest === "culture"
-    ) {
-        message = `A ${selectedDuration.replace("-", "–")} day
-        local Tanzania experience focused on culture, food, communities
-        and nature.`;
-    }
-
-    else {
-        message = `A ${selectedDuration.replace("-", "–")} day
-        Tanzania journey combining ${selectedInterest} experiences
-        around ${selectedDestination}.`;
-    }
-
-    // Display the result
-    journeyMessage.textContent = message;
-
-    journeyResult.classList.add("show");
 
     // ---------- TRAVEL PROFILE ----------
-let travelProfile = "";
-let travelPace = "";
 
-if (selectedInterest === "adventure") {
-    travelProfile = "Active Explorer";
-} else if (selectedInterest === "wildlife") {
-    travelProfile = "Wildlife Seeker";
-} else if (selectedInterest === "beach") {
-    travelProfile = "Island Escape";
-} else if (selectedInterest === "culture") {
-    travelProfile = "Culture Connector";
-} else {
-    travelProfile = "Tanzania Explorer";
-}
+    const travelProfiles = {
+        adventure: "Active Explorer",
+        wildlife: "Wildlife Seeker",
+        beach: "Island Escape",
+        culture: "Culture Connector"
+    };
 
-if (selectedDuration === "3-4") {
-    travelPace = "Focused Escape";
-} else if (selectedDuration === "5-7") {
-    travelPace = "Deep Experience";
-} else if (selectedDuration === "8-10") {
-    travelPace = "Multi-Experience Journey";
-} else if (selectedDuration === "11-plus") {
-    travelPace = "Slow Explorer";
-} else {
-    travelPace = "Flexible Journey";
-}
+    const travelProfile =
+        travelProfiles[interest] ||
+        "Tanzania Explorer";
 
-// ---------- TRIP DNA ----------
-const tripDNA = document.createElement("div");
 
-tripDNA.className = "trip-dna";
+    // ---------- JOURNEY PACE ----------
 
-// ---------- JOURNEY DNA CODE ----------
-const durationCode =
-    selectedDuration === "11-plus"
-        ? "11+"
-        : selectedDuration.replace("-", "/");
+    const journeyPaces = {
+        "3-4": "Focused Escape",
+        "5-7": "Deep Experience",
+        "8-10": "Multi-Experience Journey",
+        "11-plus": "Slow Explorer"
+    };
 
-const tripCode =
-    `${selectedDestination.slice(0, 3).toUpperCase()}-` +
-    `${selectedInterest.slice(0, 3).toUpperCase()}-` +
-    `${durationCode}`;
+    const travelPace =
+        journeyPaces[duration] ||
+        "Flexible Journey";
+
+
+    // ---------- DURATION ----------
+
+    const durationDisplay = {
+        "3-4": "3–4",
+        "5-7": "5–7",
+        "8-10": "8–10",
+        "11-plus": "11+"
+    };
+
+    const displayDuration =
+        durationDisplay[duration] ||
+        duration;
+
+
+    // ---------- DNA CODE ----------
+
+    const destinationCode =
+        destination.slice(0, 3).toUpperCase();
+
+    const interestCode =
+        interest.slice(0, 3).toUpperCase();
+
+    const durationCode =
+        duration === "11-plus"
+            ? "11+"
+            : duration.replace("-", "/");
+
+    const tripCode =
+        `${destinationCode}-${interestCode}-${durationCode}`;
+
+
+    // ---------- MAIN MESSAGE ----------
+
+    const journeyMessages = {
+
+        kilimanjaro:
+            `A ${displayDuration}-day Kilimanjaro adventure focused on trekking, hiking and active mountain experiences.`,
+
+        safari:
+            `A ${displayDuration}-day Tanzania safari focused on wildlife, national parks and unforgettable encounters.`,
+
+        zanzibar:
+            `A ${displayDuration}-day Zanzibar escape focused on beaches, marine life and island experiences.`,
+
+        local:
+            `A ${displayDuration}-day local Tanzania experience focused on culture, food, communities and nature.`
+    };
+
+    const message =
+        journeyMessages[destination] ||
+        `A ${displayDuration}-day Tanzania journey shaped around your interests.`;
+
+
+    // ---------- JOURNEY INSIGHT ----------
+
+    const journeyInsights = {
+
+        kilimanjaro:
+            "A strong match for travelers who want active days, mountain landscapes and a rewarding trekking experience.",
+
+        safari:
+            "A good match for travelers who want wildlife, open landscapes and time to explore Tanzania's national parks.",
+
+        zanzibar:
+            "A good match for travelers looking for beaches, marine experiences, island culture and a slower rhythm.",
+
+        local:
+            "A good match for travelers who want nature, culture, local communities and experiences beyond the main tourist routes."
+    };
+
+    const journeyInsight =
+        journeyInsights[destination] ||
+        "Your selections can be combined into a flexible Tanzania journey.";
+
+
+    // ---------- JOURNEY STORY ----------
+
+    const journeyStories = {
+
+        kilimanjaro:
+            `Begin your Tanzania story on the slopes of Kilimanjaro, surrounded by changing landscapes, fresh mountain air and the challenge of reaching higher.`,
+
+        safari:
+            `Your Tanzania story begins in the wild. Travel through open landscapes, discover Tanzania's wildlife and explore national parks through unforgettable wildlife experiences.`,
+
+        zanzibar:
+            `Slow down and discover the island side of Tanzania through beaches, marine experiences, island culture and the rhythm of Zanzibar.`,
+
+        local:
+            `Go beyond the famous sights and discover another side of Tanzania through local communities, nature, food and everyday experiences.`
+    };
+
+    const journeyStory =
+        journeyStories[destination] ||
+        "Your Tanzania story is shaped around the experiences you selected.";
+
+
+    // ---------- EXPERIENCE PATH ----------
+
+    const experiencePaths = {
+
+        kilimanjaro: [
+            "Prepare — Meet your guide and begin your mountain journey.",
+            "Trek — Experience changing landscapes as you climb higher.",
+            "Summit — Work toward the high point of your Kilimanjaro adventure."
+        ],
+
+        safari: [
+            "Discover — Enter Tanzania's wildlife landscapes.",
+            "Explore — Spend time observing wildlife and exploring national parks.",
+            "Remember — Build unforgettable moments in the wild."
+        ],
+
+        zanzibar: [
+            "Arrive — Begin your island experience.",
+            "Explore — Discover beaches, marine life and island culture.",
+            "Unwind — Slow down and enjoy the rhythm of Zanzibar."
+        ],
+
+        local: [
+            "Connect — Meet local people and discover everyday Tanzania.",
+            "Explore — Experience nature, communities and local landscapes.",
+            "Taste — Discover local flavors, traditions and stories."
+        ]
+    };
+
+    const experiencePath =
+        experiencePaths[destination] || [
+            "Discover — Start with the experiences that interest you most.",
+            "Explore — Connect different sides of Tanzania.",
+            "Remember — Create a journey shaped around your interests."
+        ];
+
 
     // ---------- RECOMMENDATION ENGINE ----------
 
-const recommendedExperiences = experiences.filter((experience) => {
-    return (
-        experience.destination === selectedDestination &&
-        experience.interest === selectedInterest
-    );
-});
+    const recommendedExperiences =
+        experiences.filter((experience) => {
 
-   // ---------- JOURNEY INSIGHT ----------
-let journeyInsight = "";
+            return (
+                experience.destination === destination &&
+                experience.interest === interest
+            );
 
-if (selectedDestination === "kilimanjaro") {
-    journeyInsight =
-        "A strong match for travelers who want active days, mountain landscapes and a rewarding trekking experience.";
-} else if (selectedDestination === "safari") {
-    journeyInsight =
-        "A good match for travelers who want wildlife, open landscapes and time to explore Tanzania's national parks.";
-} else if (selectedDestination === "zanzibar") {
-    journeyInsight =
-        "A good match for travelers looking for beaches, marine experiences, island culture and a slower rhythm.";
-} else if (selectedDestination === "local") {
-    journeyInsight =
-        "A good match for travelers who want nature, culture, local communities and experiences beyond the main tourist routes.";
-} else {
-    journeyInsight =
-        "Your selections can be combined into a flexible Tanzania journey.";
-}
-
-// ---------- JOURNEY STORY ----------
-let journeyStory = "";
-
-if (selectedDestination === "kilimanjaro") {
-    journeyStory =
-        `Begin your Tanzania story on the slopes of Kilimanjaro, surrounded by changing landscapes, fresh mountain air and the challenge of reaching higher. Your ${selectedDuration} day journey is designed for travelers who want an active and rewarding experience.`;
-} else if (selectedDestination === "safari") {
-    journeyStory =
-        `Your Tanzania story begins in the wild. Travel through open landscapes, discover Tanzania's wildlife and enjoy the freedom of exploring national parks at your own pace. Your ${selectedDuration} day journey is built around unforgettable wildlife experiences.`;
-} else if (selectedDestination === "zanzibar") {
-    journeyStory =
-        `Slow down and discover the island side of Tanzania. Your journey brings together beaches, marine experiences, island culture and moments to simply enjoy the rhythm of Zanzibar. Your ${selectedDuration} day escape is designed for travelers looking for a tropical experience.`;
-} else if (selectedDestination === "local") {
-    journeyStory =
-        `Go beyond the famous sights and discover another side of Tanzania. Meet local communities, explore nature, taste local flavors and experience places that connect you with everyday Tanzania. Your ${selectedDuration} day journey is designed around authentic experiences.`;
-} else {
-    journeyStory =
-        `Your Tanzania story is built around the experiences you selected, giving you a flexible ${selectedDuration} day journey to discover Tanzania your way.`;
-}
-
-// ---------- SUGGESTED EXPERIENCE PATH ----------
-let experiencePath = [];
-
-if (
-    selectedDestination === "kilimanjaro" &&
-    selectedInterest === "adventure"
-) {
-    experiencePath = [
-        "Prepare — Meet your guide and begin your mountain journey.",
-        "Trek — Experience changing landscapes as you climb higher.",
-        "Summit — Work toward the high point of your Kilimanjaro adventure."
-    ];
-} else if (
-    selectedDestination === "safari" &&
-    selectedInterest === "wildlife"
-) {
-    experiencePath = [
-        "Discover — Enter Tanzania's wildlife landscapes.",
-        "Explore — Spend time observing wildlife and exploring national parks.",
-        "Remember — Build unforgettable moments in the wild."
-    ];
-} else if (
-    selectedDestination === "zanzibar" &&
-    selectedInterest === "beach"
-) {
-    experiencePath = [
-        "Arrive — Begin your island experience.",
-        "Explore — Discover beaches, marine life and island culture.",
-        "Unwind — Slow down and enjoy the rhythm of Zanzibar."
-    ];
-} else if (
-    selectedDestination === "local" &&
-    selectedInterest === "culture"
-) {
-    experiencePath = [
-        "Connect — Meet local people and discover everyday Tanzania.",
-        "Explore — Experience nature, communities and local landscapes.",
-        "Taste — Discover local flavors, traditions and stories."
-    ];
-} else {
-    experiencePath = [
-        "Discover — Start with the experiences that interest you most.",
-        "Explore — Connect different sides of Tanzania.",
-        "Remember — Create a journey shaped around your interests."
-    ];
-}
-tripDNA.innerHTML = `
-    <h4>Your Trip DNA</h4>
-
-    <div class="dna-grid">
-
-        <div>
-            <span>Destination</span>
-            <strong>${selectedDestination}</strong>
-        </div>
-
-        <div>
-            <span>Travel Profile</span>
-            <strong>${travelProfile}</strong>
-        </div>
-
-        <div>
-            <span>Journey Pace</span>
-            <strong>${travelPace}</strong>
-        </div>
-
-        <div>
-            <span>Duration</span>
-            <strong>${selectedDuration} days</strong>
-        </div>
-
-        <div class="dna-code">
-            <span>DNA Code</span>
-            <strong>${tripCode}</strong>
-        </div>
-
-    </div>
-
-    <div class="recommendations">
-        <span>Recommended for you</span>
-
-        ${
-            recommendedExperiences.length > 0
-                ? recommendedExperiences.map((experience) => `
-                    <div class="recommended-experience">
-
-                        <h5>${experience.name}</h5>
-
-                        <p>${experience.description}</p>
-
-                        <button
-                            type="button"
-                            class="explore-recommended"
-                            data-destination="${experience.destination}">
-                            Explore This Experience →
-                        </button>
-
-                    </div>
-                `).join("")
-                : `
-                    <p>
-                        We can create a personalized combination
-                        based on your interests.
-                    </p>
-                `
-        }
-    </div>
-
-    <div class="journey-insight">
-        <span>Why this journey fits you</span>
-
-        <p>${journeyInsight}</p>
-    </div>
-
-    <div class="journey-story">
-        <span>Your Tanzania Story</span>
-
-        <p>${journeyStory}</p>
-    </div>
-
-    <div class="experience-path">
-
-        <span class="path-title">
-            Your Suggested Experience Path
-        </span>
-
-        <div class="path-steps">
-
-            <div class="path-step">
-                <span>01</span>
-                <p>${experiencePath[0]}</p>
-            </div>
-
-            <div class="path-step">
-                <span>02</span>
-                <p>${experiencePath[1]}</p>
-            </div>
-
-            <div class="path-step">
-                <span>03</span>
-                <p>${experiencePath[2]}</p>
-            </div>
-
-        </div>
-
-    </div>
-`;
-journeyResult.appendChild(tripDNA);
-
-const exploreButton = tripDNA.querySelector(".explore-recommended");
-
-exploreButton.addEventListener("click", () => {
-    const destination = exploreButton.dataset.destination;
-
-    const destinationLinks = {
-        kilimanjaro: "#experiences",
-        safari: "#experiences",
-        zanzibar: "#experiences",
-        local: "#experiences"
-    };
-
-    const target = destinationLinks[destination];
-
-    if (target) {
-        document.querySelector(target).scrollIntoView({
-            behavior: "smooth",
-            block: "start"
         });
-    }
-});
 
-    // Smoothly move to the result
+
+    // ---------- REMOVE PREVIOUS RESULT ----------
+
+    const oldTripDNA =
+        journeyResult.querySelector(".trip-dna");
+
+    if (oldTripDNA) {
+        oldTripDNA.remove();
+    }
+
+
+    // ---------- CREATE CURRENT RESULT ----------
+
+    const tripDNA =
+        document.createElement("div");
+
+    tripDNA.className = "trip-dna";
+
+
+    // ---------- TRIP DNA CONTENT ----------
+
+    tripDNA.innerHTML = `
+
+        <h4>Your Trip DNA</h4>
+
+        <div class="dna-grid">
+
+            <div>
+                <span>Destination</span>
+                <strong>${destination}</strong>
+            </div>
+
+            <div>
+                <span>Travel Profile</span>
+                <strong>${travelProfile}</strong>
+            </div>
+
+            <div>
+                <span>Journey Pace</span>
+                <strong>${travelPace}</strong>
+            </div>
+
+            <div>
+                <span>Duration</span>
+                <strong>${displayDuration} days</strong>
+            </div>
+
+            <div class="dna-code">
+                <span>DNA Code</span>
+                <strong>${tripCode}</strong>
+            </div>
+
+        </div>
+
+
+        <div class="recommendations">
+
+            <span>Recommended for you</span>
+
+            ${
+                recommendedExperiences.length > 0
+
+                    ? recommendedExperiences
+                        .map((experience) => `
+
+                            <div class="recommended-experience">
+
+                                <h5>
+                                    ${experience.name}
+                                </h5>
+
+                                <p>
+                                    ${experience.description}
+                                </p>
+
+                            </div>
+
+                        `)
+                        .join("")
+
+                    : `
+
+                        <p>
+                            We can create a personalized combination
+                            based on your interests.
+                        </p>
+
+                    `
+            }
+
+        </div>
+
+
+        <div class="journey-insight">
+
+            <span>
+                Why this journey fits you
+            </span>
+
+            <p>
+                ${journeyInsight}
+            </p>
+
+        </div>
+
+
+        <div class="journey-story">
+
+            <span>
+                Your Tanzania Story
+            </span>
+
+            <p>
+                ${journeyStory}
+            </p>
+
+        </div>
+
+
+        <div class="experience-path">
+
+            <span class="path-title">
+                Your Suggested Experience Path
+            </span>
+
+            <div class="path-steps">
+
+                <div class="path-step">
+                    <span>01</span>
+                    <p>${experiencePath[0]}</p>
+                </div>
+
+                <div class="path-step">
+                    <span>02</span>
+                    <p>${experiencePath[1]}</p>
+                </div>
+
+                <div class="path-step">
+                    <span>03</span>
+                    <p>${experiencePath[2]}</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    `;
+
+
+    // ---------- INSERT CURRENT RESULT ----------
+
+    journeyResult.appendChild(tripDNA);
+
+
+    // ---------- UPDATE MESSAGE ----------
+
+    journeyMessage.textContent =
+        message;
+
+
+    journeyResult.classList.add("show");
+
+
+    // ---------- DEBUG ----------
+
+    console.log("Trip Planner:", {
+        destination,
+        interest,
+        duration,
+        tripCode
+    });
+
+
+    // ---------- SHOW RESULT ----------
+
     journeyResult.scrollIntoView({
         behavior: "smooth",
         block: "center"
     });
-});
 
+});
 // ---------- PLAN THIS TRIP ----------
 const planTripButton = document.querySelector("#plan-this-trip");
 planTripButton.addEventListener("click", () => {
@@ -517,7 +557,7 @@ planTripButton.addEventListener("click", () => {
     };
 
     destinationField.value =
-        destinationMap[selectedDestination] || "";
+        destinationMap[plannerSelections.destination] || "";
 
     durationField.value =
         durationMap[selectedDuration] || "";
