@@ -560,10 +560,10 @@ planTripButton.addEventListener("click", () => {
         destinationMap[plannerSelections.destination] || "";
 
     durationField.value =
-        durationMap[selectedDuration] || "";
+    durationMap[plannerSelections.duration] || "";
 
-    messageField.value =
-        `I am interested in a ${selectedDuration} day Tanzania journey focused on ${selectedInterest}. Please help me create the right itinerary for my trip.`;
+messageField.value =
+    `I am interested in a ${plannerSelections.duration} Tanzania journey focused on ${plannerSelections.interest}. Please help me create the right itinerary for my trip.`;
 
     document.querySelector("#contact").scrollIntoView({
         behavior: "smooth",
