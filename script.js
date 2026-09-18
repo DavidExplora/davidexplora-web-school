@@ -531,8 +531,8 @@ buildJourneyButton.addEventListener("click", () => {
 });
 // ---------- PLAN THIS TRIP ----------
 const planTripButton = document.querySelector("#plan-this-trip");
-planTripButton.addEventListener("click", () => {
 
+planTripButton?.addEventListener("click", () => {
     const destinationField =
         document.querySelector("#trip-destination");
 
@@ -576,7 +576,7 @@ messageField.value =
 
 const inquiryForm = document.querySelector("#trip-inquiry-form");
 
-inquiryForm.addEventListener("submit", (event) => {
+inquiryForm?.addEventListener("submit", (event) => {
 
     event.preventDefault();
 
