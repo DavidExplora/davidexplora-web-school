@@ -147,8 +147,7 @@ const journeyMessage =
     document.querySelector("#journey-message");
 
 
-buildJourneyButton.addEventListener("click", () => {
-
+buildJourneyButton?.addEventListener("click", () => {
     const {
         destination,
         interest,
