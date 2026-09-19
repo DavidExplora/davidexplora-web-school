@@ -2471,3 +2471,90 @@ a {
     }
 
 }
+
+/* =========================================
+   KILIMANJARO ROUTE NAVIGATION
+========================================= */
+
+.route-navigation {
+    background: #eef0e9;
+}
+
+.route-navigation-grid {
+    max-width: 1000px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.route-navigation-card {
+    display: block;
+
+    padding: 34px;
+
+    background: white;
+
+    border: 1px solid #e1e5df;
+    border-radius: 18px;
+
+    color: #18231d;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.route-navigation-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #b57a32;
+
+    box-shadow: 0 14px 35px rgba(20, 40, 25, 0.10);
+}
+
+.route-navigation-card .eyebrow {
+    margin-bottom: 12px;
+}
+
+.route-navigation-card h3 {
+    margin-bottom: 12px;
+
+    color: #183c29;
+
+    font-size: 27px;
+}
+
+.route-navigation-card p {
+    margin-bottom: 24px;
+
+    color: #667169;
+}
+
+.route-navigation-link {
+    color: #183c29;
+    font-weight: 800;
+}
+
+.route-navigation-back {
+    margin-top: 30px;
+
+    text-align: center;
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 700px) {
+
+    .route-navigation-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .route-navigation-card {
+        padding: 26px;
+    }
+
+}
