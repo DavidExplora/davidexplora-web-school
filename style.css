@@ -2343,3 +2343,131 @@ a {
     }
 
 }
+
+/* =========================================
+   KILIMANJARO ROUTE COMPARISON
+========================================= */
+
+.route-comparison {
+    background: #f7f7f3;
+}
+
+.route-comparison-table {
+    max-width: 1150px;
+    margin: 0 auto;
+
+    overflow-x: auto;
+
+    background: white;
+
+    border: 1px solid #e2e5df;
+    border-radius: 18px;
+
+    box-shadow: 0 10px 35px rgba(20, 40, 25, 0.06);
+}
+
+.comparison-row {
+    min-width: 900px;
+
+    display: grid;
+    grid-template-columns: 1.15fr repeat(3, 1fr);
+
+    border-bottom: 1px solid #e6e8e3;
+}
+
+.comparison-row:last-child {
+    border-bottom: none;
+}
+
+.comparison-row > div {
+    padding: 20px 22px;
+
+    color: #56635a;
+    font-size: 15px;
+}
+
+.comparison-feature {
+    color: #183c29 !important;
+    font-weight: 800;
+}
+
+.comparison-header {
+    background: #183c29;
+}
+
+.comparison-header > div {
+    color: white;
+    font-weight: 800;
+}
+
+.comparison-header .comparison-feature {
+    color: #e1b56e !important;
+}
+
+.comparison-actions {
+    background: #fafbf8;
+}
+
+.comparison-link {
+    display: inline-block;
+
+    color: #183c29;
+    font-weight: 800;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.comparison-link:hover {
+    color: #b57a32;
+    transform: translateX(3px);
+}
+
+.comparison-note {
+    max-width: 950px;
+    margin: 25px auto 0;
+
+    padding: 18px 22px;
+
+    border-left: 3px solid #b57a32;
+
+    background: white;
+
+    color: #657068;
+    font-size: 14px;
+}
+
+.comparison-note strong {
+    color: #183c29;
+}
+
+
+/* ---------- MOBILE COMPARISON ---------- */
+
+@media (max-width: 700px) {
+
+    .route-comparison-table {
+        border-radius: 14px;
+    }
+
+    .comparison-row {
+        min-width: 760px;
+
+        grid-template-columns:
+            1fr
+            1.2fr
+            1.2fr
+            1.2fr;
+    }
+
+    .comparison-row > div {
+        padding: 16px;
+        font-size: 14px;
+    }
+
+    .comparison-note {
+        font-size: 13px;
+    }
+
+}
