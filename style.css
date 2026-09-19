@@ -43,7 +43,7 @@ a {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: rgba(255, 255, 255, 0.96);
+    background: #ffffff;
     border-bottom: 1px solid #e7e7e2;
 }
 
@@ -2557,4 +2557,885 @@ a {
         padding: 26px;
     }
 
+}
+
+/* =========================================
+   DAVID EXPLORA SAFARI PAGE
+========================================= */
+
+.safari-hero {
+    position: relative;
+    min-height: 78vh;
+
+    display: flex;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(8, 29, 18, 0.90),
+            rgba(8, 29, 18, 0.58),
+            rgba(8, 29, 18, 0.20)
+        ),
+        url("images/safari/safari-elephant.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    color: #ffffff;
+}
+
+.safari-hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(8, 29, 18, 0.20),
+            rgba(8, 29, 18, 0.04)
+        );
+
+    pointer-events: none;
+}
+
+.safari-hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: min(1100px, 88%);
+    margin: 0 auto;
+
+    padding: 120px 0 100px;
+}
+
+.safari-hero-content .eyebrow {
+    margin-bottom: 22px;
+}
+
+.safari-hero-content h1 {
+    max-width: 900px;
+
+    margin-bottom: 26px;
+
+    font-size: clamp(3.2rem, 7vw, 6.2rem);
+    line-height: 0.98;
+
+    letter-spacing: -0.045em;
+}
+
+.safari-hero-content h1 span {
+    display: block;
+
+    color: #e1b56e;
+}
+
+.safari-hero-content > p:not(.eyebrow) {
+    max-width: 720px;
+
+    margin-bottom: 34px;
+
+    color: rgba(255, 255, 255, 0.90);
+
+    font-size: 19px;
+    line-height: 1.75;
+}
+
+
+/* ---------- INTRODUCTION ---------- */
+
+.safari-introduction {
+    background: #f7f7f3;
+}
+
+.safari-introduction .section-heading {
+    max-width: 850px;
+}
+
+.safari-introduction-grid {
+    max-width: 1100px;
+
+    margin: 60px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 24px;
+}
+
+.safari-introduction-grid > div {
+    padding: 30px;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e5df;
+    border-radius: 16px;
+}
+
+.safari-introduction-grid h3 {
+    margin-bottom: 12px;
+
+    color: #183c29;
+
+    font-size: 24px;
+}
+
+.safari-introduction-grid p {
+    color: #627068;
+
+    line-height: 1.7;
+}
+
+
+/* ---------- DESTINATIONS ---------- */
+
+.safari-destinations {
+    background: #ffffff;
+}
+
+.safari-destination-grid {
+    max-width: 1150px;
+
+    margin: 60px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 28px;
+}
+
+.safari-destination-card {
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid #e1e5df;
+    border-radius: 18px;
+
+    box-shadow:
+        0 10px 30px rgba(24, 60, 41, 0.06);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.safari-destination-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 16px 35px rgba(24, 60, 41, 0.11);
+}
+
+.safari-destination-image {
+    height: 300px;
+
+    overflow: hidden;
+}
+
+.safari-destination-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.safari-destination-card:hover img {
+    transform: scale(1.03);
+}
+
+.safari-destination-content {
+    padding: 30px;
+}
+
+.safari-destination-content h3 {
+    margin: 10px 0 12px;
+
+    color: #183c29;
+
+    font-size: 30px;
+}
+
+.safari-destination-content p {
+    margin-bottom: 22px;
+
+    color: #5f6c64;
+
+    line-height: 1.7;
+}
+
+.safari-destination-content a {
+    color: #183c29;
+
+    font-weight: 800;
+}
+
+.safari-destination-content a:hover {
+    color: #b57a32;
+}
+
+
+/* ---------- SAFARI STYLES ---------- */
+
+.safari-styles {
+    background: #f7f7f3;
+}
+
+.safari-style-grid {
+    max-width: 1150px;
+
+    margin: 60px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.safari-style-card {
+    padding: 30px;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e5df;
+    border-radius: 16px;
+}
+
+.safari-style-card > span {
+    display: block;
+
+    margin-bottom: 25px;
+
+    color: #b57a32;
+
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.safari-style-card h3 {
+    margin-bottom: 14px;
+
+    color: #183c29;
+
+    font-size: 22px;
+}
+
+.safari-style-card p {
+    color: #647068;
+
+    line-height: 1.7;
+}
+
+
+/* ---------- PROCESS ---------- */
+
+.safari-process {
+    background: #ffffff;
+}
+
+.safari-process-grid {
+    max-width: 1150px;
+
+    margin: 60px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 24px;
+}
+
+.safari-process-step {
+    padding-top: 20px;
+
+    border-top: 2px solid #b57a32;
+}
+
+.safari-process-step > span {
+    display: block;
+
+    margin-bottom: 25px;
+
+    color: #b57a32;
+
+    font-weight: 800;
+}
+
+.safari-process-step h3 {
+    margin-bottom: 12px;
+
+    color: #183c29;
+
+    font-size: 22px;
+}
+
+.safari-process-step p {
+    color: #627068;
+
+    line-height: 1.7;
+}
+
+
+/* ---------- PLAN SAFARI ---------- */
+
+.safari-plan {
+    background: #f7f7f3;
+}
+
+.safari-plan-box {
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 40px;
+
+    background: #183c29;
+
+    border-radius: 20px;
+
+    color: #ffffff;
+}
+
+.safari-plan-box > div {
+    max-width: 700px;
+}
+
+.safari-plan-box h2 {
+    margin-bottom: 18px;
+
+    color: #ffffff;
+
+    font-size: clamp(32px, 5vw, 48px);
+    line-height: 1.1;
+}
+
+.safari-plan-box p:not(.eyebrow) {
+    margin-bottom: 0;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    line-height: 1.7;
+}
+
+.safari-plan-box .btn-primary {
+    flex-shrink: 0;
+
+    background: #e1b56e;
+    color: #183c29;
+}
+
+.safari-plan-box .btn-primary:hover {
+    background: #ffffff;
+}
+
+
+/* ---------- SAFARI MOBILE ---------- */
+
+@media (max-width: 850px) {
+
+    .safari-hero {
+        min-height: 75vh;
+    }
+
+    .safari-hero-content {
+        width: 90%;
+
+        padding: 95px 0 80px;
+    }
+
+    .safari-hero-content h1 {
+        font-size: clamp(2.8rem, 11vw, 4.8rem);
+    }
+
+    .safari-introduction-grid {
+        grid-template-columns: 1fr;
+
+        max-width: 600px;
+    }
+
+    .safari-destination-grid {
+        grid-template-columns: 1fr;
+
+        max-width: 650px;
+    }
+
+    .safari-style-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .safari-process-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .safari-plan-box {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 42px 30px;
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .safari-hero {
+        min-height: 78vh;
+    }
+
+    .safari-hero-content {
+        width: 90%;
+
+        padding: 80px 0 65px;
+    }
+
+    .safari-hero-content h1 {
+        font-size: 2.8rem;
+    }
+
+    .safari-hero-content .hero-buttons {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .safari-hero-content .btn {
+        width: 100%;
+    }
+
+    .safari-destination-image {
+        height: 240px;
+    }
+
+    .safari-destination-content {
+        padding: 25px;
+    }
+
+    .safari-style-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .safari-process-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .safari-plan-box {
+        padding: 35px 24px;
+    }
+
+}
+
+/* =========================================================
+   SERENGETI DESTINATION PAGE
+   ========================================================= */
+
+.serengeti-hero {
+    background-image: url("images/safari/safari-elephant.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.destination-hero {
+    position: relative;
+    min-height: 78vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.destination-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(10, 35, 23, 0.88) 0%,
+            rgba(10, 35, 23, 0.68) 45%,
+            rgba(10, 35, 23, 0.25) 100%
+        );
+}
+
+.destination-hero-content {
+    position: relative;
+    z-index: 1;
+    width: min(1180px, 90%);
+    margin: 0 auto;
+    padding: 110px 0;
+    color: white;
+}
+
+.destination-eyebrow,
+.section-eyebrow {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #c78a36;
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.destination-hero h1 {
+    max-width: 850px;
+    margin: 0 0 26px;
+    font-size: clamp(3.2rem, 7vw, 6.8rem);
+    line-height: 0.98;
+    letter-spacing: -0.045em;
+}
+
+.destination-hero h1 span {
+    display: block;
+    color: #e1b56e;
+}
+
+.destination-hero p {
+    max-width: 720px;
+    margin: 0 0 34px;
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.destination-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.primary-button,
+.secondary-button,
+.destination-planning-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 25px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.primary-button {
+    background: #c78a36;
+    color: #14291e;
+}
+
+.primary-button:hover {
+    transform: translateY(-3px);
+    background: #e1b56e;
+}
+
+.secondary-button {
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    color: white;
+}
+
+.secondary-button:hover {
+    transform: translateY(-3px);
+    border-color: white;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+
+/* INTRODUCTION */
+
+.destination-introduction {
+    padding: 110px 20px;
+    background: #f7f7f3;
+}
+
+.destination-introduction-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.destination-introduction h2,
+.destination-section-heading h2,
+.destination-planning h2,
+.destination-responsible h2,
+.destination-final-cta h2 {
+    margin: 0 0 24px;
+    color: #182a21;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+}
+
+.destination-introduction p {
+    max-width: 820px;
+    margin: 0 0 18px;
+    color: #53645c;
+    font-size: 1.12rem;
+    line-height: 1.8;
+}
+
+
+/* EXPERIENCE SECTION */
+
+.destination-experiences {
+    padding: 110px 20px;
+    background: white;
+}
+
+.destination-section-heading {
+    max-width: 900px;
+    margin: 0 auto 60px;
+    text-align: center;
+}
+
+.destination-section-heading p {
+    max-width: 700px;
+    margin: 0 auto;
+    color: #617169;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.destination-experience-grid {
+    width: min(1100px, 100%);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.destination-experience-card {
+    padding: 38px;
+    border: 1px solid #e0e5df;
+    border-radius: 18px;
+    background: #fbfcfa;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.destination-experience-card:hover {
+    transform: translateY(-5px);
+    border-color: #c78a36;
+    box-shadow: 0 18px 40px rgba(24, 60, 41, 0.09);
+}
+
+.destination-card-number {
+    display: block;
+    margin-bottom: 45px;
+    color: #c78a36;
+    font-size: 0.95rem;
+    font-weight: 800;
+}
+
+.destination-experience-card h3 {
+    margin: 0 0 16px;
+    color: #183c29;
+    font-size: 1.7rem;
+}
+
+.destination-experience-card p {
+    margin: 0;
+    color: #5d6d65;
+    font-size: 1rem;
+    line-height: 1.75;
+}
+
+
+/* PLANNING */
+
+.destination-planning {
+    padding: 100px 20px;
+    background: #eef0e9;
+}
+
+.destination-planning-box {
+    width: min(1100px, 100%);
+    margin: 0 auto;
+    padding: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    border-radius: 22px;
+    background: #123c29;
+}
+
+.destination-planning-box h2 {
+    max-width: 700px;
+    color: white;
+}
+
+.destination-planning-box p {
+    max-width: 700px;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 1.08rem;
+    line-height: 1.7;
+}
+
+.destination-planning-button {
+    flex-shrink: 0;
+    background: #e1b56e;
+    color: #14291e;
+}
+
+.destination-planning-button:hover {
+    transform: translateY(-3px);
+    background: #f0c984;
+}
+
+
+/* RESPONSIBLE TRAVEL */
+
+.destination-responsible {
+    padding: 110px 20px;
+    background: #f7f7f3;
+}
+
+.destination-responsible-content {
+    width: min(850px, 100%);
+    margin: 0 auto;
+}
+
+.destination-responsible p {
+    max-width: 760px;
+    margin: 0 0 25px;
+    color: #586960;
+    font-size: 1.08rem;
+    line-height: 1.8;
+}
+
+.destination-responsible a {
+    color: #183c29;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.destination-responsible a:hover {
+    color: #c78a36;
+}
+
+
+/* FINAL CTA */
+
+.destination-final-cta {
+    padding: 120px 20px;
+    text-align: center;
+    background: white;
+}
+
+.destination-final-cta h2 {
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.destination-final-cta p {
+    max-width: 650px;
+    margin: 0 auto 32px;
+    color: #5d6d65;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 850px) {
+
+    .destination-hero {
+        min-height: 680px;
+    }
+
+    .destination-hero-content {
+        padding: 90px 0;
+    }
+
+    .destination-experience-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .destination-planning-box {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 40px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .destination-hero {
+        min-height: 620px;
+    }
+
+    .destination-hero-content {
+        width: 88%;
+    }
+
+    .destination-hero h1 {
+        font-size: clamp(2.8rem, 14vw, 4.5rem);
+    }
+
+    .destination-hero p {
+        font-size: 1rem;
+    }
+
+    .destination-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .primary-button,
+    .secondary-button {
+        width: 100%;
+    }
+
+    .destination-introduction,
+    .destination-experiences,
+    .destination-responsible {
+        padding: 80px 20px;
+    }
+
+    .destination-planning {
+        padding: 70px 20px;
+    }
+
+    .destination-planning-box {
+        padding: 32px 25px;
+    }
+
+    .destination-experience-card {
+        padding: 30px;
+    }
+
+    .destination-card-number {
+        margin-bottom: 30px;
+    }
+
+}
+
+/* =========================================
+   NGORONGORO DESTINATION PAGE
+   ========================================= */
+
+.ngorongoro-hero {
+    background-image: url("images/safari/safari-elephant.jpg");
+}
+
+/* =========================================
+   TARANGIRE DESTINATION PAGE
+   ========================================= */
+
+.tarangire-hero {
+    background-image: url("images/safari/safari-elephant.jpg");
 }
