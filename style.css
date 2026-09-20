@@ -3447,3 +3447,55 @@ a {
 .manyara-hero {
     background-image: url("images/safari/safari-elephant.jpg");
 }
+
+/* =========================================================
+   ZANZIBAR DESTINATION PAGE
+   ========================================================= */
+
+.zanzibar-hero {
+    background-image: url("images/zanzibar/zanzibar.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+/* =========================================================
+   ZANZIBAR VISUAL REFINEMENT
+   ========================================================= */
+
+.zanzibar-hero {
+    background-image: url("images/zanzibar/zanzibar.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.zanzibar-hero .destination-hero-overlay {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(10, 35, 23, 0.58) 0%,
+            rgba(10, 35, 23, 0.34) 48%,
+            rgba(10, 35, 23, 0.10) 100%
+        );
+}
+
+
+.zanzibar-hero .destination-hero-content {
+    max-width: 1180px;
+}
+
+.destination-card-link {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 24px;
+    color: #183c29;
+    font-weight: 800;
+    text-decoration: none;
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.destination-experience-card:hover .destination-card-link {
+    color: #c78a36;
+    transform: translateX(4px);
+}
