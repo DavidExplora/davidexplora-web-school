@@ -2577,7 +2577,7 @@ a {
             rgba(8, 29, 18, 0.58),
             rgba(8, 29, 18, 0.20)
         ),
-        url("images/safari/safari-elephant.jpg");
+       url("images/safari/safari-hero-wide.jpg");
 
     background-size: cover;
     background-position: center;
@@ -3038,7 +3038,7 @@ a {
    ========================================================= */
 
 .serengeti-hero {
-    background-image: url("images/safari/safari-elephant.jpg");
+    background-image: url("images/safari/serengeti.jpg");
     background-size: cover;
     background-position: center;
 }
@@ -3429,7 +3429,7 @@ a {
    ========================================= */
 
 .ngorongoro-hero {
-    background-image: url("images/safari/safari-elephant.jpg");
+    background-image: url("images/safari/ngorongoro.jpg");
 }
 
 /* =========================================
@@ -3437,7 +3437,7 @@ a {
    ========================================= */
 
 .tarangire-hero {
-    background-image: url("images/safari/safari-elephant.jpg");
+    background-image: url("images/safari/tarangire.jpg");
 }
 
 /* =========================================
@@ -3445,7 +3445,7 @@ a {
    ========================================= */
 
 .manyara-hero {
-    background-image: url("images/safari/safari-elephant.jpg");
+    background-image: url("images/safari/manyara.jpg");
 }
 
 /* =========================================================
