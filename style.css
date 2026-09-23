@@ -3037,10 +3037,8 @@ a {
    SERENGETI DESTINATION PAGE
    ========================================================= */
 
-.serengeti-hero {
+    .serengeti-hero {
     background-image: url("images/safari/serengeti.jpg");
-    background-size: cover;
-    background-position: center;
 }
 
 .destination-hero {
@@ -3432,6 +3430,7 @@ a {
     background-image: url("images/safari/ngorongoro.jpg");
 }
 
+
 /* =========================================
    TARANGIRE DESTINATION PAGE
    ========================================= */
@@ -3463,7 +3462,7 @@ a {
    ========================================================= */
 
 .zanzibar-hero {
-    background-image: url("images/zanzibar/stone-town.jpg");
+    background-image: url("zanzibar/stone-town.jpg");
     background-size: cover;
     background-position: center;
 }
