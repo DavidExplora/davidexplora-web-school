@@ -1,0 +1,231 @@
+/* Launch refinements for the original HTML/CSS site. No framework required. */
+:root{--forest:#173d32;--ink:#20392f;--muted:#59665e;--cream:#f7f4ec;--sand:#ece5d7;--copper:#a75933;--gold:#efbf80;--line:#dadfd6;--serif:Georgia,'Times New Roman',serif}
+html{scroll-behavior:smooth;scroll-padding-top:105px}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1.7}
+*,*::before,*::after{box-sizing:border-box}
+img{max-width:100%;display:block}
+button,input,select,textarea{font:inherit}
+button,a,input,textarea,select{-webkit-tap-highlight-color:transparent}
+button{cursor:pointer}
+a{color:inherit}
+a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #b86632;outline-offset:5px}
+[hidden]{display:none!important}
+h1,h2,h3{font-family:var(--serif);font-weight:400;text-wrap:balance}
+h2{font-size:clamp(2.25rem,4vw,3.8rem);line-height:1.13;letter-spacing:-.035em}
+h3{letter-spacing:-.025em}
+p{margin-top:0}
+.skip-link{position:fixed;top:8px;left:12px;background:var(--forest);color:white;padding:10px 20px;transform:translateY(-160%);z-index:110}
+.skip-link:focus{transform:translateY(0)}
+.site-header{position:sticky;top:0;z-index:100;background:var(--cream);border-bottom:1px solid var(--line);box-shadow:none;backdrop-filter:none}
+.nav-container{width:min(1280px,90%);min-height:92px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:30px;padding:12px 0}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;font-size:26px;line-height:1.1;white-space:nowrap;letter-spacing:-.04em}
+.logo .brand-mark{width:47px;height:47px;display:grid;place-items:center;border:1px solid var(--forest);border-radius:50%;font-family:var(--serif);font-size:29px;font-style:italic;color:var(--forest);padding-bottom:3px}
+.logo .brand-name{font-family:var(--serif);color:var(--forest);font-weight:400}
+.brand-name em{font-style:italic}
+.brand-name small{display:block;font-family:Arial,sans-serif;font-size:8px;letter-spacing:.14em;font-weight:600;margin-top:7px;color:var(--muted)}
+.main-nav{display:flex;flex-direction:row;align-items:center;gap:27px;position:static;background:transparent;box-shadow:none}
+.main-nav a{font-size:12px;font-weight:600;letter-spacing:.01em;text-decoration:none;padding:9px 0;border-bottom:1px solid transparent;white-space:nowrap}
+.main-nav a:hover{color:var(--copper);border-bottom-color:currentColor}
+.main-nav .nav-cta{background:var(--forest);color:white;padding:13px 18px;border-radius:3px;display:flex;gap:20px}
+.main-nav .nav-cta:hover{background:#255541;color:white}
+.menu-toggle{display:none;border:1px solid var(--line);border-radius:3px;background:transparent;color:var(--forest);padding:8px 13px;font-size:13px}
+.hero,.kili-hero,.safari-hero,.route-hero,.destination-hero{position:relative;color:#fff;isolation:isolate;background-size:cover;background-repeat:no-repeat;border-radius:0;min-height:650px}
+.hero{min-height:min(820px,calc(100svh - 92px));height:auto;background-image:url('images/optimized/safari-hero-wide.webp');background-position:50% 57%;display:flex;align-items:center;justify-content:flex-start;padding:95px 0 120px}
+.hero-overlay,.kili-hero-overlay,.safari-hero-overlay,.route-hero-overlay,.destination-hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,30,23,.81),rgba(10,30,23,.55) 48%,rgba(10,30,23,.09));z-index:0}
+.hero-content,.kili-hero-content,.safari-hero-content,.route-hero-content,.destination-hero-content{width:min(1280px,90%);max-width:1280px;margin:auto;position:relative;z-index:1;text-align:left;padding:85px 0}
+.hero .hero-content{padding:0}
+.hero h1,.kili-hero h1,.safari-hero h1,.route-hero h1,.destination-hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(3.2rem,6.7vw,6.1rem);letter-spacing:-.04em;line-height:1.05;max-width:1000px;margin:0 0 27px;color:white}
+.hero h1 span,.kili-hero h1 span,.safari-hero h1 span,.route-hero h1 span,.destination-hero h1 span{display:block;color:#f0c896;font-style:italic}
+.hero-text,.hero-content>p:not(.hero-eyebrow),.kili-hero-content>p:not(.eyebrow),.safari-hero-content>p:not(.eyebrow),.route-hero-content>p:not(.eyebrow),.destination-hero-content>p:not(.destination-eyebrow){max-width:660px;font-size:18px;line-height:1.8;color:#f1f3ea;margin:0 0 30px}
+.hero-eyebrow,.hero-content .eyebrow,.kili-hero .eyebrow,.safari-hero .eyebrow,.route-hero .eyebrow,.destination-eyebrow{display:block;color:#f0c896;font-size:10px;font-weight:600;letter-spacing:.2em;margin:0 0 25px}
+.hero-buttons,.destination-actions{display:flex;flex-wrap:wrap;gap:12px;margin:30px 0 0}
+.btn,.primary-button,.secondary-button,.destination-planning-button,#build-journey,#plan-this-trip{display:inline-flex;align-items:center;justify-content:center;gap:25px;min-height:51px;padding:13px 23px;border:1px solid transparent;border-radius:3px;font-size:13px;font-family:Arial,sans-serif;font-weight:600;letter-spacing:.01em;text-decoration:none;transition:background .2s, color .2s;box-shadow:none}
+.btn-primary,.primary-button,#build-journey,#plan-this-trip{background:var(--forest);color:white;border-color:var(--forest)}
+.btn-primary:hover,.primary-button:hover,#build-journey:hover,#plan-this-trip:hover{background:#255541;color:white;transform:none;box-shadow:none}
+.hero .btn-primary,.kili-hero .btn-primary,.safari-hero .btn-primary,.route-hero .btn-primary,.destination-hero .primary-button,.destination-final-cta .primary-button{background:var(--gold);color:#17372b;border-color:var(--gold)}
+.hero .btn-primary:hover,.kili-hero .btn-primary:hover,.safari-hero .btn-primary:hover,.route-hero .btn-primary:hover,.destination-hero .primary-button:hover,.destination-final-cta .primary-button:hover{background:#f6d6ab}
+.btn-secondary,.secondary-button{color:white;background:rgba(0,0,0,.07);border-color:rgba(255,255,255,.55)}
+.btn-secondary:hover,.secondary-button:hover{background:rgba(255,255,255,.13);color:white;transform:none}
+.hero-trust{display:flex;flex-direction:row;gap:27px;flex-wrap:wrap;margin-top:42px;color:#f2f2e9;font-size:11px;font-weight:400;letter-spacing:.015em}
+.hero-trust span::before{content:'·';padding-right:10px;color:var(--gold)}
+.hero-scroll{position:absolute;bottom:33px;left:5%;right:5%;display:flex;justify-content:space-between;align-items:center;writing-mode:horizontal-tb;z-index:2;color:#f3eddf;font-size:9px;letter-spacing:.16em}
+.hero-scroll a{font-size:26px;line-height:1;text-decoration:none}
+.travel-ribbon{background:var(--forest);color:var(--cream);display:flex;align-items:center;justify-content:space-between;gap:30px;padding:23px max(5%,calc((100vw - 1280px)/2))}
+.travel-ribbon p{font-family:var(--serif);font-style:italic;font-size:21px;margin:0}
+.travel-ribbon span{font-size:9px;letter-spacing:.12em;color:#d3ddd3}
+.section{padding:100px max(5%,calc((100vw - 1280px)/2));margin:0;width:100%;max-width:none}
+.section-heading{max-width:900px;margin:0 0 45px}
+.section-heading h2,.about-content h2{color:var(--forest);font-size:clamp(2.25rem,4vw,3.8rem);line-height:1.13;letter-spacing:-.035em;margin:0 0 22px;font-weight:400}
+.section-heading p:not(.eyebrow){color:var(--muted);font-size:16px;line-height:1.8;max-width:660px}
+.section-heading.centered{margin:0 auto 45px;max-width:950px;text-align:center}
+.section-heading.centered p{margin-left:auto;margin-right:auto}
+.eyebrow,.section-eyebrow{display:block;color:var(--copper);font-size:10px;font-weight:700;letter-spacing:.17em;margin:0 0 22px}
+.split-heading{display:grid;grid-template-columns:1.25fr 1fr;align-items:end;gap:60px;max-width:none}
+.split-heading>p{max-width:440px;margin:0 0 20px}
+.experiences-section{background:var(--cream)}
+.experience-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:23px;max-width:none;margin:0}
+.experience-card,.experience-card.featured-card{background:transparent;border:none;border-radius:0;box-shadow:none;overflow:visible;grid-column:auto}
+.experience-card:hover{transform:none;box-shadow:none}
+.experience-card .card-image{height:auto;aspect-ratio:3/4;overflow:hidden;position:relative;border-radius:3px}
+.card-image img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.experience-card:hover .card-image img{transform:scale(1.035)}
+#experience-kilimanjaro .card-image img,.about-image img,.route-story-image img{object-position:50% 70%}
+.experience-card .card-tag{position:absolute;top:auto;right:auto;left:15px;bottom:15px;margin:0;padding:6px 9px;background:rgba(247,244,236,.94);color:var(--forest);border-radius:1px;font-size:8px;letter-spacing:.12em;font-weight:600}
+.experience-card .card-content{padding:24px 0 0}
+.card-content h3{font-size:27px;margin:0 0 12px;color:var(--forest);font-weight:400}
+.card-content p{font-size:14px;line-height:1.75;color:var(--muted);min-height:75px;margin:0 0 20px}
+.card-content a,.text-link,.idea-card a{font-size:12px;font-weight:600;color:var(--forest);border-bottom:1px solid #c1cabe;padding-bottom:6px;text-decoration:none;display:inline-block}
+.card-content a:hover,.text-link:hover,.idea-card a:hover{color:var(--copper);border-color:var(--copper)}
+.journey-ideas{background:var(--sand)}
+.ideas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
+.idea-card{padding:32px;border:1px solid #c9c9ba;border-radius:3px;background:rgba(247,244,236,.45)}
+.idea-card .idea-number{font-size:9px;font-weight:700;letter-spacing:.14em;color:var(--copper);margin-bottom:28px}
+.idea-card h3{font-size:30px;color:var(--forest);margin:0 0 15px}
+.idea-card .idea-meta{font-size:11px;font-weight:600;color:var(--forest);border-top:1px solid #cecebf;padding-top:15px}
+.idea-card p{font-size:14px;color:var(--muted);line-height:1.8}
+.idea-card a{margin-top:10px}
+.about-section{background:var(--cream)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:9%;max-width:1150px;margin:auto}
+.about-image{margin:0;position:relative;border-radius:3px;overflow:hidden;box-shadow:none}
+.about-image img{width:100%;height:auto;max-height:640px;aspect-ratio:4/5;object-fit:cover}
+.about-image figcaption{position:absolute;bottom:0;left:0;right:0;font-size:8px;letter-spacing:.13em;color:white;padding:23px 25px;background:linear-gradient(transparent,rgba(13,39,28,.8))}
+.about-content p{color:var(--muted);font-size:15px;line-height:1.9;margin:0 0 20px}
+.about-content .eyebrow{font-size:10px;color:var(--copper)}
+.about-content .language-note{font-size:12px;padding-top:20px;border-top:1px solid var(--line)}
+.about-content .signature{font-family:var(--serif);font-size:45px;line-height:1;font-style:italic;color:var(--forest);margin-top:27px}
+.trust-section{background:#fffdf7;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
+.trust-card{padding:15px 0 0;background:transparent;border:none;box-shadow:none;border-radius:0;text-align:left}
+.trust-card:hover{transform:none;box-shadow:none}
+.trust-icon{width:auto;height:auto;display:block;background:transparent;color:var(--copper);font-family:var(--serif);font-size:27px;line-height:1;margin:0 0 22px}
+.trust-card h3{font-family:var(--serif);font-size:23px;font-weight:400;color:var(--forest);margin:0 0 15px}
+.trust-card p{font-size:13px;line-height:1.8;color:var(--muted);margin:0}
+.trip-planner-section{display:block;padding:95px max(5%,calc((100vw - 1140px)/2));background:var(--forest);color:white}
+.trip-planner-content{max-width:none;width:100%;margin:auto}
+.trip-planner-content>.eyebrow{color:var(--gold)}
+.trip-planner-content h2{color:var(--cream);margin:0 0 25px;font-size:clamp(2.6rem,4.5vw,4rem)}
+.trip-planner-content h2 em{color:var(--gold);font-weight:400}
+.trip-planner-content>p:not(.eyebrow){max-width:670px;color:#d9e1d7;font-size:15px;line-height:1.9;margin-bottom:35px}
+.planner-box{margin:0;padding:32px;background:#f7f4ec;border:0;border-radius:3px;box-shadow:none;color:var(--forest)}
+.planner-box fieldset{min-width:0;border:0;border-bottom:1px solid var(--line);margin:0 0 25px;padding:0 0 25px}
+.planner-box legend{font-size:16px;font-weight:600;padding:0 0 13px}
+.planner-box legend span{display:inline-block;font-family:var(--serif);font-weight:400;color:var(--copper);padding-right:10px}
+.planner-options{display:flex;flex-wrap:wrap;gap:10px;margin:0}
+.planner-options button{flex:0 1 auto;min-width:0;border:1px solid #bbc7ba;border-radius:3px;box-shadow:none;background:transparent;color:var(--forest);padding:10px 17px;font-size:13px;font-weight:400;text-align:left;min-height:45px}
+.planner-options button:hover{background:#e7ede1;transform:none;box-shadow:none}
+.planner-options button.selected{background:var(--forest);color:white;border-color:var(--forest);box-shadow:none}
+.planner-action{margin:0;text-align:left}
+#planner-status{font-size:13px;color:#9a3820;margin:15px 0 0}
+.journey-result{display:block;opacity:1;transform:none;background:#fbf8ef;color:var(--forest);margin:22px 0 0;padding:32px;border:1px solid #c6d0be;border-radius:3px;max-width:none;box-shadow:none;text-align:left}
+.journey-result h3{font-family:var(--serif);font-size:32px;font-weight:400;margin:0 0 17px}
+.journey-result>p{font-size:15px;color:var(--muted)}
+.journey-result .eyebrow{color:var(--copper);font-size:9px}
+.journey-steps{display:grid;grid-template-columns:repeat(3,1fr);list-style:none;counter-reset:steps;padding:0;margin:28px 0;gap:24px}
+.journey-steps li{counter-increment:steps;padding-top:15px;border-top:1px solid var(--line);font-size:14px;line-height:1.8}
+.journey-steps li::before{content:'0' counter(steps);display:block;font-size:20px;font-family:var(--serif);color:var(--copper);margin-bottom:10px}
+.journey-result .planning-note{font-size:12px;border-left:2px solid var(--copper);padding-left:15px}
+#plan-this-trip{margin:10px 0 0}
+#journey-detail{margin-right:25px}
+.faq-section{display:grid;grid-template-columns:1fr 1.5fr;gap:60px;background:var(--cream)}
+.faq-list details{border-bottom:1px solid var(--line);padding:22px 0}
+.faq-list details:first-child{border-top:1px solid var(--line)}
+.faq-list summary{cursor:pointer;font-size:15px;font-weight:600;color:var(--forest);padding-right:15px}
+.faq-list p{font-size:14px;color:var(--muted);margin:18px 0 0;line-height:1.85}
+.contact-section{background:var(--sand)}
+.contact-box{display:grid;align-items:start;grid-template-columns:1fr 1.6fr;gap:65px;max-width:1150px;margin:auto;box-shadow:none;background:transparent;border:0;border-radius:0;padding:0;text-align:left}
+.contact-intro{padding-top:23px}
+.contact-intro h3{font-size:34px;font-weight:400;line-height:1.25;color:var(--forest);margin:0 0 20px}
+.contact-intro p{font-size:14px;color:var(--muted);line-height:1.8}
+.contact-intro a{display:block;font-size:12px;color:var(--forest);margin:15px 0;text-decoration:none}
+.contact-intro .contact-phone{font-family:var(--serif);font-size:23px;color:var(--forest)}
+.contact-intro .contact-small{font-size:12px;border-top:1px solid #cbcfc3;padding-top:23px;margin-top:27px}
+.booking-steps{display:grid;gap:12px;margin-top:35px;font-size:11px;letter-spacing:.02em;color:var(--forest)}
+.inquiry-form{width:100%;background:#fffdf7;border-radius:3px;padding:32px;max-width:none;margin:0;box-shadow:none;border:1px solid #d4d4c5}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.form-group{margin:0 0 20px;min-width:0}
+.form-group label{display:block;font-size:12px;font-weight:600;color:var(--forest);margin:0 0 7px}
+.form-group label span{font-weight:400;color:var(--muted);font-size:10px}
+.form-group input,.form-group select,.form-group textarea{width:100%;max-width:100%;padding:11px 12px;border:1px solid #cbd0c4;border-radius:2px;background:#fffdf7;color:var(--forest);font-size:14px;min-height:46px;box-shadow:none}
+.form-group textarea{resize:vertical;min-height:115px}
+.form-hint{display:block;font-size:11px;color:var(--muted);line-height:1.7;margin:0 0 20px}
+.form-group .form-hint{margin:8px 0 0;font-size:10px}
+.consent-label{display:flex;align-items:flex-start;gap:10px;margin:0 0 22px;font-size:11px;color:var(--muted);line-height:1.8}
+.consent-label input{flex:0 0 17px;width:17px;height:17px;margin-top:3px;accent-color:var(--forest)}
+.consent-label a{text-decoration:underline}
+.inquiry-submit{width:100%;margin:0}
+#inquiry-status,#copy-status{font-size:12px;line-height:1.7;margin:14px 0 0;color:var(--copper)}
+.inquiry-ready{border-top:1px solid var(--line);padding-top:20px;margin-top:20px}
+.inquiry-ready p,.inquiry-ready summary{font-size:13px;color:var(--forest)}
+.inquiry-ready summary{cursor:pointer;margin-bottom:20px}
+.inquiry-ready pre{font-family:Arial,sans-serif;font-size:12px;line-height:1.8;background:var(--cream);padding:20px;white-space:pre-wrap;overflow-wrap:anywhere;max-height:400px;overflow:auto;color:var(--forest)}
+.copy-button{display:inline-block;background:transparent;border:0;color:var(--forest);text-decoration:underline;padding:15px;font-size:12px}
+.site-footer{background:#112e25;color:#e2e8dc;padding:65px 5% 0}
+.footer-container{max-width:1280px;margin:auto;display:grid;grid-template-columns:1.5fr 1fr 1.2fr;gap:70px;align-items:start;text-align:left}
+.footer-wordmark{font-family:var(--serif);font-size:32px;color:var(--cream);text-decoration:none}
+.footer-wordmark em{font-style:italic}
+.footer-brand p{font-size:12px;line-height:1.8;color:#b9c8b9;max-width:310px;margin:10px 0}
+.footer-brand p:first-of-type{font-family:var(--serif);font-style:italic;font-size:18px;color:#efc896}
+.footer-location{font-size:10px;color:#b9c8b9}
+.footer-container h2{font-family:Arial,sans-serif;font-size:10px;font-weight:700;letter-spacing:.12em;color:#f0c896;margin:10px 0 23px}
+.footer-container>div:not(.footer-brand)>a{display:block;color:#d3ddd0;text-decoration:none;font-size:11px;margin:0 0 13px;overflow-wrap:anywhere}
+.footer-container a:hover{color:var(--gold)}
+.footer-bottom{display:flex;justify-content:space-between;gap:25px;max-width:1280px;margin:45px auto 0;padding:22px 0 80px;border-top:1px solid #365244;font-size:10px;color:#b9c8b9}
+.footer-bottom p{margin:0;font-size:10px}
+.footer-bottom>div{display:flex;gap:25px}
+.footer-bottom a{text-decoration:none}
+.whatsapp-float{position:fixed;right:22px;bottom:20px;z-index:80;display:flex;align-items:center;gap:9px;background:var(--forest);color:#fff;border:1px solid #7a9682;padding:11px 16px;border-radius:50px;box-shadow:0 4px 20px #0002;font-size:11px;text-decoration:none}
+.whatsapp-float:hover{background:#255541}
+/* Original destination and route pages retain their content and structure. */
+.kili-hero,.route-hero{background-image:url('images/optimized/kilimanjaro-guide.webp');background-position:50% 67%}
+.safari-hero{background-image:url('images/optimized/safari-hero-wide.webp');background-position:center}
+.serengeti-hero{background-image:url('images/optimized/serengeti.webp')}
+.ngorongoro-hero{background-image:url('images/optimized/ngorongoro.webp')}
+.tarangire-hero{background-image:url('images/optimized/tarangire.webp')}
+.manyara-hero{background-image:url('images/optimized/manyara.webp')}
+.zanzibar-hero,.mnemba-hero{background-image:url('images/optimized/zanzibar.webp')}
+.stone-town-hero{background-image:url('images/optimized/stone-town.webp');background-position:50% 45%}
+.prison-island-hero{background-image:url('images/optimized/stone-town.webp');background-position:50% 45%}
+.local-hero{background-image:url('images/optimized/local-tanzania.webp')}
+.kili-route-card,.safari-destination-card,.safari-style-card,.character-card,.route-navigation-card,.destination-experience-card{border-radius:3px;box-shadow:none;border-color:var(--line);background:#fffdf7}
+.kili-route-card:hover,.safari-destination-card:hover,.safari-style-card:hover,.character-card:hover,.route-navigation-card:hover,.destination-experience-card:hover{transform:none;box-shadow:none;border-color:var(--copper)}
+.kili-route-image{background-image:url('images/optimized/kilimanjaro-guide.webp');background-size:cover;background-position:50% 67%}
+.kili-route-image img{object-position:50% 70%}
+.safari-destination-image img{width:100%;height:100%;object-fit:cover}
+.kili-route-content h3,.safari-destination-content h3,.character-card h3,.route-navigation-card h3,.safari-style-card h3,.destination-experience-card h3{font-family:var(--serif);font-weight:400}
+.route-story-image{border-radius:3px}
+.route-fact{min-width:0}
+.route-comparison-table{overflow-x:auto;border-radius:3px}
+.comparison-row{min-width:660px}
+.route-plan-box,.kili-plan-box,.safari-plan-box,.destination-planning-box{border-radius:3px;box-shadow:none;background:var(--forest)}
+.route-plan-box .btn-primary,.kili-plan-box .btn-primary,.safari-plan-box .btn-primary{background:var(--gold);color:var(--forest);border-color:var(--gold)}
+.destination-introduction,.destination-responsible{background:var(--cream);padding:80px 5%}
+.destination-experiences{background:#fffdf7;padding:85px 5%}
+.destination-section-heading{max-width:900px}
+.destination-introduction h2,.destination-section-heading h2,.destination-planning h2,.destination-responsible h2,.destination-final-cta h2{font-family:var(--serif);font-size:clamp(2.2rem,4vw,3.8rem);font-weight:400;letter-spacing:-.035em;line-height:1.15}
+.destination-introduction p,.destination-responsible p{font-size:16px;line-height:1.9;color:var(--muted)}
+.destination-experience-card{padding:30px}
+.destination-card-number{color:var(--copper);margin-bottom:25px;font-size:13px}
+.destination-experience-grid.three-columns{grid-template-columns:repeat(3,1fr)}
+.destination-planning{background:var(--sand);padding:70px 5%}
+.destination-final-cta{background:var(--forest);color:white;padding:85px 5%;text-align:center}
+.destination-final-cta h2{color:var(--cream);max-width:850px;margin:0 auto 25px}
+.destination-final-cta .section-eyebrow{color:var(--gold)}
+.official-link{font-size:12px!important;margin-top:25px!important}
+.destination-hero-content .photo-context{font-size:10px!important;letter-spacing:.025em;color:#f2e5cb!important;margin-bottom:25px!important}
+.inquiry-submit:disabled{opacity:.5;cursor:not-allowed}
+.legal-content{max-width:820px;margin:auto;padding:80px 25px 110px}
+.legal-content h1,.not-found h1{font-size:clamp(2.6rem,5vw,4.6rem);line-height:1.1;font-weight:400;color:var(--forest);margin:0 0 22px}
+.legal-content h2{font-size:26px;margin:40px 0 15px}
+.legal-content p{font-size:15px;color:var(--muted);line-height:1.9}
+.legal-content a:not(.btn){text-decoration:underline}
+.legal-content .legal-date{font-size:11px;border-bottom:1px solid var(--line);padding-bottom:25px}
+.legal-content .btn{margin-top:30px}
+.not-found{text-align:center;padding:80px 25px 120px;max-width:1000px;margin:auto}
+.error-number{display:block;font-family:var(--serif);font-size:100px;font-style:italic;color:var(--copper);line-height:1.2;margin-bottom:25px}
+.not-found p{color:var(--muted);max-width:520px;margin:0 auto 30px}
+.not-found .text-link{display:block;width:fit-content;margin:25px auto 0}
+@media(min-width:1450px){.hero-scroll{left:max(5%,calc((100vw - 1280px)/2));right:max(5%,calc((100vw - 1280px)/2))}}
+@media(max-width:1050px){.main-nav{gap:17px}.main-nav a{font-size:11px}.nav-container{gap:15px}.experience-grid{grid-template-columns:repeat(2,1fr);gap:35px 25px}.experience-card .card-image{aspect-ratio:4/3}.card-content p{min-height:0}.ideas-grid{gap:15px}.idea-card{padding:25px}.about-grid{gap:6%}.contact-box{gap:35px}.footer-container{gap:35px}}
+@media(max-width:780px){html{scroll-padding-top:90px}.nav-container{min-height:80px;flex-wrap:wrap;gap:15px}.logo{font-size:24px}.logo .brand-mark{width:42px;height:42px;font-size:26px}.brand-name small{font-size:7px}.main-nav{width:100%;flex-wrap:wrap;gap:10px 23px;padding:0 0 12px;display:flex}.main-nav a{font-size:12px}.js-ready .menu-toggle{display:flex;align-items:center;gap:12px}.js-ready .main-nav{display:none}.js-ready .main-nav.is-open{display:flex}.hero{min-height:650px;height:auto;padding:85px 0 110px}.hero h1,.kili-hero h1,.safari-hero h1,.route-hero h1,.destination-hero h1{font-size:clamp(3rem,9vw,4.7rem)}.hero-text{font-size:16px}.hero-trust{gap:15px;margin-top:32px;font-size:10px}.travel-ribbon{display:block;padding:22px 5%}.travel-ribbon p{font-size:20px;margin-bottom:8px}.travel-ribbon span{font-size:8px}.section{padding:70px 5%}.split-heading{grid-template-columns:1fr;gap:6px}.split-heading>p{max-width:600px}.ideas-grid{grid-template-columns:1fr}.idea-card{padding:30px}.idea-card .idea-number{margin-bottom:18px}.about-grid{gap:35px;grid-template-columns:1fr}.about-image{max-width:480px}.about-content{max-width:650px}.trust-grid{grid-template-columns:1fr 1fr;gap:30px}.trip-planner-section{padding:70px 5%}.planner-box,.journey-result{padding:25px}.journey-steps{gap:20px}.faq-section{display:block}.faq-section .section-heading{margin-bottom:30px}.contact-box{grid-template-columns:1fr;gap:35px}.contact-intro{padding-top:0}.contact-intro h3 br{display:none}.booking-steps{display:flex;flex-wrap:wrap;gap:15px;margin-top:20px}.footer-container{grid-template-columns:1fr 1fr;gap:35px}.footer-brand{grid-column:1/-1}.footer-bottom{flex-wrap:wrap}.destination-experience-grid.three-columns{grid-template-columns:1fr}.destination-planning-box{flex-direction:column;align-items:flex-start;padding:30px}.kili-hero,.safari-hero,.route-hero,.destination-hero{min-height:580px}.kili-hero-content,.safari-hero-content,.route-hero-content,.destination-hero-content{padding:70px 0}}
+@media(max-width:480px){.hero h1{font-size:46px}.hero{background-position:57% center;min-height:625px}.hero-content .hero-text br{display:none}.hero-buttons{gap:10px}.hero-buttons .btn{padding:12px 17px;gap:15px;font-size:12px}.hero-trust{gap:9px 16px}.hero-trust span::before{padding-right:5px}.experience-grid{grid-template-columns:1fr;gap:35px}.experience-card .card-image{aspect-ratio:4/3}.card-content{max-width:430px}.card-content h3{font-size:29px}.planner-options{gap:8px}.planner-options button{font-size:12px;padding:10px 12px}.planner-box,.journey-result{padding:22px}.planner-box legend{font-size:14px}.journey-steps{grid-template-columns:1fr;gap:18px}.journey-steps li::before{display:inline-block;margin:0 15px 0 0}.form-row{grid-template-columns:1fr;gap:0}.inquiry-form{padding:22px}.trust-grid{gap:28px 20px}.trust-card h3{font-size:21px}.footer-container{grid-template-columns:1fr}.footer-brand{grid-column:auto}.footer-bottom>div{gap:16px;flex-wrap:wrap}.whatsapp-float{right:14px;bottom:14px;padding:11px}.whatsapp-float span{display:none}.destination-experience-grid{grid-template-columns:1fr}.destination-introduction,.destination-responsible{padding:60px 5%}.destination-experiences{padding:65px 5%}.route-facts{grid-template-columns:1fr 1fr}.route-fact{padding:22px 16px}.hero-eyebrow{font-size:9px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.experience-card:hover .card-image img{transform:none}}

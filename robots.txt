@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://david-explora.fastash16.chatgpt.site/sitemap.xml

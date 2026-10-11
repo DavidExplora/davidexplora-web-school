@@ -1,630 +1,132 @@
-// =========================================
-// DAVID EXPLORA
-// BASIC WEBSITE JAVASCRIPT
-// =========================================
-// ---------- TRIP PLANNER SELECTIONS ----------
+'use strict';
 
-
-// ---------- EXPERIENCE DATA ----------
-
-const experiences = [
-    {
-        name: "Kilimanjaro Trek",
-        destination: "kilimanjaro",
-        interest: "adventure",
-        description: "Trek through changing mountain landscapes toward the roof of Africa."
-    },
-
-    {
-        name: "Tanzania Wildlife Safari",
-        destination: "safari",
-        interest: "wildlife",
-        description: "Explore Tanzania's national parks and experience wildlife in the wild."
-    },
-
-    {
-        name: "Zanzibar Island Escape",
-        destination: "zanzibar",
-        interest: "beach",
-        description: "Enjoy beaches, marine experiences, island culture and the rhythm of Zanzibar."
-    },
-
-    {
-        name: "Local Tanzania Experience",
-        destination: "local",
-        interest: "culture",
-        description: "Discover local communities, nature, food and experiences beyond the main tourist routes."
-    }
-];
-
-// ---------- MOBILE NAVIGATION ----------
-
-const menuToggle = document.querySelector(".menu-toggle");
-const mainNav = document.querySelector(".main-nav");
-
-menuToggle.addEventListener("click", () => {
-
-    mainNav.classList.toggle("active");
-
+document.body.classList.add('js-ready');
+const api = window.DavidJourney;
+const menu = document.querySelector('.menu-toggle');
+const nav = document.querySelector('.main-nav');
+function closeMenu() {
+  nav?.classList.remove('is-open');
+  menu?.setAttribute('aria-expanded', 'false');
+  menu?.setAttribute('aria-label', 'Open navigation');
+}
+menu?.addEventListener('click', () => {
+  const open = !nav.classList.contains('is-open');
+  nav.classList.toggle('is-open', open);
+  menu.setAttribute('aria-expanded', String(open));
+  menu.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
 });
-
-
-// ---------- CLOSE MENU AFTER CLICK ----------
-
-const navLinks = document.querySelectorAll(".main-nav a");
-
-navLinks.forEach((link) => {
-
-    link.addEventListener("click", () => {
-
-        mainNav.classList.remove("active");
-
-    });
-
+nav?.addEventListener('click', event => { if (event.target.closest('a')) closeMenu(); });
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && nav?.classList.contains('is-open')) { closeMenu(); menu.focus(); }
 });
+document.addEventListener('click', event => {
+  if (nav && menu && !nav.contains(event.target) && !menu.contains(event.target)) closeMenu();
+});
+const year = document.querySelector('#current-year');
+if (year) year.textContent = String(new Date().getFullYear());
 
-
-// ---------- CURRENT YEAR ----------
-const yearElement = document.querySelector("#current-year");
-const currentYear = new Date().getFullYear();
-yearElement.textContent = currentYear;
-
-// ---------- TRIP PLANNER ----------
-
-const plannerSelections = {
-    destination: "",
-    interest: "",
-    duration: ""
-};
-
-
-// ---------- PLANNER BUTTON SETUP ----------
-
-function setupPlannerSelection(selector, key, dataKey) {
-
-    const buttons = document.querySelectorAll(selector);
-
-    buttons.forEach((button) => {
-
-        button.addEventListener("click", () => {
-
-            buttons.forEach((item) => {
-                item.classList.remove("selected");
-            });
-
-            button.classList.add("selected");
-
-            plannerSelections[key] =
-                button.dataset[dataKey];
-
-            console.log(
-                `${key} selected:`,
-                plannerSelections[key]
-            );
-
-        });
-
-    });
+const form = document.querySelector('#trip-inquiry-form');
+const status = document.querySelector('#inquiry-status');
+const selections = { destination: '', interest: '', duration: '' };
+let currentPlan = null;
+const result = document.querySelector('#journey-result');
+const plannerStatus = document.querySelector('#planner-status');
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+function reveal(element) { element?.scrollIntoView({ behavior: reducedMotion.matches ? 'auto' : 'smooth', block: 'start' }); }
+function setField(id, value) { const field = document.getElementById(id); if (field) field.value = value; }
+function resetRequest() {
+  const ready = document.querySelector('#inquiry-ready');
+  if (ready) ready.hidden = true;
+  if (status) status.textContent = '';
+  const link = document.querySelector('#inquiry-whatsapp');
+  if (link) link.href = 'https://wa.me/' + api.phone;
+  const preview = document.querySelector('#inquiry-preview');
+  if (preview) preview.textContent = '';
+  const copyStatus = document.querySelector('#copy-status');
+  if (copyStatus) copyStatus.textContent = '';
 }
 
-
-// ---------- DESTINATION ----------
-
-setupPlannerSelection(
-    '.planner-options button[data-destination]',
-    "destination",
-    "destination"
-);
-
-
-// ---------- INTEREST ----------
-
-setupPlannerSelection(
-    '.planner-options button[data-interest]',
-    "interest",
-    "interest"
-);
-
-
-// ---------- DURATION ----------
-
-setupPlannerSelection(
-    '.planner-options button[data-duration]',
-    "duration",
-    "duration"
-);
-
-
-// ---------- BUILD JOURNEY ----------
-
-const buildJourneyButton =
-    document.querySelector("#build-journey");
-
-const journeyResult =
-    document.querySelector("#journey-result");
-
-const journeyMessage =
-    document.querySelector("#journey-message");
-
-
-buildJourneyButton?.addEventListener("click", () => {
-    const {
-        destination,
-        interest,
-        duration
-    } = plannerSelections;
-
-
-    // ---------- VALIDATION ----------
-
-    if (!destination || !interest || !duration) {
-
-        journeyMessage.textContent =
-            "Please choose a destination, experience type and trip length first.";
-
-        journeyResult.classList.add("show");
-
-        journeyResult.scrollIntoView({
-            behavior: "smooth",
-            block: "center"
-        });
-
-        return;
-    }
-
-
-    // ---------- TRAVEL PROFILE ----------
-
-    const travelProfiles = {
-        adventure: "Active Explorer",
-        wildlife: "Wildlife Seeker",
-        beach: "Island Escape",
-        culture: "Culture Connector"
-    };
-
-    const travelProfile =
-        travelProfiles[interest] ||
-        "Tanzania Explorer";
-
-
-    // ---------- JOURNEY PACE ----------
-
-    const journeyPaces = {
-        "3-4": "Focused Escape",
-        "5-7": "Deep Experience",
-        "8-10": "Multi-Experience Journey",
-        "11-plus": "Slow Explorer"
-    };
-
-    const travelPace =
-        journeyPaces[duration] ||
-        "Flexible Journey";
-
-
-    // ---------- DURATION ----------
-
-    const durationDisplay = {
-        "3-4": "3–4",
-        "5-7": "5–7",
-        "8-10": "8–10",
-        "11-plus": "11+"
-    };
-
-    const displayDuration =
-        durationDisplay[duration] ||
-        duration;
-
-
-    // ---------- DNA CODE ----------
-
-    const destinationCode =
-        destination.slice(0, 3).toUpperCase();
-
-    const interestCode =
-        interest.slice(0, 3).toUpperCase();
-
-    const durationCode =
-        duration === "11-plus"
-            ? "11+"
-            : duration.replace("-", "/");
-
-    const tripCode =
-        `${destinationCode}-${interestCode}-${durationCode}`;
-
-
-    // ---------- MAIN MESSAGE ----------
-
-    const journeyMessages = {
-
-        kilimanjaro:
-            `A ${displayDuration}-day Kilimanjaro adventure focused on trekking, hiking and active mountain experiences.`,
-
-        safari:
-            `A ${displayDuration}-day Tanzania safari focused on wildlife, national parks and unforgettable encounters.`,
-
-        zanzibar:
-            `A ${displayDuration}-day Zanzibar escape focused on beaches, marine life and island experiences.`,
-
-        local:
-            `A ${displayDuration}-day local Tanzania experience focused on culture, food, communities and nature.`
-    };
-
-    const message =
-        journeyMessages[destination] ||
-        `A ${displayDuration}-day Tanzania journey shaped around your interests.`;
-
-
-    // ---------- JOURNEY INSIGHT ----------
-
-    const journeyInsights = {
-
-        kilimanjaro:
-            "A strong match for travelers who want active days, mountain landscapes and a rewarding trekking experience.",
-
-        safari:
-            "A good match for travelers who want wildlife, open landscapes and time to explore Tanzania's national parks.",
-
-        zanzibar:
-            "A good match for travelers looking for beaches, marine experiences, island culture and a slower rhythm.",
-
-        local:
-            "A good match for travelers who want nature, culture, local communities and experiences beyond the main tourist routes."
-    };
-
-    const journeyInsight =
-        journeyInsights[destination] ||
-        "Your selections can be combined into a flexible Tanzania journey.";
-
-
-    // ---------- JOURNEY STORY ----------
-
-    const journeyStories = {
-
-        kilimanjaro:
-            `Begin your Tanzania story on the slopes of Kilimanjaro, surrounded by changing landscapes, fresh mountain air and the challenge of reaching higher.`,
-
-        safari:
-            `Your Tanzania story begins in the wild. Travel through open landscapes, discover Tanzania's wildlife and explore national parks through unforgettable wildlife experiences.`,
-
-        zanzibar:
-            `Slow down and discover the island side of Tanzania through beaches, marine experiences, island culture and the rhythm of Zanzibar.`,
-
-        local:
-            `Go beyond the famous sights and discover another side of Tanzania through local communities, nature, food and everyday experiences.`
-    };
-
-    const journeyStory =
-        journeyStories[destination] ||
-        "Your Tanzania story is shaped around the experiences you selected.";
-
-
-    // ---------- EXPERIENCE PATH ----------
-
-    const experiencePaths = {
-
-        kilimanjaro: [
-            "Prepare — Meet your guide and begin your mountain journey.",
-            "Trek — Experience changing landscapes as you climb higher.",
-            "Summit — Work toward the high point of your Kilimanjaro adventure."
-        ],
-
-        safari: [
-            "Discover — Enter Tanzania's wildlife landscapes.",
-            "Explore — Spend time observing wildlife and exploring national parks.",
-            "Remember — Build unforgettable moments in the wild."
-        ],
-
-        zanzibar: [
-            "Arrive — Begin your island experience.",
-            "Explore — Discover beaches, marine life and island culture.",
-            "Unwind — Slow down and enjoy the rhythm of Zanzibar."
-        ],
-
-        local: [
-            "Connect — Meet local people and discover everyday Tanzania.",
-            "Explore — Experience nature, communities and local landscapes.",
-            "Taste — Discover local flavors, traditions and stories."
-        ]
-    };
-
-    const experiencePath =
-        experiencePaths[destination] || [
-            "Discover — Start with the experiences that interest you most.",
-            "Explore — Connect different sides of Tanzania.",
-            "Remember — Create a journey shaped around your interests."
-        ];
-
-
-    // ---------- RECOMMENDATION ENGINE ----------
-
-    const recommendedExperiences =
-        experiences.filter((experience) => {
-
-            return (
-                experience.destination === destination &&
-                experience.interest === interest
-            );
-
-        });
-
-
-    // ---------- REMOVE PREVIOUS RESULT ----------
-
-    const oldTripDNA =
-        journeyResult.querySelector(".trip-dna");
-
-    if (oldTripDNA) {
-        oldTripDNA.remove();
-    }
-
-
-    // ---------- CREATE CURRENT RESULT ----------
-
-    const tripDNA =
-        document.createElement("div");
-
-    tripDNA.className = "trip-dna";
-
-
-    // ---------- TRIP DNA CONTENT ----------
-
-    tripDNA.innerHTML = `
-
-        <h4>Your Trip DNA</h4>
-
-        <div class="dna-grid">
-
-            <div>
-                <span>Destination</span>
-                <strong>${destination}</strong>
-            </div>
-
-            <div>
-                <span>Travel Profile</span>
-                <strong>${travelProfile}</strong>
-            </div>
-
-            <div>
-                <span>Journey Pace</span>
-                <strong>${travelPace}</strong>
-            </div>
-
-            <div>
-                <span>Duration</span>
-                <strong>${displayDuration} days</strong>
-            </div>
-
-            <div class="dna-code">
-                <span>DNA Code</span>
-                <strong>${tripCode}</strong>
-            </div>
-
-        </div>
-
-
-        <div class="recommendations">
-
-            <span>Recommended for you</span>
-
-            ${
-                recommendedExperiences.length > 0
-
-                    ? recommendedExperiences
-                        .map((experience) => `
-
-                            <div class="recommended-experience">
-
-                                <h5>
-                                    ${experience.name}
-                                </h5>
-
-                                <p>
-                                    ${experience.description}
-                                </p>
-
-                            </div>
-
-                        `)
-                        .join("")
-
-                    : `
-
-                        <p>
-                            We can create a personalized combination
-                            based on your interests.
-                        </p>
-
-                    `
-            }
-
-        </div>
-
-
-        <div class="journey-insight">
-
-            <span>
-                Why this journey fits you
-            </span>
-
-            <p>
-                ${journeyInsight}
-            </p>
-
-        </div>
-
-
-        <div class="journey-story">
-
-            <span>
-                Your Tanzania Story
-            </span>
-
-            <p>
-                ${journeyStory}
-            </p>
-
-        </div>
-
-
-        <div class="experience-path">
-
-            <span class="path-title">
-                Your Suggested Experience Path
-            </span>
-
-            <div class="path-steps">
-
-                <div class="path-step">
-                    <span>01</span>
-                    <p>${experiencePath[0]}</p>
-                </div>
-
-                <div class="path-step">
-                    <span>02</span>
-                    <p>${experiencePath[1]}</p>
-                </div>
-
-                <div class="path-step">
-                    <span>03</span>
-                    <p>${experiencePath[2]}</p>
-                </div>
-
-            </div>
-
-        </div>
-
-    `;
-
-
-    // ---------- INSERT CURRENT RESULT ----------
-
-    journeyResult.appendChild(tripDNA);
-
-
-    // ---------- UPDATE MESSAGE ----------
-
-    journeyMessage.textContent =
-        message;
-
-
-    journeyResult.classList.add("show");
-
-
-    // ---------- DEBUG ----------
-
-    console.log("Trip Planner:", {
-        destination,
-        interest,
-        duration,
-        tripCode
+document.querySelectorAll('.planner-options button').forEach(button => {
+  button.addEventListener('click', () => {
+    const key = ['destination', 'interest', 'duration'].find(name => button.dataset[name]);
+    if (!key) return;
+    selections[key] = button.dataset[key];
+    document.querySelectorAll('[data-' + key + ']').forEach(option => {
+      const selected = option === button;
+      option.classList.toggle('selected', selected);
+      option.setAttribute('aria-pressed', String(selected));
     });
-
-
-    // ---------- SHOW RESULT ----------
-
-    journeyResult.scrollIntoView({
-        behavior: "smooth",
-        block: "center"
-    });
-
+    if (result) result.hidden = true;
+    currentPlan = null;
+    if (plannerStatus) plannerStatus.textContent = '';
+  });
 });
-// ---------- PLAN THIS TRIP ----------
-const planTripButton = document.querySelector("#plan-this-trip");
-
-planTripButton?.addEventListener("click", () => {
-    const destinationField =
-        document.querySelector("#trip-destination");
-
-    const durationField =
-        document.querySelector("#trip-duration");
-
-    const messageField =
-        document.querySelector("#trip-message");
-
-    const destinationMap = {
-        kilimanjaro: "Kilimanjaro",
-        safari: "Safari",
-        zanzibar: "Zanzibar",
-        local: "Local Tanzania"
-    };
-
-    const durationMap = {
-        "3-4": "3-4 days",
-        "5-7": "5-7 days",
-        "8-10": "8-10 days",
-        "11-plus": "11+ days"
-    };
-
-    destinationField.value =
-        destinationMap[plannerSelections.destination] || "";
-
-    durationField.value =
-    durationMap[plannerSelections.duration] || "";
-
-messageField.value =
-    `I am interested in a ${plannerSelections.duration} Tanzania journey focused on ${plannerSelections.interest}. Please help me create the right itinerary for my trip.`;
-
-    document.querySelector("#contact").scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-    });
-
+document.querySelector('#build-journey')?.addEventListener('click', () => {
+  currentPlan = api.buildPlan(selections);
+  if (!currentPlan) {
+    plannerStatus.textContent = 'Choose a destination, an interest and your available time to see a starting idea.';
+    return;
+  }
+  plannerStatus.textContent = '';
+  document.querySelector('#journey-title').textContent = currentPlan.title;
+  document.querySelector('#journey-message').textContent = currentPlan.duration + ' · ' + currentPlan.summary;
+  document.querySelector('#journey-note').textContent = currentPlan.note;
+  const steps = document.querySelector('#journey-steps');
+  steps.replaceChildren(...currentPlan.steps.map(text => { const item = document.createElement('li'); item.textContent = text; return item; }));
+  const detail = document.querySelector('#journey-detail');
+  detail.href = currentPlan.link;
+  result.hidden = false;
+  reveal(result);
+});
+document.querySelector('#plan-this-trip')?.addEventListener('click', () => {
+  if (!currentPlan || !form) return;
+  setField('trip-destination', currentPlan.destination);
+  setField('trip-duration', currentPlan.duration);
+  setField('trip-message', currentPlan.message);
+  resetRequest();
+  reveal(document.querySelector('#contact'));
 });
 
-// ---------- TRIP INQUIRY FORM ----------
-
-const inquiryForm = document.querySelector("#trip-inquiry-form");
-
-inquiryForm?.addEventListener("submit", (event) => {
-
+if (form) {
+  form.querySelector('.inquiry-submit').disabled = false;
+  const presetKey = new URLSearchParams(window.location.search).get('experience');
+  if (Object.hasOwn(api.presets, presetKey)) {
+    const [destination, duration, message] = api.presets[presetKey];
+    setField('trip-destination', destination);
+    setField('trip-duration', duration);
+    setField('trip-message', message);
+  }
+  const now = new Date();
+  const today = now.getFullYear() + '-' + String(now.getMonth()+1).padStart(2,'0') + '-' + String(now.getDate()).padStart(2,'0');
+  const dateInput = document.querySelector('#travel-date');
+  dateInput.min = today;
+  form.addEventListener('input', resetRequest);
+  form.addEventListener('change', resetRequest);
+  form.addEventListener('submit', event => {
     event.preventDefault();
-
-    const customerName =
-        document.querySelector("#customer-name").value.trim();
-
-    const customerEmail =
-        document.querySelector("#customer-email").value.trim();
-
-    const customerWhatsApp =
-        document.querySelector("#customer-whatsapp").value.trim();
-
-    const travelDate =
-        document.querySelector("#travel-date").value;
-
-    const travelerCount =
-        document.querySelector("#traveler-count").value;
-
-    const destination =
-        document.querySelector("#trip-destination").value;
-
-    const tripDuration =
-        document.querySelector("#trip-duration").value;
-
-    const tripMessage =
-        document.querySelector("#trip-message").value.trim();
-
-    const whatsappMessage =
-    ` NEW TANZANIA TRIP INQUIRY
-
-Traveler: ${customerName}
-Email: ${customerEmail}
-WhatsApp: ${customerWhatsApp}
-
-Preferred Travel Date: ${travelDate || "Not specified"}
-Travelers: ${travelerCount}
-Destination: ${destination}
-Trip Length: ${tripDuration}
-
-TRAVELER'S IDEA
-${tripMessage || "No additional travel idea provided."}
-
-NEXT STEP
-Please help me design this journey, recommend suitable options, and provide the available pricing.`;
-
-    const whatsappURL =
-        "https://wa.me/255778321400?text=" +
-        encodeURIComponent(whatsappMessage);
-
-    window.open(whatsappURL, "_blank");
-
-});
+    if (!form.reportValidity()) return;
+    const field = id => document.getElementById(id).value;
+    const inquiry = api.createInquiry({ name: field('customer-name'), email: field('customer-email'), whatsapp: field('customer-whatsapp'), date: field('travel-date'), travelers: field('traveler-count'), destination: field('trip-destination'), duration: field('trip-duration'), style: field('trip-style'), language: field('trip-language'), message: field('trip-message'), consent: document.querySelector('#privacy-consent').checked }, today);
+    if (inquiry.errors.length) {
+      status.textContent = inquiry.errors.join(' ');
+      return;
+    }
+    document.querySelector('#inquiry-preview').textContent = inquiry.text;
+    document.querySelector('#inquiry-whatsapp').href = inquiry.url;
+    const ready = document.querySelector('#inquiry-ready');
+    ready.hidden = false;
+    status.textContent = 'Your request is prepared. Open WhatsApp below and press Send. Nothing has been sent yet.';
+    reveal(ready);
+    document.querySelector('#inquiry-whatsapp').focus({ preventScroll: true });
+  });
+  document.querySelector('#copy-inquiry')?.addEventListener('click', async () => {
+    const copyStatus = document.querySelector('#copy-status');
+    try {
+      await navigator.clipboard.writeText(document.querySelector('#inquiry-preview').textContent);
+      copyStatus.textContent = 'Message copied. Paste it into your conversation with David.';
+    } catch {
+      document.querySelector('#inquiry-ready details').open = true;
+      copyStatus.textContent = 'Open the message preview, select the text and copy it manually.';
+    }
+  });
+}
