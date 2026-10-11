@@ -1,7 +1,7 @@
 /* Photo journeys and a clear, original Tanzania tour catalogue. */
 .main-nav{gap:20px}.nav-container{width:min(1380px,92%)}
 .main-nav a{font-size:12px}.main-nav .nav-cta{gap:12px}
-.cinema-hero{background-image:none;min-height:740px;padding:95px 0 155px;overflow:hidden}
+.cinema-hero{background-image:none;min-height:min(740px,calc(100svh - 92px));padding:95px 0 155px;overflow:hidden}
 .cinema-hero .hero-content{pointer-events:none}.cinema-hero .hero-content a{pointer-events:auto}
 .cinema-hero .hero-content h1{max-width:970px}
 .cinema-hero .hero-overlay{z-index:1;background:linear-gradient(90deg,rgba(8,25,18,.85),rgba(8,25,18,.42) 60%,rgba(8,25,18,.15)),linear-gradient(0deg,rgba(8,25,18,.72),transparent 38%)}
@@ -11,8 +11,8 @@
 .hero-frames img{width:100%;height:100%;object-fit:cover;object-position:center;transform:scale(1)}
 .hero-frames figure.is-active img{animation:gentle-travel 14s ease-out both}
 .hero-frames figcaption{display:none}
-.hero-scene-caption{position:absolute;bottom:31px;left:5%;max-width:50%;color:#fff;font-size:11px;letter-spacing:.07em;z-index:3;margin:0}
-.cinema-hero .story-controls{position:absolute;bottom:19px;right:5%;z-index:4;color:white;background:transparent;border:0;padding:0;width:auto}
+.hero-scene-caption{position:absolute;bottom:85px;left:5%;max-width:50%;color:#fff;font-size:11px;letter-spacing:.07em;z-index:3;margin:0}
+.cinema-hero .story-controls{position:absolute;bottom:19px;left:5%;right:auto;z-index:4;color:white;background:transparent;border:0;padding:0;width:auto}
 .cinema-hero .story-controls button{color:white;border-color:#b9c6bc;background:rgba(8,25,18,.3)}
 .cinema-hero .story-dots{display:none}.cinema-hero .story-count{color:white}
 @keyframes gentle-travel{from{transform:scale(1)}to{transform:scale(1.075)}}
