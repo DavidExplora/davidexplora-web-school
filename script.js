@@ -40,6 +40,8 @@ function resetRequest() {
   if (status) status.textContent = '';
   const link = document.querySelector('#inquiry-whatsapp');
   if (link) link.href = 'https://wa.me/' + api.phone;
+  const emailLink = document.querySelector('#inquiry-email');
+  if (emailLink) emailLink.href = 'mailto:davidlyamuya819@gmail.com';
   const preview = document.querySelector('#inquiry-preview');
   if (preview) preview.textContent = '';
   const copyStatus = document.querySelector('#copy-status');
@@ -115,9 +117,10 @@ if (form) {
     }
     document.querySelector('#inquiry-preview').textContent = inquiry.text;
     document.querySelector('#inquiry-whatsapp').href = inquiry.url;
+    document.querySelector('#inquiry-email').href = inquiry.emailURL;
     const ready = document.querySelector('#inquiry-ready');
     ready.hidden = false;
-    status.textContent = 'Your request is prepared. Open WhatsApp below and press Send. Nothing has been sent yet.';
+    status.textContent = 'Your request is prepared. Choose WhatsApp or email below and press Send in that app. Nothing has been sent yet.';
     reveal(ready);
     document.querySelector('#inquiry-whatsapp').focus({ preventScroll: true });
   });
