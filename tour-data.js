@@ -285,7 +285,7 @@
     "basis": "4 climbers; shared mountain huts",
     "start": "Moshi → Moshi",
     "style": "Mountain huts · 6-day route",
-    "image": "images/optimized/kilimanjaro-guide.webp",
+    "image": "images/stories/marangu-huts.webp",
     "summary": "A six-day hut route with an extra Horombo acclimatization day, not a rushed five-day summit promise.",
     "places": [
       "Marangu",
@@ -648,7 +648,7 @@
     "basis": "2 adults travelling together",
     "start": "Moshi → Moshi",
     "style": "Private foothill day",
-    "image": "images/optimized/local-tanzania.webp",
+    "image": "images/stories/coffee-cherries.webp",
     "summary": "A forest-framed waterfall walk, a hands-on coffee experience and a local lunch in the Kilimanjaro foothills.",
     "places": [
       "Materuni",
@@ -848,7 +848,7 @@
     "basis": "2 adults joining a shared boat",
     "start": "Matemwe meeting point → Matemwe",
     "style": "Shared boat · guided snorkeling",
-    "image": "images/optimized/zanzibar.webp",
+    "image": "images/stories/zanzibar-blue-water.webp",
     "summary": "Explore the waters around Mnemba with a marine guide, then leave time for a relaxed coast afternoon.",
     "places": [
       "Mnemba waters",
