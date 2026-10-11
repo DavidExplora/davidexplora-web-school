@@ -1,0 +1,79 @@
+[
+  {
+    "label": "Kilimanjaro forest trail",
+    "author": "Jorge Láscar from Australia",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Lascar_Muddy_trail_and_dense_vegetation_-_Montane_rainforests_biome_(4460834130).jpg",
+    "alt": "Montane rainforest trail on Mount Kilimanjaro.",
+    "date": "2009-03-17 15:34",
+    "file": "images/stories/kili-forest.webp",
+    "changes": "Resized and re-encoded to WebP for loading speed; CSS may crop the display."
+  },
+  {
+    "label": "Kilimanjaro moorland",
+    "author": "Jorge Láscar from Australia",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Lascar_Habitat_Moorland_(4461926142).jpg",
+    "alt": "Moorland landscape on Mount Kilimanjaro.",
+    "date": "2009-03-18 11:23",
+    "file": "images/stories/kili-moorland.webp",
+    "changes": "Resized and re-encoded to WebP for loading speed; CSS may crop the display."
+  },
+  {
+    "label": "Barafu high camp",
+    "author": "Jorge Láscar from Australia",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Lascar_The_inhospitable_Barafu_camp,_the_goal_of_the_fourth_day_(4464782140).jpg",
+    "alt": "A shelter, tents and the Barafu Hut sign on rocky Mount Kilimanjaro.",
+    "date": "2009-03-20 14:29",
+    "file": "images/stories/kili-high-camp.webp",
+    "changes": "Resized and re-encoded to WebP for loading speed; CSS may crop the display."
+  },
+  {
+    "label": "Uhuru summit",
+    "author": "Jorge Láscar from Australia",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Lascar_Jumping_at_the_summit_of_the_the_tallest_freestanding_mountain_on_earth_(3408927879).jpg",
+    "alt": "A climber at the summit of Mount Kilimanjaro, Uhuru Peak.",
+    "date": "2009-03-21 06:46",
+    "file": "images/stories/kili-summit.webp",
+    "changes": "Resized and re-encoded to WebP for loading speed; CSS may crop the display."
+  },
+  {
+    "label": "Stone Town street",
+    "author": "Yann Macherez",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Stone_Town%27s_Maze.jpg",
+    "alt": "A narrow street between historic buildings in Stone Town, Zanzibar.",
+    "date": "2016-08-13 10:57:22",
+    "file": "images/stories/stone-town-street.webp",
+    "changes": "Resized and re-encoded to WebP for loading speed; CSS may crop the display."
+  },
+  {
+    "label": "Zanzibar nutmeg spice farm",
+    "author": "Bärbel Miemietz",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:2024-06-15_Zanzibar_Spices_105020547.jpg",
+    "alt": "Nutmeg fruit on a tree at a spice farm in Zanzibar.",
+    "date": "2024-06-15",
+    "file": "images/stories/zanzibar-spices.webp",
+    "changes": "Resized and re-encoded to WebP for loading speed; CSS may crop the display."
+  },
+  {
+    "label": "Maasai village, Lolmalasin",
+    "author": "Guillaume Baviere (Giåm)",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Maasai_village,_Lolmalasin.jpg",
+    "alt": "A Maasai settlement in the foothills of Mount Lolmalasin, Tanzania.",
+    "date": "2007-08-18",
+    "file": "images/stories/maasai-community.webp",
+    "changes": "Resized and re-encoded to WebP for loading speed; CSS may crop the display."
+  }
+]

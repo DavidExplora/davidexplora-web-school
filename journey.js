@@ -88,6 +88,9 @@
     if (whatsapp && (!/^[+()\d\s.\-]+$/.test(whatsapp) || whatsapp.replace(/\D/g,'').length < 7 || whatsapp.replace(/\D/g,'').length > 15)) errors.push('Please check your WhatsApp number and country code.');
     const travelers = Number(data.travelers);
     if (!Number.isInteger(travelers) || travelers < 1 || travelers > 50) errors.push('Please choose between 1 and 50 travelers.');
+    const packageName = clean(data.package, 160);
+    const budget = String(data.budget ?? '').trim();
+    if (budget && (!/^\d+$/.test(budget) || Number(budget) < 1 || Number(budget) > 1000000)) errors.push('Please enter a whole USD budget between 1 and 1,000,000 per adult, or leave it blank.');
     const date = String(data.date || '');
     if (date) {
       const parsed = new Date(date+'T00:00:00Z');
@@ -99,13 +102,13 @@
     if (!allowedDestinations.includes(data.destination)) errors.push('Please choose a destination.');
     if (!allowedDurations.includes(data.duration)) errors.push('Please choose your trip length.');
     if (data.consent !== true) errors.push('Please read and agree to the privacy and booking information.');
-    return { errors, values: { name, email, whatsapp, travelers, date, destination: data.destination, duration: data.duration, style: clean(data.style || 'Help me decide',70), language: clean(data.language || 'English',70), message: String(data.message || '').replace(/\u0000/g,'').trim().slice(0,1800) } };
+    return { errors, values: { name, email, whatsapp, travelers, date, package: packageName, budget, destination: data.destination, duration: data.duration, style: clean(data.style || 'Help me decide',70), language: clean(data.language || 'English',70), message: String(data.message || '').replace(/\u0000/g,'').trim().slice(0,1800) } };
   }
   function createInquiry(input, today) {
     const result = validateInquiry(input, today);
     if (result.errors.length) return { ...result, text: '', url: '' };
     const v = result.values;
-    const text = 'Hello David! I would like to plan a Tanzania trip.\n\nName: '+v.name+'\nEmail: '+v.email+'\nWhatsApp: '+(v.whatsapp || 'Contact me here or by email')+'\nPreferred arrival: '+(v.date || 'Flexible / to discuss')+'\nTravelers: '+v.travelers+'\nDestination: '+v.destination+'\nTime in Tanzania: '+v.duration+'\nTravel style: '+v.style+'\nPreferred language: '+v.language+'\n\nMy trip idea:\n'+(v.message || 'Please help me choose a suitable itinerary.')+'\n\nPlease confirm availability, a suitable itinerary, inclusions and exclusions, a personal quote and booking terms.';
+    const text = 'Hello David! I would like to plan a Tanzania trip.\n\nName: '+v.name+'\nEmail: '+v.email+'\nWhatsApp: '+(v.whatsapp || 'Contact me here or by email')+'\nPreferred arrival: '+(v.date || 'Flexible / to discuss')+'\nTravelers: '+v.travelers+'\nStarting itinerary: '+(v.package || 'Personal trip / help me choose')+'\nBudget per adult: '+(v.budget ? 'USD '+Number(v.budget).toLocaleString('en-US') : 'To discuss')+'\nDestination: '+v.destination+'\nTime in Tanzania: '+v.duration+'\nTravel style: '+v.style+'\nPreferred language: '+v.language+'\n\nMy trip idea:\n'+(v.message || 'Please help me choose a suitable itinerary.')+'\n\nPlease confirm availability, a suitable itinerary, inclusions and exclusions, a personal quote and booking terms.';
     return { ...result, text, url: 'https://wa.me/'+phone+'?text='+encodeURIComponent(text) };
   }
   return { phone, destinations, durations, interests, presets, buildPlan, validateInquiry, createInquiry };

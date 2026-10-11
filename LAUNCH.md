@@ -1,18 +1,18 @@
 # David Explora launch
 
-Prepared 10 October 2026. The existing website has been completed in its original HTML/CSS/JavaScript structure.
+Updated 11 October 2026. The photo-story and detailed-package update keeps the original HTML/CSS/JavaScript structure.
 
 Public website: https://david-explora.fastash16.chatgpt.site
 
-GitHub status: the launch source update has not been pushed. The connected GitHub integration rejected the upload with HTTP 403, "Resource not accessible by integration." The existing remote main branch remains at `ac39ca42fb650279773791bcc8f1545e24ec0b20`. Restore write access for this repository, or apply the provided source/patch and push from your own authenticated clone. A pull from GitHub alone will not retrieve the new changes yet.
+GitHub status: David successfully pushed the previous launch from Windows. The last verified remote main commit is `19d960a71c918a2b908d6d67d0a1b0c39f266070`, and its website check succeeded. The photo-story/package version is a separate source update. The connected integration lacks GitHub write access; apply the provided update in your authenticated Windows clone, review, commit and push. A pull cannot retrieve unpushed changes. GitHub and the hosted Site do not automatically synchronize.
 
-## What has been finished
+## What the new version includes
 
-The three missing experience pages are included, the broken safari card images are fixed, and the previously truncated Lemosho and Marangu pages have complete page structure and navigation. The home page has a personal David introduction, four destination collections, three journey ideas, a working journey builder, FAQ and a complete WhatsApp inquiry flow.
+The site has 39 HTML pages, including 18 detailed packages, a searchable price catalogue, planning guide and public photo credits. The safari hero moves through supplied photographs. Separate safari, seven-day Machame, Zanzibar and local-life stories have motion, fades, pause, manual controls and reduced-motion support.
 
-The selected project photographs are used throughout. Smaller WebP delivery copies and CSS framing improve loading and composition; the original files are retained. Privacy information, booking information, favicon, social previews, robots.txt, sitemap and a custom 404 page are included.
+Package pages show daily plans, start/end points, inclusions, exclusions, estimates based on the displayed group and two-adult alternatives where available. Public operator benchmarks informed these estimates; they are not supplier-confirmed offers. See `PRICING.md`. Final quotes need actual costs, fees, taxes and booking terms.
 
-The inquiry supports route-specific links, name, email, optional WhatsApp, future arrival dates, whole traveler counts, trip length, destination, travel style, language and a personal message. The traveler reviews the message, opens WhatsApp and presses Send. The website does not claim the inquiry was sent, confirm a booking or collect a payment.
+Requests support selected itinerary, optional per-adult budget and the original contact/travel fields. The traveler reviews the message, opens WhatsApp and presses Send. There is no booking database, payment backend or instant reservation.
 
 ## Buy the domain in your own account
 
@@ -44,6 +44,7 @@ The custom-domain process needs ownership verification, DNS propagation and an a
 
 ```sh
 python scripts/set_site_url.py https://davidexplora.com
+python scripts/build_tours.py
 python scripts/check_site.py
 ```
 
@@ -98,4 +99,4 @@ Use the domain/email lines only when those services are active.
 - Have the actual written itinerary, quote, contracting-party details, provider arrangements, payment method and cancellation terms ready. Complete any business registration/licensing requirements that apply to the services you offer before selling them. The website makes no licensing claim.
 - Check the custom domain over HTTPS and test the professional mailbox before advertising those addresses.
 
-Automated checks cover 18 complete pages, local links and assets, metadata, sitemap, form labels, consent, all 80 planner combinations, query presets and booking-message validation/encoding. Browser visual QA and a delivered WhatsApp request still need a real browser and the user's accounts.
+Automated checks cover 39 pages, local links, responsive images, structured data, sitemap, labels, consent, photo controls, credits, all 80 planner combinations, filtering and request encoding. Nineteen tests also exercise carousel controls, visibility pauses and reduced motion using DOM fixtures. A phone/desktop visual review and a delivered test inquiry still need a real browser and WhatsApp account.
