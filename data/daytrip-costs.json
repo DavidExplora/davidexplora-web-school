@@ -1,0 +1,57 @@
+{
+  "currency": "USD",
+  "status": "Planning assumptions; replace with written supplier quotes before confirming a booking. These are not verified supplier rates or guaranteed net profits.",
+  "minimum_modeled_margin": 0.3,
+  "models": {
+    "arusha-city-tour": {
+      "group": 2,
+      "guide": 20,
+      "refreshments": 7,
+      "water": 2,
+      "guide_travel": 3,
+      "operating_allowance": 4,
+      "contingency": 3
+    },
+    "moshi-city-tour": {
+      "group": 2,
+      "guide": 16,
+      "refreshments": 7,
+      "water": 2,
+      "guide_travel": 3,
+      "operating_allowance": 3,
+      "contingency": 2
+    },
+    "marangu-village-tour": {
+      "group": 2,
+      "transport": 40,
+      "guide_hosts": 22,
+      "lunch": 14,
+      "coffee": 6,
+      "community_fees": 8,
+      "water": 3,
+      "operating_allowance": 3,
+      "contingency": 3
+    },
+    "materuni-waterfall-coffee": {
+      "group": 2,
+      "transport": 40,
+      "guide_hosts": 20,
+      "lunch": 14,
+      "coffee": 6,
+      "community_fees": 10,
+      "water": 3,
+      "operating_allowance": 3,
+      "contingency": 3
+    },
+    "chemka-springs-day": {
+      "group": 2,
+      "transport": 40,
+      "guide": 18,
+      "lunch": 14,
+      "entry_allowance": 10,
+      "water": 3,
+      "operating_allowance": 3,
+      "contingency": 4
+    }
+  }
+}

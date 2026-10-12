@@ -20,6 +20,8 @@
     ngorongoro: ['Safari', '', 'I would like to include Ngorongoro in my safari.'],
     tarangire: ['Safari', '', 'I would like to include Tarangire in my safari.'],
     manyara: ['Safari', '', 'I would like to include Lake Manyara in my safari.'],
+    arusha: ['Safari', '', 'I would like to plan a safari starting in Arusha. Please include arrival and pickup arrangements.'],
+    moshi: ['Local Tanzania', '1–2 days', 'I would like to explore Moshi and the Kilimanjaro foothills. Please suggest a local day trip.'],
     zanzibar: ['Zanzibar', '', 'I would like to plan a Zanzibar stay and island experiences.'],
     'stone-town': ['Zanzibar', '1–2 days', 'I would like to plan a guided Stone Town experience.'],
     'prison-island': ['Zanzibar', '1–2 days', 'I would like to plan a Changuu / Prison Island excursion from Stone Town. Please confirm boat arrangements and entry fees.'],
@@ -28,6 +30,12 @@
     'northern-safari': ['Safari', '5–7 days', 'I am interested in a 4–6 day northern safari through Tarangire, Ngorongoro and Serengeti. Please allow for arrival and departure logistics.'],
     'safari-zanzibar': ['Combined Tanzania trip', '8–10 days', 'I would like to combine a mainland wildlife safari with Zanzibar. Please include transfer and flight options in the quote.']
   };
+
+  function urlPreset(search) {
+    const params = new URLSearchParams(search);
+    const key = params.get('trip') || params.get('experience');
+    return Object.hasOwn(presets, key) ? [...presets[key]] : null;
+  }
 
   function buildPlan(selection) {
     const { destination, interest, duration } = selection || {};
@@ -111,5 +119,5 @@
     const text = 'Hello David! I would like to plan a Tanzania trip.\n\nName: '+v.name+'\nEmail: '+v.email+'\nWhatsApp: '+(v.whatsapp || 'Contact me here or by email')+'\nPreferred arrival: '+(v.date || 'Flexible / to discuss')+'\nTravelers: '+v.travelers+'\nStarting itinerary: '+(v.package || 'Personal trip / help me choose')+'\nBudget per adult: '+(v.budget ? 'USD '+Number(v.budget).toLocaleString('en-US') : 'To discuss')+'\nDestination: '+v.destination+'\nTime in Tanzania: '+v.duration+'\nTravel style: '+v.style+'\nPreferred language: '+v.language+'\n\nMy trip idea:\n'+(v.message || 'Please help me choose a suitable itinerary.')+'\n\nPlease confirm availability, a suitable itinerary, inclusions and exclusions, a personal quote and booking terms.';
     return { ...result, text, url: 'https://wa.me/'+phone+'?text='+encodeURIComponent(text), emailURL: 'mailto:davidlyamuya819@gmail.com?subject='+encodeURIComponent('Tanzania trip request — '+v.name)+'&body='+encodeURIComponent(text) };
   }
-  return { phone, destinations, durations, interests, presets, buildPlan, validateInquiry, createInquiry };
+  return { phone, destinations, durations, interests, presets, urlPreset, buildPlan, validateInquiry, createInquiry };
 });

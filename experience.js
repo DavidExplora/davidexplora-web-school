@@ -51,7 +51,7 @@
     });
     root.addEventListener('mouseenter', () => { hover = true; explicitPlay = false; playback(); });
     root.addEventListener('mouseleave', () => { hover = false; playback(); });
-    root.addEventListener('focusin', () => { focus = true; explicitPlay = false; playback(); });
+    root.addEventListener('focusin', () => { focus = true; userPaused = true; explicitPlay = false; playback(); });
     root.addEventListener('focusout', event => { if (!root.contains(event.relatedTarget)) { focus = false; playback(); } });
     root.addEventListener('keydown', event => {
       if (event.target.closest('input,select,textarea')) return;
@@ -59,6 +59,23 @@
         event.preventDefault(); show(index + (event.key === 'ArrowRight' ? 1 : -1), true); playback();
       }
     });
+    let touchStart = null;
+    root.addEventListener('touchstart', event => {
+      if (event.touches.length !== 1 || event.target.closest('button,a,input,select,textarea')) return;
+      touchStart = { x: event.touches[0].clientX, y: event.touches[0].clientY };
+    }, { passive: true });
+    root.addEventListener('touchend', event => {
+      if (!touchStart || !event.changedTouches.length) return;
+      const x = event.changedTouches[0].clientX - touchStart.x;
+      const y = event.changedTouches[0].clientY - touchStart.y;
+      touchStart = null;
+      if (Math.abs(x) > 55 && Math.abs(x) > Math.abs(y) * 1.5) {
+        userPaused = true;
+        explicitPlay = false;
+        show(index + (x < 0 ? 1 : -1), true);
+        playback();
+      }
+    }, { passive: true });
     document.addEventListener('visibilitychange', playback);
     reduce.addEventListener('change', () => { if (reduce.matches) userPaused = true; playback(); });
     if ('IntersectionObserver' in window) {
@@ -123,14 +140,32 @@
   const inquiry = document.querySelector('#trip-inquiry-form');
   if (inquiry && tours && document.querySelector('#trip-package')) {
     const field = document.querySelector('#trip-package');
+    const managed = ['trip-destination', 'trip-duration', 'trip-style', 'trip-message'];
+    const edited = new Set();
+    const original = Object.fromEntries(managed.map(id => [id, document.getElementById(id).value]));
+    let applied = {};
+    managed.forEach(id => {
+      const input = document.getElementById(id);
+      input.addEventListener('input', () => edited.add(id));
+      input.addEventListener('change', () => edited.add(id));
+    });
+    function update(id, value) {
+      const input = document.getElementById(id);
+      if (edited.has(id) || (applied[id] !== undefined && input.value !== applied[id])) return;
+      input.value = value;
+      applied[id] = value;
+    }
     function choose(id) {
       const preset = tours.requestPreset(id);
-      if (!preset) return;
-      document.querySelector('#trip-destination').value = preset.destination;
-      document.querySelector('#trip-duration').value = preset.duration;
-      document.querySelector('#traveler-count').value = preset.travelers;
-      document.querySelector('#trip-style').value = tours.getTour(id).style.startsWith('Private') ? 'Private journey' : 'Help me decide';
-      document.querySelector('#trip-message').value = preset.message;
+      if (!preset) {
+        managed.forEach(key => update(key, original[key]));
+        return;
+      }
+      update('trip-destination', preset.destination);
+      update('trip-duration', preset.duration);
+      update('trip-style', tours.getTour(id).style.startsWith('Private') ? 'Private journey' : 'Help me decide');
+      update('trip-message', preset.message);
+      // The pricing party is an estimate basis, never the customer's party size.
     }
     const selected = new URLSearchParams(window.location.search).get('package');
     if (tours.getTour(selected)) { field.value = selected; choose(selected); }

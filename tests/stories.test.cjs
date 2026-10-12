@@ -67,3 +67,17 @@ test('reduced motion prevents autoplay while next, previous and keyboard remain 
   let prevented=false;f.root.fire('keydown',{key:'ArrowRight',preventDefault:()=>{prevented=true;}});
   assert.equal(prevented,true);assert.equal(f.counter.textContent,'03 / 03');assert.equal(f.timers.size,0);
 });
+
+test('keyboard focus pauses photos until the visitor explicitly resumes',()=>{
+  const f=fixture();f.visible(true);
+  f.root.fire('focusin');assert.equal(f.timers.size,0);
+  f.root.fire('focusout',{relatedTarget:null});assert.equal(f.timers.size,0);
+  f.pause.fire('click');assert.equal(f.timers.size,1);
+});
+
+test('a horizontal touch swipe changes the photo and pauses autoplay',()=>{
+  const f=fixture();f.visible(true);
+  f.root.fire('touchstart',{target:{closest:()=>null},touches:[{clientX:220,clientY:100}]});
+  f.root.fire('touchend',{changedTouches:[{clientX:100,clientY:105}]});
+  assert.equal(f.counter.textContent,'02 / 03');assert.equal(f.timers.size,0);
+});

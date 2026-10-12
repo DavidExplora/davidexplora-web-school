@@ -1,7 +1,7 @@
 [
   {
     "id": "tarangire-day-safari",
-    "title": "Tarangire: an elephant country day",
+    "title": "Tarangire National Park Day Safari",
     "category": "safari",
     "days": 1,
     "duration": "1 day",
@@ -12,7 +12,7 @@
     "start": "Arusha → Arusha",
     "style": "Private 4×4 day safari",
     "image": "images/stories/baobab-elephants.webp",
-    "summary": "A full wildlife day among baobabs and river landscapes, without committing to a long safari.",
+    "summary": "A private game drive among Tarangire’s baobabs and river landscapes, with a picnic lunch and return to Arusha.",
     "places": [
       "Tarangire",
       "Arusha"
@@ -51,7 +51,7 @@
   },
   {
     "id": "2-day-tarangire-ngorongoro",
-    "title": "Tarangire & Ngorongoro in two days",
+    "title": "2-Day Tarangire & Ngorongoro Safari",
     "category": "safari",
     "days": 2,
     "duration": "2 days · 1 night",
@@ -62,7 +62,7 @@
     "start": "Arusha → Arusha",
     "style": "Private 4×4 · modest lodge",
     "image": "images/stories/crater-safari.webp",
-    "summary": "A short northern escape: Tarangire’s elephant country, a night around Karatu, then the crater floor.",
+    "summary": "Visit Tarangire and the Ngorongoro Crater with an overnight stay around Karatu. A short private safari from Arusha.",
     "places": [
       "Tarangire",
       "Ngorongoro",
@@ -100,7 +100,7 @@
   },
   {
     "id": "4-day-serengeti-camping",
-    "title": "Serengeti & Crater under canvas",
+    "title": "4-Day Serengeti & Ngorongoro Camping Safari",
     "category": "safari",
     "days": 4,
     "duration": "4 days · 3 nights",
@@ -111,7 +111,7 @@
     "start": "Arusha → Arusha",
     "style": "Private 4×4 · public camping",
     "image": "images/stories/plains-game-drive.webp",
-    "summary": "Trade hotel walls for canvas and spend meaningful time in the Serengeti, ending with a crater game drive.",
+    "summary": "Explore the Serengeti and Ngorongoro Crater with game drives, public camping and a safari crew.",
     "places": [
       "Serengeti",
       "Ngorongoro",
@@ -160,7 +160,7 @@
   },
   {
     "id": "5-day-northern-lodge-safari",
-    "title": "Northern Tanzania, with a softer landing",
+    "title": "5-Day Northern Tanzania Lodge Safari",
     "category": "safari",
     "days": 5,
     "duration": "5 days · 4 nights",
@@ -171,7 +171,7 @@
     "start": "Arusha → Arusha",
     "style": "Private 4×4 · comfort lodges",
     "image": "images/stories/elephant-savannah.webp",
-    "summary": "Tarangire, two Serengeti nights and the crater, with a proper bed at the end of each wildlife day.",
+    "summary": "Visit Tarangire, the Serengeti and Ngorongoro, with lodge accommodation between game drives.",
     "places": [
       "Tarangire",
       "Serengeti",
@@ -225,7 +225,7 @@
   },
   {
     "id": "luxury-northern-safari",
-    "title": "Your private luxury safari",
+    "title": "Private Northern Tanzania Luxury Safari",
     "category": "safari",
     "days": 5,
     "duration": "5–7 days · tailored",
@@ -236,7 +236,7 @@
     "start": "Arusha or Kilimanjaro airport · agreed return",
     "style": "Private 4×4 · luxury upgrade",
     "image": "images/stories/zebras-safari-vehicle.webp",
-    "summary": "A quieter pace, fewer lodge changes and more time in the wildlife areas that matter to you.",
+    "summary": "Plan a private safari with camps, lodges and game-drive arrangements selected for your dates and preferences.",
     "places": [
       "Tarangire",
       "Serengeti",
@@ -273,7 +273,7 @@
   },
   {
     "id": "6-day-marangu-trek",
-    "title": "Marangu: the mountain, hut by hut",
+    "title": "6-Day Kilimanjaro Trek: Marangu Route",
     "category": "trekking",
     "days": 6,
     "duration": "6 mountain days · 8 trip days",
@@ -284,7 +284,7 @@
     "start": "Moshi → Moshi",
     "style": "Mountain huts · 6-day route",
     "image": "images/stories/marangu-huts.webp",
-    "summary": "A six-day hut route with an extra Horombo acclimatization day, not a rushed five-day summit promise.",
+    "summary": "A hut-based Kilimanjaro trek with an acclimatization day at Horombo and a summit attempt via Gilman’s Point.",
     "places": [
       "Marangu",
       "Mandara",
@@ -355,7 +355,7 @@
   },
   {
     "id": "7-day-machame-trek",
-    "title": "Machame: seven days above the clouds",
+    "title": "7-Day Kilimanjaro Trek: Machame Route",
     "category": "trekking",
     "days": 7,
     "duration": "7 mountain days · 9 trip days",
@@ -366,7 +366,7 @@
     "start": "Moshi → Moshi",
     "style": "Mountain camping · 7-day route",
     "image": "images/stories/kili-moorland.webp",
-    "summary": "Forest, moorland, Barranco and a high-camp night: a varied route with time built in for the climb.",
+    "summary": "A camping route through varied mountain landscapes, with a seven-day trekking schedule and a summit attempt from Barafu.",
     "places": [
       "Machame",
       "Shira",
@@ -443,7 +443,7 @@
   },
   {
     "id": "8-day-lemosho-trek",
-    "title": "Lemosho: take the longer way up",
+    "title": "8-Day Kilimanjaro Trek: Lemosho Route",
     "category": "trekking",
     "days": 8,
     "duration": "8 mountain days · 10 trip days",
@@ -454,7 +454,7 @@
     "start": "Moshi → Moshi",
     "style": "Mountain camping · 8-day route",
     "image": "images/stories/kili-high-camp.webp",
-    "summary": "A western approach, the Shira Plateau and a longer mountain journey, with arrival and recovery time around it.",
+    "summary": "Approach Kilimanjaro from the west, cross the Shira Plateau and allow eight mountain days for the planned ascent and descent.",
     "places": [
       "Lemosho",
       "Shira",
@@ -535,7 +535,7 @@
   },
   {
     "id": "kilimanjaro-marangu-day-hike",
-    "title": "Kilimanjaro forest, in one day",
+    "title": "Kilimanjaro Rainforest Day Hike",
     "category": "trekking",
     "days": 1,
     "duration": "1 day · no summit attempt",
@@ -546,7 +546,7 @@
     "start": "Moshi → Moshi",
     "style": "Guided forest day hike",
     "image": "images/stories/kili-forest.webp",
-    "summary": "A guided walk on the Marangu forest trail, with an agreed turnaround point. This is a day hike, not a summit trek.",
+    "summary": "Walk from Marangu Gate towards Mandara Hut with a mountain guide. This is a rainforest day visit, not a summit climb.",
     "places": [
       "Marangu Gate",
       "Mandara area",
@@ -584,70 +584,238 @@
     "seoTitle": "Kilimanjaro Day Hike on the Marangu Route"
   },
   {
-    "id": "moshi-arusha-city-walk",
-    "title": "City stories: Moshi or Arusha",
+    "id": "arusha-city-tour",
+    "title": "Arusha City Walk: Markets, Heritage & Swahili",
+    "category": "local",
+    "days": 1,
+    "duration": "3–4 hours",
+    "tripDays": 1,
+    "price": 30,
+    "group": 2,
+    "basis": "2 adults booking a private tour together",
+    "start": "Arusha Clock Tower → central Arusha",
+    "style": "Private city walk",
+    "image": "images/daytrips/arusha-clock-tower.webp",
+    "imageAlt": "The Clock Tower in central Arusha",
+    "summary": "Get your bearings in Arusha with a local guide. Explore everyday markets and city landmarks, practise a few Swahili phrases and stop for tea or coffee and a local snack.",
+    "places": [
+      "Arusha",
+      "Clock Tower",
+      "Central Market",
+      "City heritage"
+    ],
+    "itinerary": [
+      {
+        "label": "Meet",
+        "title": "Start at the Clock Tower",
+        "text": "Meet your guide at the Arusha Clock Tower at the agreed time. Discuss your walking pace and interests, and learn a few useful Swahili greetings."
+      },
+      {
+        "label": "Explore",
+        "title": "Landmarks and everyday streets",
+        "text": "Walk through central Arusha with stops at public city landmarks and the outside of the Old Boma area. Your guide explains the city’s place in Tanzania’s history; museum entry is optional and quoted separately."
+      },
+      {
+        "label": "Market",
+        "title": "Visit the working market",
+        "text": "Discover seasonal produce and everyday trade with your guide. Ask before photographing people; purchases and respectful bargaining are entirely optional."
+      },
+      {
+        "label": "Finish",
+        "title": "A refreshment stop and local recommendations",
+        "text": "Pause for tea or coffee and one local snack, then finish at an agreed central point. The route is adjusted for market opening times and conditions."
+      }
+    ],
+    "includes": [
+      "Local English-speaking walking guide",
+      "Guided public-street, market and landmark route",
+      "Short Swahili introduction",
+      "Tea or coffee, one local snack and drinking water"
+    ],
+    "excludes": [
+      "Hotel and intercity transport",
+      "Museum admissions and optional paid attractions",
+      "Lunch, shopping, extra drinks and tips"
+    ],
+    "notes": "This is an on-foot city tour, with traffic crossings, busy markets and uneven pavements. The station photograph is an Arusha city illustration, not a guarantee that the walking route enters the station. Confirm access needs and food preferences before booking. Morning or afternoon starts are available by arrangement.",
+    "price2": null,
+    "priceSolo": 45,
+    "seoTitle": "Arusha City Walk: Markets, Heritage & Swahili",
+    "gallery": [
+      {
+        "image": "images/daytrips/arusha-clock-tower.webp",
+        "alt": "The Clock Tower in central Arusha",
+        "caption": "Arusha Clock Tower · city-centre meeting point"
+      },
+      {
+        "image": "images/daytrips/arusha-station-meru.webp",
+        "alt": "Arusha railway station building with Mount Meru in the background",
+        "caption": "Arusha and Mount Meru · destination photograph"
+      }
+    ]
+  },
+  {
+    "id": "moshi-city-tour",
+    "title": "Moshi City Walk: Markets, Railway & Coffee",
     "category": "local",
     "days": 1,
     "duration": "About 3 hours",
     "tripDays": 1,
     "price": 25,
     "group": 2,
-    "basis": "2 adults walking together",
-    "start": "Agreed central meeting point in your chosen city",
-    "style": "Private guided walk",
-    "image": "images/optimized/kilimanjaro-guide.webp",
-    "summary": "Choose one city, then follow everyday streets, a working market and the stories you would otherwise walk past.",
+    "basis": "2 adults booking a private tour together",
+    "start": "Moshi Clock Tower → central Moshi",
+    "style": "Private city walk",
+    "image": "images/daytrips/moshi-street.webp",
+    "imageAlt": "Street scene in Moshi town",
+    "summary": "See Moshi beyond the hotel streets: a working market, public views of the old railway area and a tea or coffee stop, with local context from your guide.",
     "places": [
       "Moshi",
-      "Arusha",
-      "Markets",
-      "Local life"
+      "Town centre",
+      "Local market",
+      "Railway area"
     ],
     "itinerary": [
       {
         "label": "Meet",
-        "title": "Choose your city and starting point",
-        "text": "Meet at an agreed central point in Moshi or Arusha. Share your interests and preferred pace."
+        "title": "Meet in central Moshi",
+        "text": "Meet at Moshi Clock Tower, or another agreed central meeting point. Discuss your interests and learn a few Swahili greetings before setting off."
+      },
+      {
+        "label": "Market",
+        "title": "Food, produce and everyday trade",
+        "text": "Walk through a working central market to discover produce and daily trade. Your guide helps you understand local buying habits without pressuring you to shop."
       },
       {
         "label": "Walk",
-        "title": "Markets and everyday streets",
-        "text": "Follow a guide-led route through public streets and a working market, pausing for a local snack."
+        "title": "Moshi streets and railway heritage",
+        "text": "Explore public streets and suitable public viewing points around the old railway area. Entry to railway facilities or tracks is not included; follow your guide’s directions."
       },
       {
-        "label": "Finish",
-        "title": "Leave with local recommendations",
-        "text": "End at the agreed central point with suggestions for your remaining time."
+        "label": "Coffee",
+        "title": "Stop for tea or coffee",
+        "text": "Enjoy tea or coffee and one local snack at an agreed local stop. Finish in central Moshi with recommendations for the rest of your stay."
       }
     ],
     "includes": [
-      "A local guide for your chosen city",
-      "Public street and market route",
-      "One local snack and drinking water"
+      "Local English-speaking walking guide",
+      "Guided market and public-street route",
+      "Tea or coffee, one local snack and drinking water",
+      "Local recommendations and a short Swahili introduction"
     ],
     "excludes": [
-      "Transport between Moshi and Arusha or hotel pickup",
-      "Paid museums and unlisted meals",
-      "Personal purchases and tips"
+      "Hotel pickup and transport from Arusha or the airport",
+      "Paid museum or railway-facility entry",
+      "Lunch, shopping, extra drinks and tips"
     ],
-    "notes": "This is a walk in one city, not a transfer between two cities. Tell David about access needs, food preferences and photography interests.",
+    "notes": "This tour takes place in Moshi, not Arusha. Walking surfaces can be uneven and markets busy. Confirm dietary needs and walking limitations in advance. Kilimanjaro views depend on cloud and visibility; no mountain view is promised.",
     "price2": null,
-    "seoTitle": "Guided City Walk in Moshi or Arusha"
+    "priceSolo": 40,
+    "seoTitle": "Moshi City Walk: Markets, Railway & Coffee",
+    "gallery": [
+      {
+        "image": "images/daytrips/moshi-street.webp",
+        "alt": "Street scene in Moshi town",
+        "caption": "Moshi town · public streets and local life"
+      },
+      {
+        "image": "images/stories/coffee-cherries.webp",
+        "alt": "Coffee cherries growing in the Kilimanjaro foothills",
+        "caption": "Coffee-growing foothills · an activity illustration, not a promised city café"
+      }
+    ]
+  },
+  {
+    "id": "marangu-village-tour",
+    "title": "Marangu Village: Chagga Culture & Coffee",
+    "category": "local",
+    "days": 1,
+    "duration": "6–7 hours including transfers",
+    "tripDays": 1,
+    "price": 75,
+    "group": 2,
+    "basis": "2 adults booking a private tour together",
+    "start": "Moshi hotel → Marangu village → Moshi",
+    "style": "Private guided day trip",
+    "image": "images/daytrips/marangu-landscape.webp",
+    "imageAlt": "Street and houses in Marangu village",
+    "summary": "Spend a day in the Kilimanjaro foothills with local hosts. Walk through Marangu, discuss Chagga farming and daily life, take part in a coffee activity and share a local lunch.",
+    "places": [
+      "Marangu",
+      "Chagga culture",
+      "Coffee",
+      "Kilimanjaro foothills"
+    ],
+    "itinerary": [
+      {
+        "label": "Morning",
+        "title": "Travel from Moshi to Marangu",
+        "text": "Pickup from an agreed Moshi hotel and transfer to Marangu. Meet the local guide and hosts; confirm the walking route and the day’s arrangements."
+      },
+      {
+        "label": "Village",
+        "title": "A host-led village and farming walk",
+        "text": "Walk through public village paths and host-approved farming areas. Discuss banana and coffee cultivation, family life and Chagga traditions. Visits to homes are by invitation, never unannounced."
+      },
+      {
+        "label": "Coffee",
+        "title": "Coffee preparation with local hosts",
+        "text": "Learn how coffee is prepared and join the agreed roasting or grinding activity. The venue and host are confirmed before departure; activities may vary with local arrangements."
+      },
+      {
+        "label": "Lunch",
+        "title": "A local meal, then return to Moshi",
+        "text": "Have the planned local lunch, with dietary requirements discussed beforehand. Return to Moshi in the afternoon. Waterfalls, caves or museums can be requested as separately quoted additions."
+      }
+    ],
+    "includes": [
+      "Private return transport from the standard Moshi pickup area",
+      "Local village guide and agreed host/community fees",
+      "Coffee activity and tasting",
+      "Local lunch and drinking water"
+    ],
+    "excludes": [
+      "Kilimanjaro National Park admission or mountain hiking",
+      "Waterfall, cave and museum additions unless quoted",
+      "Alcohol, personal purchases, accommodation and airport transfers",
+      "Tips and unlisted activities"
+    ],
+    "notes": "This is a village and cultural day, not a Kilimanjaro National Park trek. The photographed village scenery illustrates Marangu, not a promised private homestead. Ask permission before photographing people. The route has uneven paths; share access and dietary needs. Hosts and final arrangements must be confirmed before the tour.",
+    "price2": null,
+    "priceSolo": 135,
+    "seoTitle": "Marangu Village: Chagga Culture & Coffee",
+    "gallery": [
+      {
+        "image": "images/daytrips/marangu-landscape.webp",
+        "alt": "Street and houses in Marangu village",
+        "caption": "Marangu village · everyday life in the foothills"
+      },
+      {
+        "image": "images/daytrips/marangu-market.webp",
+        "alt": "Market stalls and everyday street life in Marangu village",
+        "caption": "Marangu · village market and public streets"
+      },
+      {
+        "image": "images/stories/coffee-roasting.webp",
+        "alt": "Coffee beans roasting over a wood fire",
+        "caption": "Coffee preparation · the host and venue are confirmed in your itinerary"
+      }
+    ]
   },
   {
     "id": "materuni-waterfall-coffee",
-    "title": "Materuni: waterfalls, coffee & a local table",
+    "title": "Materuni Waterfall & Chagga Coffee Day Trip",
     "category": "local",
     "days": 1,
     "duration": "1 day",
     "tripDays": 1,
-    "price": 85,
+    "price": 75,
     "group": 2,
     "basis": "2 adults travelling together",
     "start": "Moshi → Moshi",
     "style": "Private foothill day",
-    "image": "images/stories/coffee-cherries.webp",
-    "summary": "A forest-framed waterfall walk, a hands-on coffee experience and a local lunch in the Kilimanjaro foothills.",
+    "image": "images/daytrips/materuni-falls.webp",
+    "summary": "Walk to Materuni Waterfall and learn how local coffee is prepared, with a meal included in the planned itinerary.",
     "places": [
       "Materuni",
       "Moshi",
@@ -682,22 +850,40 @@
     ],
     "notes": "Wear practical walking shoes. Tell David about food needs and any difficulty with uneven paths before confirming.",
     "price2": null,
-    "seoTitle": "Materuni Waterfall & Coffee Day Tour"
+    "seoTitle": "Materuni Waterfall & Coffee Day Tour",
+    "imageAlt": "Materuni Waterfall descending a green cliff",
+    "gallery": [
+      {
+        "image": "images/daytrips/materuni-falls.webp",
+        "alt": "Materuni Waterfall descending a green cliff",
+        "caption": "Materuni Waterfall · the guided walk"
+      },
+      {
+        "image": "images/stories/coffee-cherries.webp",
+        "alt": "Coffee cherries on a leafy branch",
+        "caption": "Coffee-growing foothills · a destination illustration"
+      },
+      {
+        "image": "images/stories/coffee-roasting.webp",
+        "alt": "Coffee beans roasting over a wood fire",
+        "caption": "Local coffee preparation · host arrangements confirmed in the quote"
+      }
+    ]
   },
   {
     "id": "chemka-springs-day",
-    "title": "Chemka: a slower day by the springs",
+    "title": "Chemka Hot Springs Day Trip",
     "category": "local",
     "days": 1,
     "duration": "1 day",
     "tripDays": 1,
-    "price": 75,
+    "price": 70,
     "group": 2,
     "basis": "2 adults travelling together",
     "start": "Moshi → Moshi",
     "style": "Private transfer · relaxed day",
-    "image": "images/optimized/kilimanjaro-guide.webp",
-    "summary": "Leave room for a relaxed spring visit between a climb and your next adventure.",
+    "image": "images/daytrips/chemka-trees.webp",
+    "summary": "Spend a relaxed day by Chemka’s freshwater springs. Confirm transfers and swimming arrangements for your group.",
     "places": [
       "Chemka",
       "Kikuletwa",
@@ -731,11 +917,24 @@
     ],
     "notes": "Tell David if anyone cannot swim. Swimming supervision and safety arrangements are confirmed before the visit.",
     "price2": null,
-    "seoTitle": "Chemka Hot Springs Day Trip from Moshi"
+    "seoTitle": "Chemka Hot Springs Day Trip from Moshi",
+    "imageAlt": "Clear spring water and green trees at Chemka",
+    "gallery": [
+      {
+        "image": "images/daytrips/chemka-trees.webp",
+        "alt": "Green trees reflected in clear water at Chemka",
+        "caption": "Chemka · shade and clear water"
+      },
+      {
+        "image": "images/daytrips/chemka-pool.webp",
+        "alt": "Spring water and palms at Chemka / Kikuletwa",
+        "caption": "Chemka / Kikuletwa · the freshwater pool"
+      }
+    ]
   },
   {
     "id": "stone-town-walking-tour",
-    "title": "Stone Town: streets, doors & everyday stories",
+    "title": "Stone Town Guided Walking Tour",
     "category": "zanzibar",
     "days": 1,
     "duration": "About 3 hours",
@@ -746,7 +945,7 @@
     "start": "Stone Town meeting point → agreed central finish",
     "style": "Private guided walk",
     "image": "images/stories/stone-town-street.webp",
-    "summary": "Step away from a checklist and into narrow lanes, carved doors and the everyday rhythm of Zanzibar’s historic town.",
+    "summary": "Explore Stone Town’s lanes, carved doors and waterfront with a local guide.",
     "places": [
       "Stone Town",
       "Zanzibar",
@@ -786,7 +985,7 @@
   },
   {
     "id": "changuu-prison-island",
-    "title": "Changuu: island history & giant tortoises",
+    "title": "Prison Island Boat Trip from Stone Town",
     "category": "zanzibar",
     "days": 1,
     "duration": "Half day · weather dependent",
@@ -797,7 +996,7 @@
     "start": "Stone Town seafront → Stone Town seafront",
     "style": "Boat excursion · island visit",
     "image": "images/optimized/stone-town.webp",
-    "summary": "Take a boat from Stone Town for Changuu’s history, coastal views and a supervised look at its tortoise sanctuary.",
+    "summary": "Cross to Changuu for island history and a guided visit to the tortoise sanctuary, subject to sea conditions.",
     "places": [
       "Changuu",
       "Prison Island",
@@ -836,7 +1035,7 @@
   },
   {
     "id": "mnemba-waters-snorkeling",
-    "title": "Mnemba waters: a reef morning",
+    "title": "Mnemba Waters Guided Snorkeling",
     "category": "zanzibar",
     "days": 1,
     "duration": "Half day · weather dependent",
@@ -847,7 +1046,7 @@
     "start": "Matemwe meeting point → Matemwe",
     "style": "Shared boat · guided snorkeling",
     "image": "images/stories/zanzibar-blue-water.webp",
-    "summary": "Explore the waters around Mnemba with a marine guide, then leave time for a relaxed coast afternoon.",
+    "summary": "Join a guided boat excursion to the reefs around Mnemba from Matemwe. Landing on the private island is not included.",
     "places": [
       "Mnemba waters",
       "Matemwe",
@@ -887,7 +1086,7 @@
   },
   {
     "id": "zanzibar-spice-farm",
-    "title": "Zanzibar spices, from tree to tasting",
+    "title": "Zanzibar Spice Farm Tour",
     "category": "zanzibar",
     "days": 1,
     "duration": "Half day",
@@ -898,7 +1097,7 @@
     "start": "Stone Town → Stone Town",
     "style": "Private transfer · farm visit",
     "image": "images/stories/zanzibar-spices.webp",
-    "summary": "Smell, touch and taste the island’s spice story with a local farm host.",
+    "summary": "Discover how spices grow on a guided farm visit, with transfers from Stone Town in the planned itinerary.",
     "places": [
       "Zanzibar",
       "Spice farm",
@@ -937,7 +1136,7 @@
   },
   {
     "id": "maasai-community-day",
-    "title": "A Maasai day, hosted locally",
+    "title": "Host-Led Maasai Community Visit",
     "category": "local",
     "days": 1,
     "duration": "1 day · arrangements on request",
@@ -948,7 +1147,7 @@
     "start": "Moshi or Arusha · agreed return",
     "style": "Community-hosted cultural day",
     "image": "images/stories/maasai-community.webp",
-    "summary": "Ask about a respectful hosted visit, with time for conversation and the community’s own explanation of its traditions.",
+    "summary": "Meet local hosts on a community visit arranged in advance. The venue, activities and community fees are confirmed in your quote.",
     "places": [
       "Maasai",
       "Olpopongi option",
@@ -984,7 +1183,7 @@
   },
   {
     "id": "safari-zanzibar-journey",
-    "title": "Wildlife first. Island time after.",
+    "title": "Tanzania Safari & Zanzibar Holiday",
     "category": "combined",
     "days": 8,
     "duration": "8–10 days · tailored",
@@ -995,7 +1194,7 @@
     "start": "Mainland arrival → Zanzibar departure",
     "style": "Private safari · island extension",
     "image": "images/optimized/zanzibar.webp",
-    "summary": "Build a northern safari around your arrival, then trade the game-drive road for Stone Town and the coast.",
+    "summary": "Combine a northern wildlife safari with Zanzibar, with time for mainland travel, flights and island transfers.",
     "places": [
       "Tarangire",
       "Serengeti",

@@ -53,7 +53,7 @@ document.querySelectorAll('.planner-options button').forEach(button => {
     const key = ['destination', 'interest', 'duration'].find(name => button.dataset[name]);
     if (!key) return;
     selections[key] = button.dataset[key];
-    document.querySelectorAll('[data-' + key + ']').forEach(option => {
+    document.querySelectorAll('.planner-options [data-' + key + ']').forEach(option => {
       const selected = option === button;
       option.classList.toggle('selected', selected);
       option.setAttribute('aria-pressed', String(selected));
@@ -92,9 +92,9 @@ document.querySelector('#plan-this-trip')?.addEventListener('click', () => {
 
 if (form) {
   form.querySelector('.inquiry-submit').disabled = false;
-  const presetKey = new URLSearchParams(window.location.search).get('experience');
-  if (Object.hasOwn(api.presets, presetKey)) {
-    const [destination, duration, message] = api.presets[presetKey];
+  const destinationPreset = api.urlPreset(window.location.search);
+  if (destinationPreset) {
+    const [destination, duration, message] = destinationPreset;
     setField('trip-destination', destination);
     setField('trip-duration', duration);
     setField('trip-message', message);
@@ -113,6 +113,8 @@ if (form) {
     const inquiry = api.createInquiry({ name: field('customer-name'), email: field('customer-email'), whatsapp: field('customer-whatsapp'), date: field('travel-date'), travelers: field('traveler-count'), package: chosenPackage?.title || '', budget: field('trip-budget'), destination: field('trip-destination'), duration: field('trip-duration'), style: field('trip-style'), language: field('trip-language'), message: field('trip-message'), consent: document.querySelector('#privacy-consent').checked }, today);
     if (inquiry.errors.length) {
       status.textContent = inquiry.errors.join(' ');
+      status.tabIndex = -1;
+      status.focus();
       return;
     }
     document.querySelector('#inquiry-preview').textContent = inquiry.text;

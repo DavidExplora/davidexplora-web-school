@@ -9,7 +9,10 @@
         block.querySelectorAll('[data-destination]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.destination === id)));
         block.querySelectorAll('[data-map-dot]').forEach(dot => dot.classList.toggle('is-active', dot.dataset.mapDot === id));
         const img = block.querySelector('.destination-detail img');
-        img.removeAttribute('srcset'); img.src = area.image; img.alt = 'A chapter of your Tanzania journey: ' + area.name;
+        if (area.srcset) img.setAttribute('srcset', area.srcset);
+        else img.removeAttribute('srcset');
+        img.sizes = '(max-width: 800px) 90vw, 44vw';
+        img.src = area.image; img.alt = area.alt;
         img.width = area.width; img.height = area.height;
         img.style.objectPosition = area.id === 'kilimanjaro' ? '50% 30%' : '50% 50%';
         block.querySelector('[data-area-tag]').textContent = area.tag;

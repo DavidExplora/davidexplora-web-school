@@ -3,6 +3,7 @@ from pathlib import Path
 from html.parser import HTMLParser
 from urllib.parse import urlsplit, unquote
 import re, sys, json, xml.etree.ElementTree as ET
+from build_tours import image_size
 
 ROOT = Path(__file__).resolve().parents[1]
 VOID = {'area','base','br','col','embed','hr','img','input','link','meta','param','source','track','wbr'}
@@ -34,6 +35,11 @@ class Page(HTMLParser):
         if tag=='img':
             if not data.get('alt'):errors.append(f'{self.path.name}: image needs useful alt text')
             if not data.get('width') or not data.get('height'):errors.append(f'{self.path.name}: image dimensions missing')
+            source=ROOT/data.get('src','')
+            if source.is_file() and source.suffix=='.webp':
+                actual=image_size(source.relative_to(ROOT))
+                if (str(actual[0]),str(actual[1]))!=(data.get('width'),data.get('height')):
+                    errors.append(f'{self.path.name}: incorrect image dimensions for {source.name}')
         if data.get('target')=='_blank' and 'noopener' not in data.get('rel',''):
             errors.append(f'{self.path.name}: external tab needs noopener')
     def handle_endtag(self, tag):

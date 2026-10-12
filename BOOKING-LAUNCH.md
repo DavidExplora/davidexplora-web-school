@@ -34,4 +34,4 @@ For integrated payments, create checkout sessions on the server against an appro
 
 ## Rebuild and checks
 
-From the repository: python scripts/build_tours.py, then python scripts/build_discovery.py. Run python scripts/check_site.py and node --test tests/*.test.cjs. Package using python scripts/package_site.py with the required output dist path.
+From the repository: python scripts/build_site.py. Run python scripts/check_site.py and node --test tests/*.test.cjs. Package using python scripts/package_site.py with the required output dist path.

@@ -1,66 +1,66 @@
 # David Explora
 
-Personal Tanzania journeys with David Amani Lyamuya. The original website stays in plain HTML, CSS and JavaScript. Open `index.html` in VS Code Live Server, or run `python -m http.server 8000` and visit http://localhost:8000. Visitors need no installation or build step.
+Tanzania safaris, Kilimanjaro treks, Zanzibar experiences and local day trips, planned with David Amani Lyamuya.
 
 Website: https://david-explora.fastash16.chatgpt.site
 
-## The photo-story update
+## Source and editing
 
-- A moving safari hero with supplied wildlife and vehicle photographs.
-- Separate safari, seven-day Machame, Zanzibar and local-life stories, with pause, arrows, chapter controls and reduced-motion support.
-- 18 detailed tour pages: walks and day trips, private safaris, camping, comfort lodges, summit routes and tailored luxury journeys.
-- A searchable catalogue with category, duration and estimated-price filters.
-- Day-by-day plans, inclusions, exclusions, start/end points, group-based estimates and two-adult alternatives where available.
-- A Tanzania planning guide, photo credits, page-specific search metadata, structured trip data and sitemap.
-- Package-specific WhatsApp requests with optional per-adult budget, message review and consent.
+The site is plain HTML, CSS and JavaScript with no runtime framework. There are 44 public HTML pages and 20 tour itineraries.
 
-There are 39 HTML pages, retaining the original destinations, routes, privacy, booking information and 404.
+- `templates/home.html`: editable homepage, shared navigation and footer.
+- `data/tours.json`: tour names, estimates, group-price assumptions and itineraries.
+- `scripts/build_tours.py`: tour pages, galleries, catalogue and generated tour data.
+- `scripts/build_daytrips.py`: day-trip hub, separate city-walk links and comparison table.
+- `scripts/build_discovery.py`: map, destination data, booking guide and shared navigation.
+- `operator.css`: shared navigation, current design and responsive layouts. Older destination styles remain in `style.css`, `launch.css` and `story.css`.
+- `experience.js`: photo galleries, touch swiping, filters and package selection.
+- `ui.js`: manual featured-tour slider and active navigation.
+- `journey.js` and `script.js`: itinerary suggestions, validation and enquiry drafts.
 
-## Booking and backend
-
-The site prepares a message to **+255 778 321 400** in the visitor's browser. The traveler reviews it, opens WhatsApp and presses Send. David responds with an itinerary and written quote. There is no booking database, live inventory, automatic email delivery or online payment backend. A prepared message is not sent; an inquiry is not a confirmed reservation.
-
-Guide prices are estimates, not verified supplier offers. The group basis appears next to each price. See `PRICING.md` for research and final costing. The site keeps David's Gmail contact until the professional mailbox is created and tested.
-
-## Edit the catalogue
-
-1. Edit titles, prices, group bases and itinerary details in `data/tours.json`.
-2. Run `python scripts/build_tours.py` to regenerate the catalogue, detail pages, visible price cards, guide, photo credits, `tour-data.js` and sitemap. It uses Python's standard library.
-3. Run the checks. Commit the editable data and generated pages together.
-
-Home copy and the main hero are ordinary HTML. Other photo-story content is defined in `scripts/build_tours.py` and generated into the home and destination pages. `story.css` styles the new features; `launch.css` and `style.css` retain the established design. `experience.js` handles stories, filters and package selection; `packages.js` holds catalogue logic. `journey.js` and `script.js` retain the planner and inquiry flow.
-
-New photos are in `images/stories/`. Licensed photo sources are in `data/photo-credits.json` and the public credits page. Responsive WebP copies improve loading. When replacing a photograph, update dimensions, alt text and credits, and use material you have rights to publish. Do not label independent travelers as David's clients or representative vehicles as an owned fleet.
-
-## Checks
+Edit the source template or catalogue, then run the complete build. Do not edit generated tour pages directly: regeneration replaces them. The shared header/footer is applied to every page, including older destination pages.
 
 ```sh
-node --check journey.js
-node --check script.js
-node --check packages.js
-node --check experience.js
-node --check tour-data.js
+python scripts/build_site.py
 node --test tests/*.test.cjs
-python scripts/build_tours.py
 python scripts/check_site.py
-```
-
-Nineteen tests cover all 80 planner combinations, filtering, price bases, route buffers, inquiry validation/encoding, carousel controls, visibility pauses and reduced motion. The page checker checks links and responsive images, complete HTML, labels, photo controls and credits, trip structured data and sitemap. GitHub Actions also checks that regeneration leaves committed files unchanged.
-
-DOM-fixture and static checks do not replace a visual review on a real phone and desktop. No browser preview was available for this update. A delivered test WhatsApp inquiry still needs a real account.
-
-## GitHub and VS Code
-
-The previous launch source was verified on GitHub at `19d960a71c918a2b908d6d67d0a1b0c39f266070`. This photo-story update must be applied to the Windows clone and pushed using authenticated Git access. The connected integration could read the repository but returned HTTP 403 for writes.
-
-The download includes complete source, a checked binary patch and a Windows helper. The helper requires a clean repository, checks the patch, then applies it to the existing clone; it never commits or pushes automatically. Keep local edits safe if the helper reports a dirty working tree. Review the update, then commit and push from VS Code.
-
-Publishing the hosted Site and pushing GitHub are separate operations; automatic synchronization is not configured. See `LAUNCH.md` for domain, email and optional GitHub-triggered hosting.
-
-## Package for hosting
-
-```sh
 python scripts/package_site.py dist
 ```
 
-Only public pages, scripts and images are included. Tests, research notes and Git metadata are excluded. Use `scripts/set_site_url.py` only after the purchased domain serves successfully, then regenerate and check before publishing.
+The complete build runs the generators in the required order. GitHub Actions rebuilds the site and rejects any uncommitted generated differences. Running the complete build twice should leave all outputs unchanged.
+
+## Design and interactions
+
+The homepage uses four destination photographs, experience categories, a horizontally scrollable tour catalogue, photo galleries, local-guide information and practical planning notes. The tour rail supports touch, arrow buttons and keyboard navigation. Gallery autoplay pauses for keyboard focus, swipes, background tabs and reduced-motion preferences; visitors can explicitly resume it.
+
+Tour selection preserves the customer’s traveler count and any edited message or preferences. Map `trip` links and older `experience` links prefill the correct destination. A valid `package` link takes precedence for untouched package fields.
+
+## Booking
+
+The site prepares a WhatsApp or email draft in the visitor’s browser. The visitor must open the app and press Send. There is no automatic email delivery, reservation database, online inventory or card checkout. A prepared request is not a delivered enquiry or confirmed booking.
+
+WhatsApp: +255 778 321 400. Email: davidlyamuya819@gmail.com.
+
+Displayed prices are estimates with adult group assumptions. Verify supplier costs, services and availability before issuing the final quote. Use an approved merchant payment method against a written quote; see `BOOKING-LAUNCH.md` and `PRICING.md`.
+
+## Photos and checks
+
+Existing WebP assets are used with correct dimensions and responsive variants where available. Photo sources and licenses are recorded in `data/photo-credits.json` and `photo-credits.html`. Destination images do not establish ownership of a vehicle or property.
+
+Tests cover planner combinations, URL presets, catalogue filtering, enquiry validation and encoding, preservation of customer preferences, tour-rail boundaries/keyboard controls, and gallery pauses/swipes/reduced motion. The structural checker verifies local paths, headings, labels, image dimensions, gallery controls, structured data and sitemap coverage.
+
+Automated checks do not substitute for a phone/browser review or confirmation that a real sent enquiry arrives. The redesign was checked structurally and with Node DOM fixtures; browser preview was unavailable in the editing environment.
+
+## Hosting and domain
+
+GitHub and the hosted Site have separate repositories. Pushing GitHub alone does not deploy the hosted Site. Publish the checked `dist` package through the existing Site project; preserve its current audience.
+
+After a purchased domain serves correctly, run `python scripts/set_site_url.py https://your-domain.com`, then rebuild, check and republish. This updates the home source template as well as generated metadata. Set up and test a professional mailbox before replacing the Gmail contact.
+
+## Day-trip expansion
+
+The catalogue has separate Arusha, Moshi and Marangu products. The old combined-city URL remains a chooser linking to the two city walks. The local day-trip hub orders city walks, village culture and nature days; the homepage has a dedicated day-trip selection.
+
+Five detail pages have automatic photograph galleries with manual arrows, swipe support, pause controls and reduced-motion behavior. New location assets are in `images/daytrips/`, with author, original dimensions, dates, source URLs and image licences recorded in the photo-credit data. Each adapted WebP remains available under its stated Creative Commons licence. Photos are destination illustrations, not claims of an exclusive client visit or a specific host contract.
+
+`data/daytrip-costs.json` records internal USD cost assumptions for a two-adult private booking. These are planning estimates, not supplier-confirmed costs or guaranteed net profits. Confirm actual guide, transport, entry/community, food and operating costs before confirming a booking; recalculate for solo travelers, children, different pickup areas, commissions and tax obligations. See `DAYTRIP-OPERATIONS.md`.

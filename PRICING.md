@@ -1,6 +1,6 @@
 # David Explora guide-price worksheet
 
-Prepared 11 October 2026. These are planning estimates, not supplier-confirmed rates or guaranteed offers. The site directs travelers to a final written quote. Prices are USD per international adult; party size and sharing arrangement are essential.
+Updated 12 October 2026. These are planning estimates, not supplier-confirmed rates or guaranteed offers. The site directs travelers to a final written quote. Prices are USD per international adult; party size and sharing arrangement are essential.
 
 | Itinerary | Main estimate / adult | Main basis | Two-adult estimate / adult |
 | --- | ---: | --- | ---: |
@@ -12,9 +12,11 @@ Prepared 11 October 2026. These are planning estimates, not supplier-confirmed r
 | 7-day Machame mountain route | 2,195 | 4 climbers, twin tents | 2,395 |
 | 8-day Lemosho mountain route | 2,495 | 4 climbers, twin tents | 2,695 |
 | Kilimanjaro forest day hike | 245 | 2 adults | — |
-| Moshi or Arusha walk | 25 | 2 adults | — |
-| Materuni waterfall and coffee | 85 | 2 adults | — |
-| Chemka springs | 75 | 2 adults | — |
+| Moshi city walk | 25 | 2 adults, meet in Moshi | — |
+| Arusha city walk | 30 | 2 adults, meet in Arusha | — |
+| Marangu village & coffee | 75 | 2 adults, private Moshi transport | — |
+| Materuni waterfall and coffee | 75 | 2 adults | — |
+| Chemka springs | 70 | 2 adults | — |
 | Stone Town walk | 25 | 2 adults | — |
 | Changuu / Prison Island | 75 | 2 adults | — |
 | Mnemba waters snorkeling | 85 | 2 adults, shared boat from Matemwe | — |
@@ -42,3 +44,5 @@ Obtain written vehicle/driver/cook/crew costs, current permits, actual property 
 Name the contracting party, properties, exact services, date validity, payment method, cancellation terms and total in the quote. Children, residents, solo travelers, upgrades and flights need separate costing. Confirm the licensed operating arrangements for regulated activities rather than adding an unverified license claim.
 
 Use a fixed dated offer only after costs and arrangements are confirmed. Update `data/tours.json`, regenerate, check and publish the matching source.
+
+Day-trip competitive benchmarks, cost assumptions and modeled margins are in `DAYTRIP-OPERATIONS.md` and `data/daytrip-costs.json`. The master public estimates are in `data/tours.json`. Confirm actual supplier costs and applicable taxes before accepting payment.

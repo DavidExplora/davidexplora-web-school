@@ -44,7 +44,7 @@ The custom-domain process needs ownership verification, DNS propagation and an a
 
 ```sh
 python scripts/set_site_url.py https://davidexplora.com
-python scripts/build_tours.py
+python scripts/build_site.py
 python scripts/check_site.py
 ```
 
