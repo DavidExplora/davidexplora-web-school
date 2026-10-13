@@ -7,7 +7,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def build():
     (ROOT / 'index.html').write_text((ROOT / 'templates/home.html').read_text(encoding='utf-8'), encoding='utf-8')
-    for script in ('build_tours.py', 'build_daytrips.py', 'build_discovery.py'):
+    for script in ('build_tours.py', 'build_daytrips.py', 'build_zanzibar.py', 'build_discovery.py'):
         subprocess.run([sys.executable, str(ROOT / 'scripts' / script)], cwd=ROOT, check=True)
 
 if __name__ == '__main__':

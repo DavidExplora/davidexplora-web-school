@@ -6,7 +6,7 @@ const {createInquiry} = require('../journey.js');
 const valid = {name:'Ana García',email:'ana@example.com',travelers:2,date:'2027-02-01',consent:true,language:'Spanish'};
 
 test('the catalogue has complete, unique itineraries with honest price bases',()=>{
-  assert.equal(tours.length,20);
+  assert.equal(tours.length,29);
   assert.equal(new Set(tours.map(t=>t.id)).size,tours.length);
   for (const tour of tours) {
     assert.ok(tour.itinerary.length && tour.includes.length && tour.excludes.length && tour.notes);

@@ -939,13 +939,13 @@
     "days": 1,
     "duration": "About 3 hours",
     "tripDays": 1,
-    "price": 25,
+    "price": 35,
     "group": 2,
-    "basis": "2 adults walking together",
+    "basis": "2 adults on a private guided walk",
     "start": "Stone Town meeting point → agreed central finish",
     "style": "Private guided walk",
     "image": "images/stories/stone-town-street.webp",
-    "summary": "Explore Stone Town’s lanes, carved doors and waterfront with a local guide.",
+    "summary": "Walk Stone Town’s carved-door lanes, Darajani market and waterfront with a local guide, with time to ask about the island’s trading history and everyday life.",
     "places": [
       "Stone Town",
       "Zanzibar",
@@ -988,15 +988,15 @@
     "title": "Prison Island Boat Trip from Stone Town",
     "category": "zanzibar",
     "days": 1,
-    "duration": "Half day · weather dependent",
+    "duration": "About 3 hours",
     "tripDays": 1,
-    "price": 75,
-    "group": 2,
-    "basis": "2 adults; boat arrangement confirmed",
+    "price": 50,
+    "group": 4,
+    "basis": "4 adults joining a shared boat from Stone Town",
     "start": "Stone Town seafront → Stone Town seafront",
-    "style": "Boat excursion · island visit",
-    "image": "images/optimized/stone-town.webp",
-    "summary": "Cross to Changuu for island history and a guided visit to the tortoise sanctuary, subject to sea conditions.",
+    "style": "Shared boat · guided island visit",
+    "image": "images/zanzibar-tours/sandbank.webp",
+    "summary": "A short crossing from Stone Town to Changuu, with an island heritage walk and a respectful visit to the giant tortoise sanctuary.",
     "places": [
       "Changuu",
       "Prison Island",
@@ -1011,7 +1011,7 @@
       {
         "label": "Visit",
         "title": "History and tortoise conservation",
-        "text": "Explore the island’s heritage and sanctuary areas with respectful wildlife handling and local rules."
+        "text": "Walk the heritage areas and observe the tortoises with the local guide. Follow sanctuary rules and give animals space; no handling or staged animal photographs are promised."
       },
       {
         "label": "Return",
@@ -1020,7 +1020,7 @@
       }
     ],
     "includes": [
-      "Return boat crossing and guide",
+      "Shared return boat crossing from Stone Town, life jacket and local guide",
       "Island entry and listed sanctuary/conservation charges",
       "Drinking water"
     ],
@@ -1029,9 +1029,24 @@
       "Meals, snorkeling and unlisted activities",
       "Insurance, personal purchases and tips"
     ],
-    "notes": "The card photo shows the Stone Town departure coast. Boat type and safety arrangements are confirmed in the quote; sea conditions can change or cancel the excursion.",
+    "notes": "Meet on the Stone Town seafront. Island entry and listed sanctuary charges are included in the estimate; hotel transfers are extra. Do not touch, lift or feed tortoises except under an authorised sanctuary protocol. Sea conditions may change the departure. Boat size, safety equipment and capacity are confirmed before payment.",
     "price2": null,
-    "seoTitle": "Prison Island (Changuu) Boat Trip"
+    "seoTitle": "Prison Island (Changuu) Boat Trip",
+    "gallery": [
+      {
+        "image": "images/zanzibar-tours/sandbank.webp",
+        "alt": "Shallow water at a sandbank near Changuu / Prison Island.",
+        "caption": "Shallow water at a sandbank near Changuu / Prison Island. The itinerary visits Changuu; a sandbank picnic is not included."
+      },
+      {
+        "image": "images/zanzibar-tours/island-sunset.webp",
+        "alt": "Sailing boats at sunset in Zanzibar.",
+        "caption": "Sailing boats off Zanzibar; the actual crossing and boat are confirmed before payment."
+      }
+    ],
+    "imageAlt": "Shallow water at a sandbank near Changuu / Prison Island.",
+    "photoNote": "Shallow water at a sandbank near Changuu / Prison Island. The itinerary visits Changuu; a sandbank picnic is not included.",
+    "imageNote": "Shallow water near Changuu · island trip itinerary"
   },
   {
     "id": "mnemba-waters-snorkeling",
@@ -1045,7 +1060,7 @@
     "basis": "2 adults joining a shared boat",
     "start": "Matemwe meeting point → Matemwe",
     "style": "Shared boat · guided snorkeling",
-    "image": "images/stories/zanzibar-blue-water.webp",
+    "image": "images/zanzibar-tours/mnemba-island.webp",
     "summary": "Join a guided boat excursion to the reefs around Mnemba from Matemwe. Landing on the private island is not included.",
     "places": [
       "Mnemba waters",
@@ -1082,22 +1097,36 @@
     ],
     "notes": "There is no Mnemba island landing and no guaranteed dolphin sighting. Activities depend on sea conditions. Confirm swimming ability, safety equipment and any access needs before booking.",
     "price2": null,
-    "seoTitle": "Mnemba Snorkeling Trip from Matemwe"
+    "seoTitle": "Mnemba Snorkeling Trip from Matemwe",
+    "gallery": [
+      {
+        "image": "images/zanzibar-tours/mnemba-island.webp",
+        "alt": "Mnemba Island and reef fish.",
+        "caption": "Reef fish and Mnemba Island, photographed from the surrounding water. No landing on the private island is included."
+      },
+      {
+        "image": "images/zanzibar-tours/jambiani-beach.webp",
+        "alt": "Jambiani beach at low tide.",
+        "caption": "Jambiani coast, Zanzibar; a coastal illustration, not the Matemwe embarkation point."
+      }
+    ],
+    "imageAlt": "Mnemba Island and reef fish.",
+    "photoNote": "Reef fish and Mnemba Island, photographed from the surrounding water. No landing on the private island is included."
   },
   {
     "id": "zanzibar-spice-farm",
     "title": "Zanzibar Spice Farm Tour",
     "category": "zanzibar",
     "days": 1,
-    "duration": "Half day",
+    "duration": "About 3 hours",
     "tripDays": 1,
-    "price": 55,
+    "price": 35,
     "group": 2,
-    "basis": "2 adults travelling together",
-    "start": "Stone Town → Stone Town",
-    "style": "Private transfer · farm visit",
+    "basis": "2 adults meeting at the agreed farm",
+    "start": "Agreed spice-farm entrance → same farm",
+    "style": "Host-led farm walk · tasting",
     "image": "images/stories/zanzibar-spices.webp",
-    "summary": "Discover how spices grow on a guided farm visit, with transfers from Stone Town in the planned itinerary.",
+    "summary": "See cloves, nutmeg and other tropical crops growing, then explore their place in Swahili food with a host-led tasting. Meet at the farm; transfers are optional.",
     "places": [
       "Zanzibar",
       "Spice farm",
@@ -1106,8 +1135,8 @@
     "itinerary": [
       {
         "label": "Morning or afternoon",
-        "title": "From Stone Town to a farm",
-        "text": "Meet your driver and travel to the farm selected for your dates."
+        "title": "Meet your farm host",
+        "text": "Meet at the named spice farm at the confirmed time. Add a separate return transfer if you prefer hotel pickup."
       },
       {
         "label": "Farm walk",
@@ -1116,23 +1145,23 @@
       },
       {
         "label": "Return",
-        "title": "Back to Stone Town",
-        "text": "Return after the visit, or discuss another excursion if you have a full day available."
+        "title": "Finish at the farm",
+        "text": "Finish after the walk and tasting. Pair the visit with Stone Town if the transfer route and available time suit your hotel location."
       }
     ],
     "includes": [
-      "Return transport from Stone Town",
-      "Local farm guide and access charge",
-      "Spice/fruit tasting and drinking water"
+      "Farm entrance and local farm guide",
+      "Seasonal spice and fruit tasting",
+      "Drinking water"
     ],
     "excludes": [
-      "Hotel transfers outside Stone Town",
+      "All hotel and Stone Town transfers (can be added)",
       "Lunch, accommodation and personal purchases",
       "Unlisted activities and tips"
     ],
-    "notes": "The actual farm is named in the final itinerary. Tell David about allergies and food needs before the visit.",
+    "notes": "The farm name and meeting pin are supplied with your confirmation. This is an activity-only estimate; hotel transfers are priced by your location. Tastings depend on seasonal produce. Tell David about allergies and food needs before the visit.",
     "price2": null,
-    "seoTitle": "Zanzibar Spice Farm Tour from Stone Town"
+    "seoTitle": "Zanzibar Spice Farm Walk & Tasting"
   },
   {
     "id": "maasai-community-day",
@@ -1228,5 +1257,606 @@
     "notes": "Ask for separate safari and island totals so you can choose where to spend. Flight fares and hotels are checked for your exact dates; no package inventory is guaranteed.",
     "price2": null,
     "seoTitle": "Tanzania Safari & Zanzibar Holiday"
+  },
+  {
+    "id": "nakupenda-sandbank",
+    "title": "Nakupenda Sandbank & Ocean Picnic",
+    "category": "zanzibar",
+    "days": 1,
+    "duration": "4–6 hours · tide dependent",
+    "tripDays": 1,
+    "price": 65,
+    "group": 4,
+    "basis": "4 adults joining a shared boat from Stone Town",
+    "start": "Stone Town seafront → Stone Town",
+    "style": "Shared boat · sandbank picnic",
+    "image": "images/zanzibar-tours/sandbank.webp",
+    "summary": "Sail out from Stone Town for a tide-timed sandbank visit, a guided swim when conditions allow and a simple island-style picnic.",
+    "places": [
+      "Stone Town",
+      "Nakupenda sandbank",
+      "Ocean picnic"
+    ],
+    "itinerary": [
+      {
+        "label": "Departure",
+        "title": "Meet on the Stone Town seafront",
+        "text": "Meet at the agreed embarkation point. Your crew checks tides and sea conditions, gives the safety briefing and supplies life jackets."
+      },
+      {
+        "label": "Sandbank",
+        "title": "A morning on the Indian Ocean",
+        "text": "Cross to the exposed sandbank at a suitable tide. Take time by the water and choose a supervised swim only if conditions and your ability allow it. Shade is limited."
+      },
+      {
+        "label": "Picnic & return",
+        "title": "Lunch, then back to town",
+        "text": "Enjoy the agreed seafood, chicken or vegetarian picnic and return before the sandbank is submerged. The captain may shorten or relocate the visit when tides or weather require it."
+      }
+    ],
+    "includes": [
+      "Shared return boat from Stone Town, crew and life jackets",
+      "Applicable marine access charges for the confirmed route",
+      "Picnic lunch, seasonal fruit and drinking water"
+    ],
+    "excludes": [
+      "Hotel transfers and accommodation",
+      "Travel insurance, tips and personal purchases",
+      "Activities or meals not listed"
+    ],
+    "notes": "The sandbank is tidal; timing and time on the sand vary. There is no permanent island landing facility. Tell David about swimming ability, seafood allergies and dietary needs. Snorkeling is only included if specifically written into the quote.",
+    "price2": null,
+    "gallery": [
+      {
+        "image": "images/zanzibar-tours/sandbank.webp",
+        "alt": "Shallow water at a sandbank near Changuu / Prison Island.",
+        "caption": "Shallow water at a sandbank near Changuu / Prison Island; an illustration, not a verified Nakupenda location."
+      },
+      {
+        "image": "images/zanzibar-tours/island-sunset.webp",
+        "alt": "Sailing boats at sunset in Zanzibar.",
+        "caption": "Sailing boats at sunset in Zanzibar; the Nakupenda excursion is scheduled by daytime tides."
+      }
+    ],
+    "imageAlt": "Shallow water at a sandbank near Changuu / Prison Island.",
+    "photoNote": "Shallow water at a sandbank near Changuu / Prison Island; an illustration, not a verified Nakupenda location.",
+    "imageNote": "Sandbank near Changuu · destination illustration"
+  },
+  {
+    "id": "kizimkazi-dolphin-watching",
+    "title": "Kizimkazi Dolphin Watching & Coastal Morning",
+    "category": "zanzibar",
+    "days": 1,
+    "duration": "About 3–4 hours · early morning",
+    "tripDays": 1,
+    "price": 50,
+    "group": 4,
+    "basis": "4 adults travelling together; meet at the activity departure point",
+    "start": "Kizimkazi meeting point → Kizimkazi",
+    "style": "Shared boat · wildlife observation",
+    "image": "images/zanzibar-tours/zanzibar-dolphin.webp",
+    "summary": "Explore Zanzibar’s south coast by boat and look for wild dolphins from a respectful distance. A quiet coastal morning, with no promised sighting or dolphin swim.",
+    "places": [
+      "Kizimkazi",
+      "South coast",
+      "Wild dolphins"
+    ],
+    "itinerary": [
+      {
+        "label": "Meet",
+        "title": "An early coastal start",
+        "text": "Meet at the agreed Kizimkazi landing point for a crew briefing, weather check and life-jacket fitting."
+      },
+      {
+        "label": "At sea",
+        "title": "Observe without chasing",
+        "text": "The crew searches at a measured pace and watches from a distance. No chasing, blocking, touching, feeding or placing swimmers around dolphins is part of this itinerary. Leave the area if animals show avoidance."
+      },
+      {
+        "label": "Return",
+        "title": "Back to the village shore",
+        "text": "Return to the departure shore after the agreed boat time. The final route and timing depend on sea conditions and wildlife behaviour."
+      }
+    ],
+    "includes": [
+      "Shared boat, skipper and local observation guide",
+      "Life jacket, drinking water and applicable marine access charges"
+    ],
+    "excludes": [
+      "Hotel transfers and accommodation",
+      "Travel insurance, tips and personal purchases",
+      "Activities or meals not listed"
+    ],
+    "notes": "Wildlife sightings are never guaranteed. This is boat-based observation, not swimming with dolphins. Only confirm once the skipper agrees to the no-chasing approach and suitable safety arrangements. Transfers from north-coast hotels are extra and require an early start.",
+    "price2": null,
+    "gallery": [
+      {
+        "image": "images/zanzibar-tours/zanzibar-dolphin.webp",
+        "alt": "Wild dolphin in the Indian Ocean near Zanzibar.",
+        "caption": "Wild dolphin photographed near Zanzibar; sightings on the Kizimkazi tour are not guaranteed."
+      },
+      {
+        "image": "images/zanzibar-tours/jambiani-beach.webp",
+        "alt": "Jambiani beach at low tide.",
+        "caption": "Jambiani on Zanzibar’s east coast; a southern-coast illustration, not the Kizimkazi departure beach."
+      }
+    ],
+    "imageAlt": "Wild dolphin in the Indian Ocean near Zanzibar.",
+    "photoNote": "Wild dolphin photographed near Zanzibar; sightings on the Kizimkazi tour are not guaranteed.",
+    "imageNote": "Wild dolphin near Zanzibar · sightings vary"
+  },
+  {
+    "id": "jozani-forest",
+    "title": "Jozani Forest & Mangrove Boardwalk",
+    "category": "zanzibar",
+    "days": 1,
+    "duration": "About 3 hours at the park",
+    "tripDays": 1,
+    "price": 45,
+    "group": 2,
+    "basis": "2 adults travelling together; meet at the activity departure point",
+    "start": "Jozani park entrance → same entrance",
+    "style": "Park-guided forest walk",
+    "image": "images/zanzibar-tours/jozani-colobus.webp",
+    "summary": "Explore the forest habitat of Zanzibar’s red colobus monkeys, then follow the mangrove boardwalk with a local park guide.",
+    "places": [
+      "Jozani-Chwaka Bay",
+      "Red colobus",
+      "Mangrove boardwalk"
+    ],
+    "itinerary": [
+      {
+        "label": "Meet",
+        "title": "Begin at the park entrance",
+        "text": "Meet at Jozani at the agreed time. Check the current walking route with the park guide and discuss your pace and access needs."
+      },
+      {
+        "label": "Forest",
+        "title": "Look into the canopy",
+        "text": "Walk the forest trails with the guide, learning about native plants and the red colobus habitat. Observe quietly and keep space around wildlife."
+      },
+      {
+        "label": "Mangroves",
+        "title": "Follow the boardwalk",
+        "text": "Continue to the permitted mangrove boardwalk section and learn how tidal forests protect the coast. Finish at the agreed park point."
+      }
+    ],
+    "includes": [
+      "Park entrance and park-guided visit",
+      "Listed forest and mangrove boardwalk route",
+      "Drinking water"
+    ],
+    "excludes": [
+      "Hotel transfers and accommodation",
+      "Travel insurance, tips and personal purchases",
+      "Activities or meals not listed"
+    ],
+    "notes": "Wildlife varies and is not guaranteed. No feeding, touching or calling animals closer. Trails can be muddy and the boardwalk has steps and uneven sections. Hotel transport is extra; the duration excludes transfers.",
+    "price2": null,
+    "gallery": [
+      {
+        "image": "images/zanzibar-tours/jozani-colobus.webp",
+        "alt": "Zanzibar red colobus at Jozani.",
+        "caption": "Zanzibar red colobus photographed in Jozani-Chwaka Bay National Park; wildlife sightings vary."
+      },
+      {
+        "image": "images/zanzibar-tours/jozani-mangrove.webp",
+        "alt": "Mangroves in Jozani Chwaka Bay National Park.",
+        "caption": "Mangrove forest in Jozani-Chwaka Bay National Park."
+      }
+    ],
+    "imageAlt": "Zanzibar red colobus at Jozani.",
+    "photoNote": "Zanzibar red colobus photographed in Jozani-Chwaka Bay National Park; wildlife sightings vary."
+  },
+  {
+    "id": "zanzibar-mangrove-kayaking",
+    "title": "Zanzibar Mangrove Kayaking",
+    "category": "zanzibar",
+    "days": 1,
+    "duration": "About 2 hours · tide dependent",
+    "tripDays": 1,
+    "price": 45,
+    "group": 2,
+    "basis": "2 adults travelling together; meet at the activity departure point",
+    "start": "Confirmed mangrove launch → same launch",
+    "style": "Guided paddle · standard kayak",
+    "image": "images/zanzibar-tours/jozani-mangrove.webp",
+    "summary": "Paddle slowly through permitted mangrove channels with a local guide. Learn how the roots shelter coastal life, with an easy pace and a tide-planned route.",
+    "places": [
+      "Zanzibar mangroves",
+      "Tidal channels",
+      "Coastal ecology"
+    ],
+    "itinerary": [
+      {
+        "label": "Briefing",
+        "title": "Meet at the confirmed launch",
+        "text": "Your quote names the launch site, meeting pin and tide window. Meet the guide, fit your buoyancy aid and practise basic paddling."
+      },
+      {
+        "label": "Paddle",
+        "title": "Follow the tidal channels",
+        "text": "Follow the guide through suitable channels without disturbing roots or wildlife. The route changes with water levels, wind and your group’s ability."
+      },
+      {
+        "label": "Finish",
+        "title": "Return with the tide",
+        "text": "Return to the same launch, with time for water and questions. Avoid stepping on mangrove roots or leaving anything in the water."
+      }
+    ],
+    "includes": [
+      "Standard kayak, paddle, buoyancy aid and local guide",
+      "Drinking water and listed launch/community charges"
+    ],
+    "excludes": [
+      "Hotel transfers and accommodation",
+      "Travel insurance, tips and personal purchases",
+      "Activities or meals not listed",
+      "Transparent kayak upgrade (estimated from USD 60 per adult; separate availability)"
+    ],
+    "notes": "USD 45 is for a standard kayak. A clear/transparent kayak is an optional equipment upgrade, not guaranteed by this price. The final quote names the venue, kayak type and route. Share swimming ability and access needs; strong wind or unsuitable tides can postpone the activity.",
+    "price2": null,
+    "gallery": [
+      {
+        "image": "images/zanzibar-tours/jozani-mangrove.webp",
+        "alt": "Mangroves in Jozani Chwaka Bay National Park.",
+        "caption": "Mangroves at Jozani, Zanzibar; a habitat illustration, not a photograph of the booked kayak route."
+      },
+      {
+        "image": "images/zanzibar-tours/kayak-illustration.webp",
+        "alt": "Mangrove kayaking illustration in Sarasota, Florida.",
+        "caption": "Standard kayak in a mangrove channel, photographed in Sarasota, Florida. Activity illustration; Zanzibar venue and equipment are confirmed separately."
+      }
+    ],
+    "imageAlt": "Mangroves in Jozani Chwaka Bay National Park.",
+    "photoNote": "Mangroves at Jozani, Zanzibar; a habitat illustration, not a photograph of the booked kayak route.",
+    "imageNote": "Jozani mangroves · habitat illustration"
+  },
+  {
+    "id": "zanzibar-jet-ski",
+    "title": "Zanzibar Guided Jet-Ski Session",
+    "category": "zanzibar",
+    "days": 1,
+    "duration": "30-minute riding slot + briefing",
+    "tripDays": 1,
+    "price": 85,
+    "group": 2,
+    "basis": "2 adults booking one jet ski each; 30-minute riding slot",
+    "start": "Confirmed water-sports base → same base",
+    "style": "Guided session · one adult per jet ski",
+    "image": "images/zanzibar-tours/jet-ski-illustration.webp",
+    "summary": "A short, supervised ride in the water-sports zone, with a safety briefing and a defined riding slot. Choose the session for fun on the water, rather than a long-distance safari.",
+    "places": [
+      "Zanzibar coast",
+      "Water sports",
+      "Jet ski"
+    ],
+    "itinerary": [
+      {
+        "label": "Check in",
+        "title": "Meet the water-sports team",
+        "text": "The confirmation names the base and authorised operator. Present the required ID, review the operator’s age and licence rules and complete the briefing."
+      },
+      {
+        "label": "Ride",
+        "title": "A defined 30-minute session",
+        "text": "Use the supplied buoyancy aid and follow the guide within the permitted zone. This estimate is for one adult per jet ski; it does not include a Mnemba trip."
+      },
+      {
+        "label": "Return",
+        "title": "Finish at the launch",
+        "text": "Return to the launch after the riding slot. The provider may postpone or cancel if weather or sea conditions are unsuitable."
+      }
+    ],
+    "includes": [
+      "30-minute jet-ski riding slot for one adult per craft",
+      "Operator briefing, supervised riding zone and buoyancy aid",
+      "Fuel and listed activity charges"
+    ],
+    "excludes": [
+      "Hotel transfers and accommodation",
+      "Travel insurance, tips and personal purchases",
+      "Activities or meals not listed",
+      "Additional riding time, passengers or long-distance trips"
+    ],
+    "notes": "The USD 85 estimate is per participating adult using one craft, based on two adults booking separate craft. Age, licence, weight, deposit and insurance/excess requirements are provider-specific and must be disclosed before payment. Ask for the exact written damage-liability terms. This is not a 60-minute session or wildlife tour.",
+    "price2": null,
+    "gallery": [
+      {
+        "image": "images/zanzibar-tours/jet-ski-illustration.webp",
+        "alt": "A jet ski on turquoise water; activity illustration photographed outside the verified Zanzibar tour route.",
+        "caption": "Jet ski on turquoise water; activity illustration with location not verified as Zanzibar. The actual craft and venue are confirmed in your quote."
+      },
+      {
+        "image": "images/zanzibar-tours/jambiani-beach.webp",
+        "alt": "Jambiani beach at low tide.",
+        "caption": "Jambiani beach in Zanzibar; a coast illustration, not the confirmed water-sports launch."
+      }
+    ],
+    "imageAlt": "A jet ski on turquoise water; activity illustration photographed outside the verified Zanzibar tour route.",
+    "photoNote": "Jet ski on turquoise water; activity illustration with location not verified as Zanzibar. The actual craft and venue are confirmed in your quote.",
+    "imageNote": "Jet-ski activity illustration · venue confirmed separately"
+  },
+  {
+    "id": "blue-lagoon-snorkeling",
+    "title": "Blue Lagoon Guided Snorkeling",
+    "category": "zanzibar",
+    "days": 1,
+    "duration": "About 3–4 hours · tide dependent",
+    "tripDays": 1,
+    "price": 45,
+    "group": 4,
+    "basis": "4 adults travelling together; meet at the activity departure point",
+    "start": "Michamvi launch → same launch",
+    "style": "Shared boat · guided snorkeling",
+    "image": "images/zanzibar-tours/michamvi-rock.webp",
+    "summary": "Explore suitable snorkeling water off the Michamvi coast with a marine guide. A simple reef outing with equipment, a tide-aware departure and time to enjoy the coast.",
+    "places": [
+      "Michamvi",
+      "Blue Lagoon",
+      "Snorkeling"
+    ],
+    "itinerary": [
+      {
+        "label": "Meet",
+        "title": "Start on the Michamvi coast",
+        "text": "Meet at the named launch and check the day’s tide window. Fit your equipment, discuss swimming ability and hear the boat briefing."
+      },
+      {
+        "label": "Snorkel",
+        "title": "Follow the guide in suitable water",
+        "text": "Visit the permitted area that suits the day’s visibility and conditions. Do not touch coral, stand on reef or handle marine life; photography never requires lifting animals."
+      },
+      {
+        "label": "Return",
+        "title": "A relaxed return to the shore",
+        "text": "Have seasonal fruit and drinking water before returning to the same launch. An optional lunch or hotel transfer can be priced separately."
+      }
+    ],
+    "includes": [
+      "Shared local boat, crew and life jackets",
+      "Snorkeling mask, fins, guide and buoyancy support",
+      "Applicable marine access charges, fruit and drinking water"
+    ],
+    "excludes": [
+      "Hotel transfers and accommodation",
+      "Travel insurance, tips and personal purchases",
+      "Activities or meals not listed"
+    ],
+    "notes": "The starting estimate uses four adults joining a shared boat and excludes hotel transport. Blue Lagoon is a Michamvi-coast excursion, separate from Safari Blue in Menai Bay and the private Mnemba island. Water clarity, marine life and tides vary.",
+    "price2": null,
+    "gallery": [
+      {
+        "image": "images/zanzibar-tours/michamvi-rock.webp",
+        "alt": "The Rock coastal landmark at Michamvi.",
+        "caption": "The Rock on the Michamvi coast; destination illustration. Restaurant visits and meals are not part of the Blue Lagoon itinerary."
+      },
+      {
+        "image": "images/zanzibar-tours/mnemba-island.webp",
+        "alt": "Mnemba Island and reef fish.",
+        "caption": "Reef fish near Mnemba, Zanzibar; an underwater activity illustration, not a photograph of the Blue Lagoon snorkeling site."
+      }
+    ],
+    "imageAlt": "The Rock coastal landmark at Michamvi.",
+    "photoNote": "The Rock on the Michamvi coast; destination illustration. Restaurant visits and meals are not part of the Blue Lagoon itinerary.",
+    "imageNote": "Michamvi coastal landmark · restaurant not included"
+  },
+  {
+    "id": "zanzibar-discover-scuba",
+    "title": "Zanzibar Discover Scuba: First Ocean Dive",
+    "category": "zanzibar",
+    "days": 1,
+    "duration": "Half day · one introductory dive",
+    "tripDays": 1,
+    "price": 145,
+    "group": 2,
+    "basis": "2 adults joining the named dive centre’s introductory programme",
+    "start": "Confirmed dive centre → same centre",
+    "style": "Instructor-led introductory scuba",
+    "image": "images/zanzibar-tours/mnemba-island.webp",
+    "summary": "Try scuba with an instructor-led briefing, shallow-water skills practice and one introductory ocean dive, subject to the dive centre’s assessment and sea conditions.",
+    "places": [
+      "Zanzibar reef waters",
+      "Introductory scuba",
+      "Marine life"
+    ],
+    "itinerary": [
+      {
+        "label": "Assessment",
+        "title": "Meet the dive instructor",
+        "text": "Your written quote names the dive centre and the instructor-led programme. Complete the provider’s medical screening, verify eligibility and learn the equipment basics."
+      },
+      {
+        "label": "Practice",
+        "title": "Get comfortable in shallow water",
+        "text": "Practise the required breathing and safety skills with the instructor. Progression to the ocean dive is subject to your readiness and the instructor’s decision."
+      },
+      {
+        "label": "Ocean",
+        "title": "One supervised introductory dive",
+        "text": "Make one guided introductory dive at a suitable site within the provider’s programme limits. Return for a debrief; this is an introductory experience and does not issue an Open Water certification."
+      }
+    ],
+    "includes": [
+      "Instructor-led introductory session and one ocean dive if cleared",
+      "Scuba equipment, listed boat transfer and drinking water",
+      "Applicable marine access charges for the listed dive"
+    ],
+    "excludes": [
+      "Hotel transfers and accommodation",
+      "Travel insurance, tips and personal purchases",
+      "Activities or meals not listed",
+      "Second dive, certification courses or specialist medical examination"
+    ],
+    "notes": "Medical screening and the dive centre’s age and eligibility rules apply. Conditions may limit the dive or require a different site. Confirm the provider’s cancellation/refund terms if you are not medically cleared or cannot progress. Tell the instructor your flight schedule and follow the programme’s post-dive flight interval.",
+    "price2": null,
+    "gallery": [
+      {
+        "image": "images/zanzibar-tours/mnemba-island.webp",
+        "alt": "Mnemba Island and reef fish.",
+        "caption": "Reef fish and Mnemba Island, Zanzibar; a destination illustration. The dive centre confirms your actual dive site."
+      },
+      {
+        "image": "images/zanzibar-tours/jambiani-beach.webp",
+        "alt": "Jambiani beach at low tide.",
+        "caption": "Jambiani coast, Zanzibar; a destination photograph rather than a dive-centre or equipment promise."
+      }
+    ],
+    "imageAlt": "Mnemba Island and reef fish.",
+    "photoNote": "Reef fish and Mnemba Island, Zanzibar; a destination illustration. The dive centre confirms your actual dive site.",
+    "imageNote": "Mnemba reef illustration · dive site confirmed separately"
+  },
+  {
+    "id": "kuza-cave",
+    "title": "Kuza Cave Swim & Swahili Heritage Visit",
+    "category": "zanzibar",
+    "days": 1,
+    "duration": "About 1.5 hours at the centre",
+    "tripDays": 1,
+    "price": 40,
+    "group": 2,
+    "basis": "2 adults travelling together; meet at the activity departure point",
+    "start": "Kuza Cave, Jambiani → Kuza Cave",
+    "style": "Hosted cave visit · optional swim",
+    "image": "images/zanzibar-tours/jambiani-beach.webp",
+    "summary": "Visit Kuza Cave in the Jambiani area, hear about the local heritage exhibits and choose a freshwater swim if the conditions and your ability suit it.",
+    "places": [
+      "Kuza Cave",
+      "Jambiani",
+      "Swahili heritage"
+    ],
+    "itinerary": [
+      {
+        "label": "Arrival",
+        "title": "Meet at the culture centre",
+        "text": "Meet at Kuza Cave at the confirmed time and hear the local guidance on respectful visiting and the cave access."
+      },
+      {
+        "label": "Cave",
+        "title": "A freshwater pause",
+        "text": "Follow the steps down to the cave. Swimming is optional; water depth, visibility and safe access must be assessed on the day. Bring suitable footwear."
+      },
+      {
+        "label": "Culture",
+        "title": "Time at the heritage displays",
+        "text": "Explore the included Swahili heritage information and finish at the centre. Cooking, drumming lessons and lunch are optional additions, not part of this short visit."
+      }
+    ],
+    "includes": [
+      "Cave admission, local host/orientation and heritage displays",
+      "Drinking water"
+    ],
+    "excludes": [
+      "Hotel transfers and accommodation",
+      "Travel insurance, tips and personal purchases",
+      "Activities or meals not listed",
+      "Cooking/drumming classes, lunch and equipment hire"
+    ],
+    "notes": "The duration excludes transport. Cave access is via uneven, sometimes slippery steps and is not step-free. Swimming is optional; non-swimmers should not enter the cave water. Children need adult supervision. Tell David about swimming ability and mobility needs before the visit. The photographs show the nearby Jambiani coast rather than the cave interior.",
+    "price2": null,
+    "gallery": [
+      {
+        "image": "images/zanzibar-tours/jambiani-beach.webp",
+        "alt": "Jambiani beach at low tide.",
+        "caption": "Jambiani coast near the Kuza Cave area; a destination illustration, not a photograph inside the cave."
+      },
+      {
+        "image": "images/zanzibar-tours/island-sunset.webp",
+        "alt": "Sailing boats at sunset in Zanzibar.",
+        "caption": "Sailing boats at sunset in Zanzibar; an island illustration, not part of the cave visit."
+      }
+    ],
+    "imageAlt": "Jambiani beach at low tide.",
+    "photoNote": "Jambiani coast near the Kuza Cave area; a destination illustration, not a photograph inside the cave.",
+    "imageNote": "Jambiani coast · destination illustration"
+  },
+  {
+    "id": "6-day-zanzibar-island-escape",
+    "title": "Zanzibar Island Escape: 6 Days / 5 Nights",
+    "category": "zanzibar",
+    "days": 6,
+    "duration": "6 days / 5 nights",
+    "tripDays": 6,
+    "price": 690,
+    "group": 2,
+    "basis": "2 adults sharing one guesthouse room; off-peak dates",
+    "start": "Zanzibar airport or ferry port → same arrival area",
+    "style": "Private transfers · small-group excursions",
+    "image": "images/zanzibar-tours/island-sunset.webp",
+    "summary": "A practical island stay with two nights in Stone Town and three on the coast. Mix heritage, spice plants, Jozani forest and a tide-planned ocean day with time to rest.",
+    "places": [
+      "Stone Town",
+      "Spice farm",
+      "Jozani",
+      "Zanzibar coast",
+      "Nakupenda"
+    ],
+    "itinerary": [
+      {
+        "label": "Day 1",
+        "title": "Arrive and settle into Stone Town",
+        "text": "Meet your driver at Zanzibar airport or ferry port and transfer to the confirmed Stone Town guesthouse. Settle in; take an independent waterfront walk if arrival time allows."
+      },
+      {
+        "label": "Day 2",
+        "title": "Stone Town lanes and spice plants",
+        "text": "Join the guided Stone Town walk, then travel to the named spice farm for a host-led visit. Return to your Stone Town room; meals other than breakfast are optional."
+      },
+      {
+        "label": "Day 3",
+        "title": "Forest, mangroves and the east coast",
+        "text": "Visit Jozani with the park guide, then continue to the confirmed east-coast guesthouse. Check in for three nights and enjoy the coast at your own pace."
+      },
+      {
+        "label": "Day 4",
+        "title": "A tide-planned Nakupenda day",
+        "text": "Transfer to Stone Town for the shared Nakupenda sandbank boat and picnic. Timing follows tides and sea conditions. Return to your coast guesthouse; an alternative ocean activity may be agreed if conditions prevent departure."
+      },
+      {
+        "label": "Day 5",
+        "title": "A free day by the sea",
+        "text": "Keep the day free for the beach and village surroundings. Kayaking, Blue Lagoon or introductory diving can be added with a separate written price and the appropriate transfers."
+      },
+      {
+        "label": "Day 6",
+        "title": "Breakfast and departure transfer",
+        "text": "After breakfast, transfer to Zanzibar airport or ferry port at a time that fits your departure. Flight and ferry tickets are not included."
+      }
+    ],
+    "includes": [
+      "5 guesthouse nights with breakfast: 2 Stone Town + 3 coast, two adults sharing one room",
+      "Private arrival, departure and listed inter-activity transfers",
+      "Guided Stone Town and spice-farm visits; park-guided Jozani visit with admission",
+      "Shared Nakupenda boat excursion, applicable marine fees and one picnic lunch",
+      "Listed guides, drinking water on excursion days and planned service charges"
+    ],
+    "excludes": [
+      "Flights, ferry tickets and any mainland safari",
+      "Meals except five breakfasts and the Nakupenda picnic",
+      "Entry documents, mandatory visitor insurance or levies not named in the quote",
+      "Unlisted activities, tips, personal purchases and room upgrades"
+    ],
+    "notes": "USD 690 is an off-peak planning estimate for two adults sharing a simple guesthouse room, not a resort or all-inclusive stay. The written quote must name both accommodations, verify availability and itemise any visitor or accommodation levies before payment. Peak dates, solo rooms and upgraded hotels cost more. Ocean days can change with tides and weather.",
+    "price2": null,
+    "gallery": [
+      {
+        "image": "images/zanzibar-tours/island-sunset.webp",
+        "alt": "Sailing boats at sunset in Zanzibar.",
+        "caption": "Sailing boats at sunset in Zanzibar; island scenery rather than an included sunset cruise."
+      },
+      {
+        "image": "images/zanzibar-tours/jambiani-beach.webp",
+        "alt": "Jambiani beach at low tide.",
+        "caption": "Jambiani beach in Zanzibar. Your quote names the actual coast guesthouse; the photograph does not show a booked property."
+      },
+      {
+        "image": "images/zanzibar-tours/jozani-colobus.webp",
+        "alt": "Zanzibar red colobus at Jozani.",
+        "caption": "Zanzibar red colobus at Jozani; wildlife sightings vary."
+      }
+    ],
+    "imageAlt": "Sailing boats at sunset in Zanzibar.",
+    "photoNote": "Sailing boats at sunset in Zanzibar; island scenery rather than an included sunset cruise.",
+    "imageNote": "Zanzibar sunset · island scenery, not an included cruise"
   }
 ]

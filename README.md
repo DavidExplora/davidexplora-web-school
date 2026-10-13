@@ -6,16 +6,17 @@ Website: https://david-explora.fastash16.chatgpt.site
 
 ## Source and editing
 
-The site is plain HTML, CSS and JavaScript with no runtime framework. There are 44 public HTML pages and 20 tour itineraries.
+The site is plain HTML, CSS and JavaScript with no runtime framework. There are 53 public HTML pages and 29 tour itineraries.
 
 - `templates/home.html`: editable homepage, shared navigation and footer.
 - `data/tours.json`: tour names, estimates, group-price assumptions and itineraries.
 - `scripts/build_tours.py`: tour pages, galleries, catalogue and generated tour data.
 - `scripts/build_daytrips.py`: day-trip hub, separate city-walk links and comparison table.
+- `scripts/build_zanzibar.py`: island hub, coast-based tour groups, comparison table and homepage Zanzibar slider.
 - `scripts/build_discovery.py`: map, destination data, booking guide and shared navigation.
 - `operator.css`: shared navigation, current design and responsive layouts. Older destination styles remain in `style.css`, `launch.css` and `story.css`.
 - `experience.js`: photo galleries, touch swiping, filters and package selection.
-- `ui.js`: manual featured-tour slider and active navigation.
+- `ui.js`: manual featured-tour slider, optional automatic Zanzibar rails and active navigation.
 - `journey.js` and `script.js`: itinerary suggestions, validation and enquiry drafts.
 
 Edit the source template or catalogue, then run the complete build. Do not edit generated tour pages directly: regeneration replaces them. The shared header/footer is applied to every page, including older destination pages.
@@ -32,6 +33,8 @@ The complete build runs the generators in the required order. GitHub Actions reb
 ## Design and interactions
 
 The homepage uses four destination photographs, experience categories, a horizontally scrollable tour catalogue, photo galleries, local-guide information and practical planning notes. The tour rail supports touch, arrow buttons and keyboard navigation. Gallery autoplay pauses for keyboard focus, swipes, background tabs and reduced-motion preferences; visitors can explicitly resume it.
+
+The Zanzibar rails advance only while visible, stop for keyboard/touch/manual browsing, pause on hover and respect reduced motion. Their automatic movement does not trigger repeated screen-reader announcements. Zanzibar tour galleries retain captions distinguishing exact destination photographs from activity illustrations.
 
 Tour selection preserves the customer’s traveler count and any edited message or preferences. Map `trip` links and older `experience` links prefill the correct destination. A valid `package` link takes precedence for untouched package fields.
 
@@ -64,3 +67,9 @@ The catalogue has separate Arusha, Moshi and Marangu products. The old combined-
 Five detail pages have automatic photograph galleries with manual arrows, swipe support, pause controls and reduced-motion behavior. New location assets are in `images/daytrips/`, with author, original dimensions, dates, source URLs and image licences recorded in the photo-credit data. Each adapted WebP remains available under its stated Creative Commons licence. Photos are destination illustrations, not claims of an exclusive client visit or a specific host contract.
 
 `data/daytrip-costs.json` records internal USD cost assumptions for a two-adult private booking. These are planning estimates, not supplier-confirmed costs or guaranteed net profits. Confirm actual guide, transport, entry/community, food and operating costs before confirming a booking; recalculate for solo travelers, children, different pickup areas, commissions and tax obligations. See `DAYTRIP-OPERATIONS.md`.
+
+## Zanzibar expansion
+
+The island hub groups boat/reef tours, culture/nature visits, water sports and a six-day guesthouse stay. Departure notes distinguish Stone Town, Matemwe, Michamvi, Jozani, Jambiani and Kizimkazi; day-tour transport is not silently included. Clear kayaks are an optional equipment upgrade, jet skis have a defined riding slot, and the introductory dive is one dive with medical/provider assessment.
+
+`data/zanzibar-costs.json` and `ZANZIBAR-OPERATIONS.md` contain unverified supplier-cost assumptions, current retail comparison sources, pricing decisions and direct operating-contribution calculations. Confirm actual rates before quoting; modeled contribution is not net profit and excludes OTA commission. New photo provenance is public in `photo-credits.html`.

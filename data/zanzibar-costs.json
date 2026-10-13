@@ -1,0 +1,88 @@
+{
+  "status": "Planning assumptions, not verified supplier rates. Retail comparisons do not prove supplier availability or net profit.",
+  "currency": "USD",
+  "minimum_modeled_margin": 0.34,
+  "models": {
+    "stone-town-walking-tour": {
+      "group": 2,
+      "guide_and_activity": 34,
+      "water": 4,
+      "reserve": 8
+    },
+    "changuu-prison-island": {
+      "group": 4,
+      "boat_and_crew": 50,
+      "admissions_allowance": 60,
+      "guide": 12,
+      "water": 4,
+      "reserve": 6
+    },
+    "zanzibar-spice-farm": {
+      "group": 2,
+      "farm_and_host": 30,
+      "water": 4,
+      "reserve": 12
+    },
+    "nakupenda-sandbank": {
+      "group": 4,
+      "boat_and_crew": 56,
+      "picnic": 52,
+      "marine_fee_allowance": 40,
+      "water_and_fruit": 12,
+      "reserve": 11
+    },
+    "kizimkazi-dolphin-watching": {
+      "group": 4,
+      "boat_and_crew": 64,
+      "marine_fee_allowance": 40,
+      "water": 4,
+      "reserve": 24
+    },
+    "jozani-forest": {
+      "group": 2,
+      "admissions_and_guide_allowance": 46,
+      "water": 4,
+      "reserve": 9
+    },
+    "zanzibar-mangrove-kayaking": {
+      "group": 2,
+      "supplier_allowance": 48,
+      "water": 4,
+      "reserve": 7
+    },
+    "zanzibar-jet-ski": {
+      "group": 2,
+      "supplier_allowance": 100,
+      "reserve": 12
+    },
+    "blue-lagoon-snorkeling": {
+      "group": 4,
+      "boat_crew_and_gear": 52,
+      "marine_fee_allowance": 40,
+      "fruit_and_water": 12,
+      "reserve": 14
+    },
+    "zanzibar-discover-scuba": {
+      "group": 2,
+      "instructor_boat_and_equipment_allowance": 160,
+      "marine_fee_allowance": 20,
+      "reserve": 11
+    },
+    "kuza-cave": {
+      "group": 2,
+      "admission_allowance": 20,
+      "host": 20,
+      "water": 4,
+      "reserve": 8
+    },
+    "6-day-zanzibar-island-escape": {
+      "group": 2,
+      "five_shared_guesthouse_nights_with_breakfast": 500,
+      "private_transfers": 155,
+      "tour_guides_and_admissions": 110,
+      "nakupenda_boat_picnic_and_fees": 112,
+      "water": 12,
+      "reserve": 20
+    }
+  }
+}
