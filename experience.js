@@ -5,6 +5,7 @@
   document.querySelectorAll('[data-carousel]').forEach(root => {
     const slides = [...root.querySelectorAll('[data-slide]')];
     const videos = [...root.querySelectorAll('video[data-motion-video]')];
+    const background = root.dataset.backgroundStory === 'true';
     if (slides.length < 2) return;
     const controls = root.querySelector('.story-controls');
     controls.hidden = false;
@@ -29,7 +30,10 @@
           video.play().catch(() => {});
         } else video.pause();
       });
-      if (running) timer = window.setInterval(() => { show(index + 1, false); playback(); }, videos.some(video => slides[index].contains(video)) ? 14000 : 7000);
+      const sceneSeconds = Number(slides[index].dataset.sceneSeconds);
+      const duration = Number.isFinite(sceneSeconds) && sceneSeconds >= 5 && sceneSeconds <= 30
+        ? sceneSeconds * 1000 : videos.some(video => slides[index].contains(video)) ? 14000 : 7000;
+      if (running) timer = window.setInterval(() => { show(index + 1, false); playback(); }, duration);
     }
     function show(next, manual) {
       index = (next + slides.length) % slides.length;
@@ -56,9 +60,9 @@
       explicitPlay = !userPaused;
       playback();
     });
-    root.addEventListener('mouseenter', () => { hover = true; explicitPlay = false; playback(); });
-    root.addEventListener('mouseleave', () => { hover = false; playback(); });
-    root.addEventListener('focusin', () => { focus = true; userPaused = true; explicitPlay = false; playback(); });
+    root.addEventListener('mouseenter', () => { if (background) return; hover = true; explicitPlay = false; playback(); });
+    root.addEventListener('mouseleave', () => { if (background) return; hover = false; playback(); });
+    root.addEventListener('focusin', event => { focus = true; if (event.target !== pause) userPaused = true; explicitPlay = false; playback(); });
     root.addEventListener('focusout', event => { if (!root.contains(event.relatedTarget)) { focus = false; playback(); } });
     root.addEventListener('keydown', event => {
       if (event.target.closest('input,select,textarea')) return;

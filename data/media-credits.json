@@ -15,5 +15,43 @@
     "width": 1280,
     "height": 720,
     "bytes": 1051120
+  },
+  {
+    "label": "Zanzibar coast and turquoise water",
+    "author": "Ros NL",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "source_url": "https://www.pexels.com/video/crystal-clear-zanzibar-beach-with-turquoise-waters-34792305/",
+    "original_url": "https://videos.pexels.com/video-files/34792305/14751202_1920_1080_30fps.mp4",
+    "file": "media/zanzibar-background.mp4",
+    "poster": "media/zanzibar-poster.webp",
+    "alt": "Boats on turquoise water along the Zanzibar coast.",
+    "changes": "Excerpt from seconds 3–13 of real original footage; audio removed; encoded to 1920×1080 H.264 MP4 at 24 fps. WebP poster extracted from second 3. No AI or generative edits; no upscaling.",
+    "duration_seconds": 10,
+    "width": 1920,
+    "height": 1080,
+    "bytes": 2644350,
+    "sha256": "f48cfeb21e906bad369e360e62b6224ef9bc0ee5115d786bb3305befc89e7e17",
+    "usage_note": "Licensed stock footage; it does not depict or imply David Explora clients, property, supplier partnership or endorsement. No exact beach, route or supplier location asserted beyond source geography.",
+    "date": "Source and licence checked 13 October 2026"
+  },
+  {
+    "label": "Kilimanjaro and forest foothills",
+    "author": "Alex Levis",
+    "license": "Pexels License",
+    "license_url": "https://www.pexels.com/license/",
+    "source_url": "https://www.pexels.com/video/aerial-view-of-mount-kilimanjaro-forest-scenery-35646306/",
+    "original_url": "https://videos.pexels.com/video-files/35646306/15106052_1920_1080_30fps.mp4",
+    "file": "media/kilimanjaro-background.mp4",
+    "poster": "media/kilimanjaro-poster.webp",
+    "alt": "Mount Kilimanjaro, with Kibo and Mawenzi above green forest foothills.",
+    "changes": "Excerpt from seconds 3–approximately 13 of real original footage; audio removed; encoded to 1920×1080 H.264 MP4 at 24 fps. WebP poster extracted from second 3. No AI or generative edits; no upscaling.",
+    "duration_seconds": 9.958333,
+    "width": 1920,
+    "height": 1080,
+    "bytes": 1537726,
+    "sha256": "2ce21c10c7b2a7cfb99ce9eb912158f69a677bac8e47d85997c21c2bc683895d",
+    "usage_note": "Licensed stock footage; it does not depict or imply David Explora clients, property, supplier partnership or endorsement. No exact beach, route or supplier location asserted beyond source geography.",
+    "date": "Source and licence checked 13 October 2026"
   }
 ]

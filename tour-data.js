@@ -537,7 +537,7 @@
   },
   {
     "id": "kilimanjaro-marangu-day-hike",
-    "title": "Kilimanjaro Rainforest Day Hike",
+    "title": "Marangu Route: Kilimanjaro Rainforest Day Hike",
     "category": "trekking",
     "days": 1,
     "duration": "1 day · no summit attempt",
@@ -583,7 +583,19 @@
     ],
     "notes": "Fitness, weather and permit conditions affect the walk. An Arusha departure requires a separate transfer quote.",
     "price2": null,
-    "seoTitle": "Kilimanjaro Day Hike on the Marangu Route"
+    "seoTitle": "Kilimanjaro Day Hike on the Marangu Route",
+    "gallery": [
+      {
+        "image": "images/stories/kili-forest.webp",
+        "alt": "A path through Kilimanjaro’s montane rainforest",
+        "caption": "Kilimanjaro rainforest · destination photograph"
+      },
+      {
+        "image": "images/daytrips/marangu-landscape.webp",
+        "alt": "Street and houses in Marangu village in the Kilimanjaro foothills",
+        "caption": "Marangu village · foothill scenery on the journey to the mountain"
+      }
+    ]
   },
   {
     "id": "arusha-city-tour",
@@ -729,7 +741,7 @@
   },
   {
     "id": "marangu-village-tour",
-    "title": "Marangu Village: Chagga Culture & Coffee",
+    "title": "Marangu Village & Coffee Day Trip",
     "category": "local",
     "days": 1,
     "duration": "6–7 hours including transfers",
@@ -785,7 +797,7 @@
     "notes": "This is a village and cultural day, not a Kilimanjaro National Park trek. The photographed village scenery illustrates Marangu, not a promised private homestead. Ask permission before photographing people. The route has uneven paths; share access and dietary needs. Hosts and final arrangements must be confirmed before the tour.",
     "price2": null,
     "priceSolo": 135,
-    "seoTitle": "Marangu Village: Chagga Culture & Coffee",
+    "seoTitle": "Marangu Village & Coffee Day Trip from Moshi",
     "gallery": [
       {
         "image": "images/daytrips/marangu-landscape.webp",
@@ -801,6 +813,11 @@
         "image": "images/stories/coffee-roasting.webp",
         "alt": "Coffee beans roasting over a wood fire",
         "caption": "Coffee preparation · the host and venue are confirmed in your itinerary"
+      },
+      {
+        "image": "images/stories/coffee-cherries.webp",
+        "alt": "Green and ripening coffee cherries on a leafy branch",
+        "caption": "Coffee cherries · a photograph supplied by David Explora"
       }
     ]
   },

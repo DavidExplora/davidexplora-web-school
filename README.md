@@ -84,6 +84,12 @@ Six additional itineraries cover Nyerere road/fly-in travel, Mikumi, a six-day n
 
 All tours can be saved in local storage, copied as links and printed as an itinerary. Saved IDs are browser-local and never presented as public likes. No public comment database, newsletter subscription service or card checkout has been added. Print expands the full itinerary and preserves quote qualifications.
 
-The 12-second 720p muted Serengeti film is adapted from Bettina May’s CC BY 3.0 footage. `data/media-credits.json` documents the licence and excerpt/poster modifications. The film and galleries pause off-screen, in background tabs and for reduced motion; data-saving mode prevents the automatic video download. The optional film player uses native video controls and a native dialog.
+The 12-second 720p muted Serengeti film is adapted from Bettina May’s CC BY 3.0 footage. `data/media-credits.json` documents the licence and excerpt/poster modifications. The film and galleries pause off-screen, in background tabs and for reduced motion; data-saving mode prevents the automatic video download. The homepage story also includes two real 1080p Kilimanjaro and Zanzibar clips under the Pexels License, with source links and adaptations recorded in the same media ledger. These films stay in the hero background; there is no popup film tile. Hovering the background does not stop playback, while the visible pause control and keyboard focus remain available.
 
 Builders explicitly use UTF-8 for Windows and CI consistency. Use the complete build pipeline before checking and packaging. Browser visual QA remains unavailable in this managed editing environment; Node behaviour fixtures and the full structural checker validate the shipped state.
+
+## Hover navigation and Marangu day trips
+
+On desktop with a fine pointer, destination menus open on hover. A short close delay lets the pointer reach the panel; Escape closes it, focused menu links remain available, and touch/small screens retain native click disclosures.
+
+The existing Marangu village tour is featured on the home and day-trip pages, with four real photos including David’s supplied coffee photos. Its USD 75 estimate for two adults and Moshi pickup are unchanged. The separate USD 245 national park rainforest day hike is also easy to find; neither day trip is described as a summit climb.

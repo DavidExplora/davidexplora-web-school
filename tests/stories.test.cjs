@@ -15,14 +15,18 @@ class Element {
   setAttribute(name,value){this.attrs[name]=value;}
   closest(){return null;}
 }
-function fixture(reduced=false, withVideo=false, saveData=false) {
+function fixture(reduced=false, withVideo=false, saveData=false, background=false, seconds=[]) {
   const root=new Element(),document=new Element(),media=new Element();
+  root.dataset.backgroundStory=String(background);
   media.matches=reduced;document.hidden=false;
   const controls=new Element(),pause=new Element(),counter=new Element(),announcement=new Element();
   const previous=new Element(),next=new Element();
   const slides=Array.from({length:3},(_,i)=>{const e=new Element();e.querySelector=()=>new Element('Chapter '+(i+1));return e;});
-  const video=new Element();video.dataset.src='media/serengeti-lion-cubs.mp4';video.getAttribute=name=>name==='src'?video.src:null;video.playing=false;video.play=()=>{video.playing=true;return {catch(){}};};video.pause=()=>{video.playing=false;};
-  const videos=withVideo?[video]:[];slides.forEach((slide,n)=>{slide.contains=element=>n===0&&element===video;});
+  slides.forEach((slide,n)=>{slide.dataset.sceneSeconds=seconds[n];});
+  const mediaElements=Array.from({length:typeof withVideo==='number'?withVideo:1},(_,i)=>{
+    const video=new Element();video.dataset.src=i===0?'media/serengeti-lion-cubs.mp4':'media/chapter-'+i+'.mp4';video.getAttribute=name=>name==='src'?video.src:null;video.playing=false;video.play=()=>{video.playing=true;return {catch(){}};};video.pause=()=>{video.playing=false;};return video;
+  });
+  const video=mediaElements[0],videos=withVideo?mediaElements:[];slides.forEach((slide,n)=>{slide.contains=element=>element===videos[n];});
   const dots=slides.map((_,i)=>{const e=new Element();e.dataset.slideTo=String(i);return e;});
   const map={'.story-controls':controls,'[data-pause]':pause,'[data-counter]':counter,'[data-announcement]':announcement,'[data-prev]':previous,'[data-next]':next};
   root.querySelector=selector=>map[selector];
@@ -30,12 +34,12 @@ function fixture(reduced=false, withVideo=false, saveData=false) {
   root.contains=element=>[...Object.values(map),...slides,...dots].includes(element);
   document.querySelectorAll=selector=>selector==='[data-carousel]'?[root]:[];
   document.querySelector=()=>null;
-  const timers=new Map();let timerId=0,observer;
+  const timers=new Map(),delays=new Map();let timerId=0,observer;
   class IntersectionObserver {constructor(callback){observer=callback;}observe(){}}
-  const window={navigator:{connection:{saveData}},matchMedia:()=>media,setInterval:callback=>{timers.set(++timerId,callback);return timerId;},clearInterval:id=>timers.delete(id),IntersectionObserver};
+  const window={navigator:{connection:{saveData}},matchMedia:()=>media,setInterval:(callback,delay)=>{timers.set(++timerId,callback);delays.set(timerId,delay);return timerId;},clearInterval:id=>{timers.delete(id);delays.delete(id);},IntersectionObserver};
   vm.runInNewContext(code,{window,document,IntersectionObserver,URLSearchParams});
   const visible=value=>observer([{isIntersecting:value}]);
-  return {root,document,media,controls,pause,counter,announcement,previous,next,slides,dots,timers,visible,video};
+  return {root,document,media,controls,pause,counter,announcement,previous,next,slides,dots,timers,delays,visible,video,videos};
 }
 test('stories rotate only while visible and stop in a background tab',()=>{
   const f=fixture();assert.equal(f.timers.size,0);
@@ -94,4 +98,20 @@ test('film playback loads only on an active visible slide and pauses with the st
 });
 test('motion and data saving preferences keep the hero poster without downloading film',()=>{
   for(const f of [fixture(true,true),fixture(false,true,true)]){f.visible(true);assert.equal(f.video.src,undefined);assert.equal(f.video.playing,false);}
+});
+test('the background story keeps playing on pointer hover but its pause button works on the first focused click',()=>{
+  const f=fixture(false,true,false,true);f.visible(true);
+  f.root.fire('mouseenter');assert.equal(f.video.playing,true);assert.equal(f.timers.size,1);
+  f.root.fire('focusin',{target:f.pause});f.pause.fire('click');
+  assert.equal(f.video.playing,false);assert.equal(f.pause.textContent,'Play story');
+  f.pause.fire('click');assert.equal(f.video.playing,true);
+});
+test('mixed film chapters load one at a time and use their individual scene timings',()=>{
+  const f=fixture(false,3,false,true,[12,10,10]);f.visible(true);
+  assert.deepEqual(f.videos.map(v=>v.playing),[true,false,false]);
+  assert.equal(f.videos[1].src,undefined);assert.equal([...f.delays.values()][0],12000);
+  [...f.timers.values()][0]();assert.deepEqual(f.videos.map(v=>v.playing),[false,true,false]);
+  assert.equal([...f.delays.values()][0],10000);assert.equal(f.videos[2].src,undefined);
+  [...f.timers.values()][0]();assert.deepEqual(f.videos.map(v=>v.playing),[false,false,true]);
+  f.visible(false);assert.ok(f.videos.every(v=>!v.playing));
 });

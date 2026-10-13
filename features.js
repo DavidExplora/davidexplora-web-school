@@ -1,4 +1,4 @@
-/* Native navigation, quick planning, saved tours and an owner-controlled film story. */
+/* Hover and native navigation, quick planning, and browser-local saved tours. */
 (function (root) {
   'use strict';
   const node = typeof module === 'object' && module.exports;
@@ -20,7 +20,66 @@
     }
     return {errors,destination:values.destination,date,travelers};
   }
-  const api={cleanSaved,readSaved,toggleSaved,quickPlan};
+  function setupNavigation(nav, groups, env) {
+    const doc = env.document;
+    const desktop = env.matchMedia('(min-width: 1181px) and (hover: hover) and (pointer: fine)');
+    const state = new Map(groups.map(group => [group, {timer:null, inside:false, dismissed:false}]));
+    function cancel(group) {
+      const item = state.get(group);
+      if (item.timer !== null) env.clearTimeout(item.timer);
+      item.timer = null;
+    }
+    function close(group) { cancel(group); group.open = false; }
+    function open(group) {
+      cancel(group);
+      groups.forEach(other => { if (other !== group) close(other); });
+      group.open = true;
+    }
+    function leave(group) {
+      cancel(group);
+      const item = state.get(group);
+      item.timer = env.setTimeout(() => {
+        item.timer = null;
+        if (!item.inside && !group.contains(doc.activeElement)) group.open = false;
+      }, 180);
+    }
+    groups.forEach(group => {
+      group.addEventListener('pointerenter', event => {
+        if (!desktop.matches || event.pointerType === 'touch') return;
+        const item = state.get(group);
+        item.inside = true;
+        cancel(group);
+        if (!item.dismissed) open(group);
+      });
+      group.addEventListener('pointerleave', () => {
+        const item = state.get(group);
+        item.inside = false;
+        item.dismissed = false;
+        if (desktop.matches) leave(group);
+      });
+      group.addEventListener('focusout', event => {
+        if (!group.contains(event.relatedTarget) && desktop.matches) leave(group);
+      });
+      group.addEventListener('toggle', () => {
+        if (group.open) groups.forEach(other => { if (other !== group) close(other); });
+      });
+      group.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && group.open) {
+          close(group);
+          state.get(group).dismissed = true;
+          event.stopPropagation();
+          group.querySelector('summary').focus();
+        }
+      });
+    });
+    doc.addEventListener('click', event => {
+      if ((nav && !nav.contains(event.target)) || event.target.closest('.main-nav a')) groups.forEach(close);
+    });
+    desktop.addEventListener('change', () => {
+      groups.forEach(group => { close(group); Object.assign(state.get(group), {inside:false, dismissed:false}); });
+    });
+  }
+  const api={cleanSaved,readSaved,toggleSaved,quickPlan,setupNavigation};
   if (node) { module.exports=api;return; }
   let saved=[];
   try { saved=readSaved(root.localStorage); } catch { /* Saving still works for this visit. */ }
@@ -55,11 +114,7 @@
   root.addEventListener('beforeprint',()=>{printedDetails=[...doc.querySelectorAll('.day-accordion')].map(detail=>[detail,detail.open]);printedDetails.forEach(([detail])=>{detail.open=true;});});
   root.addEventListener('afterprint',()=>{printedDetails.forEach(([detail,open])=>{detail.open=open;});printedDetails=[];});
   const nav=doc.querySelector('.main-nav'), groups=[...doc.querySelectorAll('.nav-group')];
-  groups.forEach(group=>{
-    group.addEventListener('toggle',()=>{if(group.open)groups.forEach(other=>{if(other!==group)other.open=false;});});
-    group.addEventListener('keydown',event=>{if(event.key==='Escape'&&group.open){group.open=false;event.stopPropagation();group.querySelector('summary').focus();}});
-  });
-  doc.addEventListener('click',event=>{if(nav&&!nav.contains(event.target))groups.forEach(group=>{group.open=false;});if(event.target.closest('.main-nav a'))groups.forEach(group=>{group.open=false;});});
+  setupNavigation(nav,groups,root);
   const quick=doc.querySelector('#quick-plan-form');
   if(quick){
     const now=new Date(),today=String(now.getFullYear())+'-'+String(now.getMonth()+1).padStart(2,'0')+'-'+String(now.getDate()).padStart(2,'0');
@@ -73,18 +128,6 @@
       doc.querySelector('#customer-name').focus({preventScroll:true});
       doc.querySelector('#inquiry-status').textContent='Your starting details are added. Complete the remaining fields, then review your message before sending.';
     });
-  }
-  const film=doc.querySelector('#wildlife-film');
-  if(film){
-    const video=film.querySelector('[data-film-video]');let opener;
-    doc.querySelectorAll('[data-open-film]').forEach(button=>button.addEventListener('click',()=>{
-      opener=button;
-      doc.querySelectorAll('[data-motion-video]').forEach(v=>v.pause());
-      const pause=doc.querySelector('#home [data-pause]');if(pause?.getAttribute('aria-pressed')==='false'&&!pause.disabled)pause.click();
-      film.showModal();video.src ||= video.dataset.src;video.play().catch(()=>{});
-    }));
-    film.querySelector('[data-close-film]').addEventListener('click',()=>film.close());
-    film.addEventListener('close',()=>{video.pause();opener?.focus();});
   }
   refreshSaved();
 })(typeof globalThis==='undefined'?this:globalThis);
