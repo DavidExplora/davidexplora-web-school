@@ -46,5 +46,11 @@
     "upload": "467(2).jpg",
     "source": "Photograph supplied by David Explora",
     "changes": "EXIF orientation corrected; resized without upscaling and compressed to WebP. No generated content."
+  },
+  {
+    "file": "images/stories/david-portrait.webp",
+    "upload": "264bc3bb-d137-48fb-9744-770b9c812b53.jpg",
+    "source": "Portrait supplied by David Explora",
+    "changes": "Converted to WebP at its original 120 × 150 pixels. Used as a small portrait, without upscaling."
   }
 ]

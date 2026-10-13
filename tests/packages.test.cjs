@@ -6,7 +6,7 @@ const {createInquiry} = require('../journey.js');
 const valid = {name:'Ana García',email:'ana@example.com',travelers:2,date:'2027-02-01',consent:true,language:'Spanish'};
 
 test('the catalogue has complete, unique itineraries with honest price bases',()=>{
-  assert.equal(tours.length,39);
+  assert.equal(tours.length,42);
   assert.equal(new Set(tours.map(t=>t.id)).size,tours.length);
   for (const tour of tours) {
     assert.ok(tour.itinerary.length && tour.includes.length && tour.excludes.length && tour.notes);
@@ -25,7 +25,7 @@ test('affordable filters exclude unpriced trips rather than suggesting they are 
 });
 test('destination, duration, price and case-insensitive search combine coherently',()=>{
   assert.deepEqual(filterTours({category:'safari',length:'short',budget:1000}).map(t=>t.id),['2-day-tarangire-ngorongoro','2-day-mikumi-safari']);
-  assert.deepEqual(filterTours({query:'  MACHAME  ',category:'trekking'}).map(t=>t.id),['7-day-machame-trek','9-day-mens-kilimanjaro-journey']);
+  assert.deepEqual(filterTours({query:'  MACHAME  ',category:'trekking'}).map(t=>t.id),['7-day-machame-trek','9-day-mens-kilimanjaro-journey','christmas-machame-group']);
   assert.equal(filterTours({query:'Serengeti',category:'zanzibar'}).length,0);
   assert.ok(filterTours({length:'day'}).every(t=>t.days===1));
 });

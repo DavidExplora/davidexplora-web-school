@@ -402,5 +402,41 @@
     "changes": "Resized and re-encoded to WebP; no generative edits. CSS may crop the display. Both WebP sizes retain the stated image licence.",
     "original_width": 3456,
     "original_height": 2304
+  },
+  {
+    "label": "Mt Kilimanjaro",
+    "author": "Schavda",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Mt_Kilimanjaro.jpg",
+    "alt": "Kilimanjaro viewed from Shira camp in evening light.",
+    "date": "2012-06-30",
+    "file": "images/december/kilimanjaro-shira-evening.webp",
+    "changes": "Resized without cropping; converted to optimised WebP. No elements, colours, animals or people added or removed. Optimised variants retain the source licence. Display may be cropped by CSS.",
+    "nearbyCredit": null
+  },
+  {
+    "label": "Elephants, Tarangire National Park, Tanzania",
+    "author": "Christoph Strässler",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Elephants,_Tarangire_National_Park,_Tanzania.jpg",
+    "alt": "Two elephants in Tarangire National Park, Tanzania.",
+    "date": "2016-11-09",
+    "file": "images/december/tarangire-elephant-family.webp",
+    "changes": "Resized without cropping; converted to optimised WebP. No elements, colours, animals or people added or removed. Optimised variants retain the source licence. Display may be cropped by CSS.",
+    "nearbyCredit": null
+  },
+  {
+    "label": "014 Giraffe in the Serengeti National Park Photo by Giles Laurent",
+    "author": "Giles Laurent",
+    "license": "CC BY-SA 4.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "source_url": "https://commons.wikimedia.org/wiki/File:014_Giraffe_in_the_Serengeti_National_Park_Photo_by_Giles_Laurent.jpg",
+    "alt": "Giraffe walking in Serengeti National Park during golden sunrise light.",
+    "date": "2020-07-10",
+    "file": "images/december/serengeti-giraffe-sunrise.webp",
+    "changes": "Resized without cropping; converted to optimised WebP. No elements, colours, animals or people added or removed. Optimised variants retain the source licence. Display may be cropped by CSS.",
+    "nearbyCredit": "© Giles Laurent, gileslaurent.com, License CC BY-SA"
   }
 ]

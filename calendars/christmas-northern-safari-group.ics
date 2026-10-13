@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//David Explora//Proposed journeys//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:christmas-northern-safari-group-2026@david-explora.fastash16.chatgpt.si
+ te
+DTSTAMP:20261014T000000Z
+DTSTART;VALUE=DATE:20261219
+DTEND;VALUE=DATE:20261228
+STATUS:TENTATIVE
+TRANSP:TRANSPARENT
+SUMMARY:Proposed · Christmas in the wild · northern Tanzania group safari
+DESCRIPTION:PROPOSED DATES ONLY. This calendar entry is not a booking. Arri
+ ve 19 Dec 2026\; activity begins 20 Dec 2026\; departure 27 Dec 2026. Chri
+ stmas in the crater · 25 Dec. Confirm the viable group\, operating arrang
+ ements\, itinerary\, quote and terms with David before buying flights. Mou
+ ntain plans depend on conditions and the guide’s safety decisions.
+URL:https://david-explora.fastash16.chatgpt.site/christmas-northern-safari-
+ group.html
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "christmas-machame-group",
+    "kind": "trekking",
+    "arrival": "2026-12-19",
+    "start": "2026-12-20",
+    "end": "2026-12-26",
+    "departure": "2026-12-27",
+    "summit": "2026-12-25",
+    "event": "Christmas summit objective · 25 Dec",
+    "size": "Proposed 6–8 trekkers",
+    "status": "proposed"
+  },
+  {
+    "id": "christmas-lemosho-group",
+    "kind": "trekking",
+    "arrival": "2026-12-19",
+    "start": "2026-12-20",
+    "end": "2026-12-27",
+    "departure": "2026-12-28",
+    "summit": "2026-12-26",
+    "event": "Christmas at Barafu · summit objective 26 Dec",
+    "size": "Proposed 6–8 trekkers",
+    "status": "proposed"
+  },
+  {
+    "id": "christmas-northern-safari-group",
+    "kind": "safari",
+    "arrival": "2026-12-19",
+    "start": "2026-12-20",
+    "end": "2026-12-26",
+    "departure": "2026-12-27",
+    "summit": null,
+    "event": "Christmas in the crater · 25 Dec",
+    "size": "Proposed 4–6 guests / one vehicle",
+    "status": "proposed"
+  }
+]

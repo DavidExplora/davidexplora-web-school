@@ -38,7 +38,7 @@ def img(path, alt, hero=False, sizes='(max-width: 780px) 90vw, 40vw'):
     if (ROOT/small).exists():
         sw,_ = image_size(small)
         responsive=f' srcset="{small.as_posix()} {sw}w, {path} {w}w" sizes="{sizes}"'
-    focal = ' style="object-position:50% 30%"' if Path(path).name in {'uhuru-summit-david.webp','marangu-huts.webp','zanzibar-blue-water.webp'} else ''
+    focal = ' style="object-position:50% 70%"' if Path(path).name=='kilimanjaro-shira-evening.webp' else ' style="object-position:50% 30%"' if Path(path).name in {'uhuru-summit-david.webp','marangu-huts.webp','zanzibar-blue-water.webp'} else ''
     return f'<img{focal} src="{path}"{responsive} alt="{esc(alt)}" width="{w}" height="{h}" '+('fetchpriority="high" loading="eager"' if hero else 'loading="lazy"')+' decoding="async">'
 
 def image_alt(tour):
@@ -248,8 +248,9 @@ def credits():
     for a in records:
         small=Path(a['file']).with_stem(Path(a['file']).stem+'-small')
         variant=f'<a href="{small.as_posix()}">Small WebP · same licence</a>' if (ROOT/small).exists() else ''
+        nearby='<p>'+esc(a['nearbyCredit'])+'</p>' if a.get('nearbyCredit') else ''
         date=esc(a['date'].split(' ')[0]) if re.match(r'^\d{4}',a['date']) else esc(a['date'].split(',')[0])
-        cards.append(f'<article class="credit-card credit-id" id="{Path(a["file"]).stem}">{img(a["file"],a["alt"])}<h2>{esc(a["label"])}</h2><p>Photo: {esc(a["author"])} · {esc(a["license"])} · Photographed {date}.</p><p>{esc(a["changes"])} The adapted image remains available under {esc(a["license"])}.</p><div class="credit-links"><a href="{esc(a["source_url"])}">Original &amp; source details ↗</a><a href="{esc(a["license_url"])}">License ↗</a><a href="{a["file"]}">WebP · same licence</a>{variant}</div></article>')
+        cards.append(f'<article class="credit-card credit-id" id="{Path(a["file"]).stem}">{img(a["file"],a["alt"])}{nearby}<h2>{esc(a["label"])}</h2><p>Photo: {esc(a["author"])} · {esc(a["license"])} · Photographed {date}.</p><p>{esc(a["changes"])} The adapted image remains available under {esc(a["license"])}.</p><div class="credit-links"><a href="{esc(a["source_url"])}">Original &amp; source details ↗</a><a href="{esc(a["license_url"])}">License ↗</a><a href="{a["file"]}">WebP · same licence</a>{variant}</div></article>')
     films=[]
     for film in json.loads((ROOT/'data/media-credits.json').read_text(encoding='utf-8')):
         films.append(f'<article class="credit-card credit-id" id="{Path(film["file"]).stem}">{img(film["poster"],film["alt"])}<h2>{esc(film["label"])}</h2><p>Film and poster: {esc(film["author"])} · {esc(film["license"])} · {esc(film["date"])}.</p><p>{esc(film["changes"])} This is licensed destination footage, not a record of David’s clients or a guaranteed sighting.</p><div class="credit-links"><a href="{esc(film["source_url"])}">Original film &amp; source details ↗</a><a href="{esc(film["license_url"])}">Licence ↗</a><a href="{film["file"]}">MP4 excerpt · same licence</a><a href="{film["poster"]}">Adapted poster · same licence</a></div></article>')

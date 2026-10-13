@@ -6,7 +6,7 @@ Website: https://david-explora.fastash16.chatgpt.site
 
 ## Source and editing
 
-The site is plain HTML, CSS and JavaScript with no runtime framework. There are 77 HTML pages (including 404 and one legacy package redirect), 39 tour itineraries and 8 original travel articles.
+The site is plain HTML, CSS and JavaScript with no runtime framework. There are 94 HTML pages (including 404 and one legacy package redirect), 42 tour itineraries and 12 original travel articles.
 
 - `templates/home.html`: editable homepage, shared navigation and footer.
 - `data/tours.json`: tour names, estimates, group-price assumptions and itineraries.
@@ -18,6 +18,10 @@ The site is plain HTML, CSS and JavaScript with no runtime framework. There are 
 - `scripts/build_discovery.py`: map, destination data, booking guide and shared navigation.
 - `data/articles.json` and `data/special-journeys.json`: original travel guides and the curated special-journey collection.
 - `scripts/build_editorial.py`: journal, articles, special journeys, founder story and the proposed education vision.
+- `data/group-departures.json`: proposed December 2026 dates and group sizes; never live inventory.
+- `scripts/build_guest_services.py`: departure rows, tentative calendars, welcome prompt, privacy notes and English/Spanish guest support pages.
+- `guest-services.js` and `guest-services.css`: departure-date expiry, dismissible welcome, support and payment-request drafts.
+- `payments.html`: requests instructions against a written quote; instant checkout remains inactive.
 - `journal.js`: article search, browser-local reading lists, reading progress and journey comparison.
 - `operator.css`: shared navigation, current design and responsive layouts. Older destination styles remain in `style.css`, `launch.css` and `story.css`.
 - `experience.js`: photo galleries, touch swiping, filters and package selection.

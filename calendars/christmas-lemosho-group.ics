@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//David Explora//Proposed journeys//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:christmas-lemosho-group-2026@david-explora.fastash16.chatgpt.site
+DTSTAMP:20261014T000000Z
+DTSTART;VALUE=DATE:20261219
+DTEND;VALUE=DATE:20261229
+STATUS:TENTATIVE
+TRANSP:TRANSPARENT
+SUMMARY:Proposed · Christmas above the clouds · 8-day Lemosho group
+DESCRIPTION:PROPOSED DATES ONLY. This calendar entry is not a booking. Arri
+ ve 19 Dec 2026\; activity begins 20 Dec 2026\; departure 28 Dec 2026. Chri
+ stmas at Barafu · summit objective 26 Dec. Confirm the viable group\, ope
+ rating arrangements\, itinerary\, quote and terms with David before buying
+  flights. Mountain plans depend on conditions and the guide’s safety dec
+ isions.
+URL:https://david-explora.fastash16.chatgpt.site/christmas-lemosho-group.ht
+ ml
+END:VEVENT
+END:VCALENDAR

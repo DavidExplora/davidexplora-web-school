@@ -2740,5 +2740,271 @@
         "caption": "Jozani · free-ranging wildlife; sightings vary"
       }
     ]
+  },
+  {
+    "price": null,
+    "price2": null,
+    "group": 6,
+    "basis": "Proposed group departure; individual written quote",
+    "style": "Proposed small-group departure",
+    "start": "Kilimanjaro International Airport → Moshi → Kilimanjaro International Airport",
+    "category": "trekking",
+    "id": "christmas-machame-group",
+    "title": "Christmas on Kilimanjaro · 7-day Machame group",
+    "days": 7,
+    "mountainDays": 7,
+    "tripDays": 9,
+    "nights": 8,
+    "duration": "7 mountain days · 9 trip days / 8 nights",
+    "image": "images/december/kilimanjaro-shira-evening.webp",
+    "imageAlt": "Kilimanjaro in evening light, photographed from Shira camp",
+    "summary": "Join a proposed 20 December 2026 Machame departure, with a summit attempt planned for Christmas Day. Arrive in Moshi on 19 December and keep time for the full descent and a hotel night.",
+    "places": [
+      "Machame",
+      "Shira",
+      "Barranco",
+      "Karanga",
+      "Barafu",
+      "Mweka"
+    ],
+    "itinerary": [
+      {
+        "label": "19 Dec · Arrival",
+        "title": "Welcome to Moshi and prepare",
+        "text": "Arrive at Kilimanjaro International Airport. Transfer to Moshi, meet the team, check equipment and discuss the mountain plan. Overnight in a Moshi hotel."
+      },
+      {
+        "label": "20 Dec · Mountain day 1",
+        "title": "Machame Gate to Machame Camp",
+        "text": "Complete park registration and walk through the rainforest with the mountain guides. Begin at a steady pace. Camp at Machame."
+      },
+      {
+        "label": "21 Dec · Mountain day 2",
+        "title": "Machame Camp to Shira Camp",
+        "text": "Continue out of the forest into open moorland. Follow the guide’s pace and settle into the agreed Shira campsite."
+      },
+      {
+        "label": "22 Dec · Mountain day 3",
+        "title": "Lava Tower and descent to Barranco",
+        "text": "Cross higher terrain towards Lava Tower, then descend to Barranco Camp. The day gives time at higher altitude before sleeping lower."
+      },
+      {
+        "label": "23 Dec · Mountain day 4",
+        "title": "Barranco Wall to Karanga Camp",
+        "text": "Cross the Barranco Wall and the valleys beyond with guide support. Camp at Karanga; this stage stays in the seven-day route rather than being compressed."
+      },
+      {
+        "label": "24 Dec · Mountain day 5",
+        "title": "Karanga to Barafu: rest and briefing",
+        "text": "Reach Barafu Camp, review the conditions with the guides, eat and rest before the planned overnight summit attempt. Christmas Eve is a preparation day."
+      },
+      {
+        "label": "25 Dec · Mountain day 6",
+        "title": "Christmas summit objective, then Mweka",
+        "text": "The planned attempt approaches Uhuru Peak via Stella Point before descending to Mweka Camp. Weather, altitude response and the lead guide’s decision govern the day. A turnaround or changed plan takes priority over the calendar."
+      },
+      {
+        "label": "26 Dec · Mountain day 7",
+        "title": "Descend to Mweka Gate and return to Moshi",
+        "text": "Finish the descent through the forest and transfer to a Moshi hotel. Allow time to rest, share a meal and reflect on the climb."
+      },
+      {
+        "label": "27 Dec · Departure",
+        "title": "Onward travel or a separate extension",
+        "text": "Transfer to the airport at the agreed time. A safari or Zanzibar extension can be quoted separately; it is not included in this nine-day plan."
+      }
+    ],
+    "includes": [
+      "Arrival transfer from Kilimanjaro International Airport to Moshi and departure transfer back, at agreed group times",
+      "Two Moshi hotel nights: before the climb and after descent, with breakfast; twin sharing unless a supplement is quoted",
+      "Listed mountain route, park and camping fees through the licensed mountain operator named in your quote",
+      "Mountain guide team, porters, cook, mountain meals and drinking-water arrangements",
+      "Sleeping tents and dining arrangements; equipment, crew welfare and safety provisions specified in the written quote"
+    ],
+    "excludes": [
+      "International flights, visa costs and personal travel insurance covering the planned altitude and rescue arrangements",
+      "Sleeping bag, trekking clothing and personal equipment unless rental is listed in the quote",
+      "Crew tips, personal purchases, hotel lunches and dinners unless stated",
+      "Single-room or private-tent supplements, extra hotel nights and optional safari or island extensions"
+    ],
+    "notes": "Proposed 2026 departure, not a confirmed group or a live seat count. Plan for 6–8 adult trekkers, subject to a viable party, the named licensed operator and availability. Six mountain camp nights plus two Moshi hotel nights. The 25 December summit is an objective, not a guarantee. Do not buy non-refundable flights until David confirms the operation in writing."
+  },
+  {
+    "price": null,
+    "price2": null,
+    "group": 6,
+    "basis": "Proposed group departure; individual written quote",
+    "style": "Proposed small-group departure",
+    "start": "Kilimanjaro International Airport → Moshi → Kilimanjaro International Airport",
+    "category": "trekking",
+    "id": "christmas-lemosho-group",
+    "title": "Christmas above the clouds · 8-day Lemosho group",
+    "days": 8,
+    "mountainDays": 8,
+    "tripDays": 10,
+    "nights": 9,
+    "duration": "8 mountain days · 10 trip days / 9 nights",
+    "image": "images/stories/marangu-moorland.webp",
+    "imageAlt": "A trekker resting in Kilimanjaro moorland, a mountain destination photograph",
+    "summary": "A proposed Lemosho departure beginning on 20 December 2026, with Christmas at Barafu and the summit attempt planned for 26 December. Keep all eight mountain days and time to prepare.",
+    "places": [
+      "Lemosho",
+      "Shira Plateau",
+      "Barranco",
+      "Karanga",
+      "Barafu",
+      "Mweka"
+    ],
+    "itinerary": [
+      {
+        "label": "19 Dec · Arrival",
+        "title": "Arrive in Moshi and meet the mountain team",
+        "text": "Airport transfer, equipment check and route briefing. Stay in a Moshi hotel before the climb."
+      },
+      {
+        "label": "20 Dec · Mountain day 1",
+        "title": "Lemosho trailhead to Mti Mkubwa",
+        "text": "After registration and the vehicle approach, enter the forest on foot. Settle at Mti Mkubwa Camp with the mountain crew."
+      },
+      {
+        "label": "21 Dec · Mountain day 2",
+        "title": "Forest edge to Shira 1",
+        "text": "Walk from the forest into the heather and moorland. Camp on the Shira Plateau at the agreed site."
+      },
+      {
+        "label": "22 Dec · Mountain day 3",
+        "title": "Shira 1 to Shira 2",
+        "text": "Continue across the plateau with time for a measured pace and the acclimatisation walking agreed by the guides. Camp at Shira 2."
+      },
+      {
+        "label": "23 Dec · Mountain day 4",
+        "title": "Lava Tower to Barranco",
+        "text": "Follow the higher route towards Lava Tower, then descend to Barranco Camp. The walking plan is adjusted to actual conditions."
+      },
+      {
+        "label": "24 Dec · Mountain day 5",
+        "title": "Barranco Wall to Karanga",
+        "text": "Move with the guides over the Barranco Wall and across the valleys to Karanga Camp. Rest and prepare for the next stage."
+      },
+      {
+        "label": "25 Dec · Mountain day 6",
+        "title": "Christmas at Barafu Camp",
+        "text": "Climb to Barafu, eat and rest. Mark Christmas with the crew within the normal camp routine; this itinerary does not attempt the summit on the 25th."
+      },
+      {
+        "label": "26 Dec · Mountain day 7",
+        "title": "Summit objective and descent to Mweka",
+        "text": "The planned overnight summit attempt goes via Stella Point towards Uhuru Peak, then descends to Mweka. The guides may change the objective or turn around for safety."
+      },
+      {
+        "label": "27 Dec · Mountain day 8",
+        "title": "Mweka Gate and a Moshi hotel night",
+        "text": "Complete the forest descent and return to Moshi. Keep the hotel night for rest before onward travel."
+      },
+      {
+        "label": "28 Dec · Departure",
+        "title": "Airport transfer or an agreed onward plan",
+        "text": "Leave for the airport at the agreed time. Any safari or Zanzibar extension needs a separate written itinerary and quote."
+      }
+    ],
+    "includes": [
+      "Arrival transfer from Kilimanjaro International Airport to Moshi and departure transfer back, at agreed group times",
+      "Two Moshi hotel nights: before the climb and after descent, with breakfast; twin sharing unless a supplement is quoted",
+      "Listed mountain route, park and camping fees through the licensed mountain operator named in your quote",
+      "Mountain guide team, porters, cook, mountain meals and drinking-water arrangements",
+      "Sleeping tents and dining arrangements; equipment, crew welfare and safety provisions specified in the written quote"
+    ],
+    "excludes": [
+      "International flights, visa costs and personal travel insurance covering the planned altitude and rescue arrangements",
+      "Sleeping bag, trekking clothing and personal equipment unless rental is listed in the quote",
+      "Crew tips, personal purchases, hotel lunches and dinners unless stated",
+      "Single-room or private-tent supplements, extra hotel nights and optional safari or island extensions"
+    ],
+    "notes": "Proposed departure for 6–8 adult trekkers, subject to a viable party, the named licensed mountain operator and availability. Seven mountain camp nights plus two Moshi hotel nights. Christmas is at Barafu; the summit objective is 26 December. The additional mountain day is retained rather than shortened to force a Christmas summit."
+  },
+  {
+    "id": "christmas-northern-safari-group",
+    "title": "Christmas in the wild · northern Tanzania group safari",
+    "category": "safari",
+    "days": 7,
+    "tripDays": 9,
+    "nights": 8,
+    "duration": "7 safari days · 9 trip days / 8 nights",
+    "price": null,
+    "price2": null,
+    "group": 6,
+    "basis": "Proposed group departure; individual written quote",
+    "start": "Kilimanjaro International Airport → Arusha → Kilimanjaro International Airport",
+    "style": "Proposed small-group safari",
+    "image": "images/december/tarangire-elephant-family.webp",
+    "imageAlt": "Two elephants in Tarangire National Park",
+    "summary": "A proposed 20–26 December 2026 northern circuit, with Tarangire, Lake Manyara, the Serengeti and Christmas Day in the Ngorongoro Crater. Share the journey in a small group, with arrival and departure time included.",
+    "places": [
+      "Tarangire",
+      "Lake Manyara",
+      "Serengeti",
+      "Ngorongoro",
+      "Karatu"
+    ],
+    "itinerary": [
+      {
+        "label": "19 Dec · Arrival",
+        "title": "Arrive in Arusha and meet your group",
+        "text": "Transfer from Kilimanjaro International Airport to an Arusha hotel. Meet your driver-guide and review luggage, accommodation and the coming route."
+      },
+      {
+        "label": "20 Dec · Safari day 1",
+        "title": "Tarangire’s baobabs and elephants",
+        "text": "Leave Arusha for a Tarangire game drive and picnic at a designated site. Continue to the Karatu or Mto wa Mbu area for the first safari night."
+      },
+      {
+        "label": "21 Dec · Safari day 2",
+        "title": "Lake Manyara’s forest and lakeside country",
+        "text": "Explore the park with the driver-guide, following the day’s wildlife and road conditions. Return to the Karatu area for the night."
+      },
+      {
+        "label": "22 Dec · Safari day 3",
+        "title": "Across the highlands to the Serengeti",
+        "text": "Drive via the Ngorongoro highlands towards the Serengeti, with a game drive on arrival when time permits. Stay in the Serengeti."
+      },
+      {
+        "label": "23 Dec · Safari day 4",
+        "title": "A full Serengeti day",
+        "text": "Plan morning and afternoon wildlife viewing around the chosen camp, with time for meals and rest. Stay a second night in the Serengeti. Animals and migration locations vary."
+      },
+      {
+        "label": "24 Dec · Safari day 5",
+        "title": "Serengeti morning, highlands evening",
+        "text": "Enjoy a morning drive, then travel towards the Ngorongoro highlands. The camp or lodge and transfer timing are selected before confirmation; there is no promised lodge name at this proposal stage."
+      },
+      {
+        "label": "25 Dec · Safari day 6",
+        "title": "Christmas Day in the Ngorongoro Crater",
+        "text": "A planned crater drive and picnic at a permitted site, subject to access, park rules and conditions. Return to the Karatu area for a shared dinner; any festive menu must be agreed with the accommodation."
+      },
+      {
+        "label": "26 Dec · Safari day 7",
+        "title": "Return to Arusha at a comfortable pace",
+        "text": "Drive back to Arusha. A stop around Mto wa Mbu can be discussed if time allows; it is not automatically an included paid activity. Stay in an Arusha hotel."
+      },
+      {
+        "label": "27 Dec · Departure",
+        "title": "Airport transfer or a Zanzibar extension",
+        "text": "Transfer to Kilimanjaro International Airport. A separate island extension is quoted with its own flight, hotel and transfer arrangements."
+      }
+    ],
+    "includes": [
+      "Arrival and departure transfers between Kilimanjaro International Airport and Arusha at agreed times",
+      "Two Arusha hotel nights with breakfast, before and after the safari",
+      "Six safari accommodation nights, twin sharing, in camps or lodges named in the final quote",
+      "Shared safari 4×4 with pop-up roof, driver-guide, game drives and drinking water",
+      "Listed park and conservation access charges, crater vehicle fee and safari meals stated in the quote"
+    ],
+    "excludes": [
+      "International or island flights, visa costs, travel insurance and tips",
+      "Single-room supplement, unlisted drinks, festive meal surcharges and personal purchases",
+      "Balloon flights, unlisted village activities and Zanzibar extensions"
+    ],
+    "notes": "Proposed departure for 4–6 guests in one safari vehicle, subject to a viable party, the named operating arrangements and accommodation availability. Six safari nights plus two Arusha hotel nights. No reserved seats or guaranteed sightings are claimed. The quote names accommodation, meal plans, festive surcharges, vehicle seating and cancellation terms before a deposit is requested."
   }
 ]);

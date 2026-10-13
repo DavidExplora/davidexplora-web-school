@@ -35,10 +35,10 @@ test('new journey totals include arrival and departure without compressing mount
   assert.equal(requestPreset('9-day-mens-kilimanjaro-journey').duration,'8–10 days');
   assert.equal(requestPreset('7-day-zanzibar-culture-coast').destination,'Zanzibar');
   assert.match(getTour('9-day-mens-kilimanjaro-journey').summary,/fathers travelling with adult sons/);
-  assert.equal(cleanSaved(tours.map(t=>t.id)).length,39);
+  assert.equal(cleanSaved(tours.map(t=>t.id)).length,tours.length);
 });
 test('all original guides have crawlable articles, sections, sources and valid related tours',()=>{
-  assert.equal(articles.length,8);assert.equal(new Set(articles.map(a=>a.id)).size,8);
+  assert.equal(articles.length,12);assert.equal(new Set(articles.map(a=>a.id)).size,articles.length);
   for(const a of articles){
     const html=fs.readFileSync(a.id+'.html','utf8');
     assert.ok(a.sources.length&&a.sections.length>=4&&a.lede);

@@ -33,13 +33,13 @@ function fixture(search='',blocked=false,compareMode=false){
 }
 test('a shared category URL initializes filters; saved-only results and reset stay usable',()=>{
   const f=fixture('?category=safari'),visible=()=>f.cards.filter(c=>!c.hidden);
-  assert.equal(visible().length,2);assert.equal(f.fields['journal-filters'].hidden,false);
+  assert.equal(visible().length,data.articles.filter(a=>a.category==='safari').length);assert.equal(f.fields['journal-filters'].hidden,false);
   const card=f.cards.find(c=>c.dataset.articleId==='planning-serengeti-safari'),button=f.buttons.find(b=>b.dataset.saveArticle===card.dataset.articleId);
   button.fire('click');assert.equal(button.attrs['aria-pressed'],'true');
   f.fields['journal-saved'].checked=true;f.fields['journal-filters'].fire('change');assert.equal(visible().length,1);
   assert.equal(new URL(f.root.lastURL).searchParams.get('saved'),'1');
   button.fire('click');assert.equal(visible().length,0);assert.equal(f.fields['journal-empty'].hidden,false);assert.equal(f.fields['journal-saved'].focused,true);
-  f.fields['journal-reset'].fire('click');assert.equal(visible().length,8);assert.equal(f.fields['journal-empty'].hidden,true);
+  f.fields['journal-reset'].fire('click');assert.equal(visible().length,data.articles.length);assert.equal(f.fields['journal-empty'].hidden,true);
 });
 test('blocked storage preserves saved guides for the visit and gives an accurate status',()=>{
   const f=fixture('',true);f.buttons[0].fire('click');
