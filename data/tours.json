@@ -1858,5 +1858,438 @@
     "imageAlt": "Sailing boats at sunset in Zanzibar.",
     "photoNote": "Sailing boats at sunset in Zanzibar; island scenery rather than an included sunset cruise.",
     "imageNote": "Zanzibar sunset · island scenery, not an included cruise"
+  },
+  {
+    "id": "3-day-nyerere-road-safari",
+    "title": "3-Day Nyerere River & Wildlife Safari",
+    "category": "safari",
+    "days": 3,
+    "duration": "3 days / 2 nights",
+    "tripDays": 3,
+    "price": 1160,
+    "group": 4,
+    "basis": "4 adults; two sharing each room",
+    "start": "Dar es Salaam → Dar es Salaam",
+    "style": "Private road safari · tented camp",
+    "image": "images/safari-expansion/rufiji-river.webp",
+    "summary": "Travel from Dar es Salaam to the Rufiji region for a boat safari and a full day of game drives. Two nights near Nyerere give the journey a comfortable overnight rhythm.",
+    "places": [
+      "Dar es Salaam",
+      "Nyerere National Park",
+      "Rufiji River"
+    ],
+    "itinerary": [
+      {
+        "label": "Day 1",
+        "title": "Dar es Salaam to the Rufiji region",
+        "text": "Leave from the agreed Dar es Salaam pickup point in the morning. Road conditions and traffic affect the drive. Settle into the confirmed camp, then join the planned Rufiji boat activity if river levels and authorised operating conditions allow."
+      },
+      {
+        "label": "Day 2",
+        "title": "A full day in Nyerere",
+        "text": "Explore permitted park tracks with your driver-guide and take a picnic break at a designated site. Return to camp after the game drive; sightings depend on the day’s wildlife movements."
+      },
+      {
+        "label": "Day 3",
+        "title": "Breakfast and the return journey",
+        "text": "After breakfast, drive back to the agreed Dar es Salaam point. Do not plan a tight international departure the same afternoon; discuss a buffer or extra overnight."
+      }
+    ],
+    "includes": [
+      "Private safari vehicle and English-speaking driver-guide for the listed road itinerary",
+      "2 tented-camp nights, two adults sharing; named property in final quote",
+      "Meals from lunch on day 1 through breakfast on day 3; drinking water",
+      "Listed game drives, applicable park/vehicle/concession charges and one authorised boat safari with life jacket"
+    ],
+    "excludes": [
+      "International flights, visas and travel insurance",
+      "Unlisted meals, drinks, personal purchases and tips",
+      "Hotels and transfers before or after the listed itinerary",
+      "Flights or Zanzibar extension",
+      "Optional community visit or walking safari"
+    ],
+    "notes": "The USD 1,160 estimate is based on four adults on a private road trip. Road access and boat schedules can change during heavy rain. Walking safaris require a separate permitted arrangement and are not included. Camps and boat providers are named before payment; wildlife is never guaranteed.",
+    "price2": null,
+    "gallery": [
+      {
+        "image": "images/safari-expansion/rufiji-river.webp",
+        "alt": "Rufiji River in the historic Selous Game Reserve landscape.",
+        "caption": "Rufiji River in the historic Selous landscape, photographed in 2016; a regional destination image, not a guaranteed boat route."
+      },
+      {
+        "image": "images/safari-expansion/rufiji-wildlife.webp",
+        "alt": "Heron on the Rufiji riverbank in the historic Selous landscape.",
+        "caption": "Heron on the Rufiji riverbank in the historic Selous landscape. Boat and wildlife conditions vary."
+      }
+    ],
+    "imageNote": "Rufiji / historic Selous landscape · regional photograph",
+    "imageAlt": "Rufiji River in the historic Selous Game Reserve landscape."
+  },
+  {
+    "id": "6-day-drive-in-safari-zanzibar",
+    "title": "6-Day Northern Safari & Zanzibar Escape",
+    "category": "combined",
+    "days": 6,
+    "duration": "6 days / 5 nights",
+    "tripDays": 6,
+    "price": 3400,
+    "group": 2,
+    "basis": "2 adults sharing; off-peak camps and coast accommodation",
+    "start": "Arusha → Zanzibar airport or coast",
+    "style": "Private safari · domestic flight · coast stay",
+    "image": "images/safari-expansion/serengeti-plains.webp",
+    "summary": "Three mainland safari days in Tarangire and the Serengeti, then fly to Zanzibar for two coast nights. A six-day route starting with a ready-to-go morning departure from Arusha.",
+    "places": [
+      "Arusha",
+      "Tarangire",
+      "Serengeti",
+      "Zanzibar"
+    ],
+    "itinerary": [
+      {
+        "label": "Day 1",
+        "title": "Tarangire and the highlands",
+        "text": "Begin from the confirmed Arusha hotel in the morning. Spend time on a Tarangire game drive, then continue to the agreed Karatu lodge. Arrive in Arusha the previous day; that hotel night is quoted separately."
+      },
+      {
+        "label": "Day 2",
+        "title": "Across the highlands to the Serengeti",
+        "text": "Travel through the permitted Ngorongoro transit route to the Serengeti, with a packed lunch and an afternoon game drive if arrival time allows. This is a substantial transfer day. Stay in the confirmed Serengeti tented camp."
+      },
+      {
+        "label": "Day 3",
+        "title": "A full Serengeti day",
+        "text": "Explore the central Serengeti with your driver-guide, returning for the second camp night. Seasonal migration areas are considered only if the agreed route, permits and driving time support them."
+      },
+      {
+        "label": "Day 4",
+        "title": "A morning flight from the Serengeti to Zanzibar",
+        "text": "Transfer to the named Serengeti airstrip after breakfast and take the confirmed scheduled flight to Zanzibar, which may have intermediate stops. Meet your island driver and continue to the named coast accommodation. Two island nights follow."
+      },
+      {
+        "label": "Day 5",
+        "title": "Time on the Zanzibar coast",
+        "text": "Enjoy the confirmed coast guesthouse or hotel at your own pace. A Stone Town, forest or reef excursion can be quoted as an extra. This flexible day allows time to rest after the safari."
+      },
+      {
+        "label": "Day 6",
+        "title": "Departure or a longer island stay",
+        "text": "Transfer to Zanzibar airport at the agreed time, or extend your coast stay with a separate quote. International flights are not included."
+      }
+    ],
+    "includes": [
+      "Private safari vehicle and English-speaking driver-guide on listed mainland days",
+      "5 accommodation nights, two adults sharing; safari camps/lodges and two Zanzibar coast nights named in the quote",
+      "Full-board meals on the listed mainland safari days; breakfast on coast nights",
+      "Applicable park, transit, vehicle and concession charges for the confirmed safari route",
+      "One scheduled mainland-to-Zanzibar flight with the named ticket’s baggage allowance",
+      "Listed airstrip/airport transfers and drinking water on safari"
+    ],
+    "excludes": [
+      "International flights, visas and travel insurance",
+      "Unlisted meals, drinks, personal purchases and tips",
+      "Hotels and transfers before or after the listed itinerary",
+      "Zanzibar excursions, lunches and dinners unless specifically added",
+      "Additional safari nights or an extra crater day",
+      "Zanzibar visitor/accommodation levies not named in the quote"
+    ],
+    "notes": "USD 3,400 is an off-peak estimate for two adults sharing. Arrive in Arusha before day 1; the pre-safari night is extra. The core six-day route visits Tarangire and the Serengeti, not a crater descent. Ngorongoro Crater or seasonal Ndutu can be added with a separately timed and priced route. The quote names the airline, luggage allowance, accommodation, visitor levies and actual services.",
+    "price2": null,
+    "gallery": [
+      {
+        "image": "images/safari-expansion/serengeti-plains.webp",
+        "alt": "Serengeti river landscape in golden light.",
+        "caption": "Serengeti river landscape; a destination image rather than a promise of the actual camp view."
+      },
+      {
+        "image": "images/stories/baobab-elephants.webp",
+        "alt": "Elephants beside a baobab in green savannah",
+        "caption": "Tanzanian safari landscape; vehicle, route and lodges are confirmed in your written itinerary."
+      },
+      {
+        "image": "images/zanzibar-tours/jambiani-beach.webp",
+        "alt": "Jambiani beach at low tide",
+        "caption": "Jambiani, Zanzibar. Your coast hotel and location are named in the quote; this is not a photograph of a reserved property."
+      }
+    ],
+    "imageAlt": "Serengeti river landscape in golden light."
+  },
+  {
+    "id": "3-day-nyerere-fly-in-zanzibar",
+    "title": "3-Day Nyerere Fly-In Safari from Zanzibar",
+    "category": "safari",
+    "days": 3,
+    "duration": "3 days / 2 nights",
+    "tripDays": 3,
+    "price": 1330,
+    "group": 4,
+    "basis": "4 adults; two sharing each room",
+    "start": "Zanzibar airport → Zanzibar airport",
+    "style": "Scheduled flights · private game drives",
+    "image": "images/safari-expansion/rufiji-river.webp",
+    "summary": "Fly from Zanzibar into Nyerere for two camp nights, game drives and a river outing, with the island return planned around the airline’s actual schedule.",
+    "places": [
+      "Zanzibar",
+      "Nyerere National Park",
+      "Rufiji River"
+    ],
+    "itinerary": [
+      {
+        "label": "Day 1",
+        "title": "Zanzibar to the safari airstrip",
+        "text": "Check in for the named scheduled flight with the confirmed baggage allowance. Meet your driver at the park airstrip, transfer to camp and join an afternoon game drive when flight arrival permits."
+      },
+      {
+        "label": "Day 2",
+        "title": "A wildlife day and a river perspective",
+        "text": "Combine a game drive with the authorised boat safari at the timing chosen for the river conditions. Use life jackets and follow crew instructions. Meals and the second camp night are included in the agreed plan."
+      },
+      {
+        "label": "Day 3",
+        "title": "Return to Zanzibar",
+        "text": "After breakfast, transfer to the airstrip for the scheduled flight back to Zanzibar. Allow a separate buffer before any onward international flight; hotel transport on the island can be added."
+      }
+    ],
+    "includes": [
+      "Return scheduled Zanzibar–Nyerere flights for the agreed route, fare class and baggage allowance",
+      "Private park game-drive vehicle and driver-guide; camp/airstrip transfers",
+      "2 tented-camp nights, two adults sharing",
+      "Meals from lunch on day 1 through breakfast on day 3; drinking water",
+      "Listed park, concession and vehicle charges, game drives and one authorised boat activity"
+    ],
+    "excludes": [
+      "International flights, visas and travel insurance",
+      "Unlisted meals, drinks, personal purchases and tips",
+      "Hotels and transfers before or after the listed itinerary",
+      "Zanzibar hotel–airport transfers unless added",
+      "Charter flights, extra baggage and walking safari"
+    ],
+    "notes": "The USD 1,330 estimate uses four adults and negotiated camp/activity assumptions; airfare and space are not reserved by this website. Named airline schedules, camp availability and every applicable charge are verified in the final quote. Do not assume a direct flight or a guaranteed wildlife sighting.",
+    "price2": null,
+    "gallery": [
+      {
+        "image": "images/safari-expansion/rufiji-river.webp",
+        "alt": "Rufiji River in the historic Selous Game Reserve landscape.",
+        "caption": "Rufiji River in the historic Selous landscape, photographed in 2016; a regional destination image, not a guaranteed boat route."
+      },
+      {
+        "image": "images/safari-expansion/rufiji-wildlife.webp",
+        "alt": "Heron on the Rufiji riverbank in the historic Selous landscape.",
+        "caption": "Heron on the Rufiji riverbank in the historic Selous landscape. Boat and wildlife conditions vary."
+      }
+    ],
+    "imageNote": "Rufiji / historic Selous landscape · regional photograph",
+    "imageAlt": "Rufiji River in the historic Selous Game Reserve landscape."
+  },
+  {
+    "id": "2-day-mikumi-safari",
+    "title": "2-Day Mikumi Safari from Dar es Salaam",
+    "category": "safari",
+    "days": 2,
+    "duration": "2 days / 1 night",
+    "tripDays": 2,
+    "price": 475,
+    "group": 4,
+    "basis": "4 adults; two sharing each room",
+    "start": "Dar es Salaam → Dar es Salaam",
+    "style": "Private road safari · one lodge night",
+    "image": "images/safari-expansion/mikumi-elephants.webp",
+    "summary": "A short road safari with an overnight near Mikumi, an afternoon game drive and another wildlife morning before returning to Dar es Salaam.",
+    "places": [
+      "Dar es Salaam",
+      "Mikumi",
+      "Mkata floodplain"
+    ],
+    "itinerary": [
+      {
+        "label": "Day 1",
+        "title": "Dar es Salaam to Mikumi",
+        "text": "Start early from the agreed pickup point. Road traffic affects the journey. Reach the Mikumi area, take lunch and join a game drive within the confirmed park-access period. Stay at the named lodge."
+      },
+      {
+        "label": "Day 2",
+        "title": "A wildlife morning, then back to Dar",
+        "text": "After breakfast, explore suitable park tracks with your driver-guide. Break for the included lunch and begin the road return in good time. Confirm the actual driving plan before booking onward travel."
+      }
+    ],
+    "includes": [
+      "Private safari vehicle and English-speaking driver-guide for the listed road route",
+      "1 lodge night, two adults sharing",
+      "Meals from lunch on day 1 through lunch on day 2; drinking water",
+      "Listed game drives and applicable park, vehicle and conservation charges"
+    ],
+    "excludes": [
+      "International flights, visas and travel insurance",
+      "Unlisted meals, drinks, personal purchases and tips",
+      "Hotels and transfers before or after the listed itinerary",
+      "Flights, optional village visit and walking safari"
+    ],
+    "notes": "USD 475 is based on four adults travelling together. Day 1 is partly a transfer day. Park access is priced for the stated itinerary; extra access periods cost more. Avoid a tight evening flight on day 2. Share your hotel so departure and return points are agreed.",
+    "price2": null,
+    "gallery": [
+      {
+        "image": "images/safari-expansion/mikumi-elephants.webp",
+        "alt": "Elephants in Mikumi National Park.",
+        "caption": "Elephants photographed in Mikumi National Park; sightings on your visit vary."
+      },
+      {
+        "image": "images/safari-expansion/mikumi-lion.webp",
+        "alt": "Male lion in Mikumi National Park.",
+        "caption": "Male lion photographed in Mikumi National Park; wildlife is not guaranteed."
+      }
+    ],
+    "imageAlt": "Elephants in Mikumi National Park."
+  },
+  {
+    "id": "6-day-northern-safari-culture",
+    "title": "6-Day Northern Safari & Local Culture",
+    "category": "safari",
+    "days": 6,
+    "duration": "6 days / 5 nights",
+    "tripDays": 6,
+    "price": null,
+    "group": 4,
+    "basis": "4 adults; two sharing each room",
+    "start": "Arusha → Arusha",
+    "style": "Private safari · locally hosted visit",
+    "image": "images/safari-expansion/serengeti-plains.webp",
+    "summary": "Connect Tarangire, Lake Manyara, the Serengeti and Ngorongoro with a hosted cultural visit. Five nights allow time for the road journeys and a full day on the plains.",
+    "places": [
+      "Tarangire",
+      "Lake Manyara",
+      "Serengeti",
+      "Ngorongoro",
+      "Karatu"
+    ],
+    "itinerary": [
+      {
+        "label": "Day 1",
+        "title": "Tarangire and the Karatu highlands",
+        "text": "Begin in Arusha, explore Tarangire and continue to the named highland lodge for your first night."
+      },
+      {
+        "label": "Day 2",
+        "title": "Lake Manyara and a hosted local visit",
+        "text": "Choose a Lake Manyara game drive with the agreed timing, followed by a pre-arranged host-led visit near the highlands. The host, activity, language and community fee are confirmed; this is not an uninvited village stop."
+      },
+      {
+        "label": "Day 3",
+        "title": "Travel to the Serengeti",
+        "text": "Drive the permitted highland transit route, with lunch and a game drive as time allows. Stay at the named Serengeti camp."
+      },
+      {
+        "label": "Day 4",
+        "title": "A full day on the plains",
+        "text": "Give the Serengeti a full wildlife day with a picnic or agreed camp lunch. Seasonal routing follows the actual accommodation and road plan, not a promise of a migration crossing."
+      },
+      {
+        "label": "Day 5",
+        "title": "Towards the crater highlands",
+        "text": "Enjoy a morning game drive, then travel back towards the Ngorongoro highlands. Stay near the crater route so the next morning can begin without a long Serengeti drive."
+      },
+      {
+        "label": "Day 6",
+        "title": "Crater descent and return to Arusha",
+        "text": "Descend into Ngorongoro at the confirmed access time, explore with a picnic and return to Arusha. A late arrival is possible; discuss an extra hotel night before your flight."
+      }
+    ],
+    "includes": [
+      "Private safari vehicle, driver-guide and listed game drives",
+      "5 named camp/lodge nights, two adults sharing",
+      "Meals from lunch on day 1 through lunch on day 6; drinking water",
+      "Applicable park, crater, vehicle, transit and concession charges",
+      "One pre-arranged host-led cultural activity with the agreed community fee"
+    ],
+    "excludes": [
+      "International flights, visas and travel insurance",
+      "Unlisted meals, drinks, personal purchases and tips",
+      "Hotels and transfers before or after the listed itinerary"
+    ],
+    "notes": "A tailored quote is used because accommodation, cultural hosts, permits and dates materially affect cost. The cultural visit respects consent, photography preferences and local payment arrangements. School visits, staged ceremonies and donations are not automatic inclusions.",
+    "price2": null,
+    "gallery": [
+      {
+        "image": "images/safari-expansion/serengeti-plains.webp",
+        "alt": "Serengeti river landscape in golden light.",
+        "caption": "Serengeti river landscape; a destination image rather than a promise of the actual camp view."
+      },
+      {
+        "image": "images/stories/baobab-elephants.webp",
+        "alt": "Elephants beside a baobab in green savannah",
+        "caption": "Tanzanian safari landscape; vehicle, route and lodges are confirmed in your written itinerary."
+      }
+    ],
+    "imageAlt": "Serengeti river landscape in golden light."
+  },
+  {
+    "id": "4-day-luxury-northern-safari",
+    "title": "4-Day Private Luxury Northern Safari",
+    "category": "safari",
+    "days": 4,
+    "duration": "4 days / 3 nights",
+    "tripDays": 4,
+    "price": null,
+    "group": 2,
+    "basis": "2 adults; two sharing each room",
+    "start": "Arusha → Arusha",
+    "style": "Private 4×4 · selected luxury lodges",
+    "image": "images/stories/baobab-elephants.webp",
+    "summary": "A compact luxury itinerary through Tarangire, Lake Manyara and Ngorongoro, with three lodge nights and a vehicle reserved for your own party.",
+    "places": [
+      "Arusha",
+      "Tarangire",
+      "Lake Manyara",
+      "Ngorongoro"
+    ],
+    "itinerary": [
+      {
+        "label": "Day 1",
+        "title": "Tarangire, with a private vehicle",
+        "text": "Depart Arusha for a focused Tarangire game drive. Continue to the named lodge, selected for your dates and preferred comfort."
+      },
+      {
+        "label": "Day 2",
+        "title": "Lake Manyara and a slower afternoon",
+        "text": "Explore Lake Manyara with your guide and return to the agreed highland lodge. Keep some afternoon time to enjoy the property rather than adding another long transfer."
+      },
+      {
+        "label": "Day 3",
+        "title": "Ngorongoro Crater",
+        "text": "Use the agreed crater-access time for a game drive and picnic. Return to the named lodge; timings follow the actual park arrangements."
+      },
+      {
+        "label": "Day 4",
+        "title": "Breakfast and return to Arusha",
+        "text": "Enjoy breakfast and make the agreed return transfer to Arusha. Airport departure timing or a final lunch is quoted around your actual plans."
+      }
+    ],
+    "includes": [
+      "Private safari 4×4 and English-speaking driver-guide",
+      "3 nights in named luxury lodges, two adults sharing",
+      "Meals and drinks only as itemised for each property in the written quote",
+      "Listed park, crater, concession, vehicle and activity charges",
+      "Drinking water during game drives and the agreed return transfer"
+    ],
+    "excludes": [
+      "International flights, visas and travel insurance",
+      "Unlisted meals, drinks, personal purchases and tips",
+      "Hotels and transfers before or after the listed itinerary",
+      "Serengeti extension, premium drinks and private charter flights"
+    ],
+    "notes": "This itinerary keeps the four days within the Tarangire–Manyara–Ngorongoro region. The Serengeti needs a longer route or a separately priced fly-in plan. Luxury is defined by named properties and room categories in your quote; photos do not promise a particular lodge or vehicle.",
+    "price2": null,
+    "gallery": [
+      {
+        "image": "images/stories/baobab-elephants.webp",
+        "alt": "Elephants beside a baobab in green savannah",
+        "caption": "Tanzanian safari landscape; vehicle, route and lodges are confirmed in your written itinerary."
+      },
+      {
+        "image": "images/safari-expansion/serengeti-plains.webp",
+        "alt": "Serengeti river landscape in golden light.",
+        "caption": "Serengeti river landscape, a safari illustration. This four-day highland route does not include the Serengeti."
+      }
+    ],
+    "imageAlt": "Elephants beside a baobab in green savannah"
   }
 ]

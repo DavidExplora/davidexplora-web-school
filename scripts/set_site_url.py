@@ -8,8 +8,8 @@ if len(sys.argv)!=2:raise SystemExit('Usage: python scripts/set_site_url.py http
 origin=sys.argv[1].rstrip('/')
 url=urlsplit(origin)
 if url.scheme!='https' or not url.netloc or url.path or url.query or url.fragment or url.username:raise SystemExit('Use an HTTPS origin with no path, credentials, query or fragment.')
-sample=(root/'index.html').read_text()
+sample=(root/'index.html').read_text(encoding='utf-8')
 old=re.search(r'<link rel="canonical" href="(https://[^/]+)',sample)[1]
 for path in [*root.glob('*.html'),root/'templates/home.html',root/'robots.txt',root/'sitemap.xml']:
-    path.write_text(path.read_text().replace(old,origin))
+    path.write_text(path.read_text(encoding='utf-8').replace(old,origin), encoding='utf-8')
 print(f'Updated the live origin from {old} to {origin}. Run the checks, commit and redeploy.')

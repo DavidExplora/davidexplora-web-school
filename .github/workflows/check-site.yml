@@ -21,6 +21,7 @@ jobs:
       - run: node --test tests/*.test.cjs
       - run: node --check discovery.js
       - run: node --check ui.js
+      - run: node --check features.js
       - run: python scripts/build_site.py
       - run: git diff --exit-code
       - run: python scripts/check_site.py

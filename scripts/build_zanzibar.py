@@ -25,11 +25,11 @@ def build():
     body+='''<section class="section destination-final-cta island-final"><p class="eyebrow">LET’S MAKE YOUR ISLAND PLAN</p><h2>Send your hotel.<br>Bring your ideas.</h2><p>Share your dates, group, hotel and the experiences you like. David will put the activities, transfers and complete price into one practical plan.</p><a class="btn btn-primary" href="index.html?trip=zanzibar#contact">Plan Zanzibar with David ↗</a><p class="photo-note">Licensed destination and activity photographs; captions identify illustrative images. <a href="photo-credits.html">Photographers, sources and licences</a></p></section>'''
     schema={'@context':'https://schema.org','@type':'ItemList','name':'David Explora Zanzibar experiences','itemListElement':[{'@type':'ListItem','position':i+1,'name':t['title'],'url':site.ORIGIN+'/'+t['id']+'.html'} for i,t in enumerate(tours)]}
     site.page('zanzibar.html','Zanzibar Tours, Ocean Days & 6-Day Island Stays','Explore Zanzibar sandbanks, guided snorkeling, Stone Town, Jozani, spice farms, kayaking, Kuza Cave and a six-day island stay. Compare clear meeting points and guide prices.',body,scenes[0][0],schema)
-    home=site.ROOT/'index.html';text=home.read_text()
+    home=site.ROOT/'index.html';text=home.read_text(encoding='utf-8')
     selected=['nakupenda-sandbank','jozani-forest','blue-lagoon-snorkeling','6-day-zanzibar-island-escape','kuza-cave','zanzibar-mangrove-kayaking']
     import re
     text=re.sub(r'<!-- BEGIN: home-zanzibar -->.*?<!-- END: home-zanzibar -->',lambda _: '<!-- BEGIN: home-zanzibar -->'+rail(selected,'Zanzibar experiences')+'<!-- END: home-zanzibar -->',text,flags=re.S)
-    home.write_text(text)
+    home.write_text(text, encoding='utf-8')
     site.sitemap()
     print('Built Zanzibar island hub and home experience slider')
 

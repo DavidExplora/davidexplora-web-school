@@ -1,0 +1,19 @@
+[
+  {
+    "label": "Lion cubs in central Serengeti",
+    "author": "Bettina May",
+    "license": "CC BY 3.0",
+    "license_url": "https://creativecommons.org/licenses/by/3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Lion_cubs_%28Panthera_leo%29.webm",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Lion_cubs_%28Panthera_leo%29.webm",
+    "date": "17 April 2016",
+    "file": "media/serengeti-lion-cubs.mp4",
+    "poster": "media/serengeti-lion-cubs-poster.webp",
+    "alt": "Lion cubs resting together on a rocky kopje in central Serengeti, Tanzania.",
+    "changes": "Excerpt from seconds 5–17 of the original footage; audio removed; transcoded to 1280×720 H.264 MP4 at 24 fps. WebP poster extracted from second 5. No generative edits. The excerpt and poster retain CC BY 3.0.",
+    "duration_seconds": 12,
+    "width": 1280,
+    "height": 720,
+    "bytes": 1051120
+  }
+]

@@ -15,25 +15,27 @@ class Element {
   setAttribute(name,value){this.attrs[name]=value;}
   closest(){return null;}
 }
-function fixture(reduced=false) {
+function fixture(reduced=false, withVideo=false, saveData=false) {
   const root=new Element(),document=new Element(),media=new Element();
   media.matches=reduced;document.hidden=false;
   const controls=new Element(),pause=new Element(),counter=new Element(),announcement=new Element();
   const previous=new Element(),next=new Element();
   const slides=Array.from({length:3},(_,i)=>{const e=new Element();e.querySelector=()=>new Element('Chapter '+(i+1));return e;});
+  const video=new Element();video.dataset.src='media/serengeti-lion-cubs.mp4';video.getAttribute=name=>name==='src'?video.src:null;video.playing=false;video.play=()=>{video.playing=true;return {catch(){}};};video.pause=()=>{video.playing=false;};
+  const videos=withVideo?[video]:[];slides.forEach((slide,n)=>{slide.contains=element=>n===0&&element===video;});
   const dots=slides.map((_,i)=>{const e=new Element();e.dataset.slideTo=String(i);return e;});
   const map={'.story-controls':controls,'[data-pause]':pause,'[data-counter]':counter,'[data-announcement]':announcement,'[data-prev]':previous,'[data-next]':next};
   root.querySelector=selector=>map[selector];
-  root.querySelectorAll=selector=>selector==='[data-slide]'?slides:selector==='[data-slide-to]'?dots:[];
+  root.querySelectorAll=selector=>selector==='[data-slide]'?slides:selector==='[data-slide-to]'?dots:selector==='video[data-motion-video]'?videos:[];
   root.contains=element=>[...Object.values(map),...slides,...dots].includes(element);
   document.querySelectorAll=selector=>selector==='[data-carousel]'?[root]:[];
   document.querySelector=()=>null;
   const timers=new Map();let timerId=0,observer;
   class IntersectionObserver {constructor(callback){observer=callback;}observe(){}}
-  const window={matchMedia:()=>media,setInterval:callback=>{timers.set(++timerId,callback);return timerId;},clearInterval:id=>timers.delete(id),IntersectionObserver};
+  const window={navigator:{connection:{saveData}},matchMedia:()=>media,setInterval:callback=>{timers.set(++timerId,callback);return timerId;},clearInterval:id=>timers.delete(id),IntersectionObserver};
   vm.runInNewContext(code,{window,document,IntersectionObserver,URLSearchParams});
   const visible=value=>observer([{isIntersecting:value}]);
-  return {root,document,media,controls,pause,counter,announcement,previous,next,slides,dots,timers,visible};
+  return {root,document,media,controls,pause,counter,announcement,previous,next,slides,dots,timers,visible,video};
 }
 test('stories rotate only while visible and stop in a background tab',()=>{
   const f=fixture();assert.equal(f.timers.size,0);
@@ -80,4 +82,16 @@ test('a horizontal touch swipe changes the photo and pauses autoplay',()=>{
   f.root.fire('touchstart',{target:{closest:()=>null},touches:[{clientX:220,clientY:100}]});
   f.root.fire('touchend',{changedTouches:[{clientX:100,clientY:105}]});
   assert.equal(f.counter.textContent,'02 / 03');assert.equal(f.timers.size,0);
+});
+test('film playback loads only on an active visible slide and pauses with the story',()=>{
+  const f=fixture(false,true);assert.equal(f.video.src,undefined);
+  f.visible(true);assert.equal(f.video.src,'media/serengeti-lion-cubs.mp4');assert.equal(f.video.playing,true);
+  f.pause.fire('click');assert.equal(f.video.playing,false);
+  f.pause.fire('click');assert.equal(f.video.playing,true);
+  f.next.fire('click');assert.equal(f.video.playing,false);
+  f.previous.fire('click');assert.equal(f.video.playing,true);
+  f.document.hidden=true;f.document.fire('visibilitychange');assert.equal(f.video.playing,false);
+});
+test('motion and data saving preferences keep the hero poster without downloading film',()=>{
+  for(const f of [fixture(true,true),fixture(false,true,true)]){f.visible(true);assert.equal(f.video.src,undefined);assert.equal(f.video.playing,false);}
 });

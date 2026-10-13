@@ -1,11 +1,12 @@
 """Build crawlable tour pages from the editable catalogue. No runtime dependency."""
 from pathlib import Path
 from html import escape
-import json, re, xml.etree.ElementTree as ET
+import json, re, sys, xml.etree.ElementTree as ET
+import site_features as features
 
 ROOT = Path(__file__).resolve().parents[1]
-TOURS = json.loads((ROOT/'data/tours.json').read_text())
-HOME = (ROOT/'index.html').read_text()
+TOURS = json.loads((ROOT/'data/tours.json').read_text(encoding='utf-8'))
+HOME = (ROOT/'index.html').read_text(encoding='utf-8')
 ORIGIN = re.search(r'<link rel="canonical" href="([^"]+)', HOME)[1].rstrip('/')
 HEADER = re.search(r'<header class="site-header">.*?</header>', HOME, re.S)[0]
 FOOTER = re.search(r'<footer class="site-footer">.*?</footer>', HOME, re.S)[0]
@@ -77,7 +78,7 @@ def card(tour):
     return f'''<article class="package-card" data-tour-id="{id}">
 <a class="package-picture" href="{id}.html" aria-label="See {title}">{img(tour['image'], image_alt(tour))}<span class="package-category">{CATEGORIES[tour['category']]}</span></a>{('<p class="card-image-note">'+esc(tour['imageNote'])+'</p>') if tour.get('imageNote') else ''}
 <div class="package-body"><p class="package-meta">{esc(tour['duration'])} · {esc(tour['style'])}</p><h3><a href="{id}.html">{title}</a></h3><p>{esc(tour['summary'])}</p><span class="package-places">{' · '.join(map(esc,tour['places']))}</span>
-<div class="package-price">{price(tour)}<div class="package-links"><a href="{id}.html">View itinerary ↗</a><a href="index.html?package={id}#contact">Request a quote ↗</a></div></div></div></article>'''
+<div class="package-price">{price(tour)}<div class="package-links"><a href="{id}.html">View itinerary ↗</a><a href="index.html?package={id}#contact">Request a quote ↗</a></div></div><div class="tour-card-actions" hidden data-tour-actions><button type="button" data-save-tour="{id}" aria-pressed="false" aria-label="Save {title}">{features.icon('save')}<span data-save-label>Save tour</span></button><button type="button" data-share-tour="{id}" aria-label="Copy link to {title}">{features.icon('share')}<span>Copy link</span></button></div><p class="card-action-status" data-card-status role="status"></p></div></article>'''
 
 def selected_cards(ids): return '\n'.join(card(next(t for t in TOURS if t['id']==id)) for id in ids)
 
@@ -94,21 +95,22 @@ def page(filename, title, description, body, image='images/stories/zebras-safari
 <meta property="og:description" content="{esc(description)}"><meta property="og:url" content="{url}"><meta property="og:image" content="{ORIGIN}/{image}"><meta name="twitter:card" content="summary_large_image">
 {('<script type="application/ld+json">'+structured+'</script>') if structured else ''}
 </head><body><a class="skip-link" href="#main">Skip to content</a>{HEADER}<main id="main">{body}</main>{FOOTER}{FLOAT}
-<script src="tour-data.js" defer></script><script src="packages.js" defer></script><script src="journey.js" defer></script><script src="script.js" defer></script><script src="experience.js" defer></script><script src="destination-data.js" defer></script><script src="business-links.js" defer></script><script src="discovery.js" defer></script><script src="ui.js" defer></script></body></html>'''
-    (ROOT/filename).write_text(source)
+<script src="tour-data.js" defer></script><script src="packages.js" defer></script><script src="journey.js" defer></script><script src="script.js" defer></script><script src="experience.js" defer></script><script src="destination-data.js" defer></script><script src="business-links.js" defer></script><script src="discovery.js" defer></script><script src="ui.js" defer></script><script src="features.js" defer></script></body></html>'''
+    (ROOT/filename).write_text(source, encoding='utf-8')
 
 EXPLAIN='''<div class="price-explainer"><strong>Estimated prices. A personal quote for your actual group.</strong> Prices are planning estimates in USD per international adult, based on the group and sharing arrangement shown. They are not fixed offers. Your dates, party size, actual permit charges, accommodation and transfers can change the total. Children, residents, solo travelers and larger groups are quoted separately. Every final quote lists the complete payable total, taxes or fees, inclusions and booking terms before you confirm.</div>'''
 
 def catalogue():
     options=''.join(f'<option value="{key}">{label}</option>' for key,label in CATEGORIES.items())
+    lengths=''.join(f'<option value="{n}">{n} days</option>' for n in range(2,15))
     body=f'''<section class="catalogue-heading"><div><nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span>Tours &amp; prices</span></nav><p class="eyebrow">SAFARIS · TREKS · ISLANDS · DAY TRIPS</p><h1>Find your Tanzania tour.</h1><p>Compare itineraries, departure points and planned inclusions. Choose a starting tour, then request a quote for your dates and group.</p>
 <div class="budget-jumps"><a href="packages.html?budget=100">Day trips up to USD 100</a><a href="packages.html?category=safari">Private safaris</a><a href="packages.html?category=trekking">Kilimanjaro routes</a><a href="packages.html?category=zanzibar">Zanzibar tours</a></div></div></section>
 <section class="section" data-catalogue><form id="package-filters" class="package-filters" role="search" aria-label="Find a journey" hidden>
 <div class="filter-field"><label for="package-search">Place or experience</label><input id="package-search" type="search" placeholder="Serengeti, coffee, Machame…" autocomplete="off"></div>
 <div class="filter-field"><label for="package-category">Your kind of Tanzania</label><select id="package-category"><option value="all">All experiences</option>{options}</select></div>
-<div class="filter-field"><label for="package-length">Tour duration</label><select id="package-length"><option value="all">Any length</option><option value="day">A day or less</option><option value="short">2–4 days</option><option value="long">5+ days</option></select></div>
+<div class="filter-field"><label for="package-length">Tour duration</label><select id="package-length"><option value="all">Any length</option><option value="day">A day or less</option>{lengths}<option value="short">2–4 days</option><option value="long">5+ days</option></select></div>
 <div class="filter-field"><label for="package-budget">Estimated price per adult</label><select id="package-budget"><option value="">Any budget + tailored quotes</option><option value="100">Up to USD 100</option><option value="300">Up to USD 300</option><option value="1000">Up to USD 1,000</option><option value="2000">Up to USD 2,000</option><option value="3000">Up to USD 3,000</option></select></div></form>
-<div class="catalogue-status"><p id="package-count" role="status">{len(TOURS)} journeys to explore</p><button id="reset-packages" type="button" hidden>Reset filters</button></div>
+<div class="catalogue-status"><p id="package-count" role="status">{len(TOURS)} journeys to explore</p><div class="catalogue-shortlist" hidden data-shortlist-filter><label for="package-saved"><input type="checkbox" id="package-saved"> Show my saved tours</label><span>Saved on this browser</span></div><button id="reset-packages" type="button" hidden>Reset filters</button></div>
 <div id="package-empty" class="empty-packages" hidden><h2>No journeys match those choices.</h2><p>Try another budget or reset the filters. David can also help create a trip around your budget.</p><a class="text-link" href="index.html#contact">Plan something personal ↗</a></div>
 <div class="package-grid">{''.join(map(card,TOURS))}</div>{EXPLAIN}<p class="photo-note">Photographs illustrate the destinations and travel styles. Exact vehicles and accommodation are confirmed in your itinerary. <a href="photo-credits.html">Photo credits</a></p></section>'''
     schema={'@context':'https://schema.org','@type':'ItemList','name':'David Explora Tanzania journeys','itemListElement':[{'@type':'ListItem','position':i+1,'name':t['title'],'url':ORIGIN+'/'+t['id']+'.html'} for i,t in enumerate(TOURS)]}
@@ -130,7 +132,7 @@ def tour_page(tour):
     if len(related)<3: related += [t for t in TOURS if t['id']!=id and t not in related][:3-len(related)]
     body=f'''<div class="tour-top"><nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><a href="packages.html">Journeys &amp; prices</a><span aria-hidden="true">/</span><span>{CATEGORIES[tour['category']]}</span></nav>
 <div class="tour-heading"><div><p class="eyebrow">{esc(CATEGORIES[tour['category']].upper())} · TOUR DETAILS</p><h1>{esc(tour['title'])}</h1><p>{esc(tour['summary'])}</p></div><div class="tour-mini"><strong>{esc(tour['duration'])}</strong><span>{esc(tour['style'])}</span><span>{esc(tour['start'])}</span></div></div>
-{gallery}{facts}</div>
+{gallery}{facts}<div class="itinerary-tools"><button type="button" data-print-itinerary hidden>Print / save itinerary PDF</button><a href="index.html?package={id}#contact">Ask David about this tour ↗</a></div></div>
 <div class="tour-body"><article class="tour-article"><section aria-labelledby="itinerary-title"><p class="eyebrow">THE JOURNEY, DAY BY DAY</p><h2 id="itinerary-title">Your itinerary</h2><div class="route-stops">{''.join(f'<span>{esc(p)}</span>' for p in tour['places'])}</div>{buffer}{schedule}</section>
 <section aria-labelledby="included-title"><p class="eyebrow">KNOW WHAT YOU ARE PLANNING</p><h2 id="included-title">What’s included</h2><p>These are the planned inclusions for this itinerary. David confirms the exact services and total in your personal quote.</p><div class="inclusion-grid"><div><h3>Planned inclusions</h3><ul>{included}</ul></div><div><h3>Not included</h3><ul>{excluded}</ul></div></div></section>
 <section><p class="eyebrow">GOOD TO KNOW</p><h2>Before you go.</h2><p>{esc(tour['notes'])}</p><p>Share your dates, actual group size, accommodation preference and access or dietary needs. Changes to the route and any extra costs are agreed with you in writing.</p><a class="text-link" href="travel-guide.html">Read the Tanzania planning guide ↗</a></section>
@@ -181,25 +183,10 @@ def tour_gallery(tour):
     frames=[]
     for i,photo in enumerate(tour['gallery']):
         frames.append(f'<figure data-slide class="{("is-active" if i==0 else "")}" aria-hidden="{str(i!=0).lower()}"{(" inert" if i else "")}>{img(photo["image"],photo["alt"],i==0,"90vw")}<figcaption>{esc(photo["caption"])}</figcaption></figure>')
-    records=json.loads((ROOT/'data/photo-credits.json').read_text())
+    records=json.loads((ROOT/'data/photo-credits.json').read_text(encoding='utf-8'))
     used={p['image'] for p in tour['gallery']}
     credits=' · '.join(f'<a href="photo-credits.html#{Path(c["file"]).stem}">{esc(c["author"])} / {esc(c["license"])}</a>' for c in records if c['file'] in used)
     return f'<div class="tour-photo-gallery" data-carousel role="region" aria-roledescription="carousel" aria-label="{esc(tour["title"])} photographs"><div class="tour-gallery-frames">{"".join(frames)}</div><p class="gallery-caption" data-visible-caption>{esc(tour["gallery"][0]["caption"])}</p>{controls(len(frames))}</div><p class="photo-note">Destination and activity photographs. Credits: {credits}. <a href="photo-credits.html">Full sources &amp; licences</a></p>'
-
-def operator_hero():
-    images=[
-        ('images/stories/zebras-safari-vehicle.webp','Safari vehicle and zebras on a green track','SAFARI / NORTHERN TANZANIA','Safari'),
-        ('images/stories/kili-moorland.webp','Open moorland on Mount Kilimanjaro','KILIMANJARO / MOUNTAIN TRAILS','Kilimanjaro'),
-        ('images/stories/zanzibar-blue-water.webp','Boats and turquoise water off the Zanzibar coast','ZANZIBAR / THE INDIAN OCEAN','Zanzibar'),
-        ('images/stories/coffee-cherries.webp','Coffee cherries growing in the Kilimanjaro foothills','LOCAL LIFE / COFFEE COUNTRY','Local life')]
-    slides=[]
-    for i,(path,alt,caption,label) in enumerate(images):
-        picture=img(path,alt,i==0,'100vw')
-        slides.append(f'<figure data-slide class="{("is-active" if i==0 else "")}" aria-hidden="{str(i!=0).lower()}"{(" inert" if i else "")}>{picture}<figcaption>{caption}</figcaption></figure>')
-    chapters=''.join(f'<button type="button" data-slide-to="{i}" aria-label="Show {item[3]} photograph" aria-pressed="{str(i==0).lower()}"><span>{i+1:02}</span> {item[3]}</button>' for i,item in enumerate(images))
-    return f'''<section id="home" class="hero cinema-hero operator-hero" data-carousel role="region" aria-roledescription="carousel" aria-label="Tanzania destination photographs"><div class="hero-frames">{''.join(slides)}</div><div class="hero-overlay"></div>
-<div class="hero-content"><p class="hero-eyebrow">KILIMANJARO · SAFARI · ZANZIBAR</p><h1>Discover Tanzania.<span>Travel with David.</span></h1><p class="hero-text">Mountain treks, private safaris and island experiences.<br>Planned with local knowledge, around your dates and your pace.</p><div class="hero-buttons"><a class="btn btn-primary" href="packages.html">Explore our tours <span aria-hidden="true">↗</span></a><a class="btn btn-secondary" href="#contact">Request your itinerary</a></div><div class="hero-trust"><span>Local guide in Tanzania</span><span>Private &amp; small group options</span><span>Personal written quotes</span></div></div>
-<div class="hero-gallery-footer"><p class="hero-scene-caption" data-visible-caption>{images[0][2]}</p><div class="story-controls" hidden><div class="hero-chapters">{chapters}</div><div class="hero-playback"><button type="button" data-prev aria-label="Previous destination photograph">←</button><span class="story-count" data-counter aria-hidden="true">01 / 04</span><button type="button" data-next aria-label="Next destination photograph">→</button><button type="button" data-pause aria-pressed="false">Pause story</button></div></div></div><p class="sr-only" data-announcement aria-live="polite" aria-atomic="true"></p></section>'''
 
 def carousel(category):
     slides=[]
@@ -242,14 +229,17 @@ def guide():
     page('travel-guide.html','Tanzania Travel Planning Guide','Plan your Tanzania safari, Kilimanjaro trek or Zanzibar stay: regions, seasons, trip budgets, arrival days and the David Explora booking process.',body)
 
 def credits():
-    records=json.loads((ROOT/'data/photo-credits.json').read_text())
+    records=json.loads((ROOT/'data/photo-credits.json').read_text(encoding='utf-8'))
     cards=[]
     for a in records:
         small=Path(a['file']).with_stem(Path(a['file']).stem+'-small')
         variant=f'<a href="{small.as_posix()}">Small WebP · same licence</a>' if (ROOT/small).exists() else ''
         date=esc(a['date'].split(' ')[0]) if re.match(r'^\d{4}',a['date']) else esc(a['date'].split(',')[0])
         cards.append(f'<article class="credit-card credit-id" id="{Path(a["file"]).stem}">{img(a["file"],a["alt"])}<h2>{esc(a["label"])}</h2><p>Photo: {esc(a["author"])} · {esc(a["license"])} · Photographed {date}.</p><p>{esc(a["changes"])} The adapted image remains available under {esc(a["license"])}.</p><div class="credit-links"><a href="{esc(a["source_url"])}">Original &amp; source details ↗</a><a href="{esc(a["license_url"])}">License ↗</a><a href="{a["file"]}">WebP · same licence</a>{variant}</div></article>')
-    body=f'<section class="guide-heading"><div><p class="eyebrow">REAL IMAGES. CLEAR SOURCES.</p><h1>The photographs<br>behind the stories.</h1><p>Selected safari and existing project photographs were supplied for David Explora. Additional licensed destination images below illustrate Kilimanjaro, Zanzibar and Maasai life. Independent travelers in these photographs are not presented as David’s customers.</p><p>Images do not promise an exact vehicle, lodge or community venue. The galleries include photographs supplied by David Explora. The licensed archive below also includes a historical 2009 summit image; the Maasai settlement pictured is near Mount Lolmalasin. Your written itinerary confirms the actual arrangements.</p></div></section><section class="section"><div class="credit-grid">{"".join(cards)}</div></section>'
+    films=[]
+    for film in json.loads((ROOT/'data/media-credits.json').read_text(encoding='utf-8')):
+        films.append(f'<article class="credit-card credit-id" id="{Path(film["file"]).stem}">{img(film["poster"],film["alt"])}<h2>{esc(film["label"])}</h2><p>Film and poster: {esc(film["author"])} · {esc(film["license"])} · {esc(film["date"])}.</p><p>{esc(film["changes"])} This is licensed destination footage, not a record of David’s clients or a guaranteed sighting.</p><div class="credit-links"><a href="{esc(film["source_url"])}">Original film &amp; source details ↗</a><a href="{esc(film["license_url"])}">Licence ↗</a><a href="{film["file"]}">MP4 excerpt · same licence</a><a href="{film["poster"]}">Adapted poster · same licence</a></div></article>')
+    body=f'<section class="guide-heading"><div><p class="eyebrow">REAL IMAGES. CLEAR SOURCES.</p><h1>The photographs<br>and films behind the stories.</h1><p>Selected safari and existing project photographs were supplied for David Explora. Additional licensed destination images below illustrate Kilimanjaro, Zanzibar, the northern parks and the Rufiji region. Independent travelers in these photographs are not presented as David’s customers.</p><p>Images do not promise an exact vehicle, lodge, wildlife sighting or community venue. Captions distinguish actual places from regional and activity illustrations. Your written itinerary confirms the actual arrangements.</p></div></section><section class="section"><div class="credit-grid">{"".join(cards)}{"".join(films)}</div></section>'
     page('photo-credits.html','Destination Photo Credits','Sources, authors and Creative Commons licenses for the Kilimanjaro, Stone Town, spice farm and Maasai photographs used by David Explora.',body)
 
 def sitemap():
@@ -265,11 +255,12 @@ def build():
     # Keep visible price cards on the original pages consistent with the catalogue.
     by_id={tour['id']:tour for tour in TOURS}
     for path in ROOT.glob('*.html'):
-        text=path.read_text()
+        text=path.read_text(encoding='utf-8')
         if path.name=='index.html':
             text=re.sub(r'<section class="section story-section" id="stories">.*?</section>',lambda _:story_section(),text,flags=re.S)
-            text=re.sub(r'<!-- BEGIN: operator-hero -->.*?<!-- END: operator-hero -->', lambda _: '<!-- BEGIN: operator-hero -->'+operator_hero()+'<!-- END: operator-hero -->', text, flags=re.S)
-            featured=['2-day-tarangire-ngorongoro','7-day-machame-trek','marangu-village-tour','4-day-serengeti-camping','mnemba-waters-snorkeling','6-day-marangu-trek']
+            text=re.sub(r'<!-- BEGIN: operator-hero -->.*?<!-- END: operator-hero -->', lambda _: '<!-- BEGIN: operator-hero -->'+features.operator_hero(sys.modules[__name__])+'<!-- END: operator-hero -->', text, flags=re.S)
+            text=re.sub(r'<!-- BEGIN: homepage-features -->.*?<!-- END: homepage-features -->',lambda _: '<!-- BEGIN: homepage-features -->'+features.home_sections(sys.modules[__name__])+'<!-- END: homepage-features -->',text,flags=re.S)
+            featured=['3-day-nyerere-road-safari','6-day-drive-in-safari-zanzibar','3-day-nyerere-fly-in-zanzibar','2-day-mikumi-safari','6-day-northern-safari-culture','4-day-luxury-northern-safari','7-day-machame-trek','marangu-village-tour','6-day-zanzibar-island-escape']
             text=re.sub(r'<!-- BEGIN: featured-packages -->.*?<!-- END: featured-packages -->',lambda _: '<!-- BEGIN: featured-packages -->'+selected_cards(featured)+'<!-- END: featured-packages -->',text,flags=re.S)
             text=re.sub(r'<!-- BEGIN: home-daytrips -->.*?<!-- END: home-daytrips -->',lambda _: '<!-- BEGIN: home-daytrips -->'+selected_cards(['moshi-city-tour','arusha-city-tour','marangu-village-tour'])+'<!-- END: home-daytrips -->',text,flags=re.S)
             options='<option value="">Create a personal trip / help me choose</option>'+''.join(f'<option value="{esc(t["id"])}">{esc(t["title"])}</option>' for t in TOURS)
@@ -281,8 +272,8 @@ def build():
         for category in STORIES:
             pattern=f'<!-- BEGIN: collection-{category} -->.*?<!-- END: collection-{category} -->'
             text=re.sub(pattern,lambda _,c=category:f'<!-- BEGIN: collection-{c} -->'+collection(c)+f'<!-- END: collection-{c} -->',text,flags=re.S)
-        path.write_text(text)
-    (ROOT/'tour-data.js').write_text('/* Generated from data/tours.json by scripts/build_tours.py. */\n(function(root,data){if(typeof module===\'object\'&&module.exports)module.exports=data;else root.DavidTourData=data;})(typeof globalThis!==\'undefined\'?globalThis:this,\n'+json.dumps(TOURS,ensure_ascii=False,indent=2)+');\n')
+        path.write_text(text, encoding='utf-8')
+    (ROOT/'tour-data.js').write_text('/* Generated from data/tours.json by scripts/build_tours.py. */\n(function(root,data){if(typeof module===\'object\'&&module.exports)module.exports=data;else root.DavidTourData=data;})(typeof globalThis!==\'undefined\'?globalThis:this,\n'+json.dumps(TOURS,ensure_ascii=False,indent=2)+');\n', encoding='utf-8')
     catalogue()
     for tour in TOURS: tour_page(tour)
     guide();credits();sitemap()

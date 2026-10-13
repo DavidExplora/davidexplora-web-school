@@ -9,10 +9,10 @@ if output == root or output.name not in {'dist','public-site'}:
 output.mkdir(parents=True,exist_ok=True)
 files = [*root.glob('*.html'), *root.glob('*.css'), *root.glob('*.js'), root/'favicon.svg', root/'robots.txt',root/'sitemap.xml']
 for file in files:shutil.copy2(file,output/file.name)
-for name in ['images','zanzibar']:
+for name in ['images','zanzibar','media']:
     shutil.copytree(root/name,output/name,dirs_exist_ok=True)
 # Delete stale one-page implementation files when updating the existing hosted site.
-allowed={file.name for file in files}|{'images','zanzibar'}
+allowed={file.name for file in files}|{'images','zanzibar','media'}
 for entry in output.iterdir():
     if entry.name not in allowed:
         if entry.is_dir():shutil.rmtree(entry)

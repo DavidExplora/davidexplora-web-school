@@ -6,17 +6,21 @@ Website: https://david-explora.fastash16.chatgpt.site
 
 ## Source and editing
 
-The site is plain HTML, CSS and JavaScript with no runtime framework. There are 53 public HTML pages and 29 tour itineraries.
+The site is plain HTML, CSS and JavaScript with no runtime framework. There are 60 public HTML pages and 35 tour itineraries.
 
 - `templates/home.html`: editable homepage, shared navigation and footer.
 - `data/tours.json`: tour names, estimates, group-price assumptions and itineraries.
 - `scripts/build_tours.py`: tour pages, galleries, catalogue and generated tour data.
 - `scripts/build_daytrips.py`: day-trip hub, separate city-walk links and comparison table.
 - `scripts/build_zanzibar.py`: island hub, coast-based tour groups, comparison table and homepage Zanzibar slider.
+- `scripts/build_safaris.py`: northern/southern safari hubs, migration and family planning notes.
+- `scripts/site_features.py`: shared navigation, profile icons and homepage quick planner/film components.
 - `scripts/build_discovery.py`: map, destination data, booking guide and shared navigation.
 - `operator.css`: shared navigation, current design and responsive layouts. Older destination styles remain in `style.css`, `launch.css` and `story.css`.
 - `experience.js`: photo galleries, touch swiping, filters and package selection.
 - `ui.js`: manual featured-tour slider, optional automatic Zanzibar rails and active navigation.
+- `features.js`: saved tours, copied links, printing, disclosure navigation, quick-plan handoff and the optional film dialog.
+- `data/social-links.json`: owner-known profile URLs; Facebook is pending the owner’s exact URL.
 - `journey.js` and `script.js`: itinerary suggestions, validation and enquiry drafts.
 
 Edit the source template or catalogue, then run the complete build. Do not edit generated tour pages directly: regeneration replaces them. The shared header/footer is applied to every page, including older destination pages.
@@ -32,7 +36,7 @@ The complete build runs the generators in the required order. GitHub Actions reb
 
 ## Design and interactions
 
-The homepage uses four destination photographs, experience categories, a horizontally scrollable tour catalogue, photo galleries, local-guide information and practical planning notes. The tour rail supports touch, arrow buttons and keyboard navigation. Gallery autoplay pauses for keyboard focus, swipes, background tabs and reduced-motion preferences; visitors can explicitly resume it.
+The homepage begins with a licensed wildlife film and three destination photographs, a compact trip starter, experience categories and a horizontally scrollable tour catalogue, followed by local-guide information and practical planning notes. The tour rail supports touch, arrow buttons and keyboard navigation. Gallery autoplay pauses for keyboard focus, swipes, background tabs and reduced-motion preferences; visitors can explicitly resume it.
 
 The Zanzibar rails advance only while visible, stop for keyboard/touch/manual browsing, pause on hover and respect reduced motion. Their automatic movement does not trigger repeated screen-reader announcements. Zanzibar tour galleries retain captions distinguishing exact destination photographs from activity illustrations.
 
@@ -73,3 +77,13 @@ Five detail pages have automatic photograph galleries with manual arrows, swipe 
 The island hub groups boat/reef tours, culture/nature visits, water sports and a six-day guesthouse stay. Departure notes distinguish Stone Town, Matemwe, Michamvi, Jozani, Jambiani and Kizimkazi; day-tour transport is not silently included. Clear kayaks are an optional equipment upgrade, jet skis have a defined riding slot, and the introductory dive is one dive with medical/provider assessment.
 
 `data/zanzibar-costs.json` and `ZANZIBAR-OPERATIONS.md` contain unverified supplier-cost assumptions, current retail comparison sources, pricing decisions and direct operating-contribution calculations. Confirm actual rates before quoting; modeled contribution is not net profit and excludes OTA commission. New photo provenance is public in `photo-credits.html`.
+
+## Safari and planning expansion
+
+Six additional itineraries cover Nyerere road/fly-in travel, Mikumi, a six-day northern cultural safari, a four-day luxury highland route and a six-day safari/island combination. `SAFARI-OPERATIONS.md` records route and price boundaries. Northern and southern departures are separate; the 6-day combined route includes two island nights and one scheduled flight.
+
+All tours can be saved in local storage, copied as links and printed as an itinerary. Saved IDs are browser-local and never presented as public likes. No public comment database, newsletter subscription service or card checkout has been added. Print expands the full itinerary and preserves quote qualifications.
+
+The 12-second 720p muted Serengeti film is adapted from Bettina May’s CC BY 3.0 footage. `data/media-credits.json` documents the licence and excerpt/poster modifications. The film and galleries pause off-screen, in background tabs and for reduced motion; data-saving mode prevents the automatic video download. The optional film player uses native video controls and a native dialog.
+
+Builders explicitly use UTF-8 for Windows and CI consistency. Use the complete build pipeline before checking and packaging. Browser visual QA remains unavailable in this managed editing environment; Node behaviour fixtures and the full structural checker validate the shipped state.

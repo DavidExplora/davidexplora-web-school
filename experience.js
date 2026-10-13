@@ -4,6 +4,7 @@
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
   document.querySelectorAll('[data-carousel]').forEach(root => {
     const slides = [...root.querySelectorAll('[data-slide]')];
+    const videos = [...root.querySelectorAll('video[data-motion-video]')];
     if (slides.length < 2) return;
     const controls = root.querySelector('.story-controls');
     controls.hidden = false;
@@ -22,7 +23,13 @@
       pause.textContent = reduce.matches ? 'Motion off' : userPaused ? 'Play story' : 'Pause story';
       pause.disabled = reduce.matches;
       pause.setAttribute('aria-pressed', String(userPaused || reduce.matches));
-      if (running) timer = window.setInterval(() => show(index + 1, false), 7000);
+      videos.forEach(video => {
+        if (running && slides[index].contains(video) && !window.navigator?.connection?.saveData) {
+          if (!video.getAttribute('src')) video.src = video.dataset.src;
+          video.play().catch(() => {});
+        } else video.pause();
+      });
+      if (running) timer = window.setInterval(() => { show(index + 1, false); playback(); }, videos.some(video => slides[index].contains(video)) ? 14000 : 7000);
     }
     function show(next, manual) {
       index = (next + slides.length) % slides.length;
@@ -119,9 +126,14 @@
     filters.addEventListener('submit', event => event.preventDefault());
     const count = document.querySelector('#package-count');
     const empty = document.querySelector('#package-empty');
+    const saved = document.querySelector('#package-saved');
+    const savedFilter = document.querySelector('[data-shortlist-filter]');
+    if (savedFilter) savedFilter.hidden = false;
     const read = id => document.getElementById(id).value;
     function apply() {
-      const matches = new Set(tours.filterTours({query:read('package-search'),category:read('package-category'),length:read('package-length'),budget:read('package-budget')}).map(tour => tour.id));
+      let savedIds;
+      if (saved?.checked) savedIds = window.DavidFeatures?.savedTours() || [];
+      const matches = new Set(tours.filterTours({query:read('package-search'),category:read('package-category'),length:read('package-length'),budget:read('package-budget'),savedIds}).map(tour => tour.id));
       catalogue.querySelectorAll('[data-tour-id]').forEach(card => { card.hidden = !matches.has(card.dataset.tourId); });
       count.textContent = matches.size+' '+(matches.size === 1 ? 'journey' : 'journeys')+' to explore';
       empty.hidden = matches.size !== 0;
@@ -133,7 +145,9 @@
     });
     filters.addEventListener('input', apply);
     filters.addEventListener('change', apply);
-    document.querySelector('#reset-packages').addEventListener('click', () => { filters.querySelectorAll('input').forEach(input => {input.value='';}); filters.querySelectorAll('select').forEach(select => {select.selectedIndex=0;}); apply(); });
+    saved?.addEventListener('change', apply);
+    window.addEventListener('david:saved-changed', apply);
+    document.querySelector('#reset-packages').addEventListener('click', () => { filters.querySelectorAll('input').forEach(input => {input.value='';}); filters.querySelectorAll('select').forEach(select => {select.selectedIndex=0;}); if (saved) saved.checked = false; apply(); });
     apply();
   }
 

@@ -16,6 +16,8 @@
       if (c.length === 'day' && tour.days > 1) return false;
       if (c.length === 'short' && (tour.days < 2 || tour.days > 4)) return false;
       if (c.length === 'long' && tour.days < 5) return false;
+      if (/^\d+$/.test(String(c.length || '')) && tour.days !== Number(c.length)) return false;
+      if (Array.isArray(c.savedIds) && !c.savedIds.includes(tour.id)) return false;
       if (ceiling > 0 && (tour.price === null || tour.price > ceiling)) return false;
       const haystack = [tour.title, tour.category, tour.style, tour.start, tour.summary, ...tour.places].join(' ').toLocaleLowerCase();
       return !query || haystack.includes(query);

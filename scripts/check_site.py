@@ -28,12 +28,12 @@ class Page(HTMLParser):
             if data['id'] in self.ids:errors.append(f'{self.path.name}: duplicate id {data["id"]}')
             self.ids.add(data['id'])
         if tag=='h1':self.headings.append(tag)
-        for attr in ('href','src'):
+        for attr in ('href','src','poster','data-src'):
             if data.get(attr):self.links.append(data[attr])
         if data.get('srcset'):
             self.links.extend(part.strip().split()[0] for part in data['srcset'].split(','))
         if tag=='img':
-            if not data.get('alt'):errors.append(f'{self.path.name}: image needs useful alt text')
+            if not data.get('alt') and not (data.get('alt')=='' and data.get('aria-hidden')=='true'):errors.append(f'{self.path.name}: image needs useful alt text or explicit decorative treatment')
             if not data.get('width') or not data.get('height'):errors.append(f'{self.path.name}: image dimensions missing')
             source=ROOT/data.get('src','')
             if source.is_file() and source.suffix=='.webp':
@@ -55,7 +55,7 @@ class Page(HTMLParser):
 
 pages={}
 for path in sorted(ROOT.glob('*.html')):
-    page=Page(path);page.feed(path.read_text());page.close();pages[path.name]=page
+    page=Page(path);page.feed(path.read_text(encoding='utf-8'));page.close();pages[path.name]=page
     if page.stack:errors.append(f'{path.name}: unclosed elements {page.stack}')
     if len(page.headings)!=1:errors.append(f'{path.name}: expected one main heading')
     if 'main' not in page.ids:errors.append(f'{path.name}: skip-link destination missing')
@@ -87,7 +87,7 @@ for name,page in pages.items():
         elif url.fragment and path.suffix=='.html' and url.fragment not in pages.get(path.name,page).ids:errors.append(f'{name}: missing anchor {target}#{url.fragment}')
 
 for css in ROOT.glob('*.css'):
-    source=css.read_text()
+    source=css.read_text(encoding='utf-8')
     without_comments=re.sub(r'/\*.*?\*/','',source,flags=re.S)
     if without_comments.count('{')!=without_comments.count('}'):errors.append(f'{css.name}: unbalanced rule braces')
     for path in re.findall(r'url\([\'\"]?([^\)\'\"]+)[\'\"]?\)',source):
@@ -107,7 +107,7 @@ expected={'/'+('' if name=='index.html' else name) for name in pages if name!='4
 if listed!=expected:errors.append('Sitemap must contain every public content page once, excluding 404')
 if len(sitemap.findall('.//{*}loc'))!=len(listed):errors.append('Sitemap contains duplicate URLs')
 
-tours=json.loads((ROOT/'data/tours.json').read_text())
+tours=json.loads((ROOT/'data/tours.json').read_text(encoding='utf-8'))
 ids={t['id'] for t in tours}
 form_ids={a.get('value') for t,a in home.tags if t=='option'}
 if not ids<=form_ids:errors.append('Inquiry is missing a catalogue package')
@@ -117,9 +117,11 @@ for tour in tours:
     if not page or not any(item.get('@type')=='TouristTrip' for item in page.structured):errors.append(f'{tour["id"]}: crawlable itinerary or structured trip data missing')
     if tour['price'] is not None and (tour['price']<=0 or not tour['basis']):errors.append(f'{tour["id"]}: guide price needs a positive estimate and a group basis')
     if not (ROOT/tour['image']).is_file():errors.append(f'{tour["id"]}: missing tour image')
-credit_source=(ROOT/'photo-credits.html').read_text()
-for credit in json.loads((ROOT/'data/photo-credits.json').read_text()):
+credit_source=(ROOT/'photo-credits.html').read_text(encoding='utf-8')
+for credit in json.loads((ROOT/'data/photo-credits.json').read_text(encoding='utf-8')):
     if credit['source_url'] not in credit_source or credit['license_url'] not in credit_source:errors.append(f'{credit["file"]}: public source/license credit missing')
+for credit in json.loads((ROOT/'data/media-credits.json').read_text(encoding='utf-8')):
+    if credit['source_url'] not in credit_source or credit['license_url'] not in credit_source:errors.append(f'{credit["file"]}: public film source/license credit missing')
 
 if errors:
     print('\n'.join(errors));sys.exit(1)
