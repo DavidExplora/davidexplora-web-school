@@ -57,6 +57,16 @@ test('optional phone, date and message produce an honest flexible request',()=>{
   assert.match(result.text,/Flexible \/ to discuss/);
   assert.match(result.text,/Contact me here or by email/);
 });
+test('pickup location and date flexibility survive both draft links safely',()=>{
+  const result=createInquiry({...valid,arrival:'Moshi / café & hotel\nPickup: to discuss',flexibility:'Within a few days'},'2026-10-10');
+  assert.deepEqual(result.errors,[]);
+  assert.match(result.text,/Starting location: Moshi \/ café & hotel Pickup: to discuss/);
+  assert.match(result.text,/Date flexibility: Within a few days/);
+  assert.equal(new URL(result.url).searchParams.get('text'),result.text);
+  assert.equal(new URL(result.emailURL).searchParams.get('body'),result.text);
+  assert.ok(createInquiry({...valid,flexibility:'<script>fake value</script>'},'2026-10-10').errors.length);
+  assert.equal(createInquiry({...valid,arrival:'A'.repeat(200)},'2026-10-10').values.arrival.length,120);
+});
 test('route presets fit the arrival/departure buffers and unknown content is never a preset',()=>{
   for(const key of ['machame','lemosho','marangu']) {
     assert.equal(presets[key][0],'Kilimanjaro');

@@ -10,13 +10,32 @@ function fixture(reduced=false, automatic=false) {
   track.querySelectorAll=()=>cards;
   const previous=element(),next=element(),pause=element(),position={},status={},buttons={hidden:true};
   const rail=Object.assign(element(),{contains:target=>target===pause,querySelector:selector=>({'.tour-rail-track':track,'[data-rail-prev]':previous,'[data-rail-next]':next,'[data-rail-pause]':automatic?pause:null,'.rail-position':position,'[data-rail-status]':status,'.rail-buttons':buttons})[selector]});
-  const document=Object.assign(element(),{hidden:false,querySelectorAll:selector=>selector==='[data-tour-rail]'?[rail]:[],querySelector:()=>null});
+  const menu=element(),nav=Object.assign(element(),{classList:{remove(value){nav.removed=value;}}});
+  const document=Object.assign(element(),{hidden:false,querySelectorAll:selector=>selector==='[data-tour-rail]'?[rail]:[],querySelector:selector=>selector==='.menu-toggle'?menu:selector==='.main-nav'?nav:null});
   let timer=null;
   const motion=Object.assign(element(),{matches:reduced});
-  const window={location:{pathname:'/index.html'},matchMedia:query=>query.includes('prefers-reduced-motion')?motion:Object.assign(element(),{matches:false}),addEventListener(){},setInterval(fn){timer=fn;return 1;},clearInterval(){timer=null;}};
+  const viewport=Object.assign(element(),{matches:false});
+  const window={location:{pathname:'/index.html'},matchMedia:query=>{if(query.includes('prefers-reduced-motion'))return motion;viewport.query=query;return viewport;},addEventListener(){},setInterval(fn){timer=fn;return 1;},clearInterval(){timer=null;}};
   vm.runInNewContext(fs.readFileSync('ui.js','utf8'),{window,document});
-  return {track,previous,next,position,buttons,pause,rail,document,motion,tick(){timer?.();},running(){return Boolean(timer);}};
+  return {track,previous,next,position,buttons,pause,rail,document,motion,viewport,menu,nav,tick(){timer?.();},running(){return Boolean(timer);}};
 }
+test('first focused pause click stops the rail; explicit play resumes it',()=>{
+  const f=fixture(false,true);
+  f.rail.fire('focusin',{target:f.pause});
+  assert.equal(f.running(),false);
+  assert.equal(f.pause.textContent,'Pause tours');
+  f.pause.fire('click');
+  assert.equal(f.running(),false);assert.equal(f.pause['aria-pressed'],'true');
+  f.pause.fire('click');
+  assert.equal(f.running(),true);assert.equal(f.pause['aria-pressed'],'false');
+});
+test('mobile navigation closes only when entering the desktop layout',()=>{
+  const f=fixture();
+  assert.equal(f.viewport.query,'(min-width: 1301px)');
+  f.viewport.fire('change',{matches:false});assert.equal(f.nav.removed,undefined);
+  f.viewport.fire('change',{matches:true});
+  assert.equal(f.nav.removed,'is-open');assert.equal(f.menu['aria-expanded'],'false');
+});
 test('tour rail reveals controls and clamps navigation at both ends',()=>{
   const f=fixture();
   assert.equal(f.buttons.hidden,false);assert.equal(f.previous.disabled,true);

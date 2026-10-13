@@ -25,7 +25,7 @@
     zanzibar: ['Zanzibar', '', 'I would like to plan a Zanzibar stay and island experiences.'],
     'stone-town': ['Zanzibar', '1–2 days', 'I would like to plan a guided Stone Town experience.'],
     'prison-island': ['Zanzibar', '1–2 days', 'I would like to plan a Changuu / Prison Island excursion from Stone Town. Please confirm boat arrangements and entry fees.'],
-    mnemba: ['Zanzibar', '1–2 days', 'I would like to request a snorkeling excursion in the waters around Mnemba. Please confirm transfers, marine fees and equipment.'],
+    mnemba: ['Zanzibar', '1–2 days', 'I would like to request a snorkelling excursion in the waters around Mnemba. Please confirm transfers, marine fees and equipment.'],
     local: ['Local Tanzania', '1–2 days', 'I would like a local experience around Moshi or Marangu, such as a waterfall walk or coffee visit.'],
     'northern-safari': ['Safari', '5–7 days', 'I am interested in a 4–6 day northern safari through Tarangire, Ngorongoro and Serengeti. Please allow for arrival and departure logistics.'],
     'safari-zanzibar': ['Combined Tanzania trip', '8–10 days', 'I would like to combine a mainland wildlife safari with Zanzibar. Please include transfer and flight options in the quote.']
@@ -54,14 +54,14 @@
         note: 'For 3–4 days, focus on nearby northern parks. Adding the Serengeti may need a longer itinerary or extra transfer arrangements. Wildlife sightings are never guaranteed.'
       },
       zanzibar: {
-        title: 'Zanzibar at your own rhythm', link: 'zanzibar.html',
-        summary: 'Pair Stone Town with coast time and choose an island or snorkeling excursion that suits your interests.',
-        steps: ['Arrive and explore Stone Town with a local guide.', 'Choose a Changuu boat visit or a snorkeling day in the waters around Mnemba.', 'Leave space for the coast and your departure transfer.'],
+        title: 'Stone Town and the Zanzibar coast', link: 'zanzibar.html',
+        summary: 'Pair Stone Town with coast time and choose an island or snorkelling excursion that suits your interests.',
+        steps: ['Arrive and explore Stone Town with a local guide.', 'Choose a Changuu boat visit or a snorkelling day in the waters around Mnemba.', 'Leave space for the coast and your departure transfer.'],
         note: 'Boat activities depend on weather and sea conditions. Transfers, marine access fees and equipment must be confirmed in the quote; Mnemba island landing is not included.'
       },
       local: {
         title: 'The everyday side of Tanzania', link: 'local-tanzania.html',
-        summary: 'Build your visit around Moshi, Marangu and the Kilimanjaro foothills, with nature and local encounters at its center.',
+        summary: 'Build your visit around Moshi, Marangu and the Kilimanjaro foothills, with nature and local encounters at its centre.',
         steps: ['Meet David and choose a day plan based on your pickup location.', 'Combine a guided walk with a coffee or village experience.', 'Add another local day or an onward destination if your time allows.'],
         note: 'Walks and activity arrangements depend on conditions and access. Longer stays can combine local days with a wider Tanzania itinerary.'
       }
@@ -95,7 +95,10 @@
     const whatsapp = clean(data.whatsapp, 40);
     if (whatsapp && (!/^[+()\d\s.\-]+$/.test(whatsapp) || whatsapp.replace(/\D/g,'').length < 7 || whatsapp.replace(/\D/g,'').length > 15)) errors.push('Please check your WhatsApp number and country code.');
     const travelers = Number(data.travelers);
-    if (!Number.isInteger(travelers) || travelers < 1 || travelers > 50) errors.push('Please choose between 1 and 50 travelers.');
+    if (!Number.isInteger(travelers) || travelers < 1 || travelers > 50) errors.push('Please choose between 1 and 50 travellers.');
+    const arrival = clean(data.arrival, 120);
+    const flexibility = data.flexibility || 'Dates to discuss';
+    if (!['Exact dates', 'Within a few days', 'Dates to discuss'].includes(flexibility)) errors.push('Please choose your date flexibility.');
     const packageName = clean(data.package, 160);
     const budget = String(data.budget ?? '').trim();
     if (budget && (!/^\d+$/.test(budget) || Number(budget) < 1 || Number(budget) > 1000000)) errors.push('Please enter a whole USD budget between 1 and 1,000,000 per adult, or leave it blank.');
@@ -110,13 +113,13 @@
     if (!allowedDestinations.includes(data.destination)) errors.push('Please choose a destination.');
     if (!allowedDurations.includes(data.duration)) errors.push('Please choose your trip length.');
     if (data.consent !== true) errors.push('Please read and agree to the privacy and booking information.');
-    return { errors, values: { name, email, whatsapp, travelers, date, package: packageName, budget, destination: data.destination, duration: data.duration, style: clean(data.style || 'Help me decide',70), language: clean(data.language || 'English',70), message: String(data.message || '').replace(/\u0000/g,'').trim().slice(0,1800) } };
+    return { errors, values: { name, email, whatsapp, travelers, date, arrival, flexibility, package: packageName, budget, destination: data.destination, duration: data.duration, style: clean(data.style || 'Help me decide',70), language: clean(data.language || 'English',70), message: String(data.message || '').replace(/\u0000/g,'').trim().slice(0,1800) } };
   }
   function createInquiry(input, today) {
     const result = validateInquiry(input, today);
     if (result.errors.length) return { ...result, text: '', url: '' };
     const v = result.values;
-    const text = 'Hello David! I would like to plan a Tanzania trip.\n\nName: '+v.name+'\nEmail: '+v.email+'\nWhatsApp: '+(v.whatsapp || 'Contact me here or by email')+'\nPreferred arrival: '+(v.date || 'Flexible / to discuss')+'\nTravelers: '+v.travelers+'\nStarting itinerary: '+(v.package || 'Personal trip / help me choose')+'\nBudget per adult: '+(v.budget ? 'USD '+Number(v.budget).toLocaleString('en-US') : 'To discuss')+'\nDestination: '+v.destination+'\nTime in Tanzania: '+v.duration+'\nTravel style: '+v.style+'\nPreferred language: '+v.language+'\n\nMy trip idea:\n'+(v.message || 'Please help me choose a suitable itinerary.')+'\n\nPlease confirm availability, a suitable itinerary, inclusions and exclusions, a personal quote and booking terms.';
+    const text = 'Hello David, I would like to plan a Tanzania trip.\n\nName: '+v.name+'\nEmail: '+v.email+'\nWhatsApp: '+(v.whatsapp || 'Contact me here or by email')+'\nPreferred arrival: '+(v.date || 'Flexible / to discuss')+'\nDate flexibility: '+v.flexibility+'\nStarting location: '+(v.arrival || 'Please help me choose')+'\nTravellers: '+v.travelers+'\nStarting itinerary: '+(v.package || 'Personal trip / help me choose')+'\nBudget per adult: '+(v.budget ? 'USD '+Number(v.budget).toLocaleString('en-US') : 'To discuss')+'\nDestination: '+v.destination+'\nTime in Tanzania: '+v.duration+'\nTravel style: '+v.style+'\nGuide language requested: '+v.language+'\n\nMy trip idea:\n'+(v.message || 'Please help me choose a suitable itinerary.')+'\n\nPlease send a proposed itinerary, an itemised quote with inclusions and exclusions, and the booking terms for my dates and group.';
     return { ...result, text, url: 'https://wa.me/'+phone+'?text='+encodeURIComponent(text), emailURL: 'mailto:davidlyamuya819@gmail.com?subject='+encodeURIComponent('Tanzania trip request — '+v.name)+'&body='+encodeURIComponent(text) };
   }
   return { phone, destinations, durations, interests, presets, urlPreset, buildPlan, validateInquiry, createInquiry };

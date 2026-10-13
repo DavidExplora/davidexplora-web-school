@@ -62,7 +62,12 @@
       pause.addEventListener('click', () => { userPaused = !userPaused; explicitPlay = !userPaused; playback(); });
       rail.addEventListener('mouseenter', () => { hover = true; explicitPlay = false; playback(); });
       rail.addEventListener('mouseleave', () => { hover = false; playback(); });
-      rail.addEventListener('focusin', () => { focused = true; userPaused = true; explicitPlay = false; playback(); });
+      rail.addEventListener('focusin', event => {
+        focused = true;
+        // Focus stops movement; the playback button still toggles the existing state.
+        if (event.target !== pause) { userPaused = true; explicitPlay = false; }
+        playback();
+      });
       rail.addEventListener('focusout', event => { if (!rail.contains(event.relatedTarget)) { focused = false; playback(); } });
       track.addEventListener('touchstart', () => { userPaused = true; explicitPlay = false; playback(); }, { passive: true });
       document.addEventListener('visibilitychange', playback);
@@ -79,7 +84,7 @@
   });
   const menu = document.querySelector('.menu-toggle');
   const nav = document.querySelector('.main-nav');
-  window.matchMedia('(min-width: 1181px)').addEventListener('change', event => {
+  window.matchMedia('(min-width: 1301px)').addEventListener('change', event => {
     if (event.matches) {
       nav?.classList.remove('is-open');
       menu?.setAttribute('aria-expanded', 'false');

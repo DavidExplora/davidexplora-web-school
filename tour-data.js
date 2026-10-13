@@ -258,13 +258,13 @@
       {
         "label": "Last chapter",
         "title": "Finish with room to breathe",
-        "text": "Return to Arusha or continue to Zanzibar with the flight and island arrangements itemized in your quote."
+        "text": "Return to Arusha or continue to Zanzibar with the flight and island arrangements itemised in your quote."
       }
     ],
     "includes": [
       "A proposed private 4×4 and guide arrangement",
       "A shortlist of named luxury properties and room types",
-      "An itemized itinerary covering meals, fees and transfers"
+      "An itemised itinerary covering meals, fees and transfers"
     ],
     "excludes": [
       "Anything not explicitly included in the final written quote"
@@ -286,7 +286,7 @@
     "start": "Moshi → Moshi",
     "style": "Mountain huts · 6-day route",
     "image": "images/stories/marangu-huts.webp",
-    "summary": "A hut-based Kilimanjaro trek with an acclimatization day at Horombo and a summit attempt via Gilman’s Point.",
+    "summary": "A hut-based Kilimanjaro trek with an acclimatisation day at Horombo and a summit attempt via Gilman’s Point.",
     "places": [
       "Marangu",
       "Mandara",
@@ -312,8 +312,8 @@
       },
       {
         "label": "Mountain day 3",
-        "title": "Acclimatization around Horombo",
-        "text": "Take the guide’s chosen acclimatization walk and return to Horombo for another night."
+        "title": "Acclimatisation around Horombo",
+        "text": "Take the guide’s chosen acclimatisation walk and return to Horombo for another night."
       },
       {
         "label": "Mountain day 4",
@@ -351,7 +351,7 @@
       "Personal clothing, boots and sleeping-bag rental",
       "Hotel lunches, dinners and additional hotel nights"
     ],
-    "notes": "The route days are mountain days. Allow the full trip length for arrival and departure. Acclimatization, weather and the guide’s decisions affect the itinerary; reaching Uhuru is never guaranteed. Personal equipment, the crew plan and available safety equipment are confirmed before booking.",
+    "notes": "The route days are mountain days. Allow the full trip length for arrival and departure. Acclimatisation, weather and the guide’s decisions affect the itinerary; reaching Uhuru is never guaranteed. Personal equipment, the crew plan and available safety equipment are confirmed before booking.",
     "price2": 2095,
     "seoTitle": "6-Day Marangu Kilimanjaro Trek"
   },
@@ -439,7 +439,7 @@
       "Personal clothing, boots and sleeping-bag rental",
       "Hotel lunches, dinners and additional hotel nights"
     ],
-    "notes": "The route days are mountain days. Allow the full trip length for arrival and departure. Acclimatization, weather and the guide’s decisions affect the itinerary; reaching Uhuru is never guaranteed. Personal equipment, the crew plan and available safety equipment are confirmed before booking.",
+    "notes": "The route days are mountain days. Allow the full trip length for arrival and departure. Acclimatisation, weather and the guide’s decisions affect the itinerary; reaching Uhuru is never guaranteed. Personal equipment, the crew plan and available safety equipment are confirmed before booking.",
     "price2": 2395,
     "seoTitle": "7-Day Machame Kilimanjaro Trek"
   },
@@ -531,7 +531,7 @@
       "Personal clothing, boots and sleeping-bag rental",
       "Hotel lunches, dinners and additional hotel nights"
     ],
-    "notes": "The route days are mountain days. Allow the full trip length for arrival and departure. Acclimatization, weather and the guide’s decisions affect the itinerary; reaching Uhuru is never guaranteed. Personal equipment, the crew plan and available safety equipment are confirmed before booking.",
+    "notes": "The route days are mountain days. Allow the full trip length for arrival and departure. Acclimatisation, weather and the guide’s decisions affect the itinerary; reaching Uhuru is never guaranteed. Personal equipment, the crew plan and available safety equipment are confirmed before booking.",
     "price2": 2695,
     "seoTitle": "8-Day Lemosho Kilimanjaro Trek"
   },
@@ -1035,7 +1035,7 @@
       {
         "label": "Return",
         "title": "Cross back to Stone Town",
-        "text": "Return by boat at the agreed time. Snorkeling is not part of this itinerary unless specifically quoted."
+        "text": "Return by boat at the agreed time. Snorkelling is not part of this itinerary unless specifically quoted."
       }
     ],
     "includes": [
@@ -1045,7 +1045,7 @@
     ],
     "excludes": [
       "Hotel transfers and accommodation",
-      "Meals, snorkeling and unlisted activities",
+      "Meals, snorkelling and unlisted activities",
       "Insurance, personal purchases and tips"
     ],
     "notes": "Meet on the Stone Town seafront. Island entry and listed sanctuary charges are included in the estimate; hotel transfers are extra. Do not touch, lift or feed tortoises except under an authorised sanctuary protocol. Sea conditions may change the departure. Boat size, safety equipment and capacity are confirmed before payment.",
@@ -1069,7 +1069,7 @@
   },
   {
     "id": "mnemba-waters-snorkeling",
-    "title": "Mnemba Waters Guided Snorkeling",
+    "title": "Mnemba Waters Guided Snorkelling",
     "category": "zanzibar",
     "days": 1,
     "duration": "Half day · weather dependent",
@@ -1078,13 +1078,13 @@
     "group": 2,
     "basis": "2 adults joining a shared boat",
     "start": "Matemwe meeting point → Matemwe",
-    "style": "Shared boat · guided snorkeling",
+    "style": "Shared boat · guided snorkelling",
     "image": "images/zanzibar-tours/mnemba-island.webp",
     "summary": "Join a guided boat excursion to the reefs around Mnemba from Matemwe. Landing on the private island is not included.",
     "places": [
       "Mnemba waters",
       "Matemwe",
-      "Snorkeling",
+      "Snorkelling",
       "Zanzibar"
     ],
     "itinerary": [
@@ -1096,7 +1096,7 @@
       {
         "label": "On the water",
         "title": "A guided reef visit",
-        "text": "Visit suitable permitted snorkeling water for the conditions, with the guide choosing the activity area."
+        "text": "Visit suitable permitted snorkelling water for the conditions, with the guide choosing the activity area."
       },
       {
         "label": "Return",
@@ -1106,7 +1106,7 @@
     ],
     "includes": [
       "Shared boat excursion from Matemwe",
-      "Snorkeling equipment and marine guide",
+      "Snorkelling equipment and marine guide",
       "Applicable marine access charges, fruit and drinking water"
     ],
     "excludes": [
@@ -1116,7 +1116,7 @@
     ],
     "notes": "There is no Mnemba island landing and no guaranteed dolphin sighting. Activities depend on sea conditions. Confirm swimming ability, safety equipment and any access needs before booking.",
     "price2": null,
-    "seoTitle": "Mnemba Snorkeling Trip from Matemwe",
+    "seoTitle": "Mnemba Snorkelling Trip from Matemwe",
     "gallery": [
       {
         "image": "images/zanzibar-tours/mnemba-island.webp",
@@ -1268,7 +1268,7 @@
       }
     ],
     "includes": [
-      "An itemized proposal for safari, island accommodation, flights and transfers"
+      "An itemised proposal for safari, island accommodation, flights and transfers"
     ],
     "excludes": [
       "Anything not explicitly included in the final written quote"
@@ -1323,7 +1323,7 @@
       "Travel insurance, tips and personal purchases",
       "Activities or meals not listed"
     ],
-    "notes": "The sandbank is tidal; timing and time on the sand vary. There is no permanent island landing facility. Tell David about swimming ability, seafood allergies and dietary needs. Snorkeling is only included if specifically written into the quote.",
+    "notes": "The sandbank is tidal; timing and time on the sand vary. There is no permanent island landing facility. Tell David about swimming ability, seafood allergies and dietary needs. Snorkelling is only included if specifically written into the quote.",
     "price2": null,
     "gallery": [
       {
@@ -1598,7 +1598,7 @@
   },
   {
     "id": "blue-lagoon-snorkeling",
-    "title": "Blue Lagoon Guided Snorkeling",
+    "title": "Blue Lagoon Guided Snorkelling",
     "category": "zanzibar",
     "days": 1,
     "duration": "About 3–4 hours · tide dependent",
@@ -1607,13 +1607,13 @@
     "group": 4,
     "basis": "4 adults travelling together; meet at the activity departure point",
     "start": "Michamvi launch → same launch",
-    "style": "Shared boat · guided snorkeling",
+    "style": "Shared boat · guided snorkelling",
     "image": "images/zanzibar-tours/michamvi-rock.webp",
-    "summary": "Explore suitable snorkeling water off the Michamvi coast with a marine guide. A simple reef outing with equipment, a tide-aware departure and time to enjoy the coast.",
+    "summary": "Explore suitable snorkelling water off the Michamvi coast with a marine guide. A simple reef outing with equipment, a tide-aware departure and time to enjoy the coast.",
     "places": [
       "Michamvi",
       "Blue Lagoon",
-      "Snorkeling"
+      "Snorkelling"
     ],
     "itinerary": [
       {
@@ -1634,7 +1634,7 @@
     ],
     "includes": [
       "Shared local boat, crew and life jackets",
-      "Snorkeling mask, fins, guide and buoyancy support",
+      "Snorkelling mask, fins, guide and buoyancy support",
       "Applicable marine access charges, fruit and drinking water"
     ],
     "excludes": [
@@ -1653,7 +1653,7 @@
       {
         "image": "images/zanzibar-tours/mnemba-island.webp",
         "alt": "Mnemba Island and reef fish.",
-        "caption": "Reef fish near Mnemba, Zanzibar; an underwater activity illustration, not a photograph of the Blue Lagoon snorkeling site."
+        "caption": "Reef fish near Mnemba, Zanzibar; an underwater activity illustration, not a photograph of the Blue Lagoon snorkelling site."
       }
     ],
     "imageAlt": "The Rock coastal landmark at Michamvi.",
@@ -1891,7 +1891,7 @@
     "start": "Dar es Salaam → Dar es Salaam",
     "style": "Private road safari · tented camp",
     "image": "images/safari-expansion/rufiji-river.webp",
-    "summary": "Travel from Dar es Salaam to the Rufiji region for a boat safari and a full day of game drives. Two nights near Nyerere give the journey a comfortable overnight rhythm.",
+    "summary": "Travel from Dar es Salaam to the Rufiji region for a boat safari and a full day of game drives. Two nights near Nyerere allow time for both activities without returning to the city each day.",
     "places": [
       "Dar es Salaam",
       "Nyerere National Park",
@@ -2354,7 +2354,7 @@
       {
         "label": "Day 4",
         "title": "Shira via Lava Tower to Barranco",
-        "text": "Follow the planned acclimatization route towards Barranco. Your guide manages pace and checks how the group is feeling."
+        "text": "Follow the planned acclimatisation route towards Barranco. Your guide manages pace and checks how the group is feeling."
       },
       {
         "label": "Day 5",
@@ -2584,7 +2584,7 @@
       {
         "label": "Day 4",
         "title": "Shira via Lava Tower to Barranco",
-        "text": "Follow the planned acclimatization route towards Barranco. Your guide manages pace and checks how the group is feeling."
+        "text": "Follow the planned acclimatisation route towards Barranco. Your guide manages pace and checks how the group is feeling."
       },
       {
         "label": "Day 5",
@@ -2664,7 +2664,7 @@
     "style": "Private journey · dates on request",
     "image": "images/zanzibar-tours/jambiani-beach.webp",
     "imageAlt": "Jambiani beach at low tide",
-    "summary": "Two Stone Town nights and four coastal nights, connected with guided history, spice and forest visits. Leave room for the tides and a genuinely unhurried beach day.",
+    "summary": "Two Stone Town nights and four coastal nights, connected with guided history, spice and forest visits. Leave room for the tides and a relaxed day on the beach.",
     "places": [
       "Stone Town",
       "Spice farm",
@@ -2695,7 +2695,7 @@
       {
         "label": "Day 5",
         "title": "A day shaped by your chosen coast",
-        "text": "Enjoy time at your hotel and beach. A Matemwe/Mnemba-water snorkeling trip or another boat day is optional, separately quoted and dependent on safe sea conditions."
+        "text": "Enjoy time at your hotel and beach. A Matemwe/Mnemba-water snorkelling trip or another boat day is optional, separately quoted and dependent on safe sea conditions."
       },
       {
         "label": "Day 6",
@@ -2717,7 +2717,7 @@
     "excludes": [
       "International or mainland-to-Zanzibar flights and any required entry documents/cover",
       "Lunch, dinner, drinks and hotel extras unless specifically quoted",
-      "Optional Changuu, snorkeling, sunset boats or other activities",
+      "Optional Changuu, snorkelling, sunset boats or other activities",
       "Tips, personal purchases and charity contributions"
     ],
     "notes": "This is an individually quoted island plan, not a resort or room-category guarantee. The quote names the coast, properties, room basis, activity transport and admissions. Optional boat activities follow provider safety decisions and sea conditions. Any future education-support contribution would be separately agreed and documented.",

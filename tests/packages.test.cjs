@@ -51,7 +51,7 @@ test('mountain requests include arrival and departure instead of compressing sum
 test('an actual couple can request a four-person guide itinerary without an assumed fixed price',()=>{
   const preset=requestPreset('4-day-serengeti-camping');
   const result=createInquiry({...valid,...preset,travelers:2},'2026-10-11');
-  assert.match(result.text,/Travelers: 2/);
+  assert.match(result.text,/Travellers: 2/);
   assert.match(result.text,/based on 4 adults/);
   assert.match(result.text,/confirm the price for my actual group and dates/);
   assert.equal(getTour('4-day-serengeti-camping').price2,1550);

@@ -447,3 +447,43 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 @media(max-width:800px){.editorial-hero,.home-education{grid-template-columns:1fr;gap:35px}.editorial-hero h1{font-size:clamp(2.8rem,7vw,4.5rem)}.editorial-hero figure img{height:400px}.special-journey-grid{grid-template-columns:1fr;gap:35px}.education-focus-grid{grid-template-columns:1fr;gap:25px}.education-roadmap ol{grid-template-columns:1fr;gap:10px}.home-education img{height:440px}.article-layout{grid-template-columns:1fr;gap:40px}.article-toc{position:static}.article-toc ol{display:grid;grid-template-columns:1fr 1fr;gap:0 30px}.article-cover img{height:360px}.article-prose{font-size:16px}.founder-scopes article>img{height:230px}.purpose-travel-note>.text-link,.founder-vision>.text-link{display:flex;margin:18px 0 0}}
 @media(max-width:600px){.journal-topic-grid,.journal-card-grid,.journal-index-grid,.journey-small-grid,.home-special-journeys .journey-small-grid,.founder-scopes>div:last-child{grid-template-columns:1fr}.journal-topic-card{min-height:330px}.journal-filters{grid-template-columns:1fr;gap:18px;padding:22px}.journal-filters .journal-saved-filter label{white-space:normal}.journal-card-image{height:240px}.journal-index-grid{gap:25px}.editorial-hero figure img{height:350px}.editorial-hero>div>p:not(.eyebrow){font-size:16px}.article-cover img{height:310px}.article-heading .article-lede{font-size:16px}.article-toc ol{grid-template-columns:1fr}.article-prose h2{font-size:29px}.home-education img{height:380px}.home-education p{font-size:16px}.island-special-stay h2{font-size:32px}.island-special-stay .text-link{display:flex;margin:18px 0 0}.education-roadmap li{gap:18px}}
 @media print{.article-progress,.article-toc,.journal-reading-tools,.article-related,.journal-save-status{display:none!important}.article-layout{display:block!important;padding:0!important}.article-heading{padding:15px 0!important;background:white!important}.article-cover{padding:0!important}.article-cover img{height:220px!important;object-fit:contain!important}.article-prose{font-size:11pt!important}.article-prose section{break-inside:auto;margin:24px 0!important}.article-prose h2{break-after:avoid}.article-sources a{overflow-wrap:anywhere}}
+/* A clear reading order: meet the guide, compare routes, then plan the details. */
+.founder-actions{display:flex;align-items:center;flex-wrap:wrap;gap:18px;margin:28px 0 0}
+.about-content .language-note{font-size:13px;line-height:1.8}
+.about-image img{object-position:50% 55%}
+.planning-promise .text-link{display:inline-flex;align-items:center;min-height:44px;margin-top:25px}
+.tour-heading{display:block;max-width:1040px}
+.tour-heading h1{font-size:clamp(2.4rem,4.2vw,4.4rem)}
+.tour-facts{margin:0 0 18px}
+.tour-facts dd{font-size:14px;line-height:1.6;overflow-wrap:anywhere}
+.tour-section-nav{display:flex;flex-wrap:wrap;gap:8px 24px;padding:8px 0 18px;margin:0 0 12px;border-bottom:1px solid var(--line)}
+.tour-section-nav a{display:inline-flex;align-items:center;min-height:44px;font-size:13px;color:var(--forest);text-underline-offset:5px}
+.tour-section-nav a:last-child{margin-left:auto;font-weight:600}
+.tour-article p,.tour-article li{font-size:16px;line-height:1.85}
+.tour-article .day-accordion summary{min-height:54px}
+.tour-request-panel{padding:30px;border:1px solid var(--line);border-radius:6px;background:var(--sand)}
+.tour-request-panel .btn{margin-top:15px}
+.compact-planner{padding:30px max(5%,calc((100vw - 1280px)/2))}
+.trip-builder>summary{display:flex;align-items:center;justify-content:space-between;gap:25px;min-height:82px;cursor:pointer;list-style:none;color:var(--cream);font-family:var(--serif);font-size:clamp(1.5rem,2.5vw,2rem);line-height:1.4}
+.trip-builder>summary::-webkit-details-marker{display:none}
+.trip-builder>summary small{display:block;font-family:Arial,Helvetica,sans-serif;font-size:10px;letter-spacing:.14em;color:var(--gold);margin-bottom:9px}
+.trip-builder-plus{font-family:Arial,Helvetica,sans-serif;font-size:28px;transition:transform .2s;flex-shrink:0}
+.trip-builder[open] .trip-builder-plus{transform:rotate(45deg)}
+.trip-builder[open]>.trip-planner-content{margin:25px 0 15px}
+.trip-builder .trip-planner-content h2{font-size:32px}
+.inquiry-form .form-hint{line-height:1.65}
+@media(max-width:800px){
+ .tour-section-nav{gap:4px 18px}.tour-section-nav a:last-child{margin-left:0}
+ .tour-facts dd{font-size:13px}.tour-request-panel{padding:24px}
+ .tour-article p,.tour-article li{font-size:15px}
+ .operator-hero{min-height:0;height:auto}
+}
+@media(max-width:600px){
+ .operator-hero{min-height:0}
+ .trip-builder>summary{gap:15px;font-size:24px}
+ .tour-section-nav{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
+ .tour-section-nav a{font-size:13px}
+ .tour-facts div{padding:16px 14px}
+}
+@media(prefers-reduced-motion:reduce){.trip-builder-plus{transition:none}}
+@media print{.tour-section-nav{display:none!important}.tour-request-panel{border:0;padding:0}}

@@ -110,7 +110,7 @@ if (form) {
     if (!form.reportValidity()) return;
     const field = id => document.getElementById(id).value;
     const chosenPackage = window.DavidTours?.getTour(field('trip-package'));
-    const inquiry = api.createInquiry({ name: field('customer-name'), email: field('customer-email'), whatsapp: field('customer-whatsapp'), date: field('travel-date'), travelers: field('traveler-count'), package: chosenPackage?.title || '', budget: field('trip-budget'), destination: field('trip-destination'), duration: field('trip-duration'), style: field('trip-style'), language: field('trip-language'), message: field('trip-message'), consent: document.querySelector('#privacy-consent').checked }, today);
+    const inquiry = api.createInquiry({ name: field('customer-name'), email: field('customer-email'), whatsapp: field('customer-whatsapp'), date: field('travel-date'), travelers: field('traveler-count'), arrival: field('trip-arrival'), flexibility: field('trip-date-flexibility'), package: chosenPackage?.title || '', budget: field('trip-budget'), destination: field('trip-destination'), duration: field('trip-duration'), style: field('trip-style'), language: field('trip-language'), message: field('trip-message'), consent: document.querySelector('#privacy-consent').checked }, today);
     if (inquiry.errors.length) {
       status.textContent = inquiry.errors.join(' ');
       status.tabIndex = -1;
