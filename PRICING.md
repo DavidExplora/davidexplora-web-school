@@ -68,4 +68,4 @@ New Zanzibar assumptions are in `ZANZIBAR-OPERATIONS.md`; new safari routes and 
 
 ## Special journeys · 13 October 2026
 
-The 14-day mountain/safari, 8-day safari/local-life, 9-day women’s mountain and 7-day island journeys are individually quoted. Supplier-confirmed complete costs are not yet available, so no numerical retail price or guaranteed margin is published. Each quote must cover its explicit night/transfer/crew/fee scope and separately agreed extras. No education donation is included. See `EDITORIAL-OPERATIONS.md`.
+The 14-day mountain/safari, 8-day safari/local-life, 9-day men’s mountain and 7-day island journeys are individually quoted. Supplier-confirmed complete costs are not yet available, so no numerical retail price or guaranteed margin is published. Each quote must cover its explicit night/transfer/crew/fee scope and separately agreed extras. No education donation is included. See `EDITORIAL-OPERATIONS.md`.

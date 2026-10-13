@@ -6,6 +6,7 @@ import site_features as features
 
 ROOT = Path(__file__).resolve().parents[1]
 TOURS = json.loads((ROOT/'data/tours.json').read_text(encoding='utf-8'))
+REDIRECTS = json.loads((ROOT/'data/tour-redirects.json').read_text(encoding='utf-8'))
 HOME = (ROOT/'index.html').read_text(encoding='utf-8')
 ORIGIN = re.search(r'<link rel="canonical" href="([^"]+)', HOME)[1].rstrip('/')
 HEADER = re.search(r'<header class="site-header">.*?</header>', HOME, re.S)[0]
@@ -246,7 +247,7 @@ def sitemap():
     ns='http://www.sitemaps.org/schemas/sitemap/0.9';ET.register_namespace('',ns)
     tree=ET.Element('{'+ns+'}urlset')
     for p in sorted(ROOT.glob('*.html')):
-        if p.name=='404.html': continue
+        if p.name=='404.html' or p.stem in REDIRECTS: continue
         url=ET.SubElement(tree,'{'+ns+'}url');ET.SubElement(url,'{'+ns+'}loc').text=ORIGIN+('/' if p.name=='index.html' else '/'+p.name)
     ET.indent(tree,space='  ')
     ET.ElementTree(tree).write(ROOT/'sitemap.xml',encoding='utf-8',xml_declaration=True)
@@ -276,6 +277,12 @@ def build():
     (ROOT/'tour-data.js').write_text('/* Generated from data/tours.json by scripts/build_tours.py. */\n(function(root,data){if(typeof module===\'object\'&&module.exports)module.exports=data;else root.DavidTourData=data;})(typeof globalThis!==\'undefined\'?globalThis:this,\n'+json.dumps(TOURS,ensure_ascii=False,indent=2)+');\n', encoding='utf-8')
     catalogue()
     for tour in TOURS: tour_page(tour)
+    for old,new in REDIRECTS.items():
+        target=next(t for t in TOURS if t['id']==new)
+        page(old+'.html',target['title'],'Continue to the updated Kilimanjaro journey.',f'<section class="guide-heading"><p class="eyebrow">UPDATED JOURNEY</p><h1>{esc(target["title"])}</h1><p>This journey now has an updated page.</p><a class="btn btn-primary" href="{new}.html">View the men’s Kilimanjaro journey ↗</a></section>',target['image'])
+        path=ROOT/(old+'.html');text=path.read_text(encoding='utf-8').replace('content="index, follow"','content="noindex, follow"').replace(ORIGIN+'/'+old+'.html',ORIGIN+'/'+new+'.html')
+        text=text.replace('<meta charset="UTF-8">',f'<meta charset="UTF-8"><meta http-equiv="refresh" content="0; url={new}.html">')
+        path.write_text(text,encoding='utf-8')
     guide();credits();sitemap()
     print(f'Built {len(TOURS)} tour pages, catalogue, guide, credits, tour-data.js and sitemap.')
 

@@ -103,8 +103,12 @@ if 'inquiry-ready' not in home.ids or 'inquiry-whatsapp' not in home.ids:errors.
 
 sitemap=ET.parse(ROOT/'sitemap.xml')
 listed={urlsplit(loc.text).path for loc in sitemap.findall('.//{*}loc')}
-expected={'/'+('' if name=='index.html' else name) for name in pages if name!='404.html'}
-if listed!=expected:errors.append('Sitemap must contain every public content page once, excluding 404')
+redirects=json.loads((ROOT/'data/tour-redirects.json').read_text(encoding='utf-8'))
+expected={'/'+('' if name=='index.html' else name) for name in pages if name!='404.html' and Path(name).stem not in redirects}
+if listed!=expected:errors.append('Sitemap must contain every public content page once, excluding 404 and legacy redirects')
+for old,new in redirects.items():
+    redirect=pages.get(old+'.html')
+    if not redirect or new+'.html' not in pages or not any(t=='meta' and a.get('name')=='robots' and 'noindex' in a.get('content','') for t,a in redirect.tags):errors.append(f'{old}: valid noindex legacy redirect missing')
 if len(sitemap.findall('.//{*}loc'))!=len(listed):errors.append('Sitemap contains duplicate URLs')
 
 tours=json.loads((ROOT/'data/tours.json').read_text(encoding='utf-8'))

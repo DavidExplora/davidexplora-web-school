@@ -1,6 +1,6 @@
 # Special journeys, journal and education vision
 
-Release scope: 13 October 2026. The website has 39 catalogue tours, eight original articles and 76 HTML pages including the 404 page.
+Release scope: 13 October 2026. The website has 39 catalogue tours, eight original articles and 77 HTML pages including the 404 page and one legacy package redirect.
 
 ## Reference review and decisions
 
@@ -32,10 +32,10 @@ Use `python scripts/build_site.py` for the complete build. Generated pages and J
 | --- | --- | --- | --- | --- |
 | Kilimanjaro & Northern Safari | 14 days | 7-day Machame | 6 mountain tents + 2 Moshi + 3 safari + 2 Arusha = 13 | Personal quote |
 | Northern Safari & Local Life | 8 days | None | 2 Arusha + 3 safari + 2 Moshi = 7 | Personal quote |
-| Women’s Kilimanjaro Journey | 9 days | 7-day Machame | 6 mountain tents + 2 Moshi = 8 | Personal quote |
+| Men’s Kilimanjaro Journey | 9 days | 7-day Machame | 6 mountain tents + 2 Moshi = 8 | Personal quote |
 | Zanzibar Culture & Coast | 7 days | None | 2 Stone Town + 4 coastal = 6 | Personal quote |
 
-The combined climb/safari route has a long Moshi-to-Tarangire transfer on day 9. Name accommodation, operating parties, safety provisions, fees, meals, room/tent basis, transport and cancellation terms in every actual quote. Female guide/crew preferences depend on availability. No fixed special-event dates, summit success rate or held inventory is advertised.
+The combined climb/safari route has a long Moshi-to-Tarangire transfer on day 9. Name accommodation, operating parties, safety provisions, fees, meals, room/tent basis, transport and cancellation terms in every actual quote. The men’s journey is for private adult groups, with individual needs and tent-sharing discussed in advance. No fixed special-event dates, summit success rate or held inventory is advertised.
 
 The special journeys have no supplier-confirmed cost model, so no competitive retail amount or profit is invented. Quote the complete actual cost, contingency, commissions/taxes as applicable and the owner’s operating contribution before confirming a booking. Existing guide prices are unchanged.
 
@@ -68,3 +68,5 @@ Partnership contact links open an editable WhatsApp/email draft; users must send
 ## Validation
 
 Node fixtures test meaningful search, storage, selection limits and new itinerary boundaries. The structural checker verifies every page, local path, source link, form label, image dimension, structured article/trip data and sitemap entry. The full build is checked for reproducible output. Browser visual QA is unavailable in the managed editing environment; the supplied reference screenshots and actual image assets were inspected visually.
+
+The former women’s Kilimanjaro URL forwards to the renamed men’s journey and is excluded from the sitemap. Its catalogue ID, related links, photo and comparison audience now match the men’s package.

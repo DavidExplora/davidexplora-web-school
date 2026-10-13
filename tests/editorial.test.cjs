@@ -32,9 +32,9 @@ test('special comparisons are capped, factual and contain no fabricated price or
 test('new journey totals include arrival and departure without compressing mountain days',()=>{
   for(const item of special){const t=getTour(item.id);assert.equal(t.itinerary.length,t.tripDays,t.id);assert.equal(t.nights,t.tripDays-1);assert.equal(t.price,null);assert.equal(t.price2,null);}
   assert.equal(requestPreset('14-day-kilimanjaro-safari-journey').duration,'11+ days');
-  assert.equal(requestPreset('9-day-womens-kilimanjaro-journey').duration,'8–10 days');
+  assert.equal(requestPreset('9-day-mens-kilimanjaro-journey').duration,'8–10 days');
   assert.equal(requestPreset('7-day-zanzibar-culture-coast').destination,'Zanzibar');
-  assert.match(getTour('9-day-womens-kilimanjaro-journey').notes,/female guide.*availability/i);
+  assert.match(getTour('9-day-mens-kilimanjaro-journey').summary,/fathers travelling with adult sons/);
   assert.equal(cleanSaved(tours.map(t=>t.id)).length,39);
 });
 test('all original guides have crawlable articles, sections, sources and valid related tours',()=>{

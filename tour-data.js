@@ -2545,8 +2545,8 @@
     ]
   },
   {
-    "id": "9-day-womens-kilimanjaro-journey",
-    "title": "Women’s Kilimanjaro Journey: 9 Days",
+    "id": "9-day-mens-kilimanjaro-journey",
+    "title": "9-Day Men’s Kilimanjaro Journey",
     "category": "trekking",
     "days": 9,
     "tripDays": 9,
@@ -2557,9 +2557,9 @@
     "basis": "Private itinerary for your actual group and dates",
     "start": "Kilimanjaro Airport → Kilimanjaro Airport",
     "style": "Private journey · dates on request",
-    "image": "images/optimized/kilimanjaro-guide.webp",
-    "imageAlt": "David with a woman traveler on a Kilimanjaro trail",
-    "summary": "A private seven-day Machame climb with arrival and departure days. Discuss your group’s pace, privacy, equipment and crew preferences before confirming the arrangements.",
+    "image": "images/stories/marangu-moorland.webp",
+    "imageAlt": "David resting among rocks in Kilimanjaro moorland",
+    "summary": "A shared mountain goal for friends, brothers, colleagues or fathers travelling with adult sons. Plan a private seven-day Machame climb with time to arrive, prepare and return, a steady guided pace and clear group arrangements.",
     "places": [
       "Machame route",
       "Kilimanjaro",
@@ -2568,8 +2568,8 @@
     "itinerary": [
       {
         "label": "Day 1",
-        "title": "Arrive, meet and prepare",
-        "text": "Transfer from Kilimanjaro Airport to Moshi. Discuss equipment, group expectations, tent/privacy arrangements and any guide or crew preferences before departure."
+        "title": "Arrive, meet your group and prepare",
+        "text": "Transfer from Kilimanjaro Airport to Moshi. Meet your mountain team, check equipment and discuss your group’s goal, walking experience, tent-sharing and individual needs before departure."
       },
       {
         "label": "Day 2",
@@ -2619,7 +2619,7 @@
       "Before-trek briefing, equipment check and the quoted safety arrangements",
       "Two Moshi hotel nights, before and after the trek",
       "Kilimanjaro Airport transfers and route-gate transport in the final itinerary",
-      "Group briefing on tent arrangements, privacy and individual needs"
+      "Group preparation briefing, agreed tent-sharing arrangements and daily route briefings with your mountain guide"
     ],
     "excludes": [
       "International flights, visa and personal insurance",
@@ -2627,15 +2627,15 @@
       "Tips, drinks and activities not listed in the final quote",
       "Extra recovery nights, safari or island extensions"
     ],
-    "notes": "Eight nights: 6 mountain camping nights and 2 hotel nights. Private dates are on request, not a scheduled International Women’s Day departure. A female guide or crew request depends on availability and is confirmed explicitly; it is not promised by the package title. The photo shows a mountain guiding moment, not this departure’s participants. No fixed summit success rate, charity contribution or school visit is claimed.",
+    "notes": "Eight nights: 6 mountain camping nights and 2 Moshi hotel nights. This private men’s journey has seven Machame mountain days plus arrival and departure. Share each traveller’s experience, equipment, tent-sharing, food and access needs before confirming. The quoted crew and safety arrangements guide the day’s decisions; a summit is not guaranteed. The supplied photo illustrates David’s mountain experience and does not depict this departure’s participants. Charity contributions, school visits and unlisted activities are not included.",
     "nights": 8,
     "specialJourney": true,
     "mountainDays": 7,
     "gallery": [
       {
-        "image": "images/optimized/kilimanjaro-guide.webp",
-        "alt": "David with a woman traveler on a Kilimanjaro trail",
-        "caption": "David on a Kilimanjaro trail · supplied project photograph"
+        "image": "images/stories/marangu-moorland.webp",
+        "alt": "David resting among rocks in Kilimanjaro moorland",
+        "caption": "David in Kilimanjaro moorland · supplied destination photograph, not a specific Machame camp"
       },
       {
         "image": "images/stories/kili-forest.webp",

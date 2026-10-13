@@ -6,7 +6,7 @@ Website: https://david-explora.fastash16.chatgpt.site
 
 ## Source and editing
 
-The site is plain HTML, CSS and JavaScript with no runtime framework. There are 76 HTML pages (including 404), 39 tour itineraries and 8 original travel articles.
+The site is plain HTML, CSS and JavaScript with no runtime framework. There are 77 HTML pages (including 404 and one legacy package redirect), 39 tour itineraries and 8 original travel articles.
 
 - `templates/home.html`: editable homepage, shared navigation and footer.
 - `data/tours.json`: tour names, estimates, group-price assumptions and itineraries.
