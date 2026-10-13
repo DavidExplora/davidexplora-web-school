@@ -5,9 +5,9 @@
   const tours = node ? require('./tour-data.js') : root.DavidTourData;
   const known = new Set(tours.map(t => t.id));
   const key = 'david-explora-saved-tours';
-  function cleanSaved(value) { return Array.isArray(value) ? [...new Set(value.filter(id => typeof id === 'string' && known.has(id)))].slice(0,35) : []; }
+  function cleanSaved(value) { return Array.isArray(value) ? [...new Set(value.filter(id => typeof id === 'string' && known.has(id)))].slice(0,tours.length) : []; }
   function readSaved(storage) { try { return cleanSaved(JSON.parse(storage.getItem(key) || '[]')); } catch { return []; } }
-  function toggleSaved(ids,id) { if (!known.has(id)) return cleanSaved(ids); const set = new Set(cleanSaved(ids)); set.has(id) ? set.delete(id) : set.add(id); return [...set].slice(0,35); }
+  function toggleSaved(ids,id) { if (!known.has(id)) return cleanSaved(ids); const set = new Set(cleanSaved(ids)); set.has(id) ? set.delete(id) : set.add(id); return [...set].slice(0,tours.length); }
   function quickPlan(values,today) {
     const destinations = new Set(['Safari','Kilimanjaro','Zanzibar','Local Tanzania']);
     const travelers = Number(values.travelers), date = String(values.date || ''), errors=[];
@@ -22,7 +22,7 @@
   }
   function setupNavigation(nav, groups, env) {
     const doc = env.document;
-    const desktop = env.matchMedia('(min-width: 1181px) and (hover: hover) and (pointer: fine)');
+    const desktop = env.matchMedia('(min-width: 1301px) and (hover: hover) and (pointer: fine)');
     const state = new Map(groups.map(group => [group, {timer:null, inside:false, dismissed:false}]));
     function cancel(group) {
       const item = state.get(group);

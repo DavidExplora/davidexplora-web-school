@@ -65,3 +65,7 @@ Use a fixed dated offer only after costs and arrangements are confirmed. Update 
 Day-trip competitive benchmarks, cost assumptions and modeled margins are in `DAYTRIP-OPERATIONS.md` and `data/daytrip-costs.json`. The master public estimates are in `data/tours.json`. Confirm actual supplier costs and applicable taxes before accepting payment.
 
 New Zanzibar assumptions are in `ZANZIBAR-OPERATIONS.md`; new safari routes and screenshot price references are in `SAFARI-OPERATIONS.md`. Retail comparison prices do not establish supplier cost, availability or operating profit.
+
+## Special journeys · 13 October 2026
+
+The 14-day mountain/safari, 8-day safari/local-life, 9-day women’s mountain and 7-day island journeys are individually quoted. Supplier-confirmed complete costs are not yet available, so no numerical retail price or guaranteed margin is published. Each quote must cover its explicit night/transfer/crew/fee scope and separately agreed extras. No education donation is included. See `EDITORIAL-OPERATIONS.md`.

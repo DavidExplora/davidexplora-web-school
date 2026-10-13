@@ -2310,5 +2310,435 @@
       }
     ],
     "imageAlt": "Elephants beside a baobab in green savannah"
+  },
+  {
+    "id": "14-day-kilimanjaro-safari-journey",
+    "title": "Kilimanjaro & Northern Safari: 14 Days",
+    "category": "combined",
+    "days": 14,
+    "tripDays": 14,
+    "duration": "14 days / 13 nights · 7 mountain days",
+    "price": null,
+    "price2": null,
+    "group": 2,
+    "basis": "Private itinerary for your actual group and dates",
+    "start": "Kilimanjaro Airport → Kilimanjaro Airport",
+    "style": "Private journey · dates on request",
+    "image": "images/stories/marangu-moorland.webp",
+    "imageAlt": "A trekker resting among rocks in Kilimanjaro moorland",
+    "summary": "Seven days on Machame, a four-day northern safari and time for arrival, recovery and departure. One written itinerary connects the mountain crew, park travel and hotels.",
+    "places": [
+      "Machame route",
+      "Tarangire",
+      "Serengeti",
+      "Ngorongoro",
+      "Moshi",
+      "Arusha"
+    ],
+    "itinerary": [
+      {
+        "label": "Day 1",
+        "title": "Arrive and prepare in Moshi",
+        "text": "Meet at Kilimanjaro Airport and transfer to the quoted Moshi hotel. Review the seven-day Machame plan and equipment; overnight in Moshi."
+      },
+      {
+        "label": "Day 2",
+        "title": "Machame Gate to Machame Camp",
+        "text": "Transfer to Machame Gate, complete registration and begin the guided forest ascent."
+      },
+      {
+        "label": "Day 3",
+        "title": "Machame to Shira Camp",
+        "text": "Continue into the moorland with your mountain crew and the agreed daily walking plan."
+      },
+      {
+        "label": "Day 4",
+        "title": "Shira via Lava Tower to Barranco",
+        "text": "Follow the planned acclimatization route towards Barranco. Your guide manages pace and checks how the group is feeling."
+      },
+      {
+        "label": "Day 5",
+        "title": "Barranco to Karanga",
+        "text": "Climb the Barranco Wall with your guide and continue to Karanga. Conditions and group needs shape the day."
+      },
+      {
+        "label": "Day 6",
+        "title": "Karanga to Barafu",
+        "text": "Continue to Barafu and prepare for the planned summit attempt. Review equipment and safety decisions with the crew."
+      },
+      {
+        "label": "Day 7",
+        "title": "Summit attempt and descent",
+        "text": "Attempt Uhuru Peak when your guide considers conditions and the group suitable, then descend to the agreed lower camp. Reaching the summit is never guaranteed."
+      },
+      {
+        "label": "Day 8",
+        "title": "Return via Mweka Gate",
+        "text": "Descend to Mweka Gate and transfer to your Moshi hotel. Rest after the seven mountain days."
+      },
+      {
+        "label": "Day 9",
+        "title": "Tarangire and the highlands",
+        "text": "Start early from Moshi for Tarangire. Allow for the road transfer, a game drive and onward travel to a quoted Karatu-area stay."
+      },
+      {
+        "label": "Day 10",
+        "title": "Travel to the Serengeti",
+        "text": "Drive through the Ngorongoro highlands to the Serengeti. The road is part of the safari day; game-drive time follows gate, weather and transfer conditions. Overnight in the Serengeti."
+      },
+      {
+        "label": "Day 11",
+        "title": "Serengeti wildlife, then return to the highlands",
+        "text": "Spend the morning on a game drive, then return towards the Ngorongoro area for the quoted overnight. A northern river-crossing extension needs extra days."
+      },
+      {
+        "label": "Day 12",
+        "title": "Ngorongoro Crater to Arusha",
+        "text": "Descend into the crater for the permitted game-drive visit, then transfer to your Arusha hotel."
+      },
+      {
+        "label": "Day 13",
+        "title": "A day to rest in Arusha",
+        "text": "Keep this day flexible after the climb and safari. An optional city walk or other activity is quoted separately; overnight in Arusha."
+      },
+      {
+        "label": "Day 14",
+        "title": "Departure",
+        "text": "Transfer from Arusha to Kilimanjaro Airport for your confirmed departure. Flight timings are checked before the route is finalized."
+      }
+    ],
+    "includes": [
+      "Licensed mountain guiding arrangements, porters and cook as specified in the quote",
+      "Six nights in mountain tents on the seven-day Machame route",
+      "Mountain meals, drinking water and applicable route, camping and rescue fees",
+      "Before-trek briefing, equipment check and the quoted safety arrangements",
+      "Seven hotel/lodge/camp nights off the mountain: Moshi (2), safari (3) and Arusha (2)",
+      "Four-day private northern safari with the quoted 4×4, driver-guide, meals and park/crater fees",
+      "Kilimanjaro Airport arrival/departure and connecting transfers as listed"
+    ],
+    "excludes": [
+      "International flights, visa and personal insurance",
+      "Personal hiking clothing, boots and equipment unless specifically quoted",
+      "Tips, drinks and activities not listed in the final quote",
+      "Optional day-13 activities",
+      "Zanzibar, balloon flights and northern Serengeti extensions"
+    ],
+    "notes": "13 nights total: 6 in mountain tents, 2 in Moshi, 3 on safari and 2 in Arusha. Safari day 9 starts from Moshi and is a long transfer day. The exact stays, mountain safety provisions, operator arrangements and all fees are named in your quote. No charity donation or school visit is included. Education-support questions are discussed separately.",
+    "nights": 13,
+    "specialJourney": true,
+    "mountainDays": 7,
+    "gallery": [
+      {
+        "image": "images/stories/marangu-moorland.webp",
+        "alt": "A trekker resting among rocks in Kilimanjaro moorland",
+        "caption": "Kilimanjaro moorland · supplied destination photograph; not a Machame camp guarantee"
+      },
+      {
+        "image": "images/stories/zebras-safari-vehicle.webp",
+        "alt": "Zebras beside a pop-up-roof safari vehicle",
+        "caption": "Northern safari travel · vehicle and route confirmed in your quote"
+      },
+      {
+        "image": "images/safari-expansion/serengeti-plains.webp",
+        "alt": "Serengeti river landscape in golden light",
+        "caption": "Serengeti landscape · destination photograph"
+      }
+    ]
+  },
+  {
+    "id": "8-day-northern-safari-local-life",
+    "title": "Northern Safari & Local Life: 8 Days",
+    "category": "combined",
+    "days": 8,
+    "tripDays": 8,
+    "duration": "8 days / 7 nights",
+    "price": null,
+    "price2": null,
+    "group": 2,
+    "basis": "Private itinerary for your actual group and dates",
+    "start": "Kilimanjaro Airport → Kilimanjaro Airport",
+    "style": "Private journey · dates on request",
+    "image": "images/stories/coffee-cherries.webp",
+    "imageAlt": "Green and ripening coffee cherries on a leafy branch",
+    "summary": "Combine four northern safari days with an Arusha walk and a host-led Marangu coffee day. Allow time for the people and places between the parks.",
+    "places": [
+      "Arusha",
+      "Tarangire",
+      "Serengeti",
+      "Ngorongoro",
+      "Marangu",
+      "Chagga coffee"
+    ],
+    "itinerary": [
+      {
+        "label": "Day 1",
+        "title": "Arrive in Arusha",
+        "text": "Transfer from Kilimanjaro Airport to your quoted Arusha stay. Meet your contact and review the route."
+      },
+      {
+        "label": "Day 2",
+        "title": "Arusha streets and markets",
+        "text": "Take a guided city walk with public markets and everyday streets. Meet the guide at an agreed point; photography and any artisan visits follow the hosts’ consent."
+      },
+      {
+        "label": "Day 3",
+        "title": "Tarangire and onward to Karatu",
+        "text": "Travel to Tarangire for the planned game-drive day, then continue to the quoted Karatu-area overnight."
+      },
+      {
+        "label": "Day 4",
+        "title": "Into the Serengeti",
+        "text": "Drive through the highlands into the Serengeti. Plan an afternoon game drive where transfer and gate conditions allow."
+      },
+      {
+        "label": "Day 5",
+        "title": "Serengeti morning and the highlands",
+        "text": "Enjoy a morning wildlife drive before returning towards the Ngorongoro area for the next overnight."
+      },
+      {
+        "label": "Day 6",
+        "title": "Ngorongoro Crater and Moshi",
+        "text": "Visit the crater within the permitted schedule, then transfer to Moshi. This is a long travel day, so keep the evening simple."
+      },
+      {
+        "label": "Day 7",
+        "title": "Marangu village, coffee and lunch",
+        "text": "Meet local hosts for the village and farming walk, coffee preparation and a local lunch. Return to Moshi; waterfalls or museums are separately quoted additions."
+      },
+      {
+        "label": "Day 8",
+        "title": "Departure from Kilimanjaro Airport",
+        "text": "Transfer to the airport for your confirmed flight. Further local days can be added to a revised quote."
+      }
+    ],
+    "includes": [
+      "Seven quoted hotel/lodge/camp nights: Arusha (2), safari (3) and Moshi (2)",
+      "Four-day private safari, quoted 4×4 and driver-guide, listed park/crater fees and safari meal plan",
+      "Arusha city walking guide and agreed refreshment stop",
+      "Marangu village guide, agreed host fees, coffee activity and local lunch",
+      "Airport and intercity transfers shown in the itinerary"
+    ],
+    "excludes": [
+      "International flights, visa, insurance, tips and personal purchases",
+      "Waterfalls, museums, balloon flights and unlisted extras",
+      "School visits, volunteering activities and charity donations"
+    ],
+    "notes": "This is a host-led travel itinerary, with paid guides and agreed community services. It does not advertise access to children or include a donation. Seasonal conditions, host consent and actual accommodation availability determine the final route. Education-support enquiries are separate from the travel contract.",
+    "nights": 7,
+    "specialJourney": true,
+    "gallery": [
+      {
+        "image": "images/daytrips/marangu-landscape.webp",
+        "alt": "Street and houses in Marangu",
+        "caption": "Marangu village · destination photograph"
+      },
+      {
+        "image": "images/stories/coffee-cherries.webp",
+        "alt": "Green and ripening coffee cherries on a leafy branch",
+        "caption": "Coffee cherries · photograph supplied by David Explora"
+      },
+      {
+        "image": "images/stories/baobab-elephants.webp",
+        "alt": "Elephants beside a baobab in green savannah",
+        "caption": "Northern safari landscape · destination illustration"
+      }
+    ]
+  },
+  {
+    "id": "9-day-womens-kilimanjaro-journey",
+    "title": "Women’s Kilimanjaro Journey: 9 Days",
+    "category": "trekking",
+    "days": 9,
+    "tripDays": 9,
+    "duration": "9 days / 8 nights · 7 mountain days",
+    "price": null,
+    "price2": null,
+    "group": 2,
+    "basis": "Private itinerary for your actual group and dates",
+    "start": "Kilimanjaro Airport → Kilimanjaro Airport",
+    "style": "Private journey · dates on request",
+    "image": "images/optimized/kilimanjaro-guide.webp",
+    "imageAlt": "David with a woman traveler on a Kilimanjaro trail",
+    "summary": "A private seven-day Machame climb with arrival and departure days. Discuss your group’s pace, privacy, equipment and crew preferences before confirming the arrangements.",
+    "places": [
+      "Machame route",
+      "Kilimanjaro",
+      "Moshi"
+    ],
+    "itinerary": [
+      {
+        "label": "Day 1",
+        "title": "Arrive, meet and prepare",
+        "text": "Transfer from Kilimanjaro Airport to Moshi. Discuss equipment, group expectations, tent/privacy arrangements and any guide or crew preferences before departure."
+      },
+      {
+        "label": "Day 2",
+        "title": "Machame Gate to Machame Camp",
+        "text": "Transfer to Machame Gate, complete registration and begin the guided forest ascent."
+      },
+      {
+        "label": "Day 3",
+        "title": "Machame to Shira Camp",
+        "text": "Continue into the moorland with your mountain crew and the agreed daily walking plan."
+      },
+      {
+        "label": "Day 4",
+        "title": "Shira via Lava Tower to Barranco",
+        "text": "Follow the planned acclimatization route towards Barranco. Your guide manages pace and checks how the group is feeling."
+      },
+      {
+        "label": "Day 5",
+        "title": "Barranco to Karanga",
+        "text": "Climb the Barranco Wall with your guide and continue to Karanga. Conditions and group needs shape the day."
+      },
+      {
+        "label": "Day 6",
+        "title": "Karanga to Barafu",
+        "text": "Continue to Barafu and prepare for the planned summit attempt. Review equipment and safety decisions with the crew."
+      },
+      {
+        "label": "Day 7",
+        "title": "Summit attempt and descent",
+        "text": "Attempt Uhuru Peak when your guide considers conditions and the group suitable, then descend to the agreed lower camp. Reaching the summit is never guaranteed."
+      },
+      {
+        "label": "Day 8",
+        "title": "Return via Mweka Gate",
+        "text": "Descend to Mweka Gate and transfer to your Moshi hotel. Rest after the seven mountain days."
+      },
+      {
+        "label": "Day 9",
+        "title": "Departure or a revised onward plan",
+        "text": "Transfer to Kilimanjaro Airport, or request extra recovery days, a safari or Zanzibar in a separate quote."
+      }
+    ],
+    "includes": [
+      "Licensed mountain guiding arrangements, porters and cook as specified in the quote",
+      "Six nights in mountain tents on the seven-day Machame route",
+      "Mountain meals, drinking water and applicable route, camping and rescue fees",
+      "Before-trek briefing, equipment check and the quoted safety arrangements",
+      "Two Moshi hotel nights, before and after the trek",
+      "Kilimanjaro Airport transfers and route-gate transport in the final itinerary",
+      "Group briefing on tent arrangements, privacy and individual needs"
+    ],
+    "excludes": [
+      "International flights, visa and personal insurance",
+      "Personal hiking clothing, boots and equipment unless specifically quoted",
+      "Tips, drinks and activities not listed in the final quote",
+      "Extra recovery nights, safari or island extensions"
+    ],
+    "notes": "Eight nights: 6 mountain camping nights and 2 hotel nights. Private dates are on request, not a scheduled International Women’s Day departure. A female guide or crew request depends on availability and is confirmed explicitly; it is not promised by the package title. The photo shows a mountain guiding moment, not this departure’s participants. No fixed summit success rate, charity contribution or school visit is claimed.",
+    "nights": 8,
+    "specialJourney": true,
+    "mountainDays": 7,
+    "gallery": [
+      {
+        "image": "images/optimized/kilimanjaro-guide.webp",
+        "alt": "David with a woman traveler on a Kilimanjaro trail",
+        "caption": "David on a Kilimanjaro trail · supplied project photograph"
+      },
+      {
+        "image": "images/stories/kili-forest.webp",
+        "alt": "A rainforest path on Kilimanjaro",
+        "caption": "Kilimanjaro rainforest · destination photograph"
+      },
+      {
+        "image": "images/stories/kili-high-camp.webp",
+        "alt": "Tents and a shelter at Barafu Camp",
+        "caption": "Kilimanjaro high camp · exact camp arrangements confirmed in your route"
+      }
+    ]
+  },
+  {
+    "id": "7-day-zanzibar-culture-coast",
+    "title": "Zanzibar Culture & Coast: 7 Days",
+    "category": "zanzibar",
+    "days": 7,
+    "tripDays": 7,
+    "duration": "7 days / 6 nights",
+    "price": null,
+    "price2": null,
+    "group": 2,
+    "basis": "Private itinerary for your actual group and dates",
+    "start": "Zanzibar Airport → Zanzibar Airport",
+    "style": "Private journey · dates on request",
+    "image": "images/zanzibar-tours/jambiani-beach.webp",
+    "imageAlt": "Jambiani beach at low tide",
+    "summary": "Two Stone Town nights and four coastal nights, connected with guided history, spice and forest visits. Leave room for the tides and a genuinely unhurried beach day.",
+    "places": [
+      "Stone Town",
+      "Spice farm",
+      "Jozani",
+      "Zanzibar coast"
+    ],
+    "itinerary": [
+      {
+        "label": "Day 1",
+        "title": "Arrive and settle in Stone Town",
+        "text": "Meet at Zanzibar Airport and transfer to the named Stone Town hotel. Keep arrival day flexible."
+      },
+      {
+        "label": "Day 2",
+        "title": "Stone Town with a local guide",
+        "text": "Take a guided walking tour through public streets and the agreed heritage stops. Confirm any interior admission fees in advance; a Changuu boat visit is an optional addition."
+      },
+      {
+        "label": "Day 3",
+        "title": "Spices, then the coast",
+        "text": "Visit the agreed spice farm with a local guide and tasting, then transfer to your named coastal stay. Choose the coast before quoting; the beach image illustrates Jambiani without fixing your hotel."
+      },
+      {
+        "label": "Day 4",
+        "title": "Jozani forest and the mangrove boardwalk",
+        "text": "Take the guided forest and boardwalk visit with entry and transport specified. Wildlife is free-ranging; do not promise sightings or touch animals."
+      },
+      {
+        "label": "Day 5",
+        "title": "A day shaped by your chosen coast",
+        "text": "Enjoy time at your hotel and beach. A Matemwe/Mnemba-water snorkeling trip or another boat day is optional, separately quoted and dependent on safe sea conditions."
+      },
+      {
+        "label": "Day 6",
+        "title": "An unhurried island day",
+        "text": "Leave this day open for the beach, a local walk or a separately quoted activity. Tide times and conditions can change the order of island days."
+      },
+      {
+        "label": "Day 7",
+        "title": "Departure from Zanzibar Airport",
+        "text": "Transfer to the airport for your flight, with enough time from the confirmed coastal hotel."
+      }
+    ],
+    "includes": [
+      "Six quoted hotel nights: Stone Town (2) and the chosen coast (4), with breakfast",
+      "Airport transfers and the Stone Town-to-coast transfer",
+      "Stone Town guide and explicitly listed admission fees",
+      "Spice-farm activity and tasting, Jozani guide/entry and scheduled activity transport"
+    ],
+    "excludes": [
+      "International or mainland-to-Zanzibar flights and any required entry documents/cover",
+      "Lunch, dinner, drinks and hotel extras unless specifically quoted",
+      "Optional Changuu, snorkeling, sunset boats or other activities",
+      "Tips, personal purchases and charity contributions"
+    ],
+    "notes": "This is an individually quoted island plan, not a resort or room-category guarantee. The quote names the coast, properties, room basis, activity transport and admissions. Optional boat activities follow provider safety decisions and sea conditions. Any future education-support contribution would be separately agreed and documented.",
+    "nights": 6,
+    "specialJourney": true,
+    "gallery": [
+      {
+        "image": "images/zanzibar-tours/jambiani-beach.webp",
+        "alt": "Jambiani beach at low tide",
+        "caption": "Jambiani · island destination photograph, not a hotel promise"
+      },
+      {
+        "image": "images/stories/stone-town-street.webp",
+        "alt": "A narrow lane between historic Stone Town buildings",
+        "caption": "Stone Town · heritage streets"
+      },
+      {
+        "image": "images/zanzibar-tours/jozani-colobus.webp",
+        "alt": "Zanzibar red colobus in Jozani forest",
+        "caption": "Jozani · free-ranging wildlife; sightings vary"
+      }
+    ]
   }
 ]);

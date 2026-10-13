@@ -122,7 +122,7 @@ def tour_page(tour):
     included=''.join(f'<li>{esc(item)}</li>' for item in tour['includes'])
     excluded=''.join(f'<li>{esc(item)}</li>' for item in tour['excludes'])
     couple=f'<p class="couple-price"><strong>Travelling as two?</strong><br>Estimated from {money(tour["price2"])} per adult for 2 adults sharing. Your quote confirms the total.</p>' if tour['price2'] else ''
-    buffer=f'<p><strong>Time in Tanzania:</strong> allow {tour["tripDays"]} days including arrival and departure around the {tour["days"]}-day mountain route.</p>' if tour['category']=='trekking' and tour['days']>1 else ''
+    buffer=f'<p><strong>Time in Tanzania:</strong> allow {tour["tripDays"]} days including arrival and departure around the {tour.get("mountainDays",tour["days"])}-day mountain route.</p>' if tour['category']=='trekking' and tour['days']>1 else ''
     photo='Destination photograph. Your itinerary confirms the route, hosts and local arrangements.'
     gallery=tour_gallery(tour) if len(tour.get('gallery',[]))>1 else '<figure style="margin:0">'+img(tour['image'],image_alt(tour),True,'90vw').replace('<img ','<img class="tour-wide-image" ')+'<figcaption class="photo-note">'+photo+' <a href="photo-credits.html">Photo credits</a></figcaption></figure>'
     solo=f'<p class="couple-price"><strong>Solo traveller?</strong><br>Estimated from {money(tour["priceSolo"])} for one adult on a private tour. Your quote confirms the services and total.</p>' if tour.get('priceSolo') else ''

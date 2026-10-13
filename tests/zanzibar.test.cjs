@@ -7,7 +7,7 @@ const costs=require('../data/zanzibar-costs.json');
 const credits=require('../data/photo-credits.json');
 
 test('Zanzibar departures and equipment have distinct, explicit price bases',()=>{
-  assert.equal(tours.filter(t=>t.category==='zanzibar').length,13);
+  assert.equal(tours.filter(t=>t.category==='zanzibar').length,14);
   assert.match(getTour('nakupenda-sandbank').start,/Stone Town/);
   assert.match(getTour('blue-lagoon-snorkeling').start,/Michamvi/);
   assert.match(getTour('mnemba-waters-snorkeling').start,/Matemwe/);

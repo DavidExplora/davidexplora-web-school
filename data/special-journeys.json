@@ -1,0 +1,25 @@
+{
+  "title": "Special journeys",
+  "journeys": [
+    {
+      "id": "14-day-kilimanjaro-safari-journey",
+      "theme": "Mountain + safari",
+      "for": "Climbers who want a complete northern safari after the trek"
+    },
+    {
+      "id": "8-day-northern-safari-local-life",
+      "theme": "Safari + local life",
+      "for": "Travellers interested in wildlife, coffee and host-led culture"
+    },
+    {
+      "id": "9-day-womens-kilimanjaro-journey",
+      "theme": "Women’s mountain journey",
+      "for": "A private women’s group discussing comfort and crew preferences"
+    },
+    {
+      "id": "7-day-zanzibar-culture-coast",
+      "theme": "Culture + coast",
+      "for": "Island travellers who want history, forest and time by the sea"
+    }
+  ]
+}
