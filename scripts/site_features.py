@@ -42,6 +42,7 @@ def update_home_source(path):
     text=path.read_text(encoding='utf-8');text=re.sub(r'<header class="site-header">.*?</header>',lambda _:header(),text,flags=re.S);text=re.sub(r'<footer class="site-footer">.*?</footer>',lambda _:footer(),text,flags=re.S)
     if 'rel="preload" href="media/serengeti-lion-cubs-poster.webp"' not in text:text=text.replace('</head>','<link rel="preload" href="media/serengeti-lion-cubs-poster.webp" as="image"></head>')
     text=text.replace('<script src="ui.js" defer></script>','<script src="ui.js" defer></script><script src="features.js" defer></script>') if 'src="features.js"' not in text else text
+    if 'src="live-chat.js"' not in text:text=text.replace('</body>','<script src="live-chat.js" defer></script></body>')
     text=re.sub(r'"sameAs":\[.*?\]',lambda _: '"sameAs":'+json.dumps([u for u in json.loads((ROOT/'data/social-links.json').read_text(encoding='utf-8')).values() if u]),text)
     text=text.replace('<button type="button" data-rail-next aria-label="Show next tours">→</button></div>', '<button type="button" data-rail-next aria-label="Show next tours">→</button><button type="button" data-rail-pause aria-pressed="false">Pause tours</button></div>')
     path.write_text(text, encoding='utf-8')

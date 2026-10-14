@@ -20,7 +20,7 @@ GitHub stores the source at `DavidExplora/davidexplora-web-school`. The public s
 
 The plain HTML/CSS/JavaScript site has 94 HTML pages, 42 tour itineraries and 12 original travel guides. Licensed destination photography and David's supplied guiding photographs have public source/credit records. Machame, Lemosho and Marangu have distinct automatic photo galleries with manual controls and reduced-motion support.
 
-Visitors can review tours and prepare a WhatsApp or email enquiry. They must press Send in the selected app. There is no automatic email delivery, enquiry database, live seat inventory or online card checkout. A prepared message does not reserve a trip or confirm a booking.
+Visitors can review tours and prepare a WhatsApp or email enquiry. They must press Send in the selected app. Live chat messages use David’s tawk.to account. There is no automatic email delivery from the enquiry forms, booking database, live seat inventory or online card checkout. A prepared message does not reserve a trip or confirm a booking.
 
 Displayed prices are planning estimates. Before confirming paid bookings, obtain actual supplier costs and availability, confirm the operating/contracting provider and applicable licensing/insurance, and issue a written itinerary, price, inclusions, payment recipient and cancellation terms. See `BOOKING-LAUNCH.md` and the destination operations documents.
 
@@ -46,11 +46,17 @@ Official references:
 
 ## Search and marketing
 
-After the canonical domain update is published, add a Domain property for `davidexplora.com` in Google Search Console. Verify ownership using the exact Google-issued DNS TXT value and submit `https://davidexplora.com/sitemap.xml`. Search Console and sitemap submission help discovery; they do not guarantee indexing, ranking or enquiries.
+The Domain property for `davidexplora.com` is verified in Google Search Console. The submitted `https://davidexplora.com/sitemap.xml` reports Success with 92 discovered pages. The homepage live inspection reports that the URL is available to Google, and indexing has been requested. These checks support discovery; they do not establish completed indexing or guarantee ranking or enquiries.
 
 Update David's real Instagram, TikTok, LinkedIn and Google Business website links to the verified live domain. Supply the exact public Facebook page URL before adding it to the site. Add only verified business listings and reviews from actual travellers.
 
 Official reference: https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap
+
+## Live chat and visitor alerts
+
+David supplied the tawk.to widget for his own account. The generated pages load it once on the HTTPS production domains; localhost and file previews keep the existing WhatsApp welcome. The old floating controls are hidden after the real widget renders, with keyboard focus preserved. If the external script cannot load, the existing contact controls remain available.
+
+The privacy notice describes live chat and visitor-session processing. Finish the tawk.to setup wizard, configure sounds/desktop notifications and the relevant consent forms in the account, then test a visit and a complete chat on the published site. Alert permissions, widget consent configuration and actual message delivery must be verified by David on his device. See `CHAT-OPERATIONS.md`; this integration does not install Google Analytics or make a security/compliance guarantee.
 
 ## Payments: still a separate activation
 
@@ -71,6 +77,6 @@ python scripts/check_site.py
 python scripts/package_site.py dist
 ```
 
-The existing 78 behaviour tests and full site checker cover the generated pages, links/assets, metadata, labelled enquiries and gallery controls. Repeat generation must leave committed outputs unchanged. Browser visual QA was unavailable in the managed editing environment; a real phone/browser review and a sent enquiry received by David remain launch checks.
+The behaviour tests and full site checker cover the generated pages, links/assets, metadata, labelled enquiries, gallery controls and live-chat fallback/focus behaviour. Repeat generation must leave committed outputs unchanged. Browser visual QA was unavailable in the managed editing environment; a real phone/browser review, a sent enquiry received by David and a delivered live chat remain owner checks.
 
 In VS Code, open the complete latest repository folder and right-click the root `index.html` → **Open with Live Server**. Live Server is a local preview. The published custom-domain site is available independently of David's laptop.

@@ -109,7 +109,7 @@
   const welcome=doc.getElementById('david-welcome'),launcher=doc.getElementById('welcome-launch'),close=doc.getElementById('welcome-close');
   if(welcome&&launcher&&close){
     launcher.hidden=false;
-    const show=()=>{welcome.hidden=false;launcher.setAttribute('aria-expanded','true');try{markWelcomeSeen(root.sessionStorage);}catch{/* Storage may be blocked. */}};
+    const show=()=>{if(root.DavidLiveChat?.ready)return;welcome.hidden=false;launcher.setAttribute('aria-expanded','true');try{markWelcomeSeen(root.sessionStorage);}catch{/* Storage may be blocked. */}};
     const hide=()=>{const inside=welcome.contains(doc.activeElement);welcome.hidden=true;launcher.setAttribute('aria-expanded','false');try{dismissWelcome(root.sessionStorage);}catch{/* Storage may be blocked. */}if(inside)launcher.focus();};
     launcher.addEventListener('click',()=>welcome.hidden?show():hide());close.addEventListener('click',hide);
     welcome.addEventListener('keydown',event=>{if(event.key==='Escape'){event.preventDefault();hide();}});

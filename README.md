@@ -24,6 +24,7 @@ The site is plain HTML, CSS and JavaScript with no runtime framework. There are 
 - `data/group-departures.json`: proposed December 2026 dates and group sizes; never live inventory.
 - `scripts/build_guest_services.py`: departure rows, tentative calendars, welcome prompt, privacy notes and English/Spanish guest support pages.
 - `guest-services.js` and `guest-services.css`: departure-date expiry, dismissible welcome, support and payment-request drafts.
+- `live-chat.js`: owner-supplied tawk.to live chat on the HTTPS production domains, with the existing contact controls retained if loading fails. See `CHAT-OPERATIONS.md` for visitor alerts, consent settings and the owner’s live test.
 - `payments.html`: requests instructions against a written quote; instant checkout remains inactive.
 - `journal.js`: article search, browser-local reading lists, reading progress and journey comparison.
 - `operator.css`: shared navigation, current design and responsive layouts. Older destination styles remain in `style.css`, `launch.css` and `story.css`.

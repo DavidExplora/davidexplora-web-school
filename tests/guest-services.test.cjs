@@ -115,6 +115,11 @@ test('welcome stays quiet around forms, focused controls, hidden tabs and blocke
   const hidden=fixture();hidden.doc.hidden=true;hidden.timers[0]();assert.equal(hidden.welcome.hidden,true);
   const blocked=fixture({blocked:true});assert.equal(blocked.timers.length,0);blocked.launcher.fire('click');assert.equal(blocked.welcome.hidden,false);blocked.close.fire('click');assert.equal(blocked.welcome.hidden,true);
 });
+test('the welcome timer and manual trigger cannot reopen a duplicate popup after live chat is ready',()=>{
+  const f=fixture();f.root.DavidLiveChat={ready:true};f.timers[0]();f.launcher.fire('click');
+  assert.equal(f.welcome.hidden,true);assert.notEqual(f.launcher.attrs['aria-expanded'],'true');
+  assert.equal(f.storage.get('david-welcome-seen'),undefined);
+});
 test('the welcome is shown once per visit and replaces the duplicate floating control without stealing form focus',()=>{
   const f=fixture();assert.equal(f.bodyClasses.has('welcome-enabled'),true);f.timers[0]();
   assert.equal(f.storage.get('david-welcome-seen'),'1');assert.equal(api.welcomeAllowed({getItem:key=>f.storage.get(key)}),false);

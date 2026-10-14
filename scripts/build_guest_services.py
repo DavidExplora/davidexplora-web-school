@@ -120,7 +120,9 @@ def enhance():
         text=path.read_text();text=re.sub(r'<button class="welcome-launch".*?</aside>', '',text,flags=re.S)
         if 'href="guest-services.css"' not in text:text=text.replace('</head>','<link rel="stylesheet" href="guest-services.css"></head>')
         if 'src="guest-services.js"' not in text:text=text.replace('</body>','<script src="guest-data.js" defer></script><script src="guest-services.js" defer></script></body>')
+        text=text.replace('<script src="live-chat.js" defer></script>','')
         text=text.replace('</body>',welcome(path.name=='viajes-en-espanol.html')+'</body>')
+        text=text.replace('</body>','<script src="live-chat.js" defer></script></body>')
         path.write_text(text)
 
 def build():
