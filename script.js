@@ -41,7 +41,7 @@ function resetRequest() {
   const link = document.querySelector('#inquiry-whatsapp');
   if (link) link.href = 'https://wa.me/' + api.phone;
   const emailLink = document.querySelector('#inquiry-email');
-  if (emailLink) emailLink.href = 'mailto:davidlyamuya819@gmail.com';
+  if (emailLink) emailLink.href = 'mailto:info@davidexplora.com';
   const preview = document.querySelector('#inquiry-preview');
   if (preview) preview.textContent = '';
   const copyStatus = document.querySelector('#copy-status');

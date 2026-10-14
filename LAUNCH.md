@@ -1,6 +1,6 @@
 # David Explora launch
 
-Updated 14 October 2026.
+Updated 15 October 2026.
 
 Public website: https://davidexplora.com
 
@@ -24,25 +24,23 @@ Visitors can review tours and prepare a WhatsApp or email enquiry. They must pre
 
 Displayed prices are planning estimates. Before confirming paid bookings, obtain actual supplier costs and availability, confirm the operating/contracting provider and applicable licensing/insurance, and issue a written itinerary, price, inclusions, payment recipient and cancellation terms. See `BOOKING-LAUNCH.md` and the destination operations documents.
 
-## Professional email: next setup
+## Professional email: active mailbox, authentication pending
 
-The professional mailbox has not yet been purchased, activated or tested. The website continues to use David's current Gmail address and WhatsApp number. Keep those contacts until the new mailbox can receive enquiries and send replies successfully.
+David created `info@davidexplora.com` in Namecheap Private Email. His 14 October screenshots show outgoing test messages received by Gmail and a Gmail reply received in the professional mailbox. Those outgoing tests landed in Gmail's Spam folder. This confirms a two-way message exchange, not reliable customer inbox placement or passing authentication.
 
-Recommended starting setup:
+The homepage, shared footers, privacy/terms contacts, organization metadata, trip enquiries, English/Spanish support requests, payment-instruction drafts and education partnership draft now use `info@davidexplora.com`. WhatsApp remains +255 778 321 400. Forms still prepare messages locally; visitors must press Send in their chosen app.
 
-- One Namecheap Private Email **Launch** mailbox: `info@davidexplora.com`.
-- `bookings@davidexplora.com` as an alias into the same inbox.
-- The listed Launch plan price is USD 14.88/year for one mailbox, with 10 aliases and a 30-day trial option. Confirm the chosen offer, renewal settings and final price at checkout.
+Next, open a newly received professional-mailbox message in Gmail and choose the message's three-dot menu beside Reply, then **Show original**. Check SPF, DKIM and DMARC results. Use the actual results and the provider-generated DKIM record before changing DNS. Do not invent a key or add a second SPF record. Marking the test Not spam helps David's own Gmail inbox; it does not guarantee customer inbox placement.
 
-Purchase and create the mailbox in David's own account. Use the mail provider's current domain-specific instructions for MX, SPF, DKIM and DMARC. Do not invent a DKIM key or add a second conflicting SPF record. The DNS currently has the registrar's email-forwarding configuration; switch to the purchased mail service through its setup process.
-
-Test an inbound message and an outbound reply. Only after those tests succeed, update the homepage template, shared/footer contacts, enquiry draft generators, privacy/booking pages and organization metadata, then rebuild, push and republish. Account passwords and mail/API credentials must remain outside the repository.
+Public DNS records could not be independently queried from this editing environment. No authentication PASS result has been established here. Keep authentication and inbox-placement checks open until the actual received-message results are reviewed. `bookings@davidexplora.com` was proposed as an alias but has not been confirmed or tested. Account passwords and mail/API credentials must remain outside the repository.
 
 Official references:
 
 - Private Email plans: https://www.namecheap.com/support/knowledgebase/article.aspx/10789/2179/private-email-plans-comparison/
 - Mail service and purchase: https://www.namecheap.com/hosting/email/
 - Namecheap host records: https://www.namecheap.com/support/knowledgebase/article.aspx/434/2237/how-do-i-set-up-host-records-for-a-domain/
+- Gmail Show original: https://support.google.com/mail/answer/29436?hl=en
+- Gmail authentication: https://support.google.com/mail/answer/180707?hl=en
 
 ## Search and marketing
 

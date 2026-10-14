@@ -3,7 +3,7 @@
   'use strict';
   const isNode=typeof module==='object'&&module.exports;
   const data=isNode?require('./guest-data.js'):root.DavidGuestData;
-  const phone='255778321400', email='davidlyamuya819@gmail.com';
+  const phone='255778321400', email='info@davidexplora.com';
   const clean=(value,max=1000)=>String(value||'').replace(/[\u0000-\u001f\u007f]/g,' ').trim().slice(0,max);
   function validDate(value){
     return /^\d{4}-\d{2}-\d{2}$/.test(value)&&Number.isFinite(Date.parse(value+'T12:00:00Z'))&&new Date(value+'T12:00:00Z').toISOString().slice(0,10)===value;

@@ -120,7 +120,7 @@
     if (result.errors.length) return { ...result, text: '', url: '' };
     const v = result.values;
     const text = 'Hello David, I would like to plan a Tanzania trip.\n\nName: '+v.name+'\nEmail: '+v.email+'\nWhatsApp: '+(v.whatsapp || 'Contact me here or by email')+'\nPreferred arrival: '+(v.date || 'Flexible / to discuss')+'\nDate flexibility: '+v.flexibility+'\nStarting location: '+(v.arrival || 'Please help me choose')+'\nTravellers: '+v.travelers+'\nStarting itinerary: '+(v.package || 'Personal trip / help me choose')+'\nBudget per adult: '+(v.budget ? 'USD '+Number(v.budget).toLocaleString('en-US') : 'To discuss')+'\nDestination: '+v.destination+'\nTime in Tanzania: '+v.duration+'\nTravel style: '+v.style+'\nGuide language requested: '+v.language+'\n\nMy trip idea:\n'+(v.message || 'Please help me choose a suitable itinerary.')+'\n\nPlease send a proposed itinerary, an itemised quote with inclusions and exclusions, and the booking terms for my dates and group.';
-    return { ...result, text, url: 'https://wa.me/'+phone+'?text='+encodeURIComponent(text), emailURL: 'mailto:davidlyamuya819@gmail.com?subject='+encodeURIComponent('Tanzania trip request — '+v.name)+'&body='+encodeURIComponent(text) };
+    return { ...result, text, url: 'https://wa.me/'+phone+'?text='+encodeURIComponent(text), emailURL: 'mailto:info@davidexplora.com?subject='+encodeURIComponent('Tanzania trip request — '+v.name)+'&body='+encodeURIComponent(text) };
   }
   return { phone, destinations, durations, interests, presets, urlPreset, buildPlan, validateInquiry, createInquiry };
 });

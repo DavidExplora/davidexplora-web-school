@@ -25,7 +25,7 @@ test('public listings reject scripts, impersonating hosts and unsupported platfo
 test('email draft preserves the validated request without allowing mail header injection', () => {
   const result=createInquiry({name:'Ana\nBcc:other@example.com',email:'ana@example.com',travelers:2,destination:'Safari',duration:'5–7 days',consent:true,message:'Café & wildlife? 😊'},'2026-10-11');
   const url=new URL(result.emailURL);
-  assert.equal(url.pathname,'davidlyamuya819@gmail.com');
+  assert.equal(url.pathname,'info@davidexplora.com');
   assert.equal(url.searchParams.get('body'),result.text);
   assert.ok(!url.searchParams.get('subject').includes('\n'));
   assert.equal(url.searchParams.size,2);

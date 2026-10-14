@@ -34,7 +34,7 @@ Once each real public listing is verified, paste its URL in business-links.js. E
 
 ## Domain and professional email
 
-Purchase the chosen domain after confirming availability, renewal cost and ownership details. Configure hosting DNS using the hosting provider's actual records. Set up the purchased professional mailbox (for example info@your-domain), then verify SPF, DKIM and DMARC using the mail provider's instructions. Test receiving and replying before replacing the current Gmail address in journey.js, page contact links and organization structured data.
+The purchased domain is connected and the website uses `info@davidexplora.com` for public contacts and enquiry drafts. A two-way exchange with David's Gmail account was confirmed on 14 October 2026; the outgoing tests landed in Spam. Review SPF, DKIM and DMARC in Gmail's **Show original** view and check inbox placement before treating email delivery as fully verified. Follow the mail provider's actual DNS instructions and preserve the website's hosting records. See `LAUNCH.md` for the current status.
 
 After the custom domain is live, update canonical URLs, Open Graph URLs, robots.txt and sitemap.xml. Verify ownership in Google Search Console and submit the sitemap.
 

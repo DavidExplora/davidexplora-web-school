@@ -4,7 +4,7 @@ Tanzania safaris, Kilimanjaro treks, Zanzibar experiences and local day trips, p
 
 Website: https://davidexplora.com
 
-Both `davidexplora.com` and `www.davidexplora.com` are connected to the existing hosted site with active HTTPS. Page canonicals and the sitemap use `https://davidexplora.com`. The professional mailbox is not yet activated; enquiry drafts still use the existing Gmail/WhatsApp contacts. See `LAUNCH.md` for the remaining email and booking setup.
+Both `davidexplora.com` and `www.davidexplora.com` are connected to the existing hosted site with active HTTPS. Page canonicals and the sitemap use `https://davidexplora.com`. The professional mailbox `info@davidexplora.com` exchanged messages with David's Gmail account on 14 October 2026. Website contacts and enquiry drafts use that mailbox; Gmail authentication and inbox placement still need checking. See `LAUNCH.md` for the remaining email and booking setup.
 
 ## Source and editing
 
@@ -57,7 +57,7 @@ Tour selection preserves the customer’s traveler count and any edited message 
 
 The site prepares a WhatsApp or email draft in the visitor’s browser. The visitor must open the app and press Send. There is no automatic email delivery, reservation database, online inventory or card checkout. A prepared request is not a delivered enquiry or confirmed booking.
 
-WhatsApp: +255 778 321 400. Email: davidlyamuya819@gmail.com.
+WhatsApp: +255 778 321 400. Email: info@davidexplora.com.
 
 Displayed prices are estimates with adult group assumptions. Verify supplier costs, services and availability before issuing the final quote. Use an approved merchant payment method against a written quote; see `BOOKING-LAUNCH.md` and `PRICING.md`.
 
@@ -73,7 +73,7 @@ Automated checks do not substitute for a phone/browser review or confirmation th
 
 GitHub and the hosted Site have separate repositories. Pushing GitHub alone does not deploy the hosted Site. Publish the checked `dist` package through the existing Site project; preserve its current audience.
 
-After a purchased domain serves correctly, run `python scripts/set_site_url.py https://your-domain.com`, then rebuild, check and republish. This updates the home source template as well as generated metadata. Set up and test a professional mailbox before replacing the Gmail contact.
+For a future domain change, run `python scripts/set_site_url.py https://your-domain.com`, then rebuild, check and republish. This updates the home source template as well as generated metadata. The current professional mailbox has passed a two-way message exchange; verify SPF, DKIM and DMARC in a newly received Gmail message and continue checking inbox placement.
 
 ## Day-trip expansion
 
