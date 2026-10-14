@@ -494,3 +494,48 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 }
 @media(prefers-reduced-motion:reduce){.trip-builder-plus{transition:none}}
 @media print{.tour-section-nav{display:none!important}.tour-request-panel{border:0;padding:0}}
+
+/* Route galleries stay compact while the mountain and travel days remain easy to compare. */
+.mountain-route-section{background:var(--sand)}
+.mountain-route-section .section-heading h2{font-size:clamp(32px,4vw,52px);line-height:1.15}
+.mountain-route-section .section-heading>p:last-child{max-width:750px;margin-inline:auto}
+.mountain-route-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.mountain-route-card{display:flex;flex-direction:column;min-width:0;background:#fffdf7;border:1px solid var(--line);border-radius:6px;overflow:hidden;scroll-margin-top:160px}
+.mountain-route-gallery{min-width:0;background:#f3efe6}
+.mountain-route-frames{display:grid;aspect-ratio:4/3;overflow:hidden;background:var(--forest)}
+.mountain-route-frames figure{grid-area:1/1;position:relative;min-width:0;min-height:0;margin:0;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .5s ease}
+.mountain-route-frames figure.is-active{opacity:1;visibility:visible;pointer-events:auto}
+.mountain-route-frames img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover}
+.mountain-route-caption{min-height:72px;font-size:12px;line-height:1.6;color:var(--forest);margin:0;padding:13px 16px}
+.mountain-route-gallery .story-controls{position:static;inset:auto;transform:none;display:flex;flex-wrap:wrap;align-items:center;justify-content:flex-start;width:auto;gap:6px;padding:10px 12px;background:transparent;border-radius:0;border-top:1px solid var(--line)}
+.mountain-route-gallery .story-controls button{min-width:44px;min-height:44px;padding:8px 10px;font-size:12px;color:var(--forest);border:1px solid #a4b39d;background:#fffdf7;border-radius:4px;cursor:pointer}
+.mountain-route-gallery .story-controls [data-pause]{margin-left:auto;min-width:98px}
+.mountain-route-gallery .story-count{font-size:11px;white-space:nowrap;color:var(--forest)}
+.mountain-route-gallery .story-dots{display:none}
+.mountain-route-copy{display:flex;flex-direction:column;flex:1;min-width:0;padding:24px}
+.mountain-route-copy .eyebrow{font-size:10px;line-height:1.7;letter-spacing:.06em;color:var(--copper);margin:0 0 12px}
+.mountain-route-copy h3{font-size:29px;line-height:1.2;margin:0 0 16px;color:var(--forest)}
+.mountain-route-copy>p:not(.eyebrow):not(.mountain-route-exit){font-size:14px;line-height:1.8;margin:0 0 22px;color:var(--muted)}
+.mountain-route-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 16px;margin:0 0 20px;padding:20px 0;border-block:1px solid var(--line)}
+.mountain-route-facts dt{font-size:11px;line-height:1.6;color:var(--muted);margin:0 0 5px}
+.mountain-route-facts dd{font-size:13px;line-height:1.6;color:var(--forest);font-weight:600;margin:0;overflow-wrap:anywhere}
+.mountain-route-exit{font-size:12px;line-height:1.7;margin:0 0 24px;color:var(--forest)}
+.mountain-route-actions{display:flex;flex-direction:column;gap:10px;margin-top:auto}
+.mountain-route-actions .btn{min-height:48px;padding:14px 16px;white-space:normal;text-align:center;font-size:13px;justify-content:center}
+.mountain-route-actions .text-link{display:flex;align-items:center;min-height:44px;font-size:13px;line-height:1.6}
+.mountain-route-section>.photo-note{max-width:1000px;margin:26px 0 0;font-size:12px;line-height:1.8}
+@media(max-width:1050px){
+ .mountain-route-grid{grid-template-columns:1fr;gap:28px}
+ .mountain-route-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start}
+ .mountain-route-frames{aspect-ratio:4/3}
+ .mountain-route-copy{height:100%;box-sizing:border-box}
+}
+@media(max-width:650px){
+ .mountain-route-card{display:flex;flex-direction:column}
+ .mountain-route-copy{padding:22px;width:100%}
+ .mountain-route-gallery{width:100%}
+ .mountain-route-caption{min-height:0}
+ .mountain-route-copy h3{font-size:27px}
+}
+@media(prefers-reduced-motion:reduce){.mountain-route-frames figure{transition:none}}
+@media print{.mountain-route-gallery .story-controls{display:none!important}.mountain-route-card{break-inside:avoid}.mountain-route-grid{grid-template-columns:1fr}}

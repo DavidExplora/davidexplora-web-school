@@ -1,0 +1,47 @@
+[
+  {
+    "id": "machame",
+    "tourId": "7-day-machame-trek",
+    "title": "Machame Route",
+    "theme": "Forest, moorland & the southern circuit",
+    "summary": "Climb from rainforest to the Shira area, then follow the southern slopes through Barranco and Karanga. Seven mountain days include the summit attempt and descent through Mweka.",
+    "sleeping": "Mountain tents",
+    "entry": "Machame Gate",
+    "exit": "Mweka Gate",
+    "photos": [
+      {"image": "images/package-covers/kilimanjaro-lava-tower-trail.webp", "alt": "Trekkers on the Machame route approaching Lava Tower beneath Kibo", "caption": "The approach to Lava Tower, with Kibo rising above the Machame trail."},
+      {"image": "images/stories/kili-high-camp.webp", "alt": "Tents and a shelter on rocky terrain at Barafu Camp", "caption": "Barafu high camp, the staging point for the summit attempt."},
+      {"image": "images/package-covers/kilimanjaro-camp-dusk.webp", "alt": "An illuminated orange tent below Kibo in evening light", "caption": "Evening light on Kibo: a glimpse of camping on Kilimanjaro."}
+    ]
+  },
+  {
+    "id": "lemosho",
+    "tourId": "8-day-lemosho-trek",
+    "title": "Lemosho Route",
+    "theme": "A western approach across the Shira Plateau",
+    "summary": "Approach from the western forest and walk across the Shira Plateau before joining the southern circuit. Eight mountain days allow a gradual journey through the plateau stages before the summit attempt.",
+    "sleeping": "Mountain tents",
+    "entry": "Londorossi registration & western trailhead",
+    "exit": "Mweka Gate",
+    "photos": [
+      {"image": "images/december/kilimanjaro-shira-evening.webp", "alt": "Kilimanjaro seen from Shira camp in warm evening light", "caption": "A view from Shira camp across the plateau on the Lemosho journey."},
+      {"image": "images/package-covers/kilimanjaro-camp-dusk.webp", "alt": "Kibo above a lit orange tent at a Kilimanjaro campsite", "caption": "Kibo at dusk: mountain camping beneath Kilimanjaro’s highest peak."},
+      {"image": "images/package-covers/kilimanjaro-lava-tower-trail.webp", "alt": "Trekkers on the rocky approach to Lava Tower with Kibo behind them", "caption": "Lava Tower on the shared southern circuit, photographed from the Machame approach."}
+    ]
+  },
+  {
+    "id": "marangu",
+    "tourId": "6-day-marangu-trek",
+    "title": "Marangu Route",
+    "theme": "Rainforest paths & mountain huts",
+    "summary": "Follow the eastern route through forest and moorland, staying in mountain huts. The six-day plan includes the Horombo acclimatisation day before the summit objective and return on the same route.",
+    "sleeping": "Shared mountain huts",
+    "entry": "Marangu Gate",
+    "exit": "Marangu Gate",
+    "photos": [
+      {"image": "images/stories/kili-forest.webp", "alt": "A path through Kilimanjaro’s dense montane rainforest", "caption": "Kilimanjaro’s montane rainforest, the landscape of the lower mountain."},
+      {"image": "images/stories/marangu-huts.webp", "alt": "David beside mountain huts on the Marangu route", "caption": "Marangu huts · a guiding photograph supplied by David Explora."},
+      {"image": "images/stories/uhuru-summit-david.webp", "alt": "Two trekkers beside the Uhuru Peak summit sign", "caption": "At Uhuru Peak: a summit photograph supplied by David Explora."}
+    ]
+  }
+]

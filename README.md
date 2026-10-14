@@ -14,6 +14,7 @@ The site is plain HTML, CSS and JavaScript with no runtime framework. There are 
 - `scripts/build_daytrips.py`: day-trip hub, separate city-walk links and comparison table.
 - `scripts/build_zanzibar.py`: island hub, coast-based tour groups, comparison table and homepage Zanzibar slider.
 - `scripts/build_safaris.py`: northern/southern safari hubs, migration and family planning notes.
+- `data/kilimanjaro-routes.json` and `scripts/build_kilimanjaro.py`: the three-route comparison, with real route photographs, automatic galleries and mountain/travel days drawn from the tour catalogue.
 - `scripts/site_features.py`: shared navigation, profile icons and homepage quick planner/film components.
 - `scripts/build_discovery.py`: map, destination data, booking guide and shared navigation.
 - `data/articles.json` and `data/special-journeys.json`: original travel guides and the curated special-journey collection.
