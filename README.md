@@ -2,7 +2,9 @@
 
 Tanzania safaris, Kilimanjaro treks, Zanzibar experiences and local day trips, planned with David Amani Lyamuya.
 
-Website: https://david-explora.fastash16.chatgpt.site
+Website: https://davidexplora.com
+
+Both `davidexplora.com` and `www.davidexplora.com` are connected to the existing hosted site with active HTTPS. Page canonicals and the sitemap use `https://davidexplora.com`. The professional mailbox is not yet activated; enquiry drafts still use the existing Gmail/WhatsApp contacts. See `LAUNCH.md` for the remaining email and booking setup.
 
 ## Source and editing
 
