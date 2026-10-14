@@ -72,7 +72,8 @@ class Element{
 }
 const code=fs.readFileSync('guest-services.js','utf8');
 function fixture({formMode=null,blocked=false,focusTag='BODY',search='',past=false}={}){
-  const controls={},doc={activeElement:{tagName:focusTag},hidden:false},root={},storage=new Map(),timers=[];
+  const controls={},doc=new Element(),root={},storage=new Map(),timers=[],bodyClasses=new Set();
+  doc.activeElement={tagName:focusTag};doc.hidden=false;doc.body={classList:{add:value=>bodyClasses.add(value)}};
   const welcome=new Element(),launcher=new Element(),close=new Element();welcome.hidden=true;welcome.contains=element=>element===close;controls['david-welcome']=welcome;controls['welcome-launch']=launcher;controls['welcome-close']=close;
   const form=new Element(),fields={};form.dataset={guestForm:formMode,locale:'es'};
   for(const name of ['name','email','date','party','destination','language','notes','reference','consent'])fields[name]=new Element(valid[name]??'');
@@ -88,7 +89,7 @@ function fixture({formMode=null,blocked=false,focusTag='BODY',search='',past=fal
   Object.defineProperty(root,'sessionStorage',{get(){if(blocked)throw Error('blocked');return {getItem:key=>storage.get(key)||null,setItem:(key,value)=>storage.set(key,value)};}});
   class Clock extends Date{constructor(...args){super(...(args.length?args:[past?'2027-01-01T00:00:00Z':'2026-10-14T00:00:00Z']));}}
   vm.runInNewContext(code,{globalThis:root,Date:Clock,Intl,URLSearchParams});
-  return {controls,doc,root,timers,welcome,launcher,close,storage,form,fields,ready,status,preview,whatsapp,email,submit,rowStatus,join,calendar};
+  return {controls,doc,root,timers,welcome,launcher,close,storage,form,fields,ready,status,preview,whatsapp,email,submit,rowStatus,join,calendar,bodyClasses};
 }
 test('the real support form handler prepares drafts, focuses the review and clears stale links after editing',()=>{
   const f=fixture({formMode:'support'});assert.equal(f.submit.disabled,false);assert.equal(f.fields.date.min,'2026-10-14');
@@ -113,6 +114,14 @@ test('welcome stays quiet around forms, focused controls, hidden tabs and blocke
   const focused=fixture({focusTag:'INPUT'});focused.timers[0]();assert.equal(focused.welcome.hidden,true);
   const hidden=fixture();hidden.doc.hidden=true;hidden.timers[0]();assert.equal(hidden.welcome.hidden,true);
   const blocked=fixture({blocked:true});assert.equal(blocked.timers.length,0);blocked.launcher.fire('click');assert.equal(blocked.welcome.hidden,false);blocked.close.fire('click');assert.equal(blocked.welcome.hidden,true);
+});
+test('the welcome is shown once per visit and replaces the duplicate floating control without stealing form focus',()=>{
+  const f=fixture();assert.equal(f.bodyClasses.has('welcome-enabled'),true);f.timers[0]();
+  assert.equal(f.storage.get('david-welcome-seen'),'1');assert.equal(api.welcomeAllowed({getItem:key=>f.storage.get(key)}),false);
+  f.doc.fire('keydown',{key:'Escape'});assert.equal(f.welcome.hidden,true);assert.equal(f.launcher.focused,undefined);
+  f.launcher.fire('click');assert.equal(f.welcome.hidden,false);
+  f.doc.fire('focusin',{target:{closest:selector=>selector==='form'?{}:null}});assert.equal(f.welcome.hidden,true);assert.equal(f.launcher.focused,undefined);
+  const early=fixture();early.launcher.fire('click');early.close.fire('click');early.timers[0]();assert.equal(early.welcome.hidden,true);
 });
 test('departure URLs prefill the arrival and group style while expired rows lose join and calendar links',()=>{
   const f=fixture({search:'?departure='+data.departures[0].id});assert.equal(f.controls['travel-date'].value,'2026-12-19');assert.equal(f.controls['trip-style'].value,'Small group, if available');assert.equal(f.controls['trip-date-flexibility'].value,'Exact dates');

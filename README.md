@@ -108,3 +108,15 @@ The new editorial section contains eight original guides across six subjects, wi
 Four additional personal-quote journeys include realistic arrival/departure days and overnight counts. The special collection lets visitors compare up to three choices; all four remain readable without JavaScript. The Zanzibar comparison now supports tailored prices. Saved tours scale to the complete catalogue.
 
 The Explora Education Vision is a proposed initiative with a practical pilot roadmap and partnership draft links. There are no donation collections, automatic booking contributions, established school partners or fabricated impact claims. See `EDITORIAL-OPERATIONS.md` for source references, itinerary boundaries and the owner’s next delivery decisions.
+
+## Open the latest site in VS Code
+
+Use GitHub Desktop **Fetch origin**, then **Pull origin** on `main`, or download the repository ZIP from GitHub. Open the repository folder in VS Code. Install **Live Server** by Ritwick Dey (extension ID `ritwickdey.LiveServer`) and right-click the root `index.html` → **Open with Live Server**. Use the root homepage, not `templates/home.html` or an old `dist` folder. The root HTML files are already generated and run without Node/npm or a Python installation.
+
+After changing source data or generators, rebuild using `python scripts/build_site.py`. Run the Node tests and static checker before pushing. `python scripts/package_site.py dist` produces the deployable static folder. Local Live Server is a preview; it does not publish changes to the existing public site or custom domain.
+
+## Package photography and layout refresh · 14 October 2026
+
+Four real 2000px destination photographs (plus 700px variants) are in `images/package-covers/`. Their authors, original sources, licences and conversion details are recorded in `data/photo-credits.json` and rendered on the credits page. Cover assignments use Kilimanjaro terrain/camping, Rufiji wildlife and Serengeti wildlife rather than cropped portraits or coffee as safari covers. Personal guiding and coffee photographs remain in appropriate stories and galleries.
+
+Package cards have a shorter preview, starting point, price basis and clear itinerary link. Home special journeys use their own compact cards; December departures separate dates, duration and group plan. Seven selected full itineraries have explicit practical planning facts in `data/tours.json`. The welcome appears once per session and shares a single floating contact control with WhatsApp as a no-JavaScript fallback.

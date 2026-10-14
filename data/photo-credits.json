@@ -438,5 +438,57 @@
     "file": "images/december/serengeti-giraffe-sunrise.webp",
     "changes": "Resized without cropping; converted to optimised WebP. No elements, colours, animals or people added or removed. Optimised variants retain the source licence. Display may be cropped by CSS.",
     "nearbyCredit": "© Giles Laurent, gileslaurent.com, License CC BY-SA"
+  },
+  {
+    "label": "Kilimanjaro camp at dusk",
+    "author": "Jorge Láscar",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Lascar_Camping_site_at_dusk_(4464687852).jpg",
+    "alt": "An illuminated orange trekking tent beneath Kilimanjaro’s snowy Kibo peak at dusk.",
+    "date": "2009-03-18",
+    "changes": "Resized without cropping and converted to optimized WebP. No elements, people, animals or colours added or removed.",
+    "file": "images/package-covers/kilimanjaro-camp-dusk.webp",
+    "location": "Kilimanjaro, Tanzania; individual camp not named in the source.",
+    "original_url": "https://live.staticflickr.com/4018/4464687852_d18eff9300_o.jpg"
+  },
+  {
+    "label": "Walking towards Lava Tower, Kilimanjaro",
+    "author": "Masa Sakano",
+    "license": "CC BY-SA 2.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Climbing_toward_the_Lava_Tower_site,_Kilimanjaro,_-25_Aug._2009_a.jpg",
+    "alt": "Trekkers walking across Kilimanjaro’s rocky upper slopes towards Lava Tower, with Kibo rising behind them.",
+    "date": "2009-08-25",
+    "changes": "Resized without cropping and converted to optimized WebP. No elements, people, animals or colours added or removed.",
+    "file": "images/package-covers/kilimanjaro-lava-tower-trail.webp",
+    "location": "Machame route, Kilimanjaro, Tanzania; approach towards Lava Tower.",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/0/01/Climbing_toward_the_Lava_Tower_site%2C_Kilimanjaro%2C_-25_Aug._2009_a.jpg"
+  },
+  {
+    "label": "Hippos in the Rufiji River",
+    "author": "Richard Mortel",
+    "license": "CC BY 2.0",
+    "license_url": "https://creativecommons.org/licenses/by/2.0/",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Hippo_in_the_Rufiji_River,_Selous_Game_Reserve_(3)_(28774209220).jpg",
+    "alt": "A pod of hippos resting in the blue waters of the Rufiji River, with green woodland on the far bank.",
+    "date": "2016-06-22",
+    "changes": "Resized without cropping and converted to optimized WebP. No elements, people, animals or colours added or removed.",
+    "file": "images/package-covers/rufiji-hippo-pod.webp",
+    "location": "Rufiji River, Selous Game Reserve, Tanzania, photographed before the 2019 Nyerere park designation.",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/5/58/Hippo_in_the_Rufiji_River%2C_Selous_Game_Reserve_%283%29_%2828774209220%29.jpg"
+  },
+  {
+    "label": "Elephant herd in Serengeti National Park",
+    "author": "Bjørn Christian Tørrissen",
+    "license": "CC BY-SA 3.0",
+    "license_url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Serengeti-African-Elephants.JPG",
+    "alt": "Adult elephants and calves crossing Serengeti grassland beside a waterhole and acacia trees.",
+    "date": "2012-08-27",
+    "changes": "Resized without cropping and converted to optimized WebP. No elements, people, animals or colours added or removed.",
+    "file": "images/package-covers/serengeti-elephant-herd.webp",
+    "location": "Serengeti National Park, Tanzania; source GPS −2.490278, 34.837778.",
+    "original_url": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Serengeti-African-Elephants.JPG"
   }
 ]

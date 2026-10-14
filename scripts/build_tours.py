@@ -13,6 +13,12 @@ HEADER = re.search(r'<header class="site-header">.*?</header>', HOME, re.S)[0]
 FOOTER = re.search(r'<footer class="site-footer">.*?</footer>', HOME, re.S)[0]
 FLOAT = re.search(r'<a class="whatsapp-float".*?</a>', HOME, re.S)[0]
 CATEGORIES = {'safari':'Safari', 'trekking':'Kilimanjaro', 'zanzibar':'Zanzibar', 'local':'Day trips', 'combined':'Combined journeys'}
+FOCAL_POSITIONS = {
+    'uhuru-summit-david.webp':'50% 30%', 'marangu-huts.webp':'50% 30%',
+    'zanzibar-blue-water.webp':'50% 30%', 'kilimanjaro-shira-evening.webp':'50% 70%',
+    'kilimanjaro-camp-dusk.webp':'50% 45%', 'kilimanjaro-lava-tower-trail.webp':'50% 45%',
+    'rufiji-hippo-pod.webp':'50% 50%', 'serengeti-elephant-herd.webp':'50% 55%',
+}
 
 def esc(value): return escape(str(value), quote=True)
 def money(value): return f'USD {value:,.0f}'
@@ -38,7 +44,8 @@ def img(path, alt, hero=False, sizes='(max-width: 780px) 90vw, 40vw'):
     if (ROOT/small).exists():
         sw,_ = image_size(small)
         responsive=f' srcset="{small.as_posix()} {sw}w, {path} {w}w" sizes="{sizes}"'
-    focal = ' style="object-position:50% 70%"' if Path(path).name=='kilimanjaro-shira-evening.webp' else ' style="object-position:50% 30%"' if Path(path).name in {'uhuru-summit-david.webp','marangu-huts.webp','zanzibar-blue-water.webp'} else ''
+    position=FOCAL_POSITIONS.get(Path(path).name)
+    focal=f' style="object-position:{position}"' if position else ''
     return f'<img{focal} src="{path}"{responsive} alt="{esc(alt)}" width="{w}" height="{h}" '+('fetchpriority="high" loading="eager"' if hero else 'loading="lazy"')+' decoding="async">'
 
 def image_alt(tour):
@@ -76,10 +83,12 @@ def price(tour):
 
 def card(tour):
     id,title=esc(tour['id']),esc(tour['title'])
+    duration=esc(tour.get('cardDuration',tour['duration']))
+    start,_=trip_endpoints(tour)
     return f'''<article class="package-card" data-tour-id="{id}">
 <a class="package-picture" href="{id}.html" aria-label="See {title}">{img(tour['image'], image_alt(tour))}<span class="package-category">{CATEGORIES[tour['category']]}</span></a>{('<p class="card-image-note">'+esc(tour['imageNote'])+'</p>') if tour.get('imageNote') else ''}
-<div class="package-body"><p class="package-meta">{esc(tour['duration'])} · {esc(tour['style'])}</p><h3><a href="{id}.html">{title}</a></h3><p>{esc(tour['summary'])}</p><span class="package-places">{' · '.join(map(esc,tour['places']))}</span>
-<div class="package-price">{price(tour)}<div class="package-links"><a href="{id}.html">View itinerary ↗</a><a href="index.html?package={id}#contact">Request a quote ↗</a></div></div><div class="tour-card-actions" hidden data-tour-actions><button type="button" data-save-tour="{id}" aria-pressed="false" aria-label="Save {title}">{features.icon('save')}<span data-save-label>Save tour</span></button><button type="button" data-share-tour="{id}" aria-label="Copy link to {title}">{features.icon('share')}<span>Copy link</span></button></div><p class="card-action-status" data-card-status role="status"></p></div></article>'''
+<div class="package-body"><p class="package-meta">{duration}</p><h3><a href="{id}.html">{esc(tour.get('cardTitle',tour['title']))}</a></h3><p class="package-summary">{esc(tour.get('cardSummary',tour['summary']))}</p><p class="package-start"><span>Starts</span> {esc(start)}</p><span class="package-places">{' · '.join(map(esc,tour['places'][:4]))}</span>
+<div class="package-price">{price(tour)}<div class="package-links"><a class="package-primary-link" href="{id}.html">View itinerary ↗</a><a href="index.html?package={id}#contact">Ask for a quote ↗</a></div></div><div class="tour-card-actions" hidden data-tour-actions><button type="button" data-save-tour="{id}" aria-pressed="false" aria-label="Save {title}">{features.icon('save')}<span data-save-label>Save tour</span></button><button type="button" data-share-tour="{id}" aria-label="Copy link to {title}">{features.icon('share')}<span>Copy link</span></button></div><p class="card-action-status" data-card-status role="status"></p></div></article>'''
 
 def selected_cards(ids): return '\n'.join(card(next(t for t in TOURS if t['id']==id)) for id in ids)
 
@@ -135,6 +144,9 @@ def tour_page(tour):
     solo=f'<p class="couple-price"><strong>Solo traveller?</strong><br>Estimated from {money(tour["priceSolo"])} for one adult on a private tour. Your quote confirms the services and total.</p>' if tour.get('priceSolo') else ''
     start,finish=trip_endpoints(tour)
     facts=f'<dl class="tour-facts"><div><dt>Duration</dt><dd>{esc(tour["duration"])}</dd></div><div><dt>Starts</dt><dd>{esc(start)}</dd></div><div><dt>Finishes</dt><dd>{esc(finish)}</dd></div><div><dt>Travel style</dt><dd>{esc(tour["style"])}</dd></div></dl>'
+    planning=tour.get('planningFacts',[])
+    overview='<section class="tour-planning-overview" id="tour-overview"><div><p class="eyebrow">BEFORE YOU CHOOSE</p><h2>The practical plan.</h2><p>Use these details alongside the itinerary and inclusions. Your written quote confirms the actual arrangements for your dates.</p></div><dl>'+''.join(f'<div><dt>{esc(item["label"])}</dt><dd>{esc(item["text"])}</dd></div>' for item in planning)+'</dl></section>' if planning else ''
+    overview_link='<a href="#tour-overview">At a glance</a>' if planning else ''
     related=[t for t in TOURS if t['category']==tour['category'] and t['id']!=id][:3]
     request_intro={
         'safari':'Tell me your travel dates, arrival point and preferred accommodation. I’ll help you choose the parks and allow time for the drives between them.',
@@ -146,7 +158,7 @@ def tour_page(tour):
     if len(related)<3: related += [t for t in TOURS if t['id']!=id and t not in related][:3-len(related)]
     body=f'''<div class="tour-top"><nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><a href="packages.html">Journeys &amp; prices</a><span aria-hidden="true">/</span><span>{CATEGORIES[tour['category']]}</span></nav>
 <div class="tour-heading"><div><p class="eyebrow">{esc(CATEGORIES[tour['category']].upper())} · TOUR DETAILS</p><h1>{esc(tour['title'])}</h1><p>{esc(tour['summary'])}</p></div></div>
-{facts}<nav class="tour-section-nav" aria-label="On this itinerary"><a href="#tour-itinerary">Itinerary</a><a href="#tour-inclusions">Inclusions</a><a href="#tour-practical">Practical details</a><a href="#tour-request">Ask David ↗</a></nav>{gallery}<div class="itinerary-tools"><button type="button" data-print-itinerary hidden>Print / save itinerary PDF</button><a href="index.html?package={id}#contact">Ask David about this tour ↗</a></div></div>
+{facts}<nav class="tour-section-nav" aria-label="On this itinerary">{overview_link}<a href="#tour-itinerary">Itinerary</a><a href="#tour-inclusions">Inclusions</a><a href="#tour-practical">Practical details</a><a href="#tour-request">Ask David ↗</a></nav>{gallery}<div class="itinerary-tools"><button type="button" data-print-itinerary hidden>Print / save itinerary PDF</button><a href="index.html?package={id}#contact">Ask David about this tour ↗</a></div>{overview}</div>
 <div class="tour-body"><article class="tour-article"><section id="tour-itinerary" aria-labelledby="itinerary-title"><p class="eyebrow">THE PLAN</p><h2 id="itinerary-title">Your itinerary</h2><div class="route-stops">{''.join(f'<span>{esc(p)}</span>' for p in tour['places'])}</div>{buffer}{schedule}</section>
 <section id="tour-inclusions" aria-labelledby="included-title"><p class="eyebrow">YOUR TRIP ARRANGEMENTS</p><h2 id="included-title">What’s included</h2><p>The itinerary below is the starting plan. Your written quote confirms the services for your dates and group.</p><div class="inclusion-grid"><div><h3>Planned inclusions</h3><ul>{included}</ul></div><div><h3>Not included</h3><ul>{excluded}</ul></div></div></section>
 <section id="tour-practical"><p class="eyebrow">GOOD TO KNOW</p><h2>Practical details</h2><p>{esc(tour['notes'])}</p><p>Tell me about food preferences, walking pace and access needs when you enquire. We’ll agree any changes to the route and price before you confirm.</p><a class="text-link" href="travel-guide.html">Read the Tanzania planning guide ↗</a></section>

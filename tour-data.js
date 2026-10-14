@@ -455,7 +455,7 @@
     "basis": "4 climbers; two sharing each tent",
     "start": "Moshi → Moshi",
     "style": "Mountain camping · 8-day route",
-    "image": "images/stories/kili-high-camp.webp",
+    "image": "images/package-covers/kilimanjaro-camp-dusk.webp",
     "summary": "Approach Kilimanjaro from the west, cross the Shira Plateau and allow eight mountain days for the planned ascent and descent.",
     "places": [
       "Lemosho",
@@ -533,7 +533,48 @@
     ],
     "notes": "The route days are mountain days. Allow the full trip length for arrival and departure. Acclimatisation, weather and the guide’s decisions affect the itinerary; reaching Uhuru is never guaranteed. Personal equipment, the crew plan and available safety equipment are confirmed before booking.",
     "price2": 2695,
-    "seoTitle": "8-Day Lemosho Kilimanjaro Trek"
+    "seoTitle": "8-Day Lemosho Kilimanjaro Trek",
+    "cardTitle": "8-Day Lemosho Trek",
+    "cardDuration": "8 mountain days · 10 total days / 9 nights",
+    "cardSummary": "A western approach across the Shira Plateau, with eight mountain days and hotel nights before and after the climb.",
+    "nights": 9,
+    "mountainDays": 8,
+    "planningFacts": [
+      {
+        "label": "Nights",
+        "text": "Seven mountain camp nights and two Moshi hotel nights with breakfast."
+      },
+      {
+        "label": "Transfers",
+        "text": "Moshi–route gate transfers are included. Airport transfers are separately quoted."
+      },
+      {
+        "label": "Equipment",
+        "text": "Shared tents and sleeping mats are planned. Confirm your sleeping bag, personal gear and any rentals."
+      },
+      {
+        "label": "Walking plan",
+        "text": "Guided mountain trekking with an acclimatisation schedule. Weather, altitude response and the guide’s decisions govern the summit attempt."
+      }
+    ],
+    "imageAlt": "An illuminated orange trekking tent beneath Kilimanjaro’s snowy Kibo peak at dusk.",
+    "gallery": [
+      {
+        "image": "images/package-covers/kilimanjaro-camp-dusk.webp",
+        "alt": "An illuminated orange trekking tent beneath Kilimanjaro’s snowy Kibo peak at dusk.",
+        "caption": "Kilimanjaro camp at dusk · Jorge Láscar / CC BY 2.0. The source does not identify the campsite; actual equipment and camp arrangements are confirmed in your itinerary."
+      },
+      {
+        "image": "images/december/kilimanjaro-shira-evening.webp",
+        "alt": "Kilimanjaro viewed from Shira camp in evening light",
+        "caption": "Shira camp view · Schavda / CC BY-SA 3.0 · destination photograph; not a promise of the weather on your dates."
+      },
+      {
+        "image": "images/package-covers/kilimanjaro-lava-tower-trail.webp",
+        "alt": "Trekkers walking across Kilimanjaro’s rocky upper slopes towards Lava Tower, with Kibo rising behind them.",
+        "caption": "Machame approach towards Lava Tower · Masa Sakano / CC BY-SA 2.0. These independent trekkers are not presented as David Explora clients."
+      }
+    ]
   },
   {
     "id": "kilimanjaro-marangu-day-hike",
@@ -2045,7 +2086,7 @@
     "basis": "4 adults; two sharing each room",
     "start": "Zanzibar airport → Zanzibar airport",
     "style": "Scheduled flights · private game drives",
-    "image": "images/safari-expansion/rufiji-river.webp",
+    "image": "images/package-covers/rufiji-hippo-pod.webp",
     "summary": "Fly from Zanzibar into Nyerere for two camp nights, game drives and a river outing, with the island return planned around the airline’s actual schedule.",
     "places": [
       "Zanzibar",
@@ -2087,6 +2128,11 @@
     "price2": null,
     "gallery": [
       {
+        "image": "images/package-covers/rufiji-hippo-pod.webp",
+        "alt": "A pod of hippos resting in the blue waters of the Rufiji River, with green woodland on the far bank.",
+        "caption": "Hippos in the Rufiji River, photographed in the then-Selous reserve in 2016 · Richard Mortel / CC BY 2.0. Regional destination image; no exact modern park boundary, boat route or sighting is promised."
+      },
+      {
         "image": "images/safari-expansion/rufiji-river.webp",
         "alt": "Rufiji River in the historic Selous Game Reserve landscape.",
         "caption": "Rufiji River in the historic Selous landscape, photographed in 2016; a regional destination image, not a guaranteed boat route."
@@ -2097,8 +2143,30 @@
         "caption": "Heron on the Rufiji riverbank in the historic Selous landscape. Boat and wildlife conditions vary."
       }
     ],
-    "imageNote": "Rufiji / historic Selous landscape · regional photograph",
-    "imageAlt": "Rufiji River in the historic Selous Game Reserve landscape."
+    "imageNote": "Rufiji River wildlife · regional destination photograph",
+    "imageAlt": "A pod of hippos resting in the blue waters of the Rufiji River, with green woodland on the far bank.",
+    "cardTitle": "Nyerere Fly-In Safari from Zanzibar",
+    "cardDuration": "3 days / 2 camp nights",
+    "cardSummary": "Fly from Zanzibar for two safari camp nights, private game drives and an authorised river outing.",
+    "nights": 2,
+    "planningFacts": [
+      {
+        "label": "Nights",
+        "text": "Two tented-camp nights, with the actual camp and sharing arrangement named in your quote."
+      },
+      {
+        "label": "Flights",
+        "text": "Return scheduled flights from Zanzibar are planned. The airline, airstrip, times and baggage allowance are confirmed before booking."
+      },
+      {
+        "label": "Activities",
+        "text": "Private game drives and one authorised boat outing, timed around flight arrivals and river conditions."
+      },
+      {
+        "label": "Island connections",
+        "text": "Zanzibar hotel–airport transfers are extra unless added. Allow a separate buffer before onward international flights."
+      }
+    ]
   },
   {
     "id": "2-day-mikumi-safari",
@@ -2324,8 +2392,8 @@
     "basis": "Private itinerary for your actual group and dates",
     "start": "Kilimanjaro Airport → Kilimanjaro Airport",
     "style": "Private journey · dates on request",
-    "image": "images/stories/marangu-moorland.webp",
-    "imageAlt": "A trekker resting among rocks in Kilimanjaro moorland",
+    "image": "images/package-covers/kilimanjaro-lava-tower-trail.webp",
+    "imageAlt": "Trekkers walking across Kilimanjaro’s rocky upper slopes towards Lava Tower, with Kibo rising behind them.",
     "summary": "Seven days on Machame, a four-day northern safari and time for arrival, recovery and departure. One written itinerary connects the mountain crew, park travel and hotels.",
     "places": [
       "Machame route",
@@ -2429,6 +2497,11 @@
     "mountainDays": 7,
     "gallery": [
       {
+        "image": "images/package-covers/kilimanjaro-lava-tower-trail.webp",
+        "alt": "Trekkers walking across Kilimanjaro’s rocky upper slopes towards Lava Tower, with Kibo rising behind them.",
+        "caption": "Machame approach towards Lava Tower · Masa Sakano / CC BY-SA 2.0. These independent trekkers are not presented as David Explora clients."
+      },
+      {
         "image": "images/stories/marangu-moorland.webp",
         "alt": "A trekker resting among rocks in Kilimanjaro moorland",
         "caption": "Kilimanjaro moorland · supplied destination photograph; not a Machame camp guarantee"
@@ -2442,6 +2515,27 @@
         "image": "images/safari-expansion/serengeti-plains.webp",
         "alt": "Serengeti river landscape in golden light",
         "caption": "Serengeti landscape · destination photograph"
+      }
+    ],
+    "cardTitle": "Kilimanjaro & Northern Safari",
+    "cardDuration": "14 days / 13 nights · 7 mountain days",
+    "cardSummary": "A seven-day Machame climb followed by four northern safari days, with airport transfers and hotel nights connected in one plan.",
+    "planningFacts": [
+      {
+        "label": "The sequence",
+        "text": "Seven mountain days, four safari days and time for arrival, descent-night rest and a final Arusha day."
+      },
+      {
+        "label": "Nights",
+        "text": "Six mountain camp nights, two Moshi nights, three safari nights and two Arusha nights."
+      },
+      {
+        "label": "Transfers",
+        "text": "Kilimanjaro Airport arrival/departure and connecting transfers are listed in the written itinerary."
+      },
+      {
+        "label": "Before confirmation",
+        "text": "Agree the licensed mountain operation, crew, actual safari accommodation, equipment and the full personal quote."
       }
     ]
   },
@@ -2458,8 +2552,8 @@
     "basis": "Private itinerary for your actual group and dates",
     "start": "Kilimanjaro Airport → Kilimanjaro Airport",
     "style": "Private journey · dates on request",
-    "image": "images/stories/coffee-cherries.webp",
-    "imageAlt": "Green and ripening coffee cherries on a leafy branch",
+    "image": "images/package-covers/serengeti-elephant-herd.webp",
+    "imageAlt": "Adult elephants and calves crossing Serengeti grassland beside a waterhole and acacia trees.",
     "summary": "Combine four northern safari days with an Arusha walk and a host-led Marangu coffee day. Allow time for the people and places between the parks.",
     "places": [
       "Arusha",
@@ -2528,6 +2622,11 @@
     "specialJourney": true,
     "gallery": [
       {
+        "image": "images/package-covers/serengeti-elephant-herd.webp",
+        "alt": "Adult elephants and calves crossing Serengeti grassland beside a waterhole and acacia trees.",
+        "caption": "Elephant herd in Serengeti National Park · Bjørn Christian Tørrissen / CC BY-SA 3.0 · destination photograph"
+      },
+      {
         "image": "images/daytrips/marangu-landscape.webp",
         "alt": "Street and houses in Marangu",
         "caption": "Marangu village · destination photograph"
@@ -2536,11 +2635,27 @@
         "image": "images/stories/coffee-cherries.webp",
         "alt": "Green and ripening coffee cherries on a leafy branch",
         "caption": "Coffee cherries · photograph supplied by David Explora"
+      }
+    ],
+    "cardTitle": "Northern Safari & Local Life",
+    "cardDuration": "8 days / 7 nights",
+    "cardSummary": "Four northern safari days, an Arusha city walk and Marangu coffee with local hosts, connected at a practical pace.",
+    "planningFacts": [
+      {
+        "label": "The sequence",
+        "text": "Arusha city life, four northern safari days and a host-led Marangu coffee visit."
       },
       {
-        "image": "images/stories/baobab-elephants.webp",
-        "alt": "Elephants beside a baobab in green savannah",
-        "caption": "Northern safari landscape · destination illustration"
+        "label": "Nights",
+        "text": "Two Arusha nights, three safari accommodation nights and two Moshi nights."
+      },
+      {
+        "label": "Local experiences",
+        "text": "The Arusha walk includes the agreed refreshment stop. Marangu includes the village guide, host fees, coffee activity and local lunch."
+      },
+      {
+        "label": "Travel pace",
+        "text": "The crater-to-Moshi transfer is a long day. Accommodation, pickup times and any support needs are checked before confirmation."
       }
     ]
   },
@@ -2557,8 +2672,8 @@
     "basis": "Private itinerary for your actual group and dates",
     "start": "Kilimanjaro Airport → Kilimanjaro Airport",
     "style": "Private journey · dates on request",
-    "image": "images/stories/marangu-moorland.webp",
-    "imageAlt": "David resting among rocks in Kilimanjaro moorland",
+    "image": "images/package-covers/kilimanjaro-lava-tower-trail.webp",
+    "imageAlt": "Trekkers walking across Kilimanjaro’s rocky upper slopes towards Lava Tower, with Kibo rising behind them.",
     "summary": "A shared mountain goal for friends, brothers, colleagues or fathers travelling with adult sons. Plan a private seven-day Machame climb with time to arrive, prepare and return, a steady guided pace and clear group arrangements.",
     "places": [
       "Machame route",
@@ -2633,6 +2748,11 @@
     "mountainDays": 7,
     "gallery": [
       {
+        "image": "images/package-covers/kilimanjaro-lava-tower-trail.webp",
+        "alt": "Trekkers walking across Kilimanjaro’s rocky upper slopes towards Lava Tower, with Kibo rising behind them.",
+        "caption": "Machame approach towards Lava Tower · Masa Sakano / CC BY-SA 2.0. These independent trekkers are not presented as David Explora clients."
+      },
+      {
         "image": "images/stories/marangu-moorland.webp",
         "alt": "David resting among rocks in Kilimanjaro moorland",
         "caption": "David in Kilimanjaro moorland · supplied destination photograph, not a specific Machame camp"
@@ -2646,6 +2766,27 @@
         "image": "images/stories/kili-high-camp.webp",
         "alt": "Tents and a shelter at Barafu Camp",
         "caption": "Kilimanjaro high camp · exact camp arrangements confirmed in your route"
+      }
+    ],
+    "cardTitle": "Men’s Kilimanjaro Journey",
+    "cardDuration": "9 days / 8 nights · 7 mountain days",
+    "cardSummary": "A private Machame climb for friends, brothers or fathers with adult sons, with a steady guided pace and time to prepare.",
+    "planningFacts": [
+      {
+        "label": "The route",
+        "text": "Seven mountain days on Machame; arrival and departure make nine trip days."
+      },
+      {
+        "label": "Nights",
+        "text": "Six mountain camp nights and two Moshi hotel nights before and after the climb."
+      },
+      {
+        "label": "Your group",
+        "text": "An adult men’s private group, with dates, tent sharing and crew arrangements agreed in the quote."
+      },
+      {
+        "label": "Preparation",
+        "text": "Review personal equipment, guide arrangements, appropriate insurance and the proposed acclimatisation plan before confirming."
       }
     ]
   },
@@ -2738,6 +2879,27 @@
         "image": "images/zanzibar-tours/jozani-colobus.webp",
         "alt": "Zanzibar red colobus in Jozani forest",
         "caption": "Jozani · free-ranging wildlife; sightings vary"
+      }
+    ],
+    "cardTitle": "Zanzibar Culture & Coast",
+    "cardDuration": "7 days / 6 nights",
+    "cardSummary": "Two Stone Town nights and four coastal nights, with history, spices, Jozani forest and time beside the sea.",
+    "planningFacts": [
+      {
+        "label": "Nights",
+        "text": "Two Stone Town hotel nights and four nights on your chosen coast, with breakfast."
+      },
+      {
+        "label": "Activities",
+        "text": "Guided Stone Town, spice-farm and Jozani visits; admissions and scheduled activity transport are listed in the quote."
+      },
+      {
+        "label": "The beach",
+        "text": "Choose the coast and named property before booking. A destination photo does not fix your hotel or room category."
+      },
+      {
+        "label": "Optional ocean days",
+        "text": "Snorkelling and boat activities are separately quoted and depend on safe sea conditions; extra meals are listed separately."
       }
     ]
   },
@@ -2844,8 +3006,8 @@
     "tripDays": 10,
     "nights": 9,
     "duration": "8 mountain days · 10 trip days / 9 nights",
-    "image": "images/stories/marangu-moorland.webp",
-    "imageAlt": "A trekker resting in Kilimanjaro moorland, a mountain destination photograph",
+    "image": "images/package-covers/kilimanjaro-camp-dusk.webp",
+    "imageAlt": "An illuminated orange trekking tent beneath Kilimanjaro’s snowy Kibo peak at dusk.",
     "summary": "A proposed Lemosho departure beginning on 20 December 2026, with Christmas at Barafu and the summit attempt planned for 26 December. Keep all eight mountain days and time to prepare.",
     "places": [
       "Lemosho",
@@ -2920,7 +3082,39 @@
       "Crew tips, personal purchases, hotel lunches and dinners unless stated",
       "Single-room or private-tent supplements, extra hotel nights and optional safari or island extensions"
     ],
-    "notes": "Proposed departure for 6–8 adult trekkers, subject to a viable party, the named licensed mountain operator and availability. Seven mountain camp nights plus two Moshi hotel nights. Christmas is at Barafu; the summit objective is 26 December. The additional mountain day is retained rather than shortened to force a Christmas summit."
+    "notes": "Proposed departure for 6–8 adult trekkers, subject to a viable party, the named licensed mountain operator and availability. Seven mountain camp nights plus two Moshi hotel nights. Christmas is at Barafu; the summit objective is 26 December. The additional mountain day is retained rather than shortened to force a Christmas summit.",
+    "cardTitle": "Christmas Lemosho Group",
+    "cardDuration": "8 mountain days · 10 total days / 9 nights",
+    "planningFacts": [
+      {
+        "label": "Christmas plan",
+        "text": "Arrive 19 December, start climbing 20 December and spend Christmas at Barafu. Summit objective: 26 December."
+      },
+      {
+        "label": "Nights",
+        "text": "Seven mountain camp nights and two Moshi hotel nights; depart 28 December."
+      },
+      {
+        "label": "Group stage",
+        "text": "A proposed 6–8-person group. The viable party, licensed operating arrangements, accommodation and quote need confirmation."
+      },
+      {
+        "label": "Mountain decisions",
+        "text": "The guide can adjust or stop the ascent for actual conditions. No date or summit is guaranteed."
+      }
+    ],
+    "gallery": [
+      {
+        "image": "images/package-covers/kilimanjaro-camp-dusk.webp",
+        "alt": "An illuminated orange trekking tent beneath Kilimanjaro’s snowy Kibo peak at dusk.",
+        "caption": "Kilimanjaro camp at dusk · Jorge Láscar / CC BY 2.0. The source does not identify the campsite; actual equipment and camp arrangements are confirmed in your itinerary."
+      },
+      {
+        "image": "images/december/kilimanjaro-shira-evening.webp",
+        "alt": "Kilimanjaro viewed from Shira camp in evening light",
+        "caption": "Shira camp view · Schavda / CC BY-SA 3.0 · destination photograph; not the confirmed Christmas group."
+      }
+    ]
   },
   {
     "id": "christmas-northern-safari-group",

@@ -9,8 +9,8 @@ ROOT=site.ROOT
 ARTICLES=json.loads((ROOT/'data/articles.json').read_text(encoding='utf-8'))
 SPECIAL=json.loads((ROOT/'data/special-journeys.json').read_text(encoding='utf-8'))['journeys']
 CATEGORIES={
-    'trekking':('Kilimanjaro','images/stories/marangu-moorland.webp','A trekker in Kilimanjaro moorland','Routes, preparation and mountain time'),
-    'safari':('Safari','images/safari-expansion/serengeti-plains.webp','Serengeti landscape in golden light','Wildlife, seasons and routes that work'),
+    'trekking':('Kilimanjaro','images/package-covers/kilimanjaro-lava-tower-trail.webp','Trekkers on Kilimanjaro’s upper slopes near Lava Tower','Routes, preparation and mountain time'),
+    'safari':('Safari','images/package-covers/serengeti-elephant-herd.webp','An elephant herd in Serengeti National Park','Wildlife, seasons and routes that work'),
     'zanzibar':('Zanzibar','images/stories/zanzibar-blue-water.webp','Boats on turquoise Zanzibar water','Island bases, tides and reef days'),
     'local':('Local life','images/stories/coffee-cherries.webp','Coffee cherries on a leafy branch','Village days and host-led experiences'),
     'purpose':('Education & purpose','images/optimized/kilimanjaro-guide.webp','David and a traveller on a Kilimanjaro trail','The education vision and its next steps'),
@@ -37,6 +37,13 @@ def related(ids):
         tour=next(t for t in site.TOURS if t['id']==id)
         cards.append(f'<article class="journey-small-card"><a href="{id}.html">{site.img(tour["image"],site.image_alt(tour))}<div><p class="journal-meta">{esc(tour["duration"])}</p><h3>{esc(tour["title"])}</h3><span class="text-link">View itinerary ↗</span></div></a></article>')
     return '<div class="journey-small-grid">'+''.join(cards)+'</div>'
+
+def signature_cards():
+    cards=[]
+    for item in SPECIAL:
+        tour=next(t for t in site.TOURS if t['id']==item['id'])
+        cards.append(f'<article class="signature-card"><a class="signature-image" href="{tour["id"]}.html" aria-label="View {esc(tour["title"])}">{site.img(tour["image"],site.image_alt(tour),sizes="(max-width: 650px) 90vw, (max-width: 1000px) 45vw, 25vw")}</a><div><p class="signature-theme">{esc(item["theme"])}</p><h3><a href="{tour["id"]}.html">{esc(tour.get("cardTitle",tour["title"]))}</a></h3><p class="signature-duration">{esc(tour.get("cardDuration",tour["duration"]))}</p><p class="signature-summary">{esc(tour.get("cardSummary",tour["summary"]))}</p><p class="signature-arrangements">Private dates · personal written quote</p><a class="text-link" href="{tour["id"]}.html">Explore this journey ↗</a></div></article>')
+    return '<div class="signature-grid">'+''.join(cards)+'</div>'
 
 def category_tiles(exclude=None):
     cards=[]
@@ -134,8 +141,8 @@ def about():
 
 def homepage():
     path=ROOT/'index.html';text=path.read_text(encoding='utf-8')
-    small=related([s['id'] for s in SPECIAL])
-    signature=f'<section class="section home-special-journeys"><div class="section-heading split-heading"><div><p class="eyebrow">MORE THAN ONE DESTINATION</p><h2>A complete journey,<br>built around your group.</h2></div><p>Four private itinerary ideas, including a mountain and safari combination, a men’s Machame climb and an extended Zanzibar stay. Compare the full travel days and request a plan for your dates. <a href="special-journeys.html">Explore special journeys ↗</a></p></div>{small}</section>'
+    small=signature_cards()
+    signature=f'<section class="section home-special-journeys" id="special-journeys"><div class="section-heading split-heading"><div><p class="eyebrow">MOUNTAIN · WILDLIFE · LOCAL LIFE · COAST</p><h2>Journeys that<br>fit together.</h2></div><p>Four private itinerary ideas with time for the places between the highlights. Compare the full travel days, then ask David to check the route and arrangements for your group. <a href="special-journeys.html">Compare special journeys ↗</a></p></div>{small}</section>'
     education_block=f'<section class="section home-education"><figure>{site.img("images/stories/marangu-huts.webp","David beside mountain huts on the Marangu route")}<figcaption>A guiding moment · photograph supplied by David Explora</figcaption></figure><div><p class="eyebrow">A LOCAL JOURNEY. A LONGER-TERM VISION.</p><h2>My next ambition:<br>help more young people learn.</h2><p>My own education journey has shaped this ambition. I want the business I am building to help young people facing difficult circumstances continue learning, with support based on real local needs and responsible partnerships.</p><p class="education-stage">Explora Education Vision · in development</p><a class="btn btn-primary" href="education-vision.html">See the vision and first steps ↗</a><p class="photo-note">A proposed initiative. The first partners, budget and delivery plan are still being developed.</p></div></section>'
     chosen=[next(a for a in ARTICLES if a['id']==id) for id in ['christmas-on-kilimanjaro','christmas-safari-tanzania','zanzibar-coast-tides']]
     journal_block='<section class="section home-journal"><div class="section-heading split-heading"><div><p class="eyebrow">THE DAVID EXPLORA JOURNAL</p><h2>Read before you travel.</h2></div><p>Christmas mountain dates, shared safari plans and Zanzibar’s tides. Read practical guides by subject and bring your questions into the planning conversation. <a href="journal.html">Read all the guides ↗</a></p></div><div class="journal-card-grid">'+''.join(article_card(a) for a in chosen)+'</div></section>'

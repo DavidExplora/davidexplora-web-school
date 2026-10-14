@@ -61,9 +61,10 @@
     if(errors.length)return {ok:false,errors};
     return {ok:true,...messageLinks(['Hello David, please send the verified payment instructions for my written quote.','Name: '+name,'Quote reference: '+reference,'Please confirm the recipient, amount, currency, payment method and booking terms before I pay.','This message is a request for instructions, not a payment or a booking confirmation.'].join('\n'),'Payment instructions · '+reference)};
   }
-  function welcomeAllowed(storage){try{return storage.getItem('david-welcome-dismissed')!=='1';}catch{return false;}}
+  function welcomeAllowed(storage){try{return storage.getItem('david-welcome-dismissed')!=='1'&&storage.getItem('david-welcome-seen')!=='1';}catch{return false;}}
+  function markWelcomeSeen(storage){try{storage.setItem('david-welcome-seen','1');}catch{/* The manual contact control remains available. */}}
   function dismissWelcome(storage){try{storage.setItem('david-welcome-dismissed','1');}catch{/* Manual opening still works without storage. */}}
-  const api={validDate,todayInTanzania,departureState,createSupportRequest,createPaymentRequest,welcomeAllowed,dismissWelcome};
+  const api={validDate,todayInTanzania,departureState,createSupportRequest,createPaymentRequest,welcomeAllowed,markWelcomeSeen,dismissWelcome};
   if(isNode){module.exports=api;return;}
   if(!data||!root.document)return;
   const doc=root.document, today=todayInTanzania();
@@ -108,13 +109,19 @@
   const welcome=doc.getElementById('david-welcome'),launcher=doc.getElementById('welcome-launch'),close=doc.getElementById('welcome-close');
   if(welcome&&launcher&&close){
     launcher.hidden=false;
-    const show=()=>{welcome.hidden=false;launcher.setAttribute('aria-expanded','true');};
+    const show=()=>{welcome.hidden=false;launcher.setAttribute('aria-expanded','true');try{markWelcomeSeen(root.sessionStorage);}catch{/* Storage may be blocked. */}};
     const hide=()=>{const inside=welcome.contains(doc.activeElement);welcome.hidden=true;launcher.setAttribute('aria-expanded','false');try{dismissWelcome(root.sessionStorage);}catch{/* Storage may be blocked. */}if(inside)launcher.focus();};
     launcher.addEventListener('click',()=>welcome.hidden?show():hide());close.addEventListener('click',hide);
     welcome.addEventListener('keydown',event=>{if(event.key==='Escape'){event.preventDefault();hide();}});
+    doc.addEventListener?.('keydown',event=>{if(event.key==='Escape'&&!welcome.hidden){event.preventDefault();hide();}});
+    doc.addEventListener?.('focusin',event=>{if(!welcome.hidden&&event.target.closest?.('form'))hide();});
+    // Keep the existing WhatsApp link as the no-JS fallback; one contact control is shown with JS.
+    doc.body?.classList.add('welcome-enabled');
     const enquiryPage=doc.querySelector('[data-guest-form]');
     let allowed=false;try{allowed=welcomeAllowed(root.sessionStorage);}catch{/* Some browser policies block the property itself. */}
     if(allowed&&!enquiryPage){root.setTimeout(()=>{
+      let stillAllowed=false;try{stillAllowed=welcomeAllowed(root.sessionStorage);}catch{/* Storage may be blocked. */}
+      if(!stillAllowed)return;
       const active=doc.activeElement,contact=doc.getElementById('contact'),rect=contact?.getBoundingClientRect();
       if(doc.hidden||root.location.hash==='#contact'||active&&/INPUT|SELECT|TEXTAREA|BUTTON|A/.test(active.tagName)||rect&&rect.top<root.innerHeight&&rect.bottom>0)return;
       show();

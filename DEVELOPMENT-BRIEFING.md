@@ -27,3 +27,11 @@ Reviewed 14 October 2026 against GitHub source f132363. This release preserves t
 ## Verification
 
 Node tests cover enquiry validation/encoding, real DOM handlers, navigation and carousel behaviour, saved lists, tour completeness, December date/nights arithmetic, tentative calendar syntax, expired departures and welcome handling when storage is blocked. The static checker checks page structure, headings, field labels, image dimensions/alt text, local links, credits, structured data and sitemap coverage. Generated output is reproducible. These checks do not replace a live browser review or confirmation of supplier/merchant arrangements.
+
+## Package photography and arrangement follow-up · 14 October 2026
+
+The four new screenshots showed weak Nyerere/Lemosho cover choices, an awkward cropped guiding portrait and coffee as the main safari-and-local-life image. This update replaces those covers with documented real photographs, strengthens the special-journey cards, makes departure rows more compact and separates duration/start/quote information. Seven itineraries now expose their accommodation, transfers, preparation or activity boundaries before the day-by-day plan.
+
+References reviewed for information structure: Asilia’s itinerary finder and detailed small-group itinerary (https://www.asiliaafrica.com/itineraries/), Nomad’s itinerary and Nyerere pages (https://www.nomad-tanzania.com/safaris/itineraries), Zara’s destination/group structure (https://zaratanzaniaadventures.com/) and Ultimate Kilimanjaro’s route breakdown (https://www.ultimatekilimanjaro.com/lemosho-route/). The original David Explora branding and writing are retained; competitor photography, prices, ratings, awards and operational claims are not copied.
+
+The floating contact controls have been consolidated, and the welcome now remembers whether it appeared during this browser session. It closes on Escape and when the traveller starts using a form, without moving focus out of the form. The previous priority list remains applicable: these presentation improvements do not activate card checkout or confirm supplier availability.
