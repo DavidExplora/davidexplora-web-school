@@ -14,8 +14,10 @@ def build():
         subprocess.run([sys.executable, str(ROOT / 'scripts' / script)], cwd=ROOT, check=True)
     # Capture a promotion's entry page before navigating to the shared enquiry form.
     tag = '<script src="lead-source.js" defer></script>'
+    analytics = '<link rel="stylesheet" href="analytics.css"><script src="analytics.js" defer></script>'
     for path in ROOT.glob('*.html'):
-        text = path.read_text(encoding='utf-8').replace(tag, '')
+        text = path.read_text(encoding='utf-8').replace(tag, '').replace(analytics, '')
+        text = text.replace('</head>', analytics + '</head>')
         if re.search(r'<script\b[^>]*\bsrc=', text):
             text = re.sub(r'(?=<script\b[^>]*\bsrc=)', lambda _: tag, text, count=1)
         else:

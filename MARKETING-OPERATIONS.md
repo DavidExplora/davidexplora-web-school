@@ -35,13 +35,19 @@ Do not replace contact links inside travel marketplaces where their rules restri
 
 For each genuine request, record lead ID, enquiry date, optional guest-reported source, promotion label, requested tour/date, next action and due date. Count test messages separately. Link clicks, source labels and Google impressions are not bookings. A confirmed booking requires the agreed services and written price, confirmed supplier delivery and verified required payment.
 
-## Analytics installation still needs the web stream ID
+## Analytics integration prepared; Google setting required
 
-The inspected source does not contain a Google Analytics tag. Connecting Windsor.ai to a property permits reading available reports; it does not install tracking in the website.
+David created the David Explora Website stream for https://davidexplora.com. The screenshot supplied on 15 October verifies stream ID `16131603101` and Measurement ID `G-BD611F1Z0K`.
 
-Find the public Measurement ID in Google Analytics: select David Explora, then Admin > Data streams > Web > the davidexplora.com stream. Copy the `G-...` Measurement ID, rather than the numeric property ID. If the property has no web stream, create the correct web stream first. After the ID is supplied, implement and verify the tag with appropriate visitor choices and privacy information, keeping customer information out of Analytics events. Do not guess an ID or publish duplicate tags.
+`analytics.js` and `analytics.css` prepare basic consent mode and equal Allow/Decline controls. Collection is currently held off with `settings.enabled = false`. Before enabling, the owner must switch Enhanced measurement off in the web stream. Automatic outbound tracking would otherwise capture WhatsApp draft URLs, which can contain enquiry details. The site uses explicit page and contact events instead. Do not enable a second tag or report the prepared integration as collecting live traffic.
+
+After the Google setting is confirmed, change the enabled flag, update the privacy notice to reflect activation, run the checks and publish. Then allow Analytics on the published site, use Google's Test installation and confirm the visit in Realtime. The basic implementation loads no Google tag until a visitor agrees, keeps advertising consent and signals off, strips unrelated query strings/fragments and sends only bounded page/source information. The custom `contact_click` event contains the contact method, never the email/WhatsApp draft URL. `enquiry_submit` signals a main-form handoff to the anti-spam step, not receipt or a confirmed booking. The site remembers consent for up to 180 days; withdrawal disables collection, clears Analytics cookies on this domain and reloads to remove the already-loaded tag.
+
+Keep automatic Enhanced measurement off while this explicit event implementation is in use. Report Analytics event counts separately from genuine enquiries and verified sales.
 
 Official guide: https://support.google.com/analytics/answer/12270356?hl=en
+
+Technical references: https://developers.google.com/tag-platform/security/guides/consent?consentmode=basic ; https://developers.google.com/analytics/devguides/collection/ga4/reference/config ; https://support.google.com/analytics/answer/9216061
 
 ## Checks
 

@@ -34,6 +34,7 @@ The site is plain HTML, CSS and JavaScript with no runtime framework. There are 
 - `data/social-links.json`: owner-known profile URLs; Facebook is pending the owner’s exact URL.
 - `journey.js` and `script.js`: itinerary suggestions, validation and enquiry drafts.
 - `lead-source.js`: bounded, tab-local promotion labels carried into main-form email and WhatsApp enquiries, plus an optional guest-reported source. See `MARKETING-OPERATIONS.md`.
+- `analytics.js` and `analytics.css`: optional Google Analytics with visitor choices and bounded page/contact events. The stream ID is supplied; collection remains disabled until the owner switches off automatic Enhanced measurement. See `MARKETING-OPERATIONS.md` before enabling.
 
 Edit the source template or catalogue, then run the complete build. Do not edit generated tour pages directly: regeneration replaces them. The shared header/footer is applied to every page, including older destination pages.
 

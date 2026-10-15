@@ -122,6 +122,8 @@
     if(allowed&&!enquiryPage){root.setTimeout(()=>{
       let stillAllowed=false;try{stillAllowed=welcomeAllowed(root.sessionStorage);}catch{/* Storage may be blocked. */}
       if(!stillAllowed)return;
+      const analyticsChoice=doc.getElementById('analytics-choice');
+      if(analyticsChoice&&!analyticsChoice.hidden)return;
       const active=doc.activeElement,contact=doc.getElementById('contact'),rect=contact?.getBoundingClientRect();
       if(doc.hidden||root.location.hash==='#contact'||active&&/INPUT|SELECT|TEXTAREA|BUTTON|A/.test(active.tagName)||rect&&rect.top<root.innerHeight&&rect.bottom>0)return;
       show();
