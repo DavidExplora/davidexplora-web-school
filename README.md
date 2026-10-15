@@ -4,7 +4,7 @@ Tanzania safaris, Kilimanjaro treks, Zanzibar experiences and local day trips, p
 
 Website: https://davidexplora.com
 
-Both `davidexplora.com` and `www.davidexplora.com` are connected to the existing hosted site with active HTTPS. Page canonicals and the sitemap use `https://davidexplora.com`. The professional mailbox `info@davidexplora.com` exchanged messages with David's Gmail account on 14 October 2026. Website contacts and enquiry drafts use that mailbox; Gmail authentication and inbox placement still need checking. See `LAUNCH.md` for the remaining email and booking setup.
+Both `davidexplora.com` and `www.davidexplora.com` are connected to the existing hosted site with active HTTPS. Page canonicals, social URLs, structured data and the sitemap use the final clean addresses under `https://davidexplora.com`. The professional mailbox `info@davidexplora.com` exchanged messages with David's Gmail account on 14 October 2026. Website contacts and enquiry drafts use that mailbox; Gmail authentication and inbox placement still need checking. See `LAUNCH.md` for the remaining email and booking setup.
 
 ## Source and editing
 
@@ -30,7 +30,7 @@ The site is plain HTML, CSS and JavaScript with no runtime framework. There are 
 - `operator.css`: shared navigation, current design and responsive layouts. Older destination styles remain in `style.css`, `launch.css` and `story.css`.
 - `experience.js`: photo galleries, touch swiping, filters and package selection.
 - `ui.js`: manual featured-tour slider, optional automatic Zanzibar rails and active navigation.
-- `features.js`: saved tours, copied links, printing, disclosure navigation, quick-plan handoff and desktop hover navigation.
+- `features.js`: saved tours, clean referral links copied from cards and all 42 itinerary pages, printing, disclosure navigation, quick-plan handoff and desktop hover navigation.
 - `data/social-links.json`: owner-known profile URLs; Facebook is pending the owner’s exact URL.
 - `journey.js` and `script.js`: itinerary suggestions, validation and enquiry drafts.
 - `lead-source.js`: bounded, tab-local promotion labels carried into main-form email and WhatsApp enquiries, plus an optional guest-reported source. See `MARKETING-OPERATIONS.md`.

@@ -8,6 +8,26 @@
   function cleanSaved(value) { return Array.isArray(value) ? [...new Set(value.filter(id => typeof id === 'string' && known.has(id)))].slice(0,tours.length) : []; }
   function readSaved(storage) { try { return cleanSaved(JSON.parse(storage.getItem(key) || '[]')); } catch { return []; } }
   function toggleSaved(ids,id) { if (!known.has(id)) return cleanSaved(ids); const set = new Set(cleanSaved(ids)); set.has(id) ? set.delete(id) : set.add(id); return [...set].slice(0,tours.length); }
+  function tourShareURL(id) {
+    if (!known.has(id)) return '';
+    const url=new URL('/'+id,'https://davidexplora.com');
+    url.searchParams.set('utm_source','referral');
+    url.searchParams.set('utm_medium','share');
+    url.searchParams.set('utm_campaign','trip_share');
+    return url.href;
+  }
+  async function copyTourLink(id,env,status) {
+    const url=tourShareURL(id);
+    if (!url || !status) return false;
+    try {
+      await env.navigator.clipboard.writeText(url);
+      status.textContent='Tour link copied. Paste it into your conversation.';
+      return true;
+    } catch {
+      status.textContent='Copy this tour link: '+url;
+      return false;
+    }
+  }
   function quickPlan(values,today) {
     const destinations = new Set(['Safari','Kilimanjaro','Zanzibar','Local Tanzania']);
     const travelers = Number(values.travelers), date = String(values.date || ''), errors=[];
@@ -79,7 +99,7 @@
       groups.forEach(group => { close(group); Object.assign(state.get(group), {inside:false, dismissed:false}); });
     });
   }
-  const api={cleanSaved,readSaved,toggleSaved,quickPlan,setupNavigation};
+  const api={cleanSaved,readSaved,toggleSaved,quickPlan,setupNavigation,tourShareURL,copyTourLink};
   if (node) { module.exports=api;return; }
   let saved=[];
   try { saved=readSaved(root.localStorage); } catch { /* Saving still works for this visit. */ }
@@ -103,12 +123,13 @@
     button.closest('.package-card').querySelector('[data-card-status]').textContent=saved.includes(button.dataset.saveTour)?(persisted?'Saved on this browser. View your shortlist in All tours.':'Saved for this visit. Browser storage is unavailable.'):'Removed from your saved tours.';
   }));
   root.addEventListener('storage',event=>{if(event.key===key){try{saved=readSaved(root.localStorage);}catch{saved=[];}refreshSaved();}});
-  doc.querySelectorAll('[data-share-tour]').forEach(button=>button.addEventListener('click',async()=>{
-    const status=button.closest('.package-card').querySelector('[data-card-status]');
-    const base=doc.querySelector('link[rel="canonical"]')?.href || root.location.href;
-    const url=new URL(button.dataset.shareTour+'.html',base).href;
-    try {await root.navigator.clipboard.writeText(url);status.textContent='Tour link copied. Paste it into your conversation.';} catch {status.textContent='Copy this tour link: '+url;}
-  }));
+  doc.querySelectorAll('[data-share-tour]').forEach(button=>{
+    button.hidden=false;
+    button.addEventListener('click',()=>{
+      const status=button.closest('.package-card, [data-tour-share]')?.querySelector('[data-card-status]');
+      return copyTourLink(button.dataset.shareTour,root,status);
+    });
+  });
   doc.querySelectorAll('[data-print-itinerary]').forEach(button=>{button.hidden=false;button.addEventListener('click',()=>root.print());});
   let printedDetails=[];
   root.addEventListener('beforeprint',()=>{printedDetails=[...doc.querySelectorAll('.day-accordion')].map(detail=>[detail,detail.open]);printedDetails.forEach(([detail])=>{detail.open=true;});});

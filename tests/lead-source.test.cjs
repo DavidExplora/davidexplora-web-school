@@ -14,7 +14,7 @@ test('a promotion survives detail-page navigation without retaining contact deta
   const first = tab('?utm_source=instagram&utm_medium=social&utm_campaign=marangu_oct2026&email=guest@example.com#secret', '/marangu-village-tour.html');
   const next = tab('?package=marangu-village-tour', '/index.html', first.shared, first.clock);
   assert.match(next.source.describe(), /source: instagram; medium: social; campaign: marangu_oct2026/);
-  assert.match(next.source.describe(), /entry page: \/marangu-village-tour.html/);
+  assert.match(next.source.describe(), /entry page: \/marangu-village-tour$/);
   assert.doesNotMatch(JSON.stringify([...first.shared]), /guest|example|secret|package=/);
 });
 
@@ -22,7 +22,7 @@ test('promotion entry pages survive clean URL redirects and exclude unrecognised
   for(const page of ['/marangu-village-tour','/marangu-village-tour/','/marangu-village-tour.html']) {
     const first=tab('?utm_source=instagram',page);
     const next=tab('', '/', first.shared, first.clock);
-    assert.equal(next.source.describe(),'source: instagram; entry page: /marangu-village-tour.html');
+    assert.equal(next.source.describe(),'source: instagram; entry page: /marangu-village-tour');
   }
   assert.equal(tab('?utm_source=instagram','/guest-alice-smith.html').source.describe(),'source: instagram; entry page: /');
 });

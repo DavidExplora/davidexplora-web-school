@@ -72,7 +72,7 @@ test('every public page keeps its identity after hosting removes the HTML extens
   const files=fs.readdirSync(path.join(__dirname,'..')).filter(name=>name.endsWith('.html'));
   for(const file of files) {
     const stem=file.slice(0,-5);
-    const expected='https://davidexplora.com'+(stem==='index'?'/':'/'+file);
+    const expected='https://davidexplora.com'+(stem==='index'?'/':'/'+stem);
     for(const alias of ['/'+file,'/'+stem,'/'+stem+'/']) {
       const f=fixture({choice:'granted',href:'https://davidexplora.com'+alias+'?email=guest%40example.com#private'});
       const page=f.eventCommands().find(args=>args[1]==='page_view');

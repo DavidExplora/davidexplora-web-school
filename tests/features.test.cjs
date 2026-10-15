@@ -1,6 +1,6 @@
 'use strict';
 const test=require('node:test'),assert=require('node:assert/strict');
-const {cleanSaved,readSaved,toggleSaved,quickPlan}=require('../features.js');
+const {cleanSaved,readSaved,toggleSaved,quickPlan,tourShareURL,copyTourLink}=require('../features.js');
 const {getTour,filterTours}=require('../packages.js');
 
 test('saved tours reject stale or malicious ids and recover from invalid browser storage',()=>{
@@ -10,6 +10,23 @@ test('saved tours reject stale or malicious ids and recover from invalid browser
   assert.deepEqual(readSaved({getItem:()=>'{}'}),[]);
   const once=toggleSaved([],'3-day-nyerere-road-safari');assert.deepEqual(once,['3-day-nyerere-road-safari']);
   assert.deepEqual(toggleSaved(once,'3-day-nyerere-road-safari'),[]);
+});
+test('copied trip links identify the actual tour and referral without retaining visitor details',async()=>{
+  const status={textContent:''},writes=[];
+  const env={location:{href:'https://davidexplora.com/?email=guest@example.com#private'},navigator:{clipboard:{async writeText(value){writes.push(value);}}}};
+  assert.equal(await copyTourLink('marangu-village-tour',env,status),true);
+  const url=new URL(writes[0]);
+  assert.equal(url.origin,'https://davidexplora.com');
+  assert.equal(url.pathname,'/marangu-village-tour');
+  assert.equal(url.searchParams.get('utm_source'),'referral');
+  assert.equal(url.searchParams.get('utm_medium'),'share');
+  assert.equal(url.searchParams.get('utm_campaign'),'trip_share');
+  assert.doesNotMatch(writes[0],/guest|example|private/);
+  assert.match(status.textContent,/copied/);
+  assert.equal(await copyTourLink('marangu-village-tour',{},status),false);
+  assert.match(status.textContent,/Copy this tour link: https:\/\/davidexplora.com\/marangu-village-tour\?/);
+  assert.equal(tourShareURL('../guest'),'');assert.equal(tourShareURL('constructor'),'');
+  assert.equal(await copyTourLink('missing',env,status),false);assert.equal(writes.length,1);
 });
 test('exact durations combine with saved tours and price filters without inventing matches',()=>{
   const ids=['2-day-mikumi-safari','3-day-nyerere-road-safari','6-day-northern-safari-culture'];

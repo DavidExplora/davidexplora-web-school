@@ -106,8 +106,15 @@ if 'inquiry-ready' not in home.ids or 'inquiry-whatsapp' not in home.ids:errors.
 sitemap=ET.parse(ROOT/'sitemap.xml')
 listed={urlsplit(loc.text).path for loc in sitemap.findall('.//{*}loc')}
 redirects=json.loads((ROOT/'data/tour-redirects.json').read_text(encoding='utf-8'))
-expected={'/'+('' if name=='index.html' else name) for name,page in pages.items() if name!='404.html' and Path(name).stem not in redirects and not any(t=='meta' and a.get('name')=='robots' and 'noindex' in a.get('content','') for t,a in page.tags)}
+expected={'/'+('' if name=='index.html' else Path(name).stem) for name,page in pages.items() if name!='404.html' and Path(name).stem not in redirects and not any(t=='meta' and a.get('name')=='robots' and 'noindex' in a.get('content','') for t,a in page.tags)}
 if listed!=expected:errors.append('Sitemap must contain every indexable content page once, excluding 404, noindex pages and legacy redirects')
+for name,page in pages.items():
+    canonical=[a.get('href') for t,a in page.tags if t=='link' and a.get('rel')=='canonical']
+    if len(canonical)!=1:errors.append(f'{name}: expected exactly one canonical address');continue
+    address='https://davidexplora.com'+('/' if name=='index.html' else '/'+Path(name).stem)
+    if Path(name).stem not in redirects and canonical[0]!=address:errors.append(f'{name}: canonical must match the final clean address served by hosting')
+    social=[a.get('content') for t,a in page.tags if t=='meta' and a.get('property')=='og:url']
+    if social and social!=canonical:errors.append(f'{name}: social and canonical addresses disagree')
 for old,new in redirects.items():
     redirect=pages.get(old+'.html')
     if not redirect or new+'.html' not in pages or not any(t=='meta' and a.get('name')=='robots' and 'noindex' in a.get('content','') for t,a in redirect.tags):errors.append(f'{old}: valid noindex legacy redirect missing')
