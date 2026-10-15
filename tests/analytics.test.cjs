@@ -30,7 +30,7 @@ function fixture({choice, age = 0, enabled = true, blocked = false, href = 'http
   return {root,doc,state,storage,writes,created,handlers,commands,eventCommands,advance(ms){time+=ms;}};
 }
 
-test('the prepared integration stays inactive until the stream settings are confirmed', () => {
+test('a disabled configuration never initializes Analytics', () => {
   assert.equal(analytics.settings.measurementId,id);
   const f=fixture({enabled:false});
   assert.equal(f.state.installed,false);

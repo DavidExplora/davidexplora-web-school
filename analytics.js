@@ -1,4 +1,4 @@
-/* Google Analytics loads after a visitor choice. Activate after stream settings are checked. */
+/* Optional Google Analytics loads only after a visitor allows it. */
 (function (root, factory) {
   'use strict';
   const api = factory();
@@ -6,7 +6,7 @@
   else root.DavidAnalytics = api.install(root, root.document);
 })(typeof globalThis !== 'undefined' ? globalThis : this, function () {
   'use strict';
-  const settings = { measurementId: 'G-BD611F1Z0K', enabled: false };
+  const settings = { measurementId: 'G-BD611F1Z0K', enabled: true };
   const key = 'david-explora-analytics-choice-v1';
   const lifetime = 180 * 24 * 60 * 60 * 1000;
   const hosts = new Set(['davidexplora.com', 'www.davidexplora.com', 'david-explora.fastash16.chatgpt.site']);
