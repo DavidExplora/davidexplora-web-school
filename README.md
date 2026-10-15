@@ -34,7 +34,7 @@ The site is plain HTML, CSS and JavaScript with no runtime framework. There are 
 - `data/social-links.json`: owner-known profile URLs; Facebook is pending the owner’s exact URL.
 - `journey.js` and `script.js`: itinerary suggestions, validation and enquiry drafts.
 - `lead-source.js`: bounded, tab-local promotion labels carried into main-form email and WhatsApp enquiries, plus an optional guest-reported source. See `MARKETING-OPERATIONS.md`.
-- `analytics.js` and `analytics.css`: optional Google Analytics with visitor choices and bounded page/contact events, enabled on 15 October 2026 after the owner confirmed automatic Enhanced measurement is off. Collection requires visitor consent; actual receipt in Google Realtime still needs a real-visit check. Keep Enhanced measurement off and see `MARKETING-OPERATIONS.md`.
+- `analytics.js` and `analytics.css`: optional Google Analytics with visitor choices and bounded page/contact events, enabled on 15 October 2026 after the owner confirmed automatic Enhanced measurement is off. Receipt of setup activity is confirmed. The build supplies known public paths so hosting's clean URL redirects retain each page's identity in Analytics and promotion labels. Distinct tour-path and contact/enquiry event receipt still need live checks. Keep Enhanced measurement off and see `MARKETING-OPERATIONS.md`.
 
 Edit the source template or catalogue, then run the complete build. Do not edit generated tour pages directly: regeneration replaces them. The shared header/footer is applied to every page, including older destination pages.
 

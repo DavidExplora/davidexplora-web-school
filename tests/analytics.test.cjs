@@ -1,6 +1,8 @@
 'use strict';
 const test = require('node:test');
 const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
 const analytics = require('../analytics.js');
 const id = 'G-BD611F1Z0K';
 
@@ -64,6 +66,26 @@ test('a positive visitor choice loads one tag, queues one page view and keeps ad
   assert.equal(config.allow_google_signals,false);
   assert.equal(config.allow_ad_personalization_signals,false);
   assert.doesNotMatch(JSON.stringify(f.commands()),/guest|example|private/);
+});
+
+test('every public page keeps its identity after hosting removes the HTML extension', () => {
+  const files=fs.readdirSync(path.join(__dirname,'..')).filter(name=>name.endsWith('.html'));
+  for(const file of files) {
+    const stem=file.slice(0,-5);
+    const expected='https://davidexplora.com'+(stem==='index'?'/':'/'+file);
+    for(const alias of ['/'+file,'/'+stem,'/'+stem+'/']) {
+      const f=fixture({choice:'granted',href:'https://davidexplora.com'+alias+'?email=guest%40example.com#private'});
+      const page=f.eventCommands().find(args=>args[1]==='page_view');
+      assert.equal(page[2].page_location,expected,alias);
+      assert.doesNotMatch(JSON.stringify(f.commands()),/guest|example|private/);
+    }
+  }
+});
+
+test('unknown paths cannot send names or identifiers as page locations', () => {
+  for(const page of ['/guest-alice-smith','/guest-alice-smith.html','/booking/12345','/guest%40example.com']) {
+    assert.equal(analytics.safeURL('https://davidexplora.com'+page,true),'https://davidexplora.com/');
+  }
 });
 
 test('contact events exclude the complete WhatsApp and email draft URLs', () => {

@@ -11,13 +11,22 @@
   const lifetime = 180 * 24 * 60 * 60 * 1000;
   const hosts = new Set(['davidexplora.com', 'www.davidexplora.com', 'david-explora.fastash16.chatgpt.site']);
   const sources = new Set(['instagram', 'facebook', 'tiktok', 'linkedin', 'google', 'google_business', 'whatsapp', 'partner', 'referral']);
+  const pagePaths = new Set(["/","/14-day-kilimanjaro-safari-journey.html","/2-day-mikumi-safari.html","/2-day-tarangire-ngorongoro.html","/3-day-nyerere-fly-in-zanzibar.html","/3-day-nyerere-road-safari.html","/4-day-luxury-northern-safari.html","/4-day-serengeti-camping.html","/404.html","/5-day-northern-lodge-safari.html","/6-day-drive-in-safari-zanzibar.html","/6-day-marangu-trek.html","/6-day-northern-safari-culture.html","/6-day-zanzibar-island-escape.html","/7-day-machame-trek.html","/7-day-zanzibar-culture-coast.html","/8-day-lemosho-trek.html","/8-day-northern-safari-local-life.html","/9-day-mens-kilimanjaro-journey.html","/9-day-womens-kilimanjaro-journey.html","/about-david.html","/arusha-city-tour.html","/blue-lagoon-snorkeling.html","/booking-payment-checklist.html","/changuu-prison-island.html","/chemka-springs-day.html","/choosing-kilimanjaro-route.html","/christmas-lemosho-group.html","/christmas-machame-group.html","/christmas-northern-safari-group.html","/christmas-on-kilimanjaro.html","/christmas-safari-tanzania.html","/education-through-tourism.html","/education-vision.html","/enquiry-submitted.html","/explore-tanzania.html","/group-departures.html","/how-to-book.html","/journal-education.html","/journal-kilimanjaro.html","/journal-local-life.html","/journal-planning.html","/journal-safari.html","/journal-zanzibar.html","/journal.html","/jozani-forest.html","/kilimanjaro-marangu-day-hike.html","/kilimanjaro-preparation.html","/kilimanjaro.html","/kizimkazi-dolphin-watching.html","/kuza-cave.html","/lemosho.html","/local-tanzania.html","/luxury-northern-safari.html","/maasai-community-day.html","/machame.html","/manyara.html","/marangu-village-or-forest.html","/marangu-village-tour.html","/marangu.html","/materuni-waterfall-coffee.html","/mnemba-waters-snorkeling.html","/mnemba.html","/moshi-arusha-city-walk.html","/moshi-city-tour.html","/nakupenda-sandbank.html","/ngorongoro.html","/packages.html","/payments.html","/photo-credits.html","/planning-serengeti-safari.html","/planning-travel-with-support.html","/prison-island.html","/privacy.html","/safari-zanzibar-journey.html","/safari.html","/serengeti.html","/southern-safaris.html","/special-journeys.html","/stone-town-walking-tour.html","/stone-town.html","/tanzania-safari-seasons.html","/tarangire-day-safari.html","/tarangire.html","/terms.html","/travel-guide.html","/travel-support.html","/understanding-tour-quote.html","/viajes-en-espanol.html","/zanzibar-coast-tides.html","/zanzibar-discover-scuba.html","/zanzibar-jet-ski.html","/zanzibar-mangrove-kayaking.html","/zanzibar-spice-farm.html","/zanzibar.html"]); // Generated from public HTML pages.
+
+  function canonicalPage(value) {
+    if (typeof value !== 'string') return '/';
+    const path = value.replace(/\/+$/, '');
+    const page = !path || path === '/index' || path === '/index.html' ? '/' :
+      path.endsWith('.html') ? path : path + '.html';
+    return pagePaths.has(page) ? page : '/';
+  }
 
   function safeURL(value, keepCampaign = false) {
     try {
       const url = new URL(value);
       if (!['http:', 'https:'].includes(url.protocol)) return '';
       if (!keepCampaign) return url.origin;
-      const path = /^\/(?:[a-z0-9/_-]+\.html)?$/i.test(url.pathname) ? url.pathname : '/';
+      const path = canonicalPage(url.pathname);
       const clean = new URL(url.origin + path);
       if (sources.has(url.searchParams.get('utm_source'))) {
         for (const name of ['utm_source', 'utm_medium', 'utm_campaign']) {

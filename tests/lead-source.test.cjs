@@ -18,6 +18,15 @@ test('a promotion survives detail-page navigation without retaining contact deta
   assert.doesNotMatch(JSON.stringify([...first.shared]), /guest|example|secret|package=/);
 });
 
+test('promotion entry pages survive clean URL redirects and exclude unrecognised paths', () => {
+  for(const page of ['/marangu-village-tour','/marangu-village-tour/','/marangu-village-tour.html']) {
+    const first=tab('?utm_source=instagram',page);
+    const next=tab('', '/', first.shared, first.clock);
+    assert.equal(next.source.describe(),'source: instagram; entry page: /marangu-village-tour.html');
+  }
+  assert.equal(tab('?utm_source=instagram','/guest-alice-smith.html').source.describe(),'source: instagram; entry page: /');
+});
+
 test('new promotion links replace the old label and the record expires after 30 minutes', () => {
   const first = tab('?utm_source=instagram', '/');
   const later = tab('?utm_source=partner&utm_medium=referral', '/moshi-city-walk.html', first.shared, first.clock);
