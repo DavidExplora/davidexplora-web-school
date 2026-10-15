@@ -33,6 +33,7 @@ The site is plain HTML, CSS and JavaScript with no runtime framework. There are 
 - `features.js`: saved tours, copied links, printing, disclosure navigation, quick-plan handoff and desktop hover navigation.
 - `data/social-links.json`: owner-known profile URLs; Facebook is pending the owner’s exact URL.
 - `journey.js` and `script.js`: itinerary suggestions, validation and enquiry drafts.
+- `lead-source.js`: bounded, tab-local promotion labels carried into main-form email and WhatsApp enquiries, plus an optional guest-reported source. See `MARKETING-OPERATIONS.md`.
 
 Edit the source template or catalogue, then run the complete build. Do not edit generated tour pages directly: regeneration replaces them. The shared header/footer is applied to every page, including older destination pages.
 
@@ -55,7 +56,7 @@ Tour selection preserves the customer’s traveler count and any edited message 
 
 ## Booking
 
-The main trip form posts enquiries to FormSubmit for email delivery to `info@davidexplora.com`. Visitors complete the provider's anti-spam check and return to `enquiry-submitted.html`; their `email` field supplies Reply-To. One-time owner activation and a real received-enquiry test are still required before email delivery is considered verified. See `FORM-DELIVERY.md`.
+The main trip form posts enquiries to FormSubmit for email delivery to `info@davidexplora.com`. Visitors complete the provider's anti-spam check and return to `enquiry-submitted.html`; their `email` field supplies Reply-To. David confirmed main-form activation, fresh enquiry receipt and a reply reaching Gmail on 15 October 2026. Email authentication and ongoing inbox placement remain separate checks. See `FORM-DELIVERY.md`.
 
 The WhatsApp option and separate guest-support/payment/partnership forms still prepare drafts that visitors must send themselves. There is no reservation database, online inventory or card checkout. A submitted enquiry is not a confirmed booking, and the return page does not prove inbox delivery.
 

@@ -5,7 +5,7 @@ const vm = require('node:vm');
 const journey = require('../journey.js');
 const tours = require('../packages.js');
 
-function fixture() {
+function fixture({campaign = '', referral = ''} = {}) {
   const element = (value = '') => ({value, hidden:true, events:{}, checked:false,
     addEventListener(name, fn){this.events[name] = fn;},
     scrollIntoView(){this.revealed = true;}, focus(){this.focused = true;},
@@ -16,7 +16,8 @@ function fixture() {
     'trip-package':'marangu-village-tour', 'trip-budget':'100',
     'trip-destination':'Local Tanzania', 'trip-duration':'1–2 days',
     'trip-style':'Private journey', 'trip-language':'English',
-    'trip-message':'Two adults and two children aged 9 and 12. Vegetarian lunch, please.'};
+    'trip-message':'Two adults and two children aged 9 and 12. Vegetarian lunch, please.',
+    'referral-source':referral, 'inquiry-campaign':''};
   const fields = Object.fromEntries(Object.entries(values).map(([id,value]) => [id,element(value)]));
   for(const id of ['inquiry-status','inquiry-ready','inquiry-preview','inquiry-whatsapp',
     'inquiry-email','inquiry-message','prepare-whatsapp','copy-status','copy-inquiry','privacy-consent','contact']) fields[id] = element();
@@ -27,7 +28,7 @@ function fixture() {
   const document = {body:element(), querySelectorAll:() => [],
     querySelector:selector => fields[selector.slice(1)] || null,
     getElementById:id => fields[id], addEventListener(){}};
-  const window = {DavidJourney:journey, DavidTours:tours, location:{search:''},
+  const window = {DavidJourney:journey, DavidTours:tours, DavidLeadSource:{describe:()=>campaign}, location:{search:''},
     matchMedia:() => ({matches:false})};
   vm.runInNewContext(fs.readFileSync('script.js','utf8'), {window,document,Date});
   return {fields,form,values,submit(id){let prevented=false;form.events.submit({submitter:id?{id}:undefined,preventDefault(){prevented=true;}});return prevented;}};
@@ -83,4 +84,24 @@ test('native form validation failure prevents submission before building any out
   assert.equal(f.submit(),true);
   assert.equal(f.fields['inquiry-message'].value,'');
   assert.equal(f.fields['inquiry-ready'].hidden,true);
+});
+
+test('email and WhatsApp enquiries preserve distinct guest-reported and promotion sources', () => {
+  const campaign='source: instagram; medium: social; campaign: marangu_oct2026; entry page: /marangu-village-tour.html';
+  for (const button of [undefined, 'prepare-whatsapp']) {
+    const f=fixture({campaign,referral:'Friend or past guest'});
+    assert.equal(f.submit(button),button==='prepare-whatsapp');
+    const message=f.fields['inquiry-message'].value;
+    assert.match(message,/How I found David Explora: Friend or past guest/);
+    assert.ok(message.includes('Promotion link: '+campaign));
+    assert.equal(f.fields['inquiry-campaign'].value,campaign);
+    assert.equal(new URL(f.fields['inquiry-whatsapp'].href).searchParams.get('text'),message);
+    assert.equal(new URL(f.fields['inquiry-email'].href).searchParams.get('body'),message);
+  }
+});
+
+test('source questions remain optional and do not block direct enquiries', () => {
+  const f=fixture();
+  assert.equal(f.submit(),false);
+  assert.doesNotMatch(f.fields['inquiry-message'].value,/How I found|Promotion link/);
 });

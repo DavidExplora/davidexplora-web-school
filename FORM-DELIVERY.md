@@ -10,7 +10,9 @@ FormSubmit's default anti-spam check remains enabled and a hidden honeypot is in
 
 The WhatsApp option prepares drafts without sending an email. Direct mail links and the separate support, payment-instruction and education partnership forms retain their existing draft workflow. No card checkout, inventory reservation or booking database is added.
 
-## Owner activation and end-to-end test — pending
+## Owner activation and end-to-end test — completed 15 October 2026
+
+David confirmed that fresh main-form enquiries reached info@davidexplora.com and that a reply reached the test Gmail account. This is owner-confirmed delivery evidence; it does not prove every future email will reach the inbox. Use the steps below when retesting after a delivery change.
 
 1. Open the published main contact form and submit a clearly labelled setup test using David's own contact details. Complete the anti-spam check.
 2. Open `info@davidexplora.com` in Private Email. Look in Inbox and Spam for FormSubmit's activation message. Confirm only the expected form for `davidexplora.com` using the activation link in that message.
