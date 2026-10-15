@@ -62,7 +62,7 @@ for path in sorted(ROOT.glob('*.html')):
     if sum(t=='footer' for t,a in page.tags)!=1:errors.append(f'{path.name}: expected one shared footer')
     if not any(t=='link' and a.get('rel')=='canonical' for t,a in page.tags):errors.append(f'{path.name}: canonical missing')
     if not any(t=='meta' and a.get('name')=='description' and a.get('content') for t,a in page.tags):errors.append(f'{path.name}: description missing')
-    for field in [a for t,a in page.tags if t in ('input','select','textarea')]:
+    for field in [a for t,a in page.tags if t in ('input','select','textarea') and a.get('type')!='hidden']:
         if not any(t=='label' and a.get('for')==field.get('id') for t,a in page.tags):errors.append(f'{path.name}: unlabeled form field {field.get("id")}')
     for carousel in page.carousels:
         a=carousel['attributes'];slides=carousel['slides'];buttons=carousel['buttons']
@@ -98,14 +98,16 @@ duration_values={a.get('value') for t,a in home.tags if t=='option'}
 for expected in ('3–4 days','5–7 days','8–10 days','11+ days','1–2 days','Flexible'):
     if expected not in duration_values:errors.append(f'Form duration missing: {expected}')
 if not any(t=='input' and a.get('id')=='privacy-consent' and 'required' in a for t,a in home.tags):errors.append('Inquiry must require consent')
-if not any(t=='button' and a.get('type')=='submit' and 'disabled' in a for t,a in home.tags):errors.append('Inquiry needs disabled no-JavaScript fallback')
+if not any(t=='form' and a.get('id')=='trip-inquiry-form' and a.get('method','').lower()=='post' and a.get('action')=='https://formsubmit.co/info@davidexplora.com' for t,a in home.tags):errors.append('Inquiry must POST to the owner email delivery endpoint')
+if not any(t=='input' and a.get('id')=='customer-email' and a.get('name')=='email' and a.get('type')=='email' for t,a in home.tags):errors.append('Inquiry needs the customer reply-to email')
+if any(t=='input' and a.get('name')=='_captcha' and a.get('value')=='false' for t,a in home.tags):errors.append('Inquiry anti-spam verification must remain enabled')
 if 'inquiry-ready' not in home.ids or 'inquiry-whatsapp' not in home.ids:errors.append('WhatsApp review/handoff is missing')
 
 sitemap=ET.parse(ROOT/'sitemap.xml')
 listed={urlsplit(loc.text).path for loc in sitemap.findall('.//{*}loc')}
 redirects=json.loads((ROOT/'data/tour-redirects.json').read_text(encoding='utf-8'))
-expected={'/'+('' if name=='index.html' else name) for name in pages if name!='404.html' and Path(name).stem not in redirects}
-if listed!=expected:errors.append('Sitemap must contain every public content page once, excluding 404 and legacy redirects')
+expected={'/'+('' if name=='index.html' else name) for name,page in pages.items() if name!='404.html' and Path(name).stem not in redirects and not any(t=='meta' and a.get('name')=='robots' and 'noindex' in a.get('content','') for t,a in page.tags)}
+if listed!=expected:errors.append('Sitemap must contain every indexable content page once, excluding 404, noindex pages and legacy redirects')
 for old,new in redirects.items():
     redirect=pages.get(old+'.html')
     if not redirect or new+'.html' not in pages or not any(t=='meta' and a.get('name')=='robots' and 'noindex' in a.get('content','') for t,a in redirect.tags):errors.append(f'{old}: valid noindex legacy redirect missing')

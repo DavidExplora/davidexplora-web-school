@@ -44,6 +44,8 @@ function resetRequest() {
   if (emailLink) emailLink.href = 'mailto:info@davidexplora.com';
   const preview = document.querySelector('#inquiry-preview');
   if (preview) preview.textContent = '';
+  const emailMessage = document.querySelector('#inquiry-message');
+  if (emailMessage) emailMessage.value = '';
   const copyStatus = document.querySelector('#copy-status');
   if (copyStatus) copyStatus.textContent = '';
 }
@@ -91,7 +93,8 @@ document.querySelector('#plan-this-trip')?.addEventListener('click', () => {
 });
 
 if (form) {
-  form.querySelector('.inquiry-submit').disabled = false;
+  const whatsappOption = document.querySelector('#prepare-whatsapp');
+  if (whatsappOption) whatsappOption.hidden = false;
   const destinationPreset = api.urlPreset(window.location.search);
   if (destinationPreset) {
     const [destination, duration, message] = destinationPreset;
@@ -106,12 +109,12 @@ if (form) {
   form.addEventListener('input', resetRequest);
   form.addEventListener('change', resetRequest);
   form.addEventListener('submit', event => {
-    event.preventDefault();
-    if (!form.reportValidity()) return;
+    if (!form.reportValidity()) { event.preventDefault(); return; }
     const field = id => document.getElementById(id).value;
     const chosenPackage = window.DavidTours?.getTour(field('trip-package'));
     const inquiry = api.createInquiry({ name: field('customer-name'), email: field('customer-email'), whatsapp: field('customer-whatsapp'), date: field('travel-date'), travelers: field('traveler-count'), arrival: field('trip-arrival'), flexibility: field('trip-date-flexibility'), package: chosenPackage?.title || '', budget: field('trip-budget'), destination: field('trip-destination'), duration: field('trip-duration'), style: field('trip-style'), language: field('trip-language'), message: field('trip-message'), consent: document.querySelector('#privacy-consent').checked }, today);
     if (inquiry.errors.length) {
+      event.preventDefault();
       status.textContent = inquiry.errors.join(' ');
       status.tabIndex = -1;
       status.focus();
@@ -120,6 +123,12 @@ if (form) {
     document.querySelector('#inquiry-preview').textContent = inquiry.text;
     document.querySelector('#inquiry-whatsapp').href = inquiry.url;
     document.querySelector('#inquiry-email').href = inquiry.emailURL;
+    document.querySelector('#inquiry-message').value = inquiry.text;
+    if (event.submitter?.id !== 'prepare-whatsapp') {
+      status.textContent = 'Continue to the anti-spam check to submit your enquiry to David by email.';
+      return;
+    }
+    event.preventDefault();
     const ready = document.querySelector('#inquiry-ready');
     ready.hidden = false;
     status.textContent = 'Your request is prepared. Choose WhatsApp or email below and press Send in that app. Nothing has been sent yet.';

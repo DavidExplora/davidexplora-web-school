@@ -8,7 +8,7 @@ Both `davidexplora.com` and `www.davidexplora.com` are connected to the existing
 
 ## Source and editing
 
-The site is plain HTML, CSS and JavaScript with no runtime framework. There are 94 HTML pages (including 404 and one legacy package redirect), 42 tour itineraries and 12 original travel articles.
+The site is plain HTML, CSS and JavaScript with no runtime framework. There are 95 HTML pages (including 404 and one legacy package redirect), 42 tour itineraries and 12 original travel articles.
 
 - `templates/home.html`: editable homepage, shared navigation and footer.
 - `data/tours.json`: tour names, estimates, group-price assumptions and itineraries.
@@ -55,7 +55,9 @@ Tour selection preserves the customer’s traveler count and any edited message 
 
 ## Booking
 
-The site prepares a WhatsApp or email draft in the visitor’s browser. The visitor must open the app and press Send. There is no automatic email delivery, reservation database, online inventory or card checkout. A prepared request is not a delivered enquiry or confirmed booking.
+The main trip form posts enquiries to FormSubmit for email delivery to `info@davidexplora.com`. Visitors complete the provider's anti-spam check and return to `enquiry-submitted.html`; their `email` field supplies Reply-To. One-time owner activation and a real received-enquiry test are still required before email delivery is considered verified. See `FORM-DELIVERY.md`.
+
+The WhatsApp option and separate guest-support/payment/partnership forms still prepare drafts that visitors must send themselves. There is no reservation database, online inventory or card checkout. A submitted enquiry is not a confirmed booking, and the return page does not prove inbox delivery.
 
 WhatsApp: +255 778 321 400. Email: info@davidexplora.com.
 

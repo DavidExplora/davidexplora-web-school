@@ -92,14 +92,14 @@ def card(tour):
 
 def selected_cards(ids): return '\n'.join(card(next(t for t in TOURS if t['id']==id)) for id in ids)
 
-def page(filename, title, description, body, image='images/stories/zebras-safari-vehicle.webp', schema=None):
+def page(filename, title, description, body, image='images/stories/zebras-safari-vehicle.webp', schema=None, robots='index, follow'):
     url=ORIGIN+('/' if filename=='index.html' else '/'+filename)
     structured=json.dumps(schema,ensure_ascii=False).replace('</','<\\/') if schema else None
     source=f'''<!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{esc(title)} | David Explora</title><meta name="description" content="{esc(description)}">
 <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="launch.css"><link rel="stylesheet" href="story.css"><link rel="stylesheet" href="discovery.css"><link rel="stylesheet" href="operator.css">
-<meta name="robots" content="index, follow"><meta name="theme-color" content="#173d32"><meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="{esc(robots)}"><meta name="theme-color" content="#173d32"><meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="canonical" href="{url}">
 <meta property="og:type" content="website"><meta property="og:site_name" content="David Explora"><meta property="og:title" content="{esc(title)} | David Explora">
 <meta property="og:description" content="{esc(description)}"><meta property="og:url" content="{url}"><meta property="og:image" content="{ORIGIN}/{image}"><meta name="twitter:card" content="summary_large_image">
@@ -273,7 +273,7 @@ def sitemap():
     ns='http://www.sitemaps.org/schemas/sitemap/0.9';ET.register_namespace('',ns)
     tree=ET.Element('{'+ns+'}urlset')
     for p in sorted(ROOT.glob('*.html')):
-        if p.name=='404.html' or p.stem in REDIRECTS: continue
+        if p.name=='404.html' or p.stem in REDIRECTS or re.search(r'<meta\s+name="robots"\s+content="[^"]*noindex',p.read_text(encoding='utf-8')): continue
         url=ET.SubElement(tree,'{'+ns+'}url');ET.SubElement(url,'{'+ns+'}loc').text=ORIGIN+('/' if p.name=='index.html' else '/'+p.name)
     ET.indent(tree,space='  ')
     ET.ElementTree(tree).write(ROOT/'sitemap.xml',encoding='utf-8',xml_declaration=True)

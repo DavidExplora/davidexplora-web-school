@@ -1,6 +1,6 @@
 # David Explora booking and payment launch
 
-The public site is live. The form prepares a WhatsApp or email draft in the visitor's browser. The visitor must press Send. There is no automatic booking database, reserved inventory, card checkout, or automatic email delivery.
+The public site is live. The main trip form posts enquiries through FormSubmit to `info@davidexplora.com`, with an anti-spam check and a return page. Owner activation and an actual received-enquiry test are pending; see `FORM-DELIVERY.md`. WhatsApp and separate guest-support/payment forms still use drafts that the visitor must send. There is no booking database, reserved inventory or card checkout.
 
 ## Current payment status and Yas merchant verification
 

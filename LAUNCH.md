@@ -18,9 +18,9 @@ GitHub stores the source at `DavidExplora/davidexplora-web-school`. The public s
 
 ## Website and booking status
 
-The plain HTML/CSS/JavaScript site has 94 HTML pages, 42 tour itineraries and 12 original travel guides. Licensed destination photography and David's supplied guiding photographs have public source/credit records. Machame, Lemosho and Marangu have distinct automatic photo galleries with manual controls and reduced-motion support.
+The plain HTML/CSS/JavaScript site has 95 HTML pages, 42 tour itineraries and 12 original travel guides. Licensed destination photography and David's supplied guiding photographs have public source/credit records. Machame, Lemosho and Marangu have distinct automatic photo galleries with manual controls and reduced-motion support.
 
-Visitors can review tours and prepare a WhatsApp or email enquiry. They must press Send in the selected app. Live chat messages use David’s tawk.to account. There is no automatic email delivery from the enquiry forms, booking database, live seat inventory or online card checkout. A prepared message does not reserve a trip or confirm a booking.
+The main trip enquiry form now submits to FormSubmit for delivery to `info@davidexplora.com`, followed by the provider's anti-spam check and the site's enquiry return page. One-time inbox activation and a real received-enquiry test are pending; see `FORM-DELIVERY.md`. Separate support/payment/partnership forms and the WhatsApp option still prepare drafts for visitors to send. Live chat messages use David’s tawk.to account. There is no booking database, live seat inventory or online card checkout. An enquiry does not reserve a trip or confirm a booking.
 
 Displayed prices are planning estimates. Before confirming paid bookings, obtain actual supplier costs and availability, confirm the operating/contracting provider and applicable licensing/insurance, and issue a written itinerary, price, inclusions, payment recipient and cancellation terms. See `BOOKING-LAUNCH.md` and the destination operations documents.
 
@@ -28,7 +28,7 @@ Displayed prices are planning estimates. Before confirming paid bookings, obtain
 
 David created `info@davidexplora.com` in Namecheap Private Email. His 14 October screenshots show outgoing test messages received by Gmail and a Gmail reply received in the professional mailbox. Those outgoing tests landed in Gmail's Spam folder. This confirms a two-way message exchange, not reliable customer inbox placement or passing authentication.
 
-The homepage, shared footers, privacy/terms contacts, organization metadata, trip enquiries, English/Spanish support requests, payment-instruction drafts and education partnership draft now use `info@davidexplora.com`. WhatsApp remains +255 778 321 400. Forms still prepare messages locally; visitors must press Send in their chosen app.
+The homepage, shared footers, privacy/terms contacts, organization metadata, trip enquiries, English/Spanish support requests, payment-instruction drafts and education partnership draft use `info@davidexplora.com`. WhatsApp remains +255 778 321 400. The main form has a direct email submission path; the other forms retain their draft workflow.
 
 Next, open a newly received professional-mailbox message in Gmail and choose the message's three-dot menu beside Reply, then **Show original**. Check SPF, DKIM and DMARC results. Use the actual results and the provider-generated DKIM record before changing DNS. Do not invent a key or add a second SPF record. Marking the test Not spam helps David's own Gmail inbox; it does not guarantee customer inbox placement.
 
